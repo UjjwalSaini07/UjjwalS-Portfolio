@@ -1,0 +1,42 @@
+svg {
+    display:block;
+    margin:auto;
+    width:650px;
+    height:700px;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    left:50%;
+    top:52%;
+    transform:translate(-50%,-50%);
+  }
+  
+  .tree {
+    fill: #E73E0D;
+  }
+  
+  .circle-mask {
+    transform-origin: 50% 90%;
+    animation: scale 8s infinite ease-out;
+  }
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: scale(0.0);
+    }
+    7%, 90% {
+      transform: scale(0.4);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    svg {
+        width:335px;
+        height:370px;
+        left: 53%;
+        top:50%;
+    }
+}
