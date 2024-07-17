@@ -7,6 +7,9 @@ import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
+
+import "./SideBar.css";
+
 const routes = [
   {
     path: "/",
