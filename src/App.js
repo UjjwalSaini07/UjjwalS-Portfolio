@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Preloader from './components/Preloader';
+import {Route, Routes } from "react-router-dom";
+
+import Preloader from './components/Preloader.js';
+import AppLayout from "./components/AppLayout";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -7,15 +10,21 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 7200); // Adjust the timeout as needed
+    }, 2200); // Adjust the timeout as needed
   }, []);
 
   return (
     <div  className="App">
-      {loading ? <Preloader /> : 
-      <div>
-        Your main content goes here
-      </div>}
+      {loading ? <Preloader /> : (
+      <>
+        <Routes>
+          <Route element={<AppLayout />}>
+
+
+          </Route>
+        </Routes>
+      </>
+    )}
     </div>
   );
 };
