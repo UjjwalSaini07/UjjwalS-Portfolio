@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&family=EB+Garamond:ital@1&family=Poppins:wght@500&family=Roboto+Condensed:wght@700&family=Young+Serif&display=swap');
+
+#text1{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .App {
   text-align: center;
 }
