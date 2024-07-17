@@ -4,6 +4,7 @@ import {Route, Routes } from "react-router-dom";
 import Preloader from './components/Preloader.js';
 import AppLayout from "./components/AppLayout";
 import SideBar from './components/Sidebar/SideBar.jsx'
+import "./App.css";
 
 import Home from './Pages/Home.js';
 import About from './Pages/About.js';
