@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
-import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
+import { FaHome, FaSignature, FaCode, FaCubes, FaGithub, FaLinkedinIn, FaBars} from "react-icons/fa";
+import { MdContacts } from "react-icons/md";
+import { ImPieChart } from "react-icons/im";
+import { IoIosMail } from "react-icons/io";
+import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
@@ -17,43 +16,43 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    icon: <FaUser />,
+    icon: <FaSignature />,
   },
   {
     path: "/skills",
     name: "Skills",
-    icon: <MdMessage />,
+    icon: <FaCode />,
   },
   {
     path: "/work",
     name: "Work Ex",
-    icon: <BiAnalyse />,
+    icon: <ImPieChart />,
   },
   {
     path: "/projects",
     name: "ProjectS",
-    icon: <BsCartCheck />,
+    icon: <FaCubes />,
   },
   {
     path: "/contact",
     name: "Contact",
-    icon: <BiCog />,
+    icon: <MdContacts />,
     exact: true,
     subRoutes: [
       {
         path: "/contact",
         name: "Github",
-        icon: <FaUser />,
+        icon: <FaGithub />,
       },
       {
         path: "/contact",
-        name: "LinkdIn",
-        icon: <FaLock />,
+        name: "Linkedin",
+        icon: <FaLinkedinIn />,
       },
       {
         path: "/contact",
         name: "Mail",
-        icon: <FaMoneyBill />,
+        icon: <IoIosMail />,
       },
     ],
   },
