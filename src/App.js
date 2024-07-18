@@ -6,7 +6,8 @@ import AppLayout from "./components/AppLayout";
 import Home from './Pages/Home.js';
 import About from './Pages/About.js';
 import Skills from './Pages/Skills.js';
-import WorkEx from './Pages/WorkEx.js';
+import Experience from './Pages/Experience.js';
+import Education from './Pages/Education.js';
 import Project from './Pages/Project.js';
 import Contact from './Pages/Contact.js';
 import Error404 from './Pages/Error404.js';
@@ -29,7 +30,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/work" element={<WorkEx />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
             <Route path="/projects" element={<Project />} />
             <Route path="/contact" element={<Contact />} />
           </Route>

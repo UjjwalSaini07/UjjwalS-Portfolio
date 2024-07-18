@@ -41,7 +41,7 @@ const Error404 = () => {
             <li><Link to="/">About</Link></li>
             <li><Link to="/">Skills</Link></li>
             <li><Link to="/">Education</Link></li>
-            <li><Link to="/">Work Ex</Link></li>
+            <li><Link to="/">Projects</Link></li>
             <li><Link to="/">Experience</Link></li>
             <li><Link to="/">Contact</Link></li>
           </ul>
@@ -78,7 +78,7 @@ const Error404 = () => {
             <Link to="/"><i className="fas fa-chevron-circle-right"></i> About</Link>
             <Link to="/"><i className="fas fa-chevron-circle-right"></i> Skills</Link>
             <Link to="/"><i className="fas fa-chevron-circle-right"></i> Education</Link>
-            <Link to="/"><i className="fas fa-chevron-circle-right"></i> Work Ex</Link>
+            <Link to="/"><i className="fas fa-chevron-circle-right"></i> Project</Link>
             <Link to="/"><i className="fas fa-chevron-circle-right"></i> Experience</Link>
           </div>
           <div className="box">
