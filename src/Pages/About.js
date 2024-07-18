@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
-// import USresume from '../components/Assest_Used/';
 import './About.css'; 
 
 const spaceboardsFont = `
@@ -15,7 +14,7 @@ const aboutMeStyle = `
     font-family: 'Spaceboards', sans-serif;
     font-size: 5rem;
     font-weight: bold;
-    background: linear-gradient(180deg, #e73e0d, #00FF88);
+    background: linear-gradient(3600deg, #0cffc5, #a939ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -39,8 +38,6 @@ const aboutMeStyle = `
 
 const About = () => {
 
-    const [isClicked, setIsClicked] = useState(false);
-
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + aboutMeStyle;
@@ -53,18 +50,16 @@ const About = () => {
 
   return (
     <section className="about" id="about">
-      <div className="about-me" style={{ textAlign: 'center' }}>
+      <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem' }}>
         About Me
       </div>
       <div className="row">
         <div className="image">
             <img
-                className={isClicked ? "tilt clicked" : "tilt"}
+                className={"tilt"}
                 src={Img1}
                 alt="Image"
-                onClick={() => setIsClicked(!isClicked)}
             />
-          {/* <img className="tilt" src={Img1} alt="Image" /> */}
         </div>
         <div className="content">
           <h3>I'm Ujjwal Saini</h3>
@@ -85,7 +80,7 @@ const About = () => {
           </div>
           
           <div className="resumebtn">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="btn">
+            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn">
               <span>Resume</span>
             </a>
           </div>
