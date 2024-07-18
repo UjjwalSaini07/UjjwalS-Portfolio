@@ -38,12 +38,12 @@ const Error404 = () => {
         <nav className="navbar">
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/">About</Link></li>
-            <li><Link to="/">Skills</Link></li>
-            <li><Link to="/">Education</Link></li>
-            <li><Link to="/">Projects</Link></li>
-            <li><Link to="/">Experience</Link></li>
-            <li><Link to="/">Contact</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/skills">Skills</Link></li>
+            <li><Link to="/education">Education</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/experience">Experience</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
       </header>
@@ -75,11 +75,11 @@ const Error404 = () => {
           <div className="box">
             <h3>Quick Links</h3>
             <Link to="/"><i className="fas fa-chevron-circle-right"></i> Home</Link>
-            <Link to="/"><i className="fas fa-chevron-circle-right"></i> About</Link>
-            <Link to="/"><i className="fas fa-chevron-circle-right"></i> Skills</Link>
-            <Link to="/"><i className="fas fa-chevron-circle-right"></i> Education</Link>
-            <Link to="/"><i className="fas fa-chevron-circle-right"></i> Project</Link>
-            <Link to="/"><i className="fas fa-chevron-circle-right"></i> Experience</Link>
+            <Link to="/about"><i className="fas fa-chevron-circle-right"></i> About</Link>
+            <Link to="/skills"><i className="fas fa-chevron-circle-right"></i> Skills</Link>
+            <Link to="/education"><i className="fas fa-chevron-circle-right"></i> Education</Link>
+            <Link to="/projects"><i className="fas fa-chevron-circle-right"></i> Project</Link>
+            <Link to="/experience"><i className="fas fa-chevron-circle-right"></i> Experience</Link>
           </div>
           <div className="box">
             <h3>Contact Info</h3>
