@@ -18,16 +18,16 @@ const EducationStyle = `
     font-family: 'Spaceboards', sans-serif;
     font-size: 5rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
+    background: linear-gradient(90deg, #ff7f00, #ff0000, #ff7f00, #ff0000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 
-      0 0 3px rgba(0, 255, 197, 0.7), 
-      0 0 5px rgba(0, 255, 197, 0.7), 
-      0 0 7px rgba(169, 57, 255, 0.7), 
-      0 0 9px rgba(169, 57, 255, 0.7), 
-      0 0 12px rgba(0, 255, 197, 0.5), 
-      0 0 15px rgba(169, 57, 255, 0.5);
+      0 0 3px rgba(255, 127, 0, 0.7), 
+      0 0 5px rgba(255, 127, 0, 0.7), 
+      0 0 7px rgba(255, 0, 0, 0.7), 
+      0 0 9px rgba(255, 0, 0, 0.7), 
+      0 0 12px rgba(255, 127, 0, 0.5), 
+      0 0 15px rgba(255, 0, 0, 0.5);
     margin-left: 4rem;
     animation: gradient 1.5s infinite, glow 1.2s infinite alternate;
     letter-spacing: 0.1rem;
@@ -49,25 +49,25 @@ const EducationStyle = `
   @keyframes glow {
     0% {
       text-shadow: 
-        0 0 0 rgba(0, 255, 197, 0.7), 
-        0 0 0 rgba(0, 255, 197, 0.7), 
-        0 0 0 rgba(169, 57, 255, 0.7), 
-        0 0 0 rgba(169, 57, 255, 0.7), 
-        0 0 0 rgba(0, 255, 197, 0.5), 
-        0 0 0 rgba(169, 57, 255, 0.5);
+        0 0 0 rgba(255, 127, 0, 0.7), 
+        0 0 0 rgba(255, 127, 0, 0.7), 
+        0 0 0 rgba(255, 0, 0, 0.7), 
+        0 0 0 rgba(255, 0, 0, 0.7), 
+        0 0 0 rgba(255, 127, 0, 0.5), 
+        0 0 0 rgba(255, 0, 0, 0.5);
     }
     100% {
       text-shadow: 
-        0 0 1px rgba(0, 255, 197, 1), 
-        0 0 2px rgba(0, 255, 197, 1), 
-        0 0 5px rgba(169, 57, 255, 1), 
-        0 0 8px rgba(169, 57, 255, 1), 
-        0 0 12px rgba(0, 255, 197, 0.7), 
-        0 0 15px rgba(169, 57, 255, 0.7);
+        0 0 1px rgba(255, 127, 0, 1), 
+        0 0 2px rgba(255, 127, 0, 1), 
+        0 0 5px rgba(255, 0, 0, 1), 
+        0 0 8px rgba(255, 0, 0, 1), 
+        0 0 12px rgba(255, 127, 0, 0.7), 
+        0 0 15px rgba(255, 0, 0, 0.7);
     }
   }
 
-.Edu-PC {
+  .Edu-PC {
     display: none;
   }
 
@@ -84,6 +84,7 @@ const EducationStyle = `
     }
   }
 `;
+
 const educationData = [
   {
     date: "2022 - Present",
@@ -224,3 +225,79 @@ const Education = () => {
 };
 
 export default Education;
+
+
+// TOdo: Use in Case Of Emergecy
+// ! -Purple and cyan Color Gradient with animate
+
+// const EducationStyle = `
+//   .Edu {
+//     font-family: 'Spaceboards', sans-serif;
+//     font-size: 5rem;
+//     font-weight: bold;
+//     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     text-shadow: 
+//       0 0 3px rgba(0, 255, 197, 0.7), 
+//       0 0 5px rgba(0, 255, 197, 0.7), 
+//       0 0 7px rgba(169, 57, 255, 0.7), 
+//       0 0 9px rgba(169, 57, 255, 0.7), 
+//       0 0 12px rgba(0, 255, 197, 0.5), 
+//       0 0 15px rgba(169, 57, 255, 0.5);
+//     margin-left: 4rem;
+//     animation: gradient 1.5s infinite, glow 1.2s infinite alternate;
+//     letter-spacing: 0.1rem;
+//     background-size: 200% 200%;
+//   }
+
+//   @keyframes gradient {
+//     0% {
+//       background-position: 0% 50%;
+//     }
+//     50% {
+//       background-position: 100% 50%;
+//     }
+//     100% {
+//       background-position: 0% 50%;
+//     }
+//   }
+
+//   @keyframes glow {
+//     0% {
+//       text-shadow: 
+//         0 0 0 rgba(0, 255, 197, 0.7), 
+//         0 0 0 rgba(0, 255, 197, 0.7), 
+//         0 0 0 rgba(169, 57, 255, 0.7), 
+//         0 0 0 rgba(169, 57, 255, 0.7), 
+//         0 0 0 rgba(0, 255, 197, 0.5), 
+//         0 0 0 rgba(169, 57, 255, 0.5);
+//     }
+//     100% {
+//       text-shadow: 
+//         0 0 1px rgba(0, 255, 197, 1), 
+//         0 0 2px rgba(0, 255, 197, 1), 
+//         0 0 5px rgba(169, 57, 255, 1), 
+//         0 0 8px rgba(169, 57, 255, 1), 
+//         0 0 12px rgba(0, 255, 197, 0.7), 
+//         0 0 15px rgba(169, 57, 255, 0.7);
+//     }
+//   }
+
+// .Edu-PC {
+//     display: none;
+//   }
+
+//   .Edu-Mobile {
+//     display: block;
+//   }
+
+//   @media (min-width: 768px) {
+//     .Edu-PC {
+//       display: block;
+//     }
+//     .Edu-Mobile {
+//       display: none;
+//     }
+//   }
+// `;
