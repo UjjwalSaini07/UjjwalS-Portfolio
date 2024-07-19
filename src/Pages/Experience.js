@@ -4,7 +4,6 @@ import "react-vertical-timeline-component/style.min.css";
 import IBM from '../components/Assest_Used/CompanyLogo/IBM_Logo.png';
 import Gssoc from '../components/Assest_Used/CompanyLogo/Gssoc_Logo.png';
 import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
-// import freelance from '../components/Assest_Used/CompanyLogo/Freelancer_Logo.jpg';
 import freelance from '../components/Assest_Used/CompanyLogo/WorkOnPC.png';
 import curious from '../components/Assest_Used/CompanyLogo/Curious_Logo.png';
 
