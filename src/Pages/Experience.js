@@ -20,13 +20,20 @@ const WorkExStyle = `
     font-family: 'Spaceboards', sans-serif;
     font-size: 5rem;
     font-weight: bold;
-    background: linear-gradient(3600deg, #0cffc5, #a939ff);
+    background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 
+      0 0 3px rgba(0, 255, 197, 0.7), 
+      0 0 5px rgba(0, 255, 197, 0.7), 
+      0 0 7px rgba(169, 57, 255, 0.7), 
+      0 0 9px rgba(169, 57, 255, 0.7), 
+      0 0 12px rgba(0, 255, 197, 0.5), 
+      0 0 15px rgba(169, 57, 255, 0.5);
     margin-left: 4rem;
-    animation: gradient 5s infinite;
+    animation: gradient 1.5s infinite, glow 1.2s infinite alternate;
     letter-spacing: 0.1rem;
+    background-size: 200% 200%;
   }
 
   @keyframes gradient {
@@ -40,16 +47,36 @@ const WorkExStyle = `
       background-position: 0% 50%;
     }
   }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 
+        0 0 0 rgba(0, 255, 197, 0.7), 
+        0 0 0 rgba(0, 255, 197, 0.7), 
+        0 0 0 rgba(169, 57, 255, 0.7), 
+        0 0 0 rgba(169, 57, 255, 0.7), 
+        0 0 0 rgba(0, 255, 197, 0.5), 
+        0 0 0 rgba(169, 57, 255, 0.5);
+    }
+    100% {
+      text-shadow: 
+        0 0 1px rgba(0, 255, 197, 1), 
+        0 0 2px rgba(0, 255, 197, 1), 
+        0 0 5px rgba(169, 57, 255, 1), 
+        0 0 8px rgba(169, 57, 255, 1), 
+        0 0 12px rgba(0, 255, 197, 0.7), 
+        0 0 15px rgba(169, 57, 255, 0.7);
+    }
+  }
 `;
 
-// Mock data for experiences
 const experiences = [
   {
     date: "July 2024 - Present",
     company_name: "Curious Ecosystem - Apprenticeship",
     title: "Open Source Developer",
     iconBg: "#fff",
-    icon: curious, // Replace with actual image path
+    icon: curious,
     points: [
       "Developing and maintaining open-source projects with a focus on full-stack solutions.",
       "Optimized Frontend services for scalability.",
@@ -62,7 +89,7 @@ const experiences = [
     company_name: "IBM SKillsBuild - Internship",
     title: "Frontend Developer",
     iconBg: "#4285F4",
-    icon: IBM, // Replace with actual image path
+    icon: IBM,
     points: [
       "Designing and developing responsive and user-friendly web interfaces.",
       "Optimizing website performance and ensuring cross-browser compatibility.",
@@ -74,7 +101,7 @@ const experiences = [
     company_name: "Freelancer, Fiverr",
     title: "Freelancing Project",
     iconBg: "#fff",
-    icon: freelance, // Replace with actual image path
+    icon: freelance,
     points: [
       "Delivering custom web development solutions for various clients.",
       "Managing end-to-end project lifecycle from requirement gathering to deployment.",
@@ -87,7 +114,7 @@ const experiences = [
     company_name: "Google Cloud Platform - Online",
     title: "Trainee In Program",
     iconBg: "#4285F4",
-    icon: GCP, // Replace with actual image path
+    icon: GCP,
     points: [
       "Participating in arcade events and completing various GCP modules.",
       "Gaining extensive knowledge and practical skills in Google Cloud Platform technologies.",
@@ -99,7 +126,7 @@ const experiences = [
     company_name: "GirlScript Summer of Code - Apprenticeship",
     title: "Gssoc Contributor",
     iconBg: "#fff",
-    icon: Gssoc, // Replace with actual image path
+    icon: Gssoc,
     points: [
       "Contributed to open-source projects as part of the GirlScript Summer of Code apprenticeship.",
       "Developed and implemented features and bug fixes in collaboration with project maintainers.",
@@ -111,7 +138,7 @@ const experiences = [
     company_name: "IBM Skillbuild - Internship (As a Learner)",
     title: "Data Analyst",
     iconBg: "#B21807",
-    icon: IBM, // Using the imported image directly
+    icon: IBM,
     points: [
       "Analyzed and interpreted complex data sets to inform business decisions.",
       "Created visualizations and reports to communicate findings effectively to stakeholders.",
@@ -197,3 +224,65 @@ const Experience = () => {
 };
 
 export default Experience;
+
+
+
+// Todo: Use for Emergency 
+// ! Sample 1: USe For Gradient Text Styling
+
+// const WorkExStyle = `
+//   .Work-Ex {
+//     font-family: 'Spaceboards', sans-serif;
+//     font-size: 5rem;
+//     font-weight: bold;
+//     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     text-shadow: 1.5px 1.5px 3px rgba(0, 255, 197, 0.7), 1px 1.5px 10px rgba(169, 57, 255, 0.7), 10px 5.5px 30px rgba(0, 255, 197, 0.5), 0 10px 40px rgba(169, 57, 255, 0.5);
+//     margin-left: 4rem;
+//     animation: gradient 2s infinite;
+//     letter-spacing: 0.1rem;
+//     background-size: 300% 300%;
+//   }
+
+//   @keyframes gradient {
+//     0% {
+//       background-position: 0% 50%;
+//     }
+//     50% {
+//       background-position: 100% 50%;
+//     }
+//     100% {
+//       background-position: 0% 50%;
+//     }
+//   }
+// `;
+
+// ! Sample 2: Use for Normal FLuid Styling
+// const WorkExStyle = `
+//   .Work-Ex {
+//     font-family: 'Spaceboards', sans-serif;
+//     font-size: 5rem;
+//     font-weight: bold;
+//     background: linear-gradient(90deg, #0cffc5, #a939ff);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+//     margin-left: 4rem;
+//     animation: gradient 3s infinite;
+//     letter-spacing: 0.1rem;
+//     background-size: 200% 200%;
+//   }
+
+//   @keyframes gradient {
+//     0% {
+//       background-position: 0% 50%;
+//     }
+//     50% {
+//       background-position: 100% 50%;
+//     }
+//     100% {
+//       background-position: 0% 50%;
+//     }
+//   }
+// `;
