@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
+import IconCloud from "../@/components/magicui/icon-cloud";
 
 // Define motion variants
 const textVariant = (delay) => ({
@@ -126,6 +127,30 @@ const technologies = [
   { name: "Google Cloud", icon: "https://bcassetcdn.com/public/blog/wp-content/uploads/2022/08/29150705/Google-Cloud.png" },
 ];
 
+const slugs = [
+  "javascript",
+  "java",
+  "react",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "amazonaws",,
+  "vercel",
+  "git",
+  "github",
+  "visualstudiocode",
+  "bootstrap",
+  "cpp",
+  "csharp",
+  "python",
+  "django",
+  "arduinoc",
+  "threejs",
+  "mysql",
+  "GoogleCloud",
+  "figma",
+];
+
 const Tech = () => {
 
   useEffect(() => {
@@ -181,103 +206,24 @@ const Tech = () => {
           </motion.div>
         ))}
       </div>
+
+      <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '3.5rem', marginRight: '3rem' ,fontSize: '5.2rem'}}>
+          Skills in CLoud
+      </div>
+
+      <div className="block md:hidden px-4 py-6 flex items-center justify-center">
+        <div className="relative w-full max-w-[90%] mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg shadow-xl p-4">
+          <div className="bg-white rounded-lg border border-gray-300 shadow-md p-6 flex items-center justify-center">
+            <div className="text-blue-600 font-bold " style={{ fontSize: '2rem',alignItems: 'center', justifyContent: 'center'}}><IconCloud iconSlugs={slugs} /></div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
 export default Tech;
 
-
-
-//Todo: Change3
-// import React from "react";
-// import { motion } from "framer-motion";
-
-// // Define motion variants
-// const textVariant = (delay) => ({
-//   hidden: { y: -50, opacity: 0 },
-//   show: {
-//     y: 0,
-//     opacity: 1,
-//     transition: { type: "spring", duration: 1.25, delay: delay },
-//   },
-// });
-
-// const fadeIn = (direction, type, delay, duration) => ({
-//   hidden: {
-//     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-//     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-//     opacity: 0,
-//   },
-//   show: {
-//     x: 0,
-//     y: 0,
-//     opacity: 1,
-//     transition: { type: type, delay: delay, duration: duration, ease: "easeOut" },
-//   },
-// });
-
-// // Define technologies array
-// const technologies = [
-//   { name: "HTML 5", icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png" },
-//   { name: "CSS 3", icon: "https://example.com/css-icon.png" },
-//   { name: "JavaScript", icon: "https://example.com/javascript-icon.png" },
-//   { name: "TypeScript", icon: "https://example.com/typescript-icon.png" },
-//   { name: "React JS", icon: "https://example.com/reactjs-icon.png" },
-//   { name: "Redux Toolkit", icon: "https://example.com/redux-icon.png" },
-//   { name: "Next Js", icon: "https://example.com/nextjs-icon.png", dark: true },
-//   { name: "Tailwind CSS", icon: "https://example.com/tailwind-icon.png" },
-//   { name: "Node JS", icon: "https://example.com/nodejs-icon.png" },
-//   { name: "MongoDB", icon: "https://example.com/mongodb-icon.png" },
-//   { name: "Express JS", icon: "https://example.com/express-icon.png" },
-//   { name: "MySQL", icon: "https://example.com/mysql-icon.png" },
-//   { name: "Three JS", icon: "https://example.com/threejs-icon.png", dark: true },
-//   { name: "Git", icon: "https://example.com/git-icon.png" },
-//   { name: "Docker", icon: "https://example.com/docker-icon.png" },
-// ];
-
-// const Tech = () => {
-//   return (
-//     <>
-//       <motion.div
-//         variants={textVariant(0.1)}
-//         initial="hidden"
-//         animate="show"
-//         className="text-center mb-12"
-//       >
-//         <p className="text-gray-400 text-lg">Technologies I have worked on</p>
-//         <h2 className="text-4xl font-bold text-white">Skills</h2>
-//       </motion.div>
-
-//       <div className="flex flex-row flex-wrap justify-center gap-8 mt-8">
-//         {technologies.map((technology, index) => (
-//           <motion.div
-//             key={technology.name}
-//             variants={fadeIn("", "", index * 0.1, 0.75)}
-//             className="relative w-64 h-64 p-4 rounded-lg bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 shadow-lg flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-xl overflow-hidden"
-//           >
-//             <motion.img
-//               src={technology.icon}
-//               alt={technology.name}
-//               className={`w-24 h-24 object-contain ${technology.dark ? "bg-gray-700 rounded-full p-2" : ""}`}
-//               initial={{ scale: 1 }}
-//               whileHover={{ scale: 1.2 }}
-//               transition={{ duration: 0.3 }}
-//             />
-//             <h3 className="text-white mt-4 text-center text-xl font-semibold">
-//               {technology.name}
-//             </h3>
-//             <motion.div
-//               className="absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300"
-//             />
-//           </motion.div>
-//         ))}
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Tech;
-
 // Todo: Use in Case of Emergency
 // ! - bg-gradient-to-br from-blue-500 to-green-500
+// ! - bg-gradient-to-br from-purple-400 via-pink-500 to-red-500
