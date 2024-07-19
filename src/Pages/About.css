@@ -116,27 +116,27 @@
   
   @media screen and (max-width: 600px) {
     .about {
-        height: 1300px;
+        height: 1350px;
     }
 
     .about .row .image {
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
     
     .about .row .image img {
       margin: 0 auto;
-      width: 28rem;
-      height: 38rem;
+      width: 32rem;
+      height: 40rem;
     }
     
     .about .row {
-      padding: 0.5rem;
+      /* padding: 0.rem; */
       margin-bottom: 7rem;
     }
     
-    .about .row .content {
-      padding: 1rem;
-    }
+    /* .about .row .content {
+      padding: 5rem;
+    } */
     
     .about .row .content .box-container {
       gap: 0;
