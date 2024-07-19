@@ -92,17 +92,19 @@ const About = () => {
           <h3>I'm Ujjwal Saini</h3>
           <span className="tag">Full Stack Developer | Designer </span>
           
-          <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual, I thrive in team environemnts and enjoy broinging inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
+          <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy broinging inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
           </p>
           
           <div className="box-container">
             <div className="box">
               <p><span> age: </span> 21</p>
               <p><span> phone : </span> +91 97178-99079</p>
+              <p><span> Birthday : </span> 7th Feburary</p>
             </div>
             <div className="box">
               <p><span> email : </span> ujjwalsaini0007@gmail.com</p>
               <p><span> place : </span> Delhi, India - 110015</p>
+              <p><span> Language Known : </span> English, Hindi, Punjabi</p>
             </div>
           </div>
           
