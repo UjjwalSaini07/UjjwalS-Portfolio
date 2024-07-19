@@ -32,8 +32,8 @@ const spaceboardsFont = `
   }
 `;
 
-const EducationStyle = `
-  .Edu {
+const SkillStyle = `
+  .Tech {
     font-family: 'Spaceboards', sans-serif;
     font-size: 5rem;
     font-weight: bold;
@@ -85,19 +85,19 @@ const EducationStyle = `
         0 0 15px rgba(255, 0, 0, 0.7);
     }
   }
-  .Edu-PC {
+  .Tech-PC {
     display: none;
   }
 
-  .Edu-Mobile {
+  .Tech-Mobile {
     display: block;
   }
 
   @media (min-width: 768px) {
-    .Edu-PC {
+    .Tech-PC {
       display: block;
     }
-    .Edu-Mobile {
+    .Tech-Mobile {
       display: none;
     }
   }
@@ -130,7 +130,7 @@ const Tech = () => {
 
   useEffect(() => {
     const styleElement = document.createElement('style');
-    styleElement.innerHTML = spaceboardsFont + EducationStyle;
+    styleElement.innerHTML = spaceboardsFont + SkillStyle;
     document.head.appendChild(styleElement);
     
     return () => {
@@ -146,11 +146,11 @@ const Tech = () => {
         animate="show"
         className="text-center mb-16 px-4"
       >
-        <div className="Edu Edu-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '4rem' }}>
+        <div className="Tech Tech-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '4rem' }}>
           My Techincal Skills
         </div>
-        <div className="Edu Edu-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '2.5rem', marginRight: '2.8rem' }}>
-          Tech Stack
+        <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '2.5rem', marginRight: '2.8rem' }}>
+          My Tech Stack
         </div>
       </motion.div>
 
