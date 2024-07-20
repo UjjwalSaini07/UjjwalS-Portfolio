@@ -106,6 +106,9 @@ const About = () => {
               <p><span> place : </span> Delhi, India - 110015</p>
               <p><span> Language Known : </span> English, Hindi, Punjabi</p>
             </div>
+            <div className="box">
+              <p><span> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
+            </div>
           </div>
           
           <div className="resumebtn">
