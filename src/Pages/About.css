@@ -35,12 +35,12 @@
   
   .about .row .content {
     flex: 1 1 45rem;
-    padding: 1.2rem;
+    padding: 1.1rem;
     background: #010215;
     /* background: #f7f7f7; */
     border-radius: 10px;
     height: 450px;
-    margin-top: 2%;
+    margin-top: -1%;
     margin-right: 7%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
@@ -85,13 +85,12 @@
     color: #e73e0d;
     font-weight: 600;
   }
-  
   .resumebtn {
     margin-top: 3rem;
   }
   
   .resumebtn .btn {
-    padding: 1.7rem 3rem;
+    padding: 1.7rem 4rem;
     border-radius: 0.5em;
     transition: 0.3s;
     color: #fff;
@@ -116,7 +115,7 @@
   
   @media screen and (max-width: 600px) {
     .about {
-        height: 1350px;
+        height: 1440px;
     }
 
     .about .row .image {

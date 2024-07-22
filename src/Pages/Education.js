@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+// import LetterPullup from "../@/components/magicui/letter-pullup";
+
+// Importing Images
 import school5 from '../components/Assest_Used/EducationLogo/Class5_1.png';
 import school10 from '../components/Assest_Used/EducationLogo/Class10_1.png';
 import school12 from '../components/Assest_Used/EducationLogo/Class12_1.png';
@@ -178,6 +181,7 @@ const Education = () => {
           >
             <h3 className="edu-title">{education.title}</h3>
             <p className="edu-name">{education.cname}</p>
+            {/* <p className="edu-name"><LetterPullup words={education.cname} delay={0.05} /></p> */}
             <ul className="mt-5 list-disc ml-5 space-y-3.5">
               {education.points.map((point, idx) => (
                 <li key={`education-point-${idx}`} className="text-[#d4d4d8] sm:text-[15px] text-[12px] pl-1 tracking-wider">
