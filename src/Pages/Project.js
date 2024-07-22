@@ -1,30 +1,22 @@
-// import React from 'react';
-
-// const Project = () => {
-//   return (
-//     <div style={{ textAlign: 'center' }}>
-//       <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '50px'}}>Projects</h1>
-//       <p style={{ color: 'white', fontWeight: 'bold' }} >Here are some of the projects we've worked on.</p>
-//     </div>
-//   );
-// };
-
-// export default Project;
-
-// TOdo: adding the chnage 
+// Todo:  Try Chnages
 import React, { useEffect } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+import link from '../components/Assest_Used/link.png';
+import github from '../components/Assest_Used/github.png';
+
+// Project Thumbnail
+import VedicVani from '../components/Assest_Used/ProjectImg/VedicVani.png';
+import MyPortfolio from '../components/Assest_Used/ProjectImg/USPortfolio.png';
+import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
+import ProfileCard from '../components/Assest_Used/ProjectImg/ProfileCard.png';
+import Cube from '../components/Assest_Used/ProjectImg/Cube.png';
+import VoiceAss from '../components/Assest_Used/ProjectImg/VoiceAss.gif';
 
 const styles = {
   paddingX: "sm:px-16 px-6",
   paddingY: "sm:py-16 py-6",
-  padding: "sm:px-16 px-6 sm:py-16 py-10",
-
-  // heroHeadText:
-  //   "font-black text-white lg:text-[80px] sm:text-[60px] text-[40px] lg:leading-[98px] mt-2",
-  // heroSubText:
-  //   "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] text-[16px] lg:leading-[40px]",
+  padding: "sm:px-16 px-9 sm:py-16 py-10",
 };
 
 const textVariant = (delay) => ({
@@ -74,93 +66,162 @@ const staggerContainer = (staggerChildren, delayChildren) => ({
 
 const projects = [
   {
-    name: "Price Watch",
+    name: "Vedic Vani",
     description:
-      "A web application that tracks Amazon product prices using web scraping, notifying users of price drops and alerting competitors when products go out of stock using cron jobs.",
+      "Explore the timeless wisdom of the Bhagavad Gita with in-depth shlokas, translations, and commentaries, connecting you to India's rich spiritual heritage.",
     tags: [
       {
-        name: "next.js",
-        color: "bg-blue-500",
-      },
-      {
-        name: "webscraping",
-        color: "bg-green-500",
+        name: "HTML",
+        color: "bg-orange-500",
       },
       {
         name: "tailwindcss",
-        color: "bg-pink-500",
-      },
-    ],
-    image: "https://w7.pngwing.com/pngs/105/958/png-transparent-formula-d-drifting-logo-car-drift-cdr-text-trademark-thumbnail.png",
-    live_link: "#",
-    source_code_link: "#",
-  },
-  {
-    name: "Get Social",
-    description:
-      "Fully functional social-media web application with features like post, follow/unfollow, like/unlike posts, user register and login, chat and much more.",
-    tags: [
-      {
-        name: "mern",
-        color: "bg-blue-500",
+        color: "bg-white",
       },
       {
-        name: "socket.io",
+        name: "React.js",
         color: "bg-green-500",
       },
       {
-        name: "css",
-        color: "bg-pink-500",
+        name: "Python",
+        color: "bg-orange-500",
+      },
+      {
+        name: "Node.js",
+        color: "bg-white",
+      },
+      {
+        name: "Backend - Jsons",
+        color: "bg-green-500",
       },
     ],
-    image: "https://w7.pngwing.com/pngs/105/958/png-transparent-formula-d-drifting-logo-car-drift-cdr-text-trademark-thumbnail.png",
-    live_link: "#",
-    source_code_link: "#",
+    image: VedicVani,
+    live_link: "https://vedic-sadhana.vercel.app/",
+    source_code_link: "https://github.com/UjjwalSaini07/VedicSadhana",
   },
   {
-    name: "Image Gallery",
+    name: "My Portfolio",
     description:
-      "Image gallery in which users can browse images. Search specific topic of images.",
+      "Explore my portfolio to see a diverse array of projects, showcasing my educational background, professional experience, and personal work. Each piece reflects a blend of creativity, skill, and dedication to excellence.",
     tags: [
       {
-        name: "react",
-        color: "bg-blue-500",
+        name: "HTML",
+        color: "bg-orange-500",
       },
       {
-        name: "tailwindcss",
+        name: "CSS, Tailwind",
+        color: "bg-white",
+      },
+      {
+        name: "Javascript",
         color: "bg-green-500",
+      },
+      {
+        name: "React",
+        color: "bg-orange-500",
+      },
+      {
+        name: "Node.js",
+        color: "bg-white",
+      },
+      {
+        name: "Magic UI",
+        color: "bg-green-500",
+      },
+      {
+        name: "Three.js",
+        color: "bg-orange-500",
+      },
+    ],
+    image: MyPortfolio,
+    live_link: "#",
+    source_code_link: "https://github.com/UjjwalSaini07/UjjwalS-Portfolio",
+  },
+  {
+    name: "RK Electricals",
+    description:
+      "Explore RK Electricals website, crafted through freelancing. Discover our comprehensive electrical solutions, professional expertise and innovative projects, showcasing dedication to quality and client satisfaction.",
+    tags: [
+      {
+        name: "HTML",
+        color: "bg-orange-500",
+      },
+      {
+        name: "TailwindCss",
+        color: "bg-white",
       },
       {
         name: "unsplashapi",
-        color: "bg-pink-500",
+        color: "bg-green-500",
       },
     ],
-    image: "https://w7.pngwing.com/pngs/105/958/png-transparent-formula-d-drifting-logo-car-drift-cdr-text-trademark-thumbnail.png",
-    live_link: "#",
-    source_code_link: "#",
+    image: RK,
+    live_link: "https://ujjwalsaini07.github.io/RK_Electricals.github.io/",
+    source_code_link: "https://github.com/UjjwalSaini07/RK_Electricals.github.io",
   },
   {
-    name: "Blog Page",
+    name: "Profile Card",
     description:
-      "Express app that enables users to save blogs and their daily journal.",
+      "Check out my Profile Card project, designed to showcase my skills and achievements in a sleek, interactive format. This site highlights my professional journey and personal flair with clean design and functionality.",
     tags: [
       {
-        name: "express.js",
-        color: "bg-blue-500",
-      },
-      {
-        name: "mongodb",
-        color: "bg-green-500",
+        name: "HTML",
+        color: "bg-orange-500",
       },
       {
         name: "css",
-        color: "bg-pink-500",
+        color: "bg-green-500",
       },
     ],
-    image: "https://w7.pngwing.com/pngs/105/958/png-transparent-formula-d-drifting-logo-car-drift-cdr-text-trademark-thumbnail.png",
-    live_link: "#",
-    source_code_link: "#",
+    image: ProfileCard,
+    live_link: "https://ujjwalsaini07.github.io/Profile_Card/",
+    source_code_link: "https://github.com/UjjwalSaini07/Profile_Card",
   },
+  {
+    name: "Cube",
+    description:
+      "Explore my Rubik's Cube project, created out of my passion for cubing. This site features interactive solving techniques and visualizations, showcasing my love for cubes and technical skill. Dive in to see innovative problem-solving in action.",
+    tags: [
+      {
+        name: "JavaScript",
+        color: "bg-orange-500",
+      },
+      {
+        name: "CSS",
+        color: "bg-white",
+      },
+      {
+        name: "HTML",
+        color: "bg-green-500",
+      },
+    ],
+    image: Cube,
+    live_link: "https://ujjwalsaini07.github.io/RubikCube.github.io/",
+    source_code_link: "https://github.com/UjjwalSaini07/RubikCube.github.io",
+  },
+  {
+    name: "Voice Assistance IDE",
+    description:
+      "Explore my Voice Assistant project on GitHub. Created as an IDE project using Python, it showcases advanced functionality and cutting-edge technology. Dive into the code to see innovative features in action.",
+    tags: [
+      {
+        name: "Python",
+        color: "bg-orange-500",
+      },
+      {
+        name: "Tkinter",
+        color: "bg-white",
+      },
+      {
+        name: "HTML",
+        color: "bg-green-500",
+      },
+    ],
+    image: VoiceAss,
+    live_link: "https://github.com/UjjwalSaini07/Voice_assistant",
+    source_code_link: "https://github.com/UjjwalSaini07/Voice_assistant",
+  },
+
 ];
 
 const spaceboardsFont = `
@@ -170,21 +231,21 @@ const spaceboardsFont = `
   }
 `;
 
-const WorkExStyle = `
-  .Work-Ex {
+const ProjectStyle = `
+  .Proj {
     font-family: 'Spaceboards', sans-serif;
     font-size: 5rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
+    background: linear-gradient(90deg, #ff7f00, #ff0000, #ff7f00, #ff0000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 
-      0 0 3px rgba(0, 255, 197, 0.7), 
-      0 0 5px rgba(0, 255, 197, 0.7), 
-      0 0 7px rgba(169, 57, 255, 0.7), 
-      0 0 9px rgba(169, 57, 255, 0.7), 
-      0 0 12px rgba(0, 255, 197, 0.5), 
-      0 0 15px rgba(169, 57, 255, 0.5);
+      0 0 3px rgba(255, 127, 0, 0.7), 
+      0 0 5px rgba(255, 127, 0, 0.7), 
+      0 0 7px rgba(255, 0, 0, 0.7), 
+      0 0 9px rgba(255, 0, 0, 0.7), 
+      0 0 12px rgba(255, 127, 0, 0.5), 
+      0 0 15px rgba(255, 0, 0, 0.5);
     margin-left: 4rem;
     animation: gradient 1.5s infinite, glow 1.2s infinite alternate;
     letter-spacing: 0.1rem;
@@ -206,24 +267,42 @@ const WorkExStyle = `
   @keyframes glow {
     0% {
       text-shadow: 
-        0 0 0 rgba(0, 255, 197, 0.7), 
-        0 0 0 rgba(0, 255, 197, 0.7), 
-        0 0 0 rgba(169, 57, 255, 0.7), 
-        0 0 0 rgba(169, 57, 255, 0.7), 
-        0 0 0 rgba(0, 255, 197, 0.5), 
-        0 0 0 rgba(169, 57, 255, 0.5);
+        0 0 0 rgba(255, 127, 0, 0.7), 
+        0 0 0 rgba(255, 127, 0, 0.7), 
+        0 0 0 rgba(255, 0, 0, 0.7), 
+        0 0 0 rgba(255, 0, 0, 0.7), 
+        0 0 0 rgba(255, 127, 0, 0.5), 
+        0 0 0 rgba(255, 0, 0, 0.5);
     }
     100% {
       text-shadow: 
-        0 0 1px rgba(0, 255, 197, 1), 
-        0 0 2px rgba(0, 255, 197, 1), 
-        0 0 5px rgba(169, 57, 255, 1), 
-        0 0 8px rgba(169, 57, 255, 1), 
-        0 0 12px rgba(0, 255, 197, 0.7), 
-        0 0 15px rgba(169, 57, 255, 0.7);
+        0 0 1px rgba(255, 127, 0, 1), 
+        0 0 2px rgba(255, 127, 0, 1), 
+        0 0 5px rgba(255, 0, 0, 1), 
+        0 0 8px rgba(255, 0, 0, 1), 
+        0 0 12px rgba(255, 127, 0, 0.7), 
+        0 0 15px rgba(255, 0, 0, 0.7);
+    }
+  }
+
+  .Proj-PC {
+    display: none;
+  }
+
+  .Proj-Mobile {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .Proj-PC {
+      display: block;
+    }
+    .Proj-Mobile {
+      display: none;
     }
   }
 `;
+
 
 const ProjectCard = ({
   index,
@@ -236,40 +315,38 @@ const ProjectCard = ({
 }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-    className="w-full sm:w-[380px] flex justify-between bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-6 rounded-3xl shadow-lg transition-transform transform hover:scale-105"
+    className="w-full sm:w-[350px] h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-6 rounded-3xl shadow-lg transition-transform transform hover:scale-150"
   >
     <Tilt
       options={{
         max: 25,
         scale: 1,
-        speed: 400,
+        speed: 300,
       }}
     >
-      <div className="relative w-full h-[235px] mb-8">
+      <div className="relative w-full h-[220px] sm:mb-10">
         <img
           src={image}
           alt="project_image"
           className="w-full h-full object-cover rounded-3xl"
         />
-        <div className="absolute inset-0 flex gap-2 justify-end m-3 card-img_hover">
+        <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
           <div
-            title="Check Live Site!!"
             onClick={() => window.open(live_link, "_blank")}
-            className="w-14 h-14 bg-black bg-opacity-60 rounded-full flex justify-center items-center cursor-pointer transition-transform transform hover:scale-110"
+            className="w-14 h-14 bg-black bg-opacity-60 p-2.5 rounded-full flex justify-center items-center cursor-pointer transition-transform transform hover:scale-110"
           >
             <img
-              src={"https://github.com/sanyam542/portfolio-2/blob/main/src/assets/link.png?raw=true"} // Placeholder link icon URL
+              src={link}
               alt="live link"
               className="w-10 h-10 object-contain"
             />
           </div>
           <div
-            title="Github Repository"
             onClick={() => window.open(source_code_link, "_blank")}
-            className="w-14 h-14 bg-black bg-opacity-60 p-2 rounded-full flex justify-center items-center cursor-pointer transition-transform transform hover:scale-110"
+            className="w-14 h-14 bg-black bg-opacity-60 p-1.5 rounded-full flex justify-center items-center cursor-pointer transition-transform transform hover:scale-110"
           >
             <img
-              src={"https://github.com/sanyam542/portfolio-2/blob/main/src/assets/github.png?raw=true"} // Placeholder github icon URL
+              src={github}
               alt="source code"
               className="w-10 h-10 object-contain"
             />
@@ -277,9 +354,8 @@ const ProjectCard = ({
         </div>
       </div>
       <div>
-        <h3 className="text-white font-bold text-[22px] mb-3">{name}</h3>
-        <p className="text-white text-[13.5px] mb-8">{description}</p>
-        {/* Tags Used in Tech Stack */}
+        <h3 className="text-white font-bold text-[22px] mb-2 mt-5">{name}</h3>
+        <p className="text-white text-[13.5px] mb-9">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span key={`${name}-${tag.name}`} className={`text-[12.5px] ${tag.color} px-2 py-1.5 rounded-full`}>
@@ -293,10 +369,9 @@ const ProjectCard = ({
 );
 
 const Works = () => {
-  // This USeEffect is Used for Custom Fonting
   useEffect(() => {
     const styleElement = document.createElement('style');
-    styleElement.innerHTML = spaceboardsFont + WorkExStyle;
+    styleElement.innerHTML = spaceboardsFont + ProjectStyle;
     document.head.appendChild(styleElement);
     
     return () => {
@@ -310,25 +385,28 @@ const Works = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.padding} max-w-10xl`}
+      className={`${styles.padding} max-w-12xl mx-auto sm:h-full h-[100vh]`}
     >
       <span className="hash-span" id="works">
         &nbsp;
       </span>
-      <motion.div variants={textVariant(0.1)}>
-        <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-        My Projects
-      </div>
+
+      <motion.div variants={textVariant(0.3)}>
+        <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          Innovative Development Works
+        </div>
+        <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '-1.6rem' }}>
+          Projects
+        </div>
       </motion.div>
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-gray-300 text-[20px] max-w-6xl">
-          
-        </motion.p>
+      
+      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3">
+        {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        ))}
       </div>
-      {/* <div className="mt-20 flex flex-wrap gap-4"> */}
-      <div className="mt-10 flex sm:flex-nowrap flex-wrap gap-5">
+
+      <div className="md:hidden mt-5 flex flex-col gap-4 overflow-x-auto overflow-y-auto">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
@@ -338,5 +416,3 @@ const Works = () => {
 };
 
 export default Works;
-
-// TOdo: Changes Additional Up
