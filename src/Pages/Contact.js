@@ -338,43 +338,48 @@ const ContactUs = () => {
                 />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', width: '100%' }}>
-                <a
-                  style={{
-                    padding: '12px',
-                    borderRadius: '10px',
-                    backgroundColor: 'transparent',
-                    textDecoration: 'none',
-                    color: '#e2e8f0',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    transition: 'background-color 0.3s',
-                    width: '100%',
-                    textAlign: 'center',
-                    cursor: 'pointer'
-                  }}
-                >
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  {sendingMsg ? 'Sending...' : 'Send'}
-                </a>
-
-                <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <div className="bg-white w-1/2 h-0.5 hr"></div>
-                    <div className="text-white font-weight-bold" style={{fontSize:'12px'}}>OR</div>
-                    <div className="bg-white w-1/2 h-0.5 hr"></div>
+                <div className="glowbtn">
+                  <a
+                    style={{
+                      padding: '12px',
+                      borderRadius: '10px',
+                      backgroundColor: 'transparent',
+                      textDecoration: 'none',
+                      color: '#33f403',
+                      border: 'none',
+                      marginBottom: '-10px',
+                      marginLeft: '1px',
+                      marginTop: '-10px',
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      transition: 'background-color 0.3s',
+                      width: '100%',
+                      textAlign: 'center',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    {sendingMsg ? 'Sending...' : 'Send'}
+                  </a>
                 </div>
 
+                <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                    <div className="bg-white w-1/2 h-1 hr"></div>
+                    <div className="text-white font-weight-bold" style={{fontSize:'12px'}}>OR</div>
+                    <div className="bg-white w-1/2 h-1 hr"></div>
+                </div>
+                <div className="glowbtn">
                 <a
                   href="#"
                   style={{
                     padding: '12px',
                     borderRadius: '10px',
                     backgroundColor: 'transparent',
-                    color: '#00bcd4',
+                    color: '#33f403',
+                    // color: '#00bcd4',
                     textDecoration: 'none',
                     fontSize: '16px',
                     fontWeight: 'bold',
@@ -388,12 +393,14 @@ const ContactUs = () => {
                     // Implement playConfirm function here if needed
                   }}
                 >
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                  
                   Schedule a Meet with me...
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </a>
+                </div>
               </div>
             </form>
           </div>
