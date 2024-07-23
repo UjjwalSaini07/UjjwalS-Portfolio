@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   return (
-    <div className="mt-3.5">
+    <div className="mt-1.1">
       <Outlet />
     </div>
   );
