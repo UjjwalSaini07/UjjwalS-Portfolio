@@ -428,7 +428,7 @@ useEffect(() => {
 
               <div style={{ flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: isMobile ? '-70px' : '-75px' }}>
                 {contactInfoData.map((info, index) => (
-                  <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize:isMobile ? '16px' : '17px', marginLeft:isMobile ? '50px' : '20px', marginTop:isMobile ? '8px' : '0', marginBottom: '8px'}}>
+                  <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize:isMobile ? '16px' : '17px', marginLeft:isMobile ? '40px' : '20px', marginTop:isMobile ? '8px' : '0', marginBottom: '8px'}}>
                     {info.icon}
                     <span>{info.description}</span>
                   </div>
