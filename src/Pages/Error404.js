@@ -7,10 +7,12 @@ import { Helmet } from 'react-helmet';
 
 const Error404 = () => {
   useEffect(() => {
-    $('#menu').click(function() {
-      $(this).toggleClass('fa-times');
+    const toggleMenu = () => {
+      $('#menu').toggleClass('fa-times');
       $('.navbar').toggleClass('nav-toggle');
-    });
+    };
+
+    $('#menu').on('click', toggleMenu);
 
     const disableDevTools = (e) => {
       if (e.keyCode === 123 || 
@@ -24,6 +26,7 @@ const Error404 = () => {
     document.addEventListener('keydown', disableDevTools);
 
     return () => {
+      $('#menu').off('click', toggleMenu);
       document.removeEventListener('keydown', disableDevTools);
     };
   }, []);
@@ -51,6 +54,7 @@ const Error404 = () => {
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
+        
       </header>
 
       <section className="page_404">

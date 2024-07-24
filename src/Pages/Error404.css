@@ -101,15 +101,20 @@ header .navbar ul li a:hover{
 @media(max-width:768px){
   #menu{
       display: block;
+      background: transparent;
   }
   header .navbar{
     position: fixed;
     top: 6.5rem; right: -120%;
-    width: 75%;
+    width: 50%;
     height: 100%;
     text-align: left;
     align-items: flex-start;
-    background-color: #0e0f31;
+    /* background-color: #0e0f31; */
+    /* background-color: transparent; */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(15px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(12px); /* For Safari */
   }
   header .navbar ul{
     flex-flow: column;
@@ -125,8 +130,10 @@ header .navbar ul li a:hover{
   header .navbar ul li a{
     display: block;
     padding: 1rem;
-    text-align: left;
-    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    /* color: #ff0000; */
+    color: #ff6200;
     font-size: 2rem;
   }
   header .navbar ul li a.active,
