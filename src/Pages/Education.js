@@ -166,8 +166,8 @@ const Education = () => {
     <Helmet>
         <title>My Education | Portfolio - Ujjwal</title>
     </Helmet>
-      <div className="mt-20">
-        <div className="Edu Edu-PC" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="mt-40">
+        <div className="Edu Edu-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '-1.5rem' }}>
           Education & Qualification
         </div>
         <div className="Edu Edu-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>

@@ -165,7 +165,7 @@ const Experience = () => {
       <title>Experience | Portfolio - Ujjwal</title>
     </Helmet>
     <div className="mt-20">
-      <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
         Work & Experience
       </div>
       <VerticalTimeline>

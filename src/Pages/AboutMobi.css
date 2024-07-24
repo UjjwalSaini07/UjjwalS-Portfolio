@@ -1,6 +1,7 @@
 .about {
     background: #010215;
     padding: 2rem 2rem;
+    margin-top: 6.5rem;
   }
   
   .about .row {
@@ -20,9 +21,10 @@
   .about .row .image img {
     margin: 2.5rem 0;
     width: 35rem;
-    height: 45rem;
-    border-radius: 15%;
-    margin-left: 20%;
+    height: 40rem;
+    border-radius: 10%;
+    /* margin-left: 35%; */
+    /* display: block; */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     cursor: pointer;

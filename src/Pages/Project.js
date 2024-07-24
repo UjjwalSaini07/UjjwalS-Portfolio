@@ -397,10 +397,10 @@ const Works = () => {
         </span>
 
         <motion.div variants={textVariant(0.3)}>
-          <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2.5rem' }}>
             Innovative Development Works
           </div>
-          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '-1.6rem' }}>
+          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '2.2rem' }}>
             Projects
           </div>
         </motion.div>

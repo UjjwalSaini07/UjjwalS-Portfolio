@@ -7,7 +7,7 @@
     justify-content: space-between;
     padding: 1.7rem 10%;
     height: 6.5rem;
-    background-color: #020214;
+    background-color: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -95,6 +95,11 @@
 /* For Mobile View */
 @media(max-width:768px){
 
+    .Basic_Nav header {
+        height: 6rem;
+        background-color: #020214;
+    }
+
     .Basic_Nav header .logo {
         font-size: 1.8rem;
         font-weight: 500;
@@ -107,14 +112,14 @@
     }
     .Basic_Nav header .navbar{
       position: fixed;
-      top: 6.8rem; right: -100%;
+      top: 6rem; right: -100%;
       width: 45%;
       height: 100%;
       text-align: left;
       align-items: flex-start;
       /* background-color: transparent; */
       background-color: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(12px); /* Apply blur effect */
+      backdrop-filter: blur(21px); /* Apply blur effect */
       -webkit-backdrop-filter: blur(12px); 
     }
     .Basic_Nav header .navbar ul{

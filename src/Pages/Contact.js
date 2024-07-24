@@ -173,6 +173,7 @@ useEffect(() => {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
+        <div style={{marginTop: '3rem'}}></div>
         <div style={{
           backdropFilter: 'blur(1px)',
           borderRadius: '30px',
@@ -188,7 +189,7 @@ useEffect(() => {
           gap: '10px'
         }}>
           <div style={{ textAlign: 'left', marginBottom: '30px', width: '100%' }}>
-            <div className="Cont" style={{ textAlign: 'left', marginBottom: '1rem',marginLeft: '5rem' }}>
+            <div className="Cont" style={{ textAlign: 'left', marginBottom: '1rem',marginLeft: '5rem', marginTop:isMobile ? '1rem' : '0' }}>
               Contact Me
             </div>
           </div>

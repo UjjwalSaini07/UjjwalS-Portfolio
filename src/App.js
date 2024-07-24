@@ -3,6 +3,7 @@ import {Route, Routes } from "react-router-dom";
 
 import AppLayout from "./components/AppLayout";
 import Preloader from './components/Preloader.js';
+import Navbar from './components/Navbar.js';
 // Pages import
 import Home from './Pages/Home.js';
 import About from './Pages/About.js';
@@ -28,6 +29,7 @@ const App = () => {
     <div  className="App">
       {loading ? <Preloader /> : (
       <>
+      <Navbar/>
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />

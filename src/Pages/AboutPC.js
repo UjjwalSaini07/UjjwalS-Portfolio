@@ -90,10 +90,12 @@ const About = () => {
       alignItems: 'center',
       color: '#e2e8f0',
       overflow: 'hidden',
+      marginTop: '-0.1rem',
       backgroundImage: `url(${gif})`, // Use GIF as background
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }} id="about">
+      <div style={{marginTop: '4rem'}}></div>
       <div style={{
         backdropFilter: 'blur(1px)',
         borderRadius: '30px',
@@ -102,6 +104,7 @@ const About = () => {
         padding: '20px',
         maxWidth: '1200px',
         width: '100%',
+        Top: '5%',
         margin: '5px auto',
         display: 'flex',
         flexDirection: 'column',

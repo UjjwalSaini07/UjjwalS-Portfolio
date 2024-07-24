@@ -77,11 +77,11 @@ const AboutMobi = () => {
 
   return (
     <section className="about" id="about">
-      <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem' }}>
+      <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4.03rem' }}>
         About Me
       </div>
       <div className="row">
-        <div className="image" style={{ marginRight: '3rem', alignItems: 'left',marginLeft: '-4rem' }}>
+        <div className="image" style={{ marginRight: '3rem', alignItems: 'left',marginLeft: '-6rem' }}>
             <img
                 className={"tilt"}
                 src={Img1}
