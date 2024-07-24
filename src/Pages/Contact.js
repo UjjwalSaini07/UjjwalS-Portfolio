@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
 import './Contact.css';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const ContactUs = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -154,322 +155,327 @@ useEffect(() => {
   };
 
   return (
-    <section style={{
-      position: 'relative',
-      padding: '60px 20px',
-      fontFamily: 'Arial, sans-serif',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      color: '#e2e8f0',
-      overflow: 'hidden',
-      backgroundImage: `url(${gif})`, // Use GIF as background
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}>
-      <div style={{
-        backdropFilter: 'blur(1px)',
-        borderRadius: '30px',
-        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-        border: isMobile ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
-        padding:isMobile ? '0' : '30px',
-        maxWidth:isMobile ?'1600px' :  '1250px',
-        width:isMobile ? '105%' : '90%',
-        margin: '0 auto',
+    <>
+    <Helmet>
+        <title>Contact Me | Portfolio - Ujjwal</title>
+    </Helmet>
+      <section style={{
+        position: 'relative',
+        padding: '60px 20px',
+        fontFamily: 'Arial, sans-serif',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: isMobile ? 'left' : 'center',
-        gap: '10px'
+        alignItems: 'center',
+        color: '#e2e8f0',
+        overflow: 'hidden',
+        backgroundImage: `url(${gif})`, // Use GIF as background
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }}>
-        <div style={{ textAlign: 'left', marginBottom: '30px', width: '100%' }}>
-          <div className="Cont" style={{ textAlign: 'left', marginBottom: '1rem',marginLeft: '5rem' }}>
-            Contact Me
-          </div>
-        </div>
         <div style={{
+          backdropFilter: 'blur(1px)',
+          borderRadius: '30px',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+          border: isMobile ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
+          padding:isMobile ? '0' : '30px',
+          maxWidth:isMobile ?'1600px' :  '1250px',
+          width:isMobile ? '105%' : '90%',
+          margin: '0 auto',
           display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
-          justifyContent: 'space-between',
-          width: '100%',
-          gap: '20px'
+          flexDirection: 'column',
+          alignItems: isMobile ? 'left' : 'center',
+          gap: '10px'
         }}>
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <form
-              id="form"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '20px',
-                backdropFilter: 'blur(1px)',
-                padding: '30px',
-                borderRadius: '15px',
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                marginTop: '-25px',
-                width: '100%'
-              }}
-              onSubmit={sendEmail}
-            >
-              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-                <label
-                  htmlFor="name"
-                  style={{
-                    position: 'absolute',
-                    top: '10px',
-                    left: '15px',
-                    color: '#e2e8f0',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    transition: 'all 0.2s ease',
-                    pointerEvents: 'none',
-                    transform: 'translateY(0)',
-                    transformOrigin: 'top left',
-                    opacity: 0.7,
-                  }}
-                >
-                  Name*
-                </label>
-                <input
-                  style={{
-                    padding: '12px 15px',
-                    borderRadius: '10px', // Remove border radius
-                    border: 'none', // Remove all borders
-                    borderBottom: '2px solid rgba(255, 255, 255, 0.3)', // Add only the bottom border
-                    fontSize: '16px',
-                    backgroundColor: 'transparent', // Make background transparent
-                    color: '#e2e8f0',
-                    outline: 'none',
-                    transition: 'border-color 0.3s',
-                    minHeight: '40px',
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    paddingBottom: '2px', // Adjust padding to align with the border
-                  }}
-                  type="text"
-                  id="name"
-                  name="name"
-                  onFocus={(e) => e.target.previousElementSibling.style.transform = 'translateY(-32px)'}
-                  onBlur={(e) => {
-                    if (!e.target.value) {
-                      e.target.previousElementSibling.style.transform = 'translateY(0)';
-                    }
-                  }}
-                />
-              </div>
-              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-                <label
-                  htmlFor="email"
-                  style={{
-                    position: 'absolute',
-                    top: '10px',
-                    left: '15px',
-                    color: '#e2e8f0',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    transition: 'all 0.2s ease',
-                    pointerEvents: 'none',
-                    transform: 'translateY(0)',
-                    transformOrigin: 'top left',
-                    opacity: 0.7,
-                  }}
-                >
-                  Email*
-                </label>
-                <input
-                  style={{
-                    padding: '12px 15px',
-                    borderRadius: '10px',
-                    border: 'none',
-                    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-                    fontSize: '16px',
-                    backgroundColor: 'transparent',
-                    color: '#e2e8f0',
-                    outline: 'none',
-                    transition: 'border-color 0.3s',
-                    minHeight: '40px',
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    paddingBottom: '5px',
-                  }}
-                  type="email"
-                  id="email"
-                  name="email"
-                  onFocus={(e) => e.target.previousElementSibling.style.transform = 'translateY(-35px)'}
-                  onBlur={(e) => {
-                    if (!e.target.value) {
-                      e.target.previousElementSibling.style.transform = 'translateY(0)';
-                    }
-                  }}
-                />
-              </div>
-              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-                <label
-                  htmlFor="message"
-                  style={{
-                    position: 'absolute',
-                    top: '10px',
-                    left: '15px',
-                    color: '#e2e8f0',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    transition: 'all 0.2s ease',
-                    pointerEvents: 'none',
-                    transform: 'translateY(0)',
-                    transformOrigin: 'top left',
-                    opacity: 0.7,
-                  }}
-                >
-                  Message*
-                </label>
-                <textarea
-                  style={{
-                    padding: '15px 20px',
-                    borderRadius: '10px',
-                    border: 'none',
-                    fontSize: '12.5px',
-                    backgroundColor: 'transparent',
-                    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
-                    color: '#e2e8f0',
-                    outline: 'none',
-                    transition: 'border-color 0.3s, background-color 0.3s, box-shadow 0.3s',
-                    minHeight: '100px',
-                    resize: 'vertical',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                    width: '100%',
-                    boxSizing: 'border-box'
-                  }}
-                  id="message"
-                  name="message"
-                  rows={4}
-                  onFocus={(e) => e.target.previousElementSibling.style.transform = 'translateY(-36px)'}
-                  onBlur={(e) => {
-                    if (!e.target.value) {
-                      e.target.previousElementSibling.style.transform = 'translateY(0)';
-                    }
-                  }}
-                />
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', width: '100%' }}>
-                <div className="glowbtn">
-                  <a
+          <div style={{ textAlign: 'left', marginBottom: '30px', width: '100%' }}>
+            <div className="Cont" style={{ textAlign: 'left', marginBottom: '1rem',marginLeft: '5rem' }}>
+              Contact Me
+            </div>
+          </div>
+          <div style={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: 'space-between',
+            width: '100%',
+            gap: '20px'
+          }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <form
+                id="form"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '20px',
+                  backdropFilter: 'blur(1px)',
+                  padding: '30px',
+                  borderRadius: '15px',
+                  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                  marginTop: '-25px',
+                  width: '100%'
+                }}
+                onSubmit={sendEmail}
+              >
+                <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
+                  <label
+                    htmlFor="name"
                     style={{
-                      padding:isMobile ? '10px 50px' : '12px 60px',
-                      borderRadius: '10px',
-                      backgroundColor: 'transparent',
-                      textDecoration: 'none',
-                      color: '#33f403',
-                      border: 'none',
-                      marginBottom:isMobile ? '-5px' : '-10px',
-                      marginLeft: '1px',
-                      marginTop:isMobile ? '-22px' : '-10px',
-                      fontSize: isMobile ? '13.5px' : '16px',
+                      position: 'absolute',
+                      top: '10px',
+                      left: '15px',
+                      color: '#e2e8f0',
+                      fontSize: '16px',
                       fontWeight: 'bold',
-                      transition: 'background-color 0.3s',
+                      transition: 'all 0.2s ease',
+                      pointerEvents: 'none',
+                      transform: 'translateY(0)',
+                      transformOrigin: 'top left',
+                      opacity: 0.7,
+                    }}
+                  >
+                    Name*
+                  </label>
+                  <input
+                    style={{
+                      padding: '12px 15px',
+                      borderRadius: '10px', // Remove border radius
+                      border: 'none', // Remove all borders
+                      borderBottom: '2px solid rgba(255, 255, 255, 0.3)', // Add only the bottom border
+                      fontSize: '16px',
+                      backgroundColor: 'transparent', // Make background transparent
+                      color: '#e2e8f0',
+                      outline: 'none',
+                      transition: 'border-color 0.3s',
+                      minHeight: '40px',
                       width: '100%',
+                      boxSizing: 'border-box',
+                      paddingBottom: '2px', // Adjust padding to align with the border
+                    }}
+                    type="text"
+                    id="name"
+                    name="name"
+                    onFocus={(e) => e.target.previousElementSibling.style.transform = 'translateY(-32px)'}
+                    onBlur={(e) => {
+                      if (!e.target.value) {
+                        e.target.previousElementSibling.style.transform = 'translateY(0)';
+                      }
+                    }}
+                  />
+                </div>
+                <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
+                  <label
+                    htmlFor="email"
+                    style={{
+                      position: 'absolute',
+                      top: '10px',
+                      left: '15px',
+                      color: '#e2e8f0',
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      transition: 'all 0.2s ease',
+                      pointerEvents: 'none',
+                      transform: 'translateY(0)',
+                      transformOrigin: 'top left',
+                      opacity: 0.7,
+                    }}
+                  >
+                    Email*
+                  </label>
+                  <input
+                    style={{
+                      padding: '12px 15px',
+                      borderRadius: '10px',
+                      border: 'none',
+                      borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+                      fontSize: '16px',
+                      backgroundColor: 'transparent',
+                      color: '#e2e8f0',
+                      outline: 'none',
+                      transition: 'border-color 0.3s',
+                      minHeight: '40px',
+                      width: '100%',
+                      boxSizing: 'border-box',
+                      paddingBottom: '5px',
+                    }}
+                    type="email"
+                    id="email"
+                    name="email"
+                    onFocus={(e) => e.target.previousElementSibling.style.transform = 'translateY(-35px)'}
+                    onBlur={(e) => {
+                      if (!e.target.value) {
+                        e.target.previousElementSibling.style.transform = 'translateY(0)';
+                      }
+                    }}
+                  />
+                </div>
+                <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
+                  <label
+                    htmlFor="message"
+                    style={{
+                      position: 'absolute',
+                      top: '10px',
+                      left: '15px',
+                      color: '#e2e8f0',
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      transition: 'all 0.2s ease',
+                      pointerEvents: 'none',
+                      transform: 'translateY(0)',
+                      transformOrigin: 'top left',
+                      opacity: 0.7,
+                    }}
+                  >
+                    Message*
+                  </label>
+                  <textarea
+                    style={{
+                      padding: '15px 20px',
+                      borderRadius: '10px',
+                      border: 'none',
+                      fontSize: '12.5px',
+                      backgroundColor: 'transparent',
+                      borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+                      color: '#e2e8f0',
+                      outline: 'none',
+                      transition: 'border-color 0.3s, background-color 0.3s, box-shadow 0.3s',
+                      minHeight: '100px',
+                      resize: 'vertical',
+                      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                      width: '100%',
+                      boxSizing: 'border-box'
+                    }}
+                    id="message"
+                    name="message"
+                    rows={4}
+                    onFocus={(e) => e.target.previousElementSibling.style.transform = 'translateY(-36px)'}
+                    onBlur={(e) => {
+                      if (!e.target.value) {
+                        e.target.previousElementSibling.style.transform = 'translateY(0)';
+                      }
+                    }}
+                  />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', width: '100%' }}>
+                  <div className="glowbtn">
+                    <a
+                      style={{
+                        padding:isMobile ? '10px 50px' : '12px 60px',
+                        borderRadius: '10px',
+                        backgroundColor: 'transparent',
+                        textDecoration: 'none',
+                        color: '#33f403',
+                        border: 'none',
+                        marginBottom:isMobile ? '-5px' : '-10px',
+                        marginLeft: '1px',
+                        marginTop:isMobile ? '-22px' : '-10px',
+                        fontSize: isMobile ? '13.5px' : '16px',
+                        fontWeight: 'bold',
+                        transition: 'background-color 0.3s',
+                        width: '100%',
+                        textAlign: 'center',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      {sendingMsg ? 'Sending...' : 'Send'}
+                    </a>
+                  </div>
+
+                  <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                      <div className="bg-white w-1/2 h-1 hr"></div>
+                      <div className="text-white font-weight-bold" style={{fontSize:'12px'}}>OR</div>
+                      <div className="bg-white w-1/2 h-1 hr"></div>
+                  </div>
+                  <div className="glowbtn">
+                  <a
+                    href="#"
+                    style={{
+                      padding: '15px',
+                      borderRadius: '12px',
+                      backgroundColor: 'transparent',
+                      color: '#33f403',
+                      textDecoration: 'none',
+                      fontSize: isMobile ? '11px' : '16px',
+                      fontWeight: 'bold',
+                      transition: 'color 0.3s',
+                      width: '100%',
+                      marginLeft: isMobile ? '3px' : '0',
+                      marginTop: isMobile ? '-1px' : '0',
+                      marginBottom: isMobile ? '50px' : '0',
                       textAlign: 'center',
                       cursor: 'pointer'
                     }}
+                    onClick={() => {
+                      setShowModal(true);
+                      // Implement playConfirm function here if needed
+                    }}
                   >
+                    
+                    Schedule a Meet with me...
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    {sendingMsg ? 'Sending...' : 'Send'}
                   </a>
+                  </div>
                 </div>
-
-                <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                    <div className="bg-white w-1/2 h-1 hr"></div>
-                    <div className="text-white font-weight-bold" style={{fontSize:'12px'}}>OR</div>
-                    <div className="bg-white w-1/2 h-1 hr"></div>
-                </div>
-                <div className="glowbtn">
-                <a
-                  href="#"
-                  style={{
-                    padding: '15px',
-                    borderRadius: '12px',
-                    backgroundColor: 'transparent',
-                    color: '#33f403',
-                    textDecoration: 'none',
-                    fontSize: isMobile ? '11px' : '16px',
-                    fontWeight: 'bold',
-                    transition: 'color 0.3s',
-                    width: '100%',
-                    marginLeft: isMobile ? '3px' : '0',
-                    marginTop: isMobile ? '-1px' : '0',
-                    marginBottom: isMobile ? '50px' : '0',
-                    textAlign: 'center',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => {
-                    setShowModal(true);
-                    // Implement playConfirm function here if needed
-                  }}
-                >
-                  
-                  Schedule a Meet with me...
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div style={{ flex: 1 }}>
-
-            <div style={{ flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: isMobile ? '-70px' : '-75px' }}>
-              {contactInfoData.map((info, index) => (
-                <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize:isMobile ? '16px' : '17px', marginLeft:isMobile ? '50px' : '20px', marginTop:isMobile ? '8px' : '0', marginBottom: '8px'}}>
-                  {info.icon}
-                  <span>{info.description}</span>
-                </div>
-              ))}
+              </form>
             </div>
+            <div style={{ flex: 1 }}>
 
-            {/* //! Problematic Code Only Show Icons */}
-            {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '28px', marginTop: '-75px',marginLeft: '16px' }}>
-              {contactInfoData.map((info, index) => (
-                <Link
-                  key={index}
-                  to={info.href}
-                  style={{ display: 'flex', alignItems: 'center', gap: '15px', fontSize: '20px', textDecoration: 'none', color: 'inherit' }}
-                >
-                  <i className={info.iconClass} style={{ fontSize: '30px' }}></i>
-                  <span style={{ fontSize: '17px', color: 'inherit' }}>{info.description}</span>
-                </Link>
-              ))}
-            </div> */}
-            {/* Ends Here */}
+              <div style={{ flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: isMobile ? '-70px' : '-75px' }}>
+                {contactInfoData.map((info, index) => (
+                  <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize:isMobile ? '16px' : '17px', marginLeft:isMobile ? '50px' : '20px', marginTop:isMobile ? '8px' : '0', marginBottom: '8px'}}>
+                    {info.icon}
+                    <span>{info.description}</span>
+                  </div>
+                ))}
+              </div>
 
-            <div className="map" style={{
-              width: '95%',
-              height: '380px',
-              padding: '1px',
-              borderRadius: '20px',
-              overflow: 'hidden',
-              boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
-              marginTop: '40px',
-              marginLeft: '12px',
-            }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5393826342255!2d77.14058945079842!3d28.66222527921225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03009e810ffd%3A0xcf2bda6f1a9acec6!2sNew%20Moti%20Nagar%2C%20Moti%20Nagar%2C%20Delhi%2C%20110015!5e0!3m2!1sen!2sin!4v1636631965111!5m2!1sen!2sin"
-                style={{
-                  border: 0,
-                  width: '100%',
-                  height: '100%',
-                  filter: 'invert(90%)' // Inverts the colors to simulate dark mode
-                }}
-                allowFullScreen=""
-                loading="lazy"
-              ></iframe>
+              {/* //! Problematic Code Only Show Icons */}
+              {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '28px', marginTop: '-75px',marginLeft: '16px' }}>
+                {contactInfoData.map((info, index) => (
+                  <Link
+                    key={index}
+                    to={info.href}
+                    style={{ display: 'flex', alignItems: 'center', gap: '15px', fontSize: '20px', textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <i className={info.iconClass} style={{ fontSize: '30px' }}></i>
+                    <span style={{ fontSize: '17px', color: 'inherit' }}>{info.description}</span>
+                  </Link>
+                ))}
+              </div> */}
+              {/* Ends Here */}
+
+              <div className="map" style={{
+                width: '95%',
+                height: '380px',
+                padding: '1px',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
+                marginTop: '40px',
+                marginLeft: '12px',
+              }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5393826342255!2d77.14058945079842!3d28.66222527921225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03009e810ffd%3A0xcf2bda6f1a9acec6!2sNew%20Moti%20Nagar%2C%20Moti%20Nagar%2C%20Delhi%2C%20110015!5e0!3m2!1sen!2sin!4v1636631965111!5m2!1sen!2sin"
+                  style={{
+                    border: 0,
+                    width: '100%',
+                    height: '100%',
+                    filter: 'invert(90%)' // Inverts the colors to simulate dark mode
+                  }}
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

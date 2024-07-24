@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
 import IconCloud from "../@/components/magicui/icon-cloud";
+import { Helmet } from 'react-helmet';
 
 // Define motion variants
 const textVariant = (delay) => ({
@@ -165,6 +166,9 @@ const Tech = () => {
 
   return (
     <>
+    <Helmet>
+        <title>My Skills | Portfolio - Ujjwal</title>
+    </Helmet>
       <motion.div
         variants={textVariant(0.1)}
         initial="hidden"

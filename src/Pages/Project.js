@@ -12,6 +12,7 @@ import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
 import ProfileCard from '../components/Assest_Used/ProjectImg/ProfileCard.png';
 import Cube from '../components/Assest_Used/ProjectImg/Cube.png';
 import VoiceAss from '../components/Assest_Used/ProjectImg/VoiceAss.gif';
+import { Helmet } from 'react-helmet';
 
 const styles = {
   paddingX: "sm:px-16 px-6",
@@ -380,38 +381,43 @@ const Works = () => {
   }, []);
 
   return (
-    <motion.section
-      variants={staggerContainer(0.5, 0.2)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.padding} max-w-12xl mx-auto sm:h-full h-[100vh]`}
-    >
-      <span className="hash-span" id="works">
-        &nbsp;
-      </span>
+    <>
+    <Helmet>
+      <title>My Projects | Portfolio - Ujjwal</title>
+    </Helmet>
+      <motion.section
+        variants={staggerContainer(0.5, 0.2)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className={`${styles.padding} max-w-12xl mx-auto sm:h-full h-[100vh]`}
+      >
+        <span className="hash-span" id="works">
+          &nbsp;
+        </span>
 
-      <motion.div variants={textVariant(0.3)}>
-        <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          Innovative Development Works
+        <motion.div variants={textVariant(0.3)}>
+          <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            Innovative Development Works
+          </div>
+          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '-1.6rem' }}>
+            Projects
+          </div>
+        </motion.div>
+        
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3">
+          {projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))}
         </div>
-        <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '-1.6rem' }}>
-          Projects
-        </div>
-      </motion.div>
-      
-      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
 
-      <div className="md:hidden mt-5 flex flex-col gap-4 overflow-x-auto overflow-y-auto">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
-    </motion.section>
+        <div className="md:hidden mt-5 flex flex-col gap-4 overflow-x-auto overflow-y-auto">
+          {projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))}
+        </div>
+      </motion.section>
+    </>
   );
 };
 

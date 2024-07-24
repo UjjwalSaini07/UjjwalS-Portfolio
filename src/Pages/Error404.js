@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import USLogopng from '../components/Assest_Used/US_LogoTransparent.png';
 import './Error404.css';
+import { Helmet } from 'react-helmet';
 
 const Error404 = () => {
   useEffect(() => {
@@ -28,6 +29,10 @@ const Error404 = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Error 404 | Portfolio - Ujjwal</title>
+    </Helmet>
     <div onContextMenu={(e) => e.preventDefault()}>
       <header>
       <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
@@ -98,6 +103,7 @@ const Error404 = () => {
         <h1 className="credit">Designed with <i className="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/"> Ujjwal Saini</a></h1>
       </section>
     </div>
+    </>
   );
 };
 
