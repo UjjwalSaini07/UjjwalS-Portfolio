@@ -166,8 +166,8 @@
     width: 100%;
     height: 2px;
     background: linear-gradient(270deg, transparent, #f40388);
-    animation: animate3 1s linear infinite;
-    animation-delay: 0.50s;
+    animation: animate3 0.85s linear infinite;
+    animation-delay: 0.68s;
 }
 
 @keyframes animate3 {
