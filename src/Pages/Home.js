@@ -1,30 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import USLogopng from '../components/Assest_Used/Us_LogoMain.png';
-import './Nav.css';
+
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const toggleMenu = () => {
-      $('#menu').toggleClass('fa-times');
-      $('.navbar').toggleClass('nav-toggle');
-    };
-
-    $('#menu').on('click', toggleMenu);
-
-    const disableDevTools = (e) => {
-      if (e.keyCode === 123 || 
-          (e.ctrlKey && e.shiftKey && (e.keyCode === 'I'.charCodeAt(0) ||
-          e.keyCode === 'C'.charCodeAt(0) || e.keyCode === 'J'.charCodeAt(0))) || 
-          (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))) {
-        e.preventDefault();
-      }
-    };
-
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
     };
@@ -32,11 +14,7 @@ const Home = () => {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    document.addEventListener('keydown', disableDevTools);
-
     return () => {
-      $('#menu').off('click', toggleMenu);
-      document.removeEventListener('keydown', disableDevTools);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -46,30 +24,8 @@ const Home = () => {
       <Helmet>
         <title>Home | Portfolio - Ujjwal</title>
       </Helmet>
-      <div onContextMenu={(e) => e.preventDefault()}>
-      <div className='Basic_Nav'>
-        <header>
-        <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src={USLogopng} alt="Logo" style={{ height:isMobile ? '38px' : '48px', marginleft: '5px' }} />
-            Ujjwal Saini
-        </Link>
-          <div id="menu" className="fas fa-bars"></div>
-          <nav className="navbar">
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/skills">Skills</Link></li>
-              <li><Link to="/education">Education</Link></li>
-              <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/experience">Experience</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </nav>
-        </header>
-      </div>
-
-        <div style={{ textAlign: 'center' }}>
-          <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '50px'}}>Home</h1>
+        <div style={{ textAlign: 'center', marginTop: '6rem' }}>
+          <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '50px', alignItems: 'center', justifyContent: 'center'}}>Home</h1>
           <p style={{ color: 'white', fontWeight: 'bold' }} >
             Welcome to the Home page!
             <br/>i'm Good <br/></p>
@@ -106,8 +62,6 @@ const Home = () => {
           </div>
           <h1 className="credit">Designed with <i className="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/"> Ujjwal Saini</a></h1>
         </section>
-
-      </div>
     </>
   );
 };

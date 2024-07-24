@@ -56,8 +56,7 @@ const About = () => {
             </nav>
           </header>
         </div>
-        {/* <div style = {{marginBottom: '7.2rem'}}>
-        </div> */}
+        {/* <div style = {{marginBottom: '7.2rem'}}></div> */}
       </div>
     );
   };

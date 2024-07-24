@@ -6,6 +6,7 @@ const CharacterFight = () => {
       textAlign: 'center',
       background: 'linear-gradient(135deg, #161626, #070721)',
       padding: '20px',
+      marginTop: '68px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
       color: '#fff',
