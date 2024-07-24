@@ -141,14 +141,14 @@ const About = () => {
             </div>
           </div>
           
-          <div className="glowbtn">
+          <div className="glowbtnAbt">
             <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
             style={{
               padding: '12px',
               borderRadius: '10px',
               backgroundColor: 'transparent',
               textDecoration: 'none',
-              color: '#33f403',
+              color: '#f40388',
               border: 'none',
               marginBottom: '-10px',
               marginLeft: '1px',
