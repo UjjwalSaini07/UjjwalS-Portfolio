@@ -1,0 +1,159 @@
+.Basic_Nav header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 10%;
+    height: 6.5rem;
+    background-color: #020214;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Basic_Nav header:hover {
+    background-color: #030321;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.Basic_Nav section {
+    min-height: 100vh;
+    padding: 2rem 9%;
+}
+
+.Basic_Nav header .logo {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.Basic_Nav header .logo i {
+    font-size: 2rem;
+    margin-right: 0.6rem;
+    color: #fc8c05;
+}
+
+.Basic_Nav header .logo:hover {
+    color: #fc8c05;
+    transition: color 0.3s ease;
+}
+
+.Basic_Nav header .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -5px;
+    padding: 0;
+}
+
+.Basic_Nav header .navbar li {
+    margin-left: 2.4rem;
+}
+
+.Basic_Nav header .navbar ul li a {
+    font-size: 1.57rem;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.04rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+
+.Basic_Nav header .navbar ul li a.active,
+.Basic_Nav header .navbar ul li a:hover {
+    color: #fc8c05;
+    border-bottom: 0.31rem solid #fc8c05;
+    border-radius: 0.5rem;
+    padding-bottom: 0.5rem;
+    transform: translateY(-2px);
+
+}
+
+.Basic_Nav header .navbar ul li a.active::after,
+.Basic_Nav header .navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* navbar ends */
+  
+/* hamburger icon starts*/
+.Basic_Nav #menu{
+    font-size: 3rem;
+    cursor: pointer;
+    color: rgb(221, 92, 0);
+    display: none;
+}
+
+/* For Mobile View */
+@media(max-width:768px){
+
+    .Basic_Nav header .logo {
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding-left: 3px;
+    }
+
+    .Basic_Nav #menu{
+        display: block;
+        background: transparent;
+    }
+    .Basic_Nav header .navbar{
+      position: fixed;
+      top: 6.8rem; right: -100%;
+      width: 45%;
+      height: 100%;
+      text-align: left;
+      align-items: flex-start;
+      /* background-color: transparent; */
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px); /* Apply blur effect */
+      -webkit-backdrop-filter: blur(12px); 
+    }
+    .Basic_Nav header .navbar ul{
+      flex-flow: column;
+      padding: 1rem;
+    }
+    .Basic_Nav header .navbar ul li{
+      text-align: center;
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: .5rem;
+      width: 26rem;
+    }
+    .Basic_Nav header .navbar ul li a{
+      display: block;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      color: #ff6200;
+      font-size: 2rem;
+    }
+    .Basic_Nav header .navbar ul li a.active,
+    .Basic_Nav header .navbar ul li a:hover {
+        padding: 1rem;
+        color: #fff;
+        align-items: center;
+        border-radius: 1.2rem;
+        width: 60%;
+        justify-content: right;
+        text-align: center;
+        display: inline-block; /* Ensure the element fits the text content */
+        border-bottom: .5rem solid #ff6200; /* Adjust the border-bottom width */
+    }
+    .Basic_Nav .fa-times{
+      transform: rotate(270deg);
+    }
+    .Basic_Nav header .navbar.nav-toggle{
+      right: 0;
+    }
+  }
+  /* hamburger icon ends */
+  
