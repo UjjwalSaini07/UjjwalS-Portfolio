@@ -81,7 +81,7 @@ const AboutMobi = () => {
         About Me
       </div>
       <div className="row">
-        <div className="image">
+        <div className="image" style={{ marginRight: '3rem', alignItems: 'left',marginLeft: '-4rem' }}>
             <img
                 className={"tilt"}
                 src={Img1}
