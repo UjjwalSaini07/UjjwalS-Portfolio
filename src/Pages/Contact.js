@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import gif from '../components/Assest_Used/ContactBG.gif';
+import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
 import './Contact.css';
 import { Link } from 'react-router-dom';
 

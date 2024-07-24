@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
 import './AboutPC.css'; 
+import gif from '../components/Assest_Used/GIFs/Gif_2.gif';
 
 const spaceboardsFont = `
   @font-face {
@@ -62,6 +63,10 @@ const aboutMeStyle = `
         0 0 15px rgba(169, 57, 255, 0.7);
     }
   }
+  
+  .about-me{
+    font-size: 6.2rem;
+  }
 `;
 const About = () => {
 
@@ -76,9 +81,34 @@ const About = () => {
   }, []);
 
   return (
-    <section className="about" id="about">
-      <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem' }}>
-        About Me- In PC
+    <section className="about" style={{
+      position: 'relative',
+      padding: '35px 10px',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      color: '#e2e8f0',
+      overflow: 'hidden',
+      backgroundImage: `url(${gif})`, // Use GIF as background
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }} id="about">
+      <div style={{
+        backdropFilter: 'blur(1px)',
+        borderRadius: '30px',
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+        border: '1px solid rgba(255, 255, 255, 0.3)',
+        padding: '20px',
+        maxWidth: '1200px',
+        width: '100%',
+        margin: '5px auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '5px'
+      }}>
+      <div className="about-me" style={{ textAlign: 'left', marginRight: '3.4rem', marginLeft: '4rem', marginBottom: '-2rem'}}>
+        About Me
       </div>
       <div className="row">
         <div className="image">
@@ -107,16 +137,38 @@ const About = () => {
               <p><span> Language Known : </span> English, Hindi, Punjabi</p>
             </div>
             <div className="box">
-              <p><span> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
+              <p><span> Hobbies : </span> Cube Solving, Gardening, Learning New Skills, Travelling, Listening Music</p>
             </div>
           </div>
           
-          <div className="resumebtn">
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn">
-              <span>Resume</span>
+          <div className="glowbtn">
+            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
+            style={{
+              padding: '12px',
+              borderRadius: '10px',
+              backgroundColor: 'transparent',
+              textDecoration: 'none',
+              color: '#33f403',
+              border: 'none',
+              marginBottom: '-10px',
+              marginLeft: '1px',
+              marginTop: '25px',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              transition: 'background-color 0.3s',
+              width: '40%',
+              textAlign: 'center',
+              cursor: 'pointer'
+            }}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Resume
             </a>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
