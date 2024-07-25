@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
 import IconCloud from "../@/components/magicui/icon-cloud";
+import { Helmet } from 'react-helmet';
 
 // Define motion variants
 const textVariant = (delay) => ({
@@ -165,16 +166,19 @@ const Tech = () => {
 
   return (
     <>
+    <Helmet>
+        <title>My Skills | Portfolio - Ujjwal</title>
+    </Helmet>
       <motion.div
         variants={textVariant(0.1)}
         initial="hidden"
         animate="show"
         className="text-center mb-16 px-4"
       >
-        <div className="Tech Tech-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '4rem' }}>
+        <div className="Tech Tech-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '7.2rem' }}>
           My Techincal Skills
         </div>
-        <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '2.5rem', marginRight: '2.8rem' }}>
+        <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '8rem', marginRight: '2.8rem' }}>
           My Tech Stack
         </div>
       </motion.div>

@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import USLogopng from '../components/Assest_Used/US_LogoTransparent.png';
 import './Error404.css';
+import { Helmet } from 'react-helmet';
 
 const Error404 = () => {
   useEffect(() => {
-    $('#menu').click(function() {
-      $(this).toggleClass('fa-times');
+    const toggleMenu = () => {
+      $('#menu').toggleClass('fa-times');
       $('.navbar').toggleClass('nav-toggle');
-    });
+    };
+
+    $('#menu').on('click', toggleMenu);
 
     const disableDevTools = (e) => {
       if (e.keyCode === 123 || 
@@ -23,11 +26,16 @@ const Error404 = () => {
     document.addEventListener('keydown', disableDevTools);
 
     return () => {
+      $('#menu').off('click', toggleMenu);
       document.removeEventListener('keydown', disableDevTools);
     };
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Error 404 | Portfolio - Ujjwal</title>
+    </Helmet>
     <div onContextMenu={(e) => e.preventDefault()}>
       <header>
       <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
@@ -46,6 +54,7 @@ const Error404 = () => {
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
+        
       </header>
 
       <section className="page_404">
@@ -98,6 +107,7 @@ const Error404 = () => {
         <h1 className="credit">Designed with <i className="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/"> Ujjwal Saini</a></h1>
       </section>
     </div>
+    </>
   );
 };
 

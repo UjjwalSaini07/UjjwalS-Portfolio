@@ -6,6 +6,7 @@ import Gssoc from '../components/Assest_Used/CompanyLogo/Gssoc_Logo.png';
 import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
 import freelance from '../components/Assest_Used/CompanyLogo/WorkOnPC.png';
 import curious from '../components/Assest_Used/CompanyLogo/Curious_Logo.png';
+import { Helmet } from 'react-helmet';
 
 const spaceboardsFont = `
   @font-face {
@@ -159,8 +160,12 @@ const Experience = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Experience | Portfolio - Ujjwal</title>
+    </Helmet>
     <div className="mt-20">
-      <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+      <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
         Work & Experience
       </div>
       <VerticalTimeline>
@@ -219,6 +224,7 @@ const Experience = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 

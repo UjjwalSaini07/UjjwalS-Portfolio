@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { Helmet } from 'react-helmet';
 // import LetterPullup from "../@/components/magicui/letter-pullup";
 
 // Importing Images
@@ -161,70 +162,75 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="mt-20">
-      <div className="Edu Edu-PC" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-        Education & Qualification
-      </div>
-      <div className="Edu Edu-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-        Education
-      </div>
-      <VerticalTimeline>
-        {educationData.map((education, index) => (
-          <VerticalTimelineElement
-            key={`education-${index}`}
-            contentStyle={{ background: "#1d1836", color: "#fff", borderRadius: "15px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
-            contentArrowStyle={{ borderRight: "10px solid  #232631" }}
-            date={education.date}
-            dateClassName="date"
-            iconStyle={{ background: education.iconBg }}
-            icon={<div className="flex items-center justify-center w-full h-full"><img src={education.icon} alt={education.cname} className="w-full h-full object-cover rounded-full" /></div>}
-          >
-            <h3 className="edu-title">{education.title}</h3>
-            <p className="edu-name">{education.cname}</p>
-            {/* <p className="edu-name"><LetterPullup words={education.cname} delay={0.05} /></p> */}
-            <ul className="mt-5 list-disc ml-5 space-y-3.5">
-              {education.points.map((point, idx) => (
-                <li key={`education-point-${idx}`} className="text-[#d4d4d8] sm:text-[15px] text-[12px] pl-1 tracking-wider">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
-      <style jsx global>{`
-        .vertical-timeline-element-date {
-          font-size: 18px !important;
-          color: #fff !important;
-          font-weight: bold !important;
-        }
-        
-        .edu-title {
-          color: white;
-          font-size: 25px;
-          font-weight: bold;
-        }
-
-        .edu-name {
-          color: #e4e4e7 !important;
-          font-size: 13px !important;
-          font-weight: bold !important;
-        }
-
-        @media (max-width: 768px) {
-          .Edu {
-            font-size: 35px;
-            margin-right: 3.7rem;
-          }
-          .edu-title {
-            font-size: 18.5px;
-          }
+    <>
+    <Helmet>
+        <title>My Education | Portfolio - Ujjwal</title>
+    </Helmet>
+      <div className="mt-40">
+        <div className="Edu Edu-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '-1.5rem' }}>
+          Education & Qualification
+        </div>
+        <div className="Edu Edu-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+          Education
+        </div>
+        <VerticalTimeline>
+          {educationData.map((education, index) => (
+            <VerticalTimelineElement
+              key={`education-${index}`}
+              contentStyle={{ background: "#1d1836", color: "#fff", borderRadius: "15px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
+              contentArrowStyle={{ borderRight: "10px solid  #232631" }}
+              date={education.date}
+              dateClassName="date"
+              iconStyle={{ background: education.iconBg }}
+              icon={<div className="flex items-center justify-center w-full h-full"><img src={education.icon} alt={education.cname} className="w-full h-full object-cover rounded-full" /></div>}
+            >
+              <h3 className="edu-title">{education.title}</h3>
+              <p className="edu-name">{education.cname}</p>
+              {/* <p className="edu-name"><LetterPullup words={education.cname} delay={0.05} /></p> */}
+              <ul className="mt-5 list-disc ml-5 space-y-3.5">
+                {education.points.map((point, idx) => (
+                  <li key={`education-point-${idx}`} className="text-[#d4d4d8] sm:text-[15px] text-[12px] pl-1 tracking-wider">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+        <style jsx global>{`
           .vertical-timeline-element-date {
-            font-size: 14px !important;
+            font-size: 18px !important;
+            color: #fff !important;
+            font-weight: bold !important;
           }
-        }
-      `}</style>
-    </div>
+          
+          .edu-title {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+          }
+
+          .edu-name {
+            color: #e4e4e7 !important;
+            font-size: 13px !important;
+            font-weight: bold !important;
+          }
+
+          @media (max-width: 768px) {
+            .Edu {
+              font-size: 35px;
+              margin-right: 3.7rem;
+            }
+            .edu-title {
+              font-size: 18.5px;
+            }
+            .vertical-timeline-element-date {
+              font-size: 14px !important;
+            }
+          }
+        `}</style>
+      </div>
+    </>
   );
 };
 
