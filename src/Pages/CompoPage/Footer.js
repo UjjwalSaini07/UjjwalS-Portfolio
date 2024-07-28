@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import './Footer.css';
 
 const footer = {
   position: "relative",
@@ -31,7 +32,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="footer">
+    <section className="footerHome">
       <div className="box-container">
         <div className="box">
           <h3 className="MainPort">UjjwalS Portfolio</h3>

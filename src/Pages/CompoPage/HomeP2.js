@@ -10,6 +10,7 @@ const HomePcContainer = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
 `;
 
 const spline_model = {

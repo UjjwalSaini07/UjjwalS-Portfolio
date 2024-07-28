@@ -9,6 +9,7 @@ const HomePcContainer = {
   width: "100%",
   height: "100vh",
   overflow: "hidden",
+  zindex: "1",
 };
 
 const spline_model = {
@@ -86,7 +87,7 @@ function Home() {
               <animated.p style={typewriterBounce}>
                 <div style={typerStyle}>
                   <Typewriter
-                    words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Data Analyst']}
+                    words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer']}
                     loop={true}
                     cursor
                     cursorStyle='_'
