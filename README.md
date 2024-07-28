@@ -1,6 +1,3 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=FFFFFF&vCenter=true&width=435&lines=Ujjwal+Saini+Portfolio)](https://git.io/typing-svg)
-
-
 
 # UjjwalS Porfolio
 Welcome to my portfolio website repository! This project is a comprehensive showcase of my personal and professional achievements, skills, and projects. Designed to be visually appealing and interactive, it highlights my expertise and creativity in a unique and engaging way, providing a detailed overview of my work and capabilities.
