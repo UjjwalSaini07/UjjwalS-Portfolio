@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=E73E0D&vCenter=true&width=435&lines=Ujjwal+Saini+Portfolio)](https://git.io/typing-svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
