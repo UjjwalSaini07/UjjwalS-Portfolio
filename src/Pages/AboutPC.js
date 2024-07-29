@@ -141,7 +141,7 @@ const About = () => {
         gap: '5px'
       }}>
       <motion.div
-        variants={textVariant(0.1)}
+        variants={textVariant(0.2)}
         initial="hidden"
         animate="show"
       >
