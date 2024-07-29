@@ -66,7 +66,7 @@ Starting NodeJS Server
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/1c282466-878e-4611-848b-99d106e57ebd)
+![image](![image](https://github.com/user-attachments/assets/6e8f1f3b-c91c-4c83-a61b-e76f003820ab)
 
 
 
