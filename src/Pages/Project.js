@@ -122,7 +122,7 @@ const projects = [
         color: "bg-orange-500",
       },
       {
-        name: "Node.js",
+        name: "Vanta.js",
         color: "bg-white",
       },
       {
@@ -132,6 +132,10 @@ const projects = [
       {
         name: "Three.js",
         color: "bg-orange-500",
+      },
+      {
+        name: "Motion Ui",
+        color: "bg-white",
       },
     ],
     image: MyPortfolio,
