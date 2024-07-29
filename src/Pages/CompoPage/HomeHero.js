@@ -4,6 +4,8 @@ import { Typewriter } from "react-simple-typewriter";
 import { useSpring, animated } from '@react-spring/web';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 
+import HireMESvg from './HireMe';
+
 const HomePcContainer = {
   position: "absolute",
   width: "100%",
@@ -52,6 +54,13 @@ const typerStyle = {
   color: "#02f202",
   fontWeight: "500",
   display: "inline-block",
+};
+
+const HireMEStyle = {
+  display: 'flex',
+  marginTop: '-4rem',
+  marginLeft: '-12.2rem',
+
 };
 
 function Home() {
@@ -129,7 +138,7 @@ function Home() {
             </animated.p>
           </div>
           <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '15px' }}>
-          <animated.p style={paragraphBounce}>
+            <animated.p style={paragraphBounce}>
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
                 <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/" className="fab fa-linkedin  fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
@@ -148,8 +157,13 @@ function Home() {
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
             </ul>
             </animated.p>
-          </div>
+          </div>          
         </div>
+      
+        <div style={HireMEStyle}>
+          <HireMESvg />
+        </div>
+
       </div>
     </div>
   );

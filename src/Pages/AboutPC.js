@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
 import gif from '../components/Assest_Used/GIFs/Gif_2.gif';
+import ParticlularImage from './CompoPage/Particles.js';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -93,6 +94,15 @@ const aboutMeStyle = `
     font-size: 6.2rem;
   }
 `;
+
+const ParticlularImageStyle = {
+  width: '35rem',
+  height: '46.5rem',
+  border: '1px solid black', // Optional, to visualize the container
+  display: 'flex',
+
+};
+
 const About = () => {
   const bounce = useSpring({
     from: { transform: 'translate3d(0, -180px, 0)' },
@@ -150,7 +160,7 @@ const About = () => {
       </div>
       </motion.div>
       <div className="row">
-        <div className="image">
+        {/* <div className="image">
           <animated.h1 style={bounce}>
             <img
                 className={"tilt"}
@@ -158,7 +168,12 @@ const About = () => {
                 alt="Image"
             />
           </animated.h1>
+        </div> */}
+        {/* <animated.h1 style={bounce}> */}
+        <div style={ParticlularImageStyle}>
+          <ParticlularImage />
         </div>
+        {/* </animated.h1> */}
         <div className="content">
         <motion.div
             variants={textVariant(0.1)}

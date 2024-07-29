@@ -4,8 +4,8 @@ const RotatingSVGWithButton = () => {
   return (
     <div style={{
       position: 'relative',
-      width: '200px',
-      height: '200px',
+      width: '130px',
+      height: '130px',
       margin: '100px auto',
       backgroundColor: 'transparent',
       borderRadius: '50%',
@@ -22,8 +22,8 @@ const RotatingSVGWithButton = () => {
           height: '100%',
           transformOrigin: 'center',
           animation: 'rotate 10s linear infinite',
-          marginTop: '-102px',
-          marginLeft: '-100px',
+          marginTop: '-67px',
+          marginLeft: '-66px',
         }}
       >
         <defs>
@@ -36,19 +36,19 @@ const RotatingSVGWithButton = () => {
         </text>
       </svg>
       <a 
-        href="https://example.com" 
+        href="mailto:ujjwalsaini0007@gmail.com" 
         style={{
           position: 'absolute',
-          width: '90px',
-          height: '90px',
-          background: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)', // Initial gradient background
+          width: '65px',
+          height: '65px',
+          background: 'linear-gradient(90deg, #6a11cb 0%, #e73e0d 100%)',
+          // background: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
           borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           color: '#fff',
-          fontWeight: 'bold',
-          fontSize: '16px',
+          fontSize: '14px',
           textAlign: 'center',
           zIndex: 1,
           textDecoration: 'none',
@@ -63,16 +63,18 @@ const RotatingSVGWithButton = () => {
         onMouseEnter={(e) => {
           e.target.style.transform = 'translate(-50%, -50%) scale(1.2)';
           e.target.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
-          e.target.style.background = 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)'; // Hover gradient background
-          e.target.style.width = '100px'; // Increase size on hover
-          e.target.style.height = '100px'; // Increase size on hover
+          e.target.style.background = 'linear-gradient(270deg, #ff7e5f 0%, #02f202 100%)';
+          // e.target.style.background = 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)';
+          e.target.style.width = '67px'; // Increase size on hover
+          e.target.style.height = '67px'; // Increase size on hover
         }}
         onMouseLeave={(e) => {
           e.target.style.transform = 'translate(-50%, -50%) scale(1)';
           e.target.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-          e.target.style.background = 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)'; // Initial gradient background
-          e.target.style.width = '95px'; // Reset size
-          e.target.style.height = '95px'; // Reset size
+          e.target.style.background = 'linear-gradient(90deg, #6a11cb 0%, #e73e0d 100%)';
+          // e.target.style.background = 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)';
+          e.target.style.width = '66px'; // Reset size
+          e.target.style.height = '66px'; // Reset size
         }}
       >
         Hire Me
