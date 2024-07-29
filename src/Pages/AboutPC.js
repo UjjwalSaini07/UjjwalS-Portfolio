@@ -1,7 +1,32 @@
 import React, { useEffect } from 'react';
-import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
 import './AboutPC.css'; 
+import { motion } from "framer-motion";
+import { useSpring, animated } from '@react-spring/web';
+import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
 import gif from '../components/Assest_Used/GIFs/Gif_2.gif';
+
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.25, delay: delay },
+  },
+});
+
+const fadeIn = (direction, type, delay, duration) => ({
+  hidden: {
+    x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+    y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: { type: type, delay: delay, duration: duration, ease: "easeOut" },
+  },
+});
 
 const spaceboardsFont = `
   @font-face {
@@ -69,6 +94,11 @@ const aboutMeStyle = `
   }
 `;
 const About = () => {
+  const bounce = useSpring({
+    from: { transform: 'translate3d(0, -180px, 0)' },
+    to: { transform: 'translate3d(0, 0, 0)' },
+    config: { tension: 150, friction: 3 },
+  });
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -110,41 +140,83 @@ const About = () => {
         flexDirection: 'column',
         gap: '5px'
       }}>
+      <motion.div
+        variants={textVariant(0.1)}
+        initial="hidden"
+        animate="show"
+      >
       <div className="about-me" style={{ textAlign: 'left', marginRight: '3.4rem', marginLeft: '4rem', marginBottom: '-2rem'}}>
         About Me
       </div>
+      </motion.div>
       <div className="row">
         <div className="image">
+          <animated.h1 style={bounce}>
             <img
                 className={"tilt"}
                 src={Img1}
                 alt="Image"
             />
+          </animated.h1>
         </div>
         <div className="content">
+        <motion.div
+            variants={textVariant(0.1)}
+            initial="hidden"
+            animate="show"
+        >
           <h3>I'm Ujjwal Saini</h3>
           <span className="tag">Full Stack Developer | Designer </span>
-          
+          </motion.div>
+          <motion.div
+            variants={textVariant(0.6)}
+            initial="hidden"
+            animate="show"
+        >
           <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy broinging inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
           </p>
+          </motion.div>
           
           <div className="box-container">
             <div className="box">
+            <motion.div
+                variants={textVariant(0.9)}
+                initial="hidden"
+                animate="show"
+            >
               <p><span> age: </span> 21</p>
               <p><span> phone : </span> +91 97178-99079</p>
               <p><span> Birthday : </span> 7th Feburary</p>
+              </motion.div>
             </div>
             <div className="box">
+            <motion.div
+                variants={textVariant(1.2)}
+                initial="hidden"
+                animate="show"
+            >
               <p><span> email : </span> ujjwalsaini0007@gmail.com</p>
               <p><span> place : </span> Delhi, India - 110015</p>
               <p><span> Language Known : </span> English, Hindi, Punjabi</p>
+              </motion.div>
             </div>
             <div className="box">
+            <motion.div
+                variants={textVariant(1.5)}
+                initial="hidden"
+                animate="show"
+            >
               <p><span> Hobbies : </span> Cube Solving, Gardening, Learning New Skills, Travelling, Listening Music</p>
+              </motion.div>
             </div>
           </div>
           
           <div className="glowbtnAbt">
+          <motion.div
+                variants={textVariant(1.8)}
+                initial="hidden"
+                animate="show"
+            >
             <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
             style={{
               padding: '12px',
@@ -169,6 +241,7 @@ const About = () => {
               <span></span>
               Resume
             </a>
+            </motion.div>
           </div>
         </div>
       </div>
