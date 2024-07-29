@@ -87,7 +87,7 @@ function Home() {
               <animated.p style={typewriterBounce}>
                 <div style={typerStyle}>
                   <Typewriter
-                    words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer']}
+                    words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer', 'Gamer']}
                     loop={true}
                     cursor
                     cursorStyle='_'

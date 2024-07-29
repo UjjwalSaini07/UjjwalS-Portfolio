@@ -75,7 +75,7 @@ const Home = () => {
         <animated.p style={typewriterBounce}>
           <div style={typerStyle}>
             <Typewriter
-              words={['Designer', 'Developer', 'Freelancer']}
+              words={['Designer', 'Developer', 'Freelancer', 'Gamer']}
               loop={true}
               cursor
               cursorStyle='_'
