@@ -101,6 +101,7 @@ function Home() {
         </div>
         <div style={{ marginTop: '425px', marginLeft: '100px' }}>
           <div className="glowbtnAbt">
+          <animated.p style={paragraphBounce}>
             <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
               style={{
                 padding: '15px',
@@ -125,8 +126,10 @@ function Home() {
               <span></span>
               About Me
             </a>
+            </animated.p>
           </div>
           <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '15px' }}>
+          <animated.p style={paragraphBounce}>
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
                 <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/" className="fab fa-linkedin  fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
@@ -144,6 +147,7 @@ function Home() {
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
             </ul>
+            </animated.p>
           </div>
         </div>
       </div>
