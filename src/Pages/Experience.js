@@ -7,6 +7,16 @@ import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
 import freelance from '../components/Assest_Used/CompanyLogo/WorkOnPC.png';
 import curious from '../components/Assest_Used/CompanyLogo/Curious_Logo.png';
 import { Helmet } from 'react-helmet';
+import { motion } from "framer-motion";
+
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.25, delay: delay },
+  },
+});
 
 const spaceboardsFont = `
   @font-face {
@@ -165,9 +175,15 @@ const Experience = () => {
       <title>Experience | Portfolio - Ujjwal</title>
     </Helmet>
     <div className="mt-20">
+      <motion.div
+        variants={textVariant(0.3)}
+        initial="hidden"
+        animate="show"
+      >
       <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
         Work & Experience
       </div>
+      </motion.div>
       <VerticalTimeline>
         {experiences.map((experience, index) => (
           <VerticalTimelineElement

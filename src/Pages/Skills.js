@@ -186,6 +186,9 @@ const Tech = () => {
       <div className="flex flex-wrap justify-center gap-10 mt-12 px-4">
         {technologies.map((technology, index) => (
           <motion.div
+            variants={textVariant(0.3)}
+            initial="hidden"
+            animate="show"
             key={technology.name}
             variants={fadeIn("", "", index * 0.1, 0.75)}
             className="relative w-64 h-64 p-6 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 shadow-lg flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl overflow-hidden"

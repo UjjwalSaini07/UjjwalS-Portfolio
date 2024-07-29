@@ -109,8 +109,8 @@ useEffect(() => {
     },
     {
       icon: <i className="fa-solid fa-mobile"></i>,
-      description: '+91-9717-xxxxx',
-      href: 'tel:+919717xxxxx'
+      description: '+91-9717-899079',
+      href: 'tel:+919717899079'
     },
     {
       icon: <i className="fa-brands fa-linkedin"></i>,

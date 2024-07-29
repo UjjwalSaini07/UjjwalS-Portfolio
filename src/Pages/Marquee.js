@@ -200,8 +200,9 @@ export function MarqueeDemo() {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '375px',
-    width: '100%', // Full width for the strip container
+    height: '460px',
+    width: '100%',
+    marginTop: '-1.1rem',
     overflow: 'hidden',
     borderRadius: '0.75rem',
     border: '1px solid rgba(0, 0, 0, 0.1)',
@@ -228,7 +229,7 @@ export function MarqueeDemo() {
 
   return (
     <div style={containerStyle}>
-      <div className="Test" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
+      <div className="Test" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '10.5rem'}}>
         Testinomails
       </div>
       <Marquee pauseOnHover className="[--duration:20s]">

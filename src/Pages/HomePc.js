@@ -69,7 +69,7 @@ const Home = () => {
         </div>
         <div
           ref={footerRef}
-          style={{ height: '50vh', border: 'none', margin: '0', padding: '0' }}
+          style={{ height: '60vh', border: 'none', margin: '0', padding: '0' }}
         >
           <MarqueeDemo />
         </div>

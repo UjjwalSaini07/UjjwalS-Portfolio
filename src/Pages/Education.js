@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { Helmet } from 'react-helmet';
+import { motion } from "framer-motion";
 // import LetterPullup from "../@/components/magicui/letter-pullup";
 
 // Importing Images
@@ -9,6 +10,15 @@ import school5 from '../components/Assest_Used/EducationLogo/Class5_1.png';
 import school10 from '../components/Assest_Used/EducationLogo/Class10_1.png';
 import school12 from '../components/Assest_Used/EducationLogo/Class12_1.png';
 import college from '../components/Assest_Used/EducationLogo/College_1.png';
+
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.25, delay: delay },
+  },
+});
 
 const spaceboardsFont = `
   @font-face {
@@ -167,12 +177,18 @@ const Education = () => {
         <title>My Education | Portfolio - Ujjwal</title>
     </Helmet>
       <div className="mt-40">
+      <motion.div
+        variants={textVariant(0.3)}
+        initial="hidden"
+        animate="show"
+      >
         <div className="Edu Edu-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '-1.5rem' }}>
           Education & Qualification
         </div>
         <div className="Edu Edu-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           Education
         </div>
+      </motion.div>
         <VerticalTimeline>
           {educationData.map((education, index) => (
             <VerticalTimelineElement

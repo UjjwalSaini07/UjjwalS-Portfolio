@@ -122,7 +122,7 @@ const projects = [
         color: "bg-orange-500",
       },
       {
-        name: "Node.js",
+        name: "Vanta.js",
         color: "bg-white",
       },
       {
@@ -133,9 +133,13 @@ const projects = [
         name: "Three.js",
         color: "bg-orange-500",
       },
+      {
+        name: "Motion Ui",
+        color: "bg-white",
+      },
     ],
     image: MyPortfolio,
-    live_link: "#",
+    live_link: "https://ujjwals-portfolio.vercel.app/",
     source_code_link: "https://github.com/UjjwalSaini07/UjjwalS-Portfolio",
   },
   {
@@ -398,7 +402,7 @@ const Works = () => {
 
         <motion.div variants={textVariant(0.3)}>
           <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2.5rem' }}>
-            Innovative Development Works
+            My Innovative Development Works
           </div>
           <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '2.2rem' }}>
             Projects
