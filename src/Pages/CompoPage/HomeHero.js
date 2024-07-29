@@ -56,10 +56,11 @@ const typerStyle = {
   display: "inline-block",
 };
 
+
 const HireMEStyle = {
   display: 'flex',
   marginTop: '-4rem',
-  marginLeft: '-12.2rem',
+  marginLeft: '-12rem',
 
 };
 
