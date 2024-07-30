@@ -440,6 +440,7 @@ const Canvas = () => {
       if (canvas) {
         canvas.width = canvas.parentElement.clientWidth;
         canvas.height = canvas.parentElement.clientHeight;
+        initEffect();
       }
     };
 
@@ -536,28 +537,28 @@ const Canvas = () => {
       }
     }
 
-    const effect = new Effect(canvas.width, canvas.height);
-
-    if (ctx) {
-      effect.init(ctx);
-    }
-
-    const animate = () => {
+    const initEffect = () => {
+      const effect = new Effect(canvas.width, canvas.height);
       if (ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        effect.draw(ctx);
-        effect.update();
-        requestAnimationFrame(animate);
+        effect.init(ctx);
       }
+
+      const animate = () => {
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          effect.draw(ctx);
+          effect.update();
+          requestAnimationFrame(animate);
+        }
+      };
+      animate();
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-    animate();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', effect.handleMouseMove.bind(effect));
     };
   }, []);
 
