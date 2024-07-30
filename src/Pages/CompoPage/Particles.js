@@ -431,6 +431,7 @@ import image1 from './AssetPic/Img3.jpg';
 
 const Canvas = () => {
   const canvasRef = useRef(null);
+  const effectRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -503,13 +504,7 @@ const Canvas = () => {
         const image = new Image();
         image.src = image1;
         image.onload = () => {
-          const scale = Math.min(
-            this.width / image.width,
-            this.height / image.height
-          );
-          const x = (this.width / 2) - (image.width / 2) * scale;
-          const y = (this.height / 2) - (image.height / 2) * scale;
-          ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
+          ctx.drawImage(image, 0, 0, this.width, this.height);
           const pixels = ctx.getImageData(0, 0, this.width, this.height).data;
 
           for (let y = 0; y < this.height; y += this.gap) {
@@ -539,6 +534,7 @@ const Canvas = () => {
 
     const initEffect = () => {
       const effect = new Effect(canvas.width, canvas.height);
+      effectRef.current = effect; // Save the effect instance in the ref
       if (ctx) {
         effect.init(ctx);
       }
@@ -559,11 +555,14 @@ const Canvas = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      if (effectRef.current) {
+        window.removeEventListener('mousemove', effectRef.current.handleMouseMove.bind(effectRef.current));
+      }
     };
   }, []);
 
   return (
-    <div className="canvas-container" style={{ width: '36rem', height: '47.5rem' }}>
+    <div className="canvas-container" style={{ width: '37rem', height: '46.5rem' }}>
       <canvas id="Canvas" ref={canvasRef}></canvas>
       <img alt="avatar" className="hidden" src={image1} />
     </div>

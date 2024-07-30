@@ -6,8 +6,8 @@ import Preloader from './components/Preloader.js';
 import Navbar from './components/Navbar.js';
 // Pages import
 import Home from './Pages/Home.js';
-// import About from './Pages/About.js';
-import About from './Pages/CompoPage/Particles';
+import About from './Pages/About.js';
+// import About from './Pages/CompoPage/Particles';
 import Skills from './Pages/Skills.js';
 import Experience from './Pages/Experience.js';
 import Education from './Pages/Education.js';
