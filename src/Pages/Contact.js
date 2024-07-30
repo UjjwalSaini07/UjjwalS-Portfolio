@@ -484,7 +484,7 @@ useEffect(() => {
                                 style={{
                                     textDecoration: 'none',
                                     color: hoveredIndex === index ? '#0a4ff0' : 'inherit',
-                                    transition: 'color 0.3s ease'
+                                    transition: 'color 0.18s ease'
                                 }}
                             >
                               <span>{info.description}</span>
