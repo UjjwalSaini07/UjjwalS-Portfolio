@@ -53,12 +53,12 @@ const Home = () => {
       <Helmet>
         <title>Home | Portfolio - Ujjwal</title>
       </Helmet>
-
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div
           ref={heroRef}
           style={{ height: '100vh', border: 'none', margin: '0', padding: '0' }}
         >
+        
           <Hero />
         </div>
         <div
