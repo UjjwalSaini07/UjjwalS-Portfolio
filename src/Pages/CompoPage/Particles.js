@@ -1,7 +1,7 @@
 // TOdo: Bounded in W*H
 
 import React, { useEffect, useRef } from 'react';
-import image1 from './AssetPic/Img3.jpg';
+import image1 from './AssetPic/Img1.jpg';
 
 const Canvas = () => {
   const canvasRef = useRef(null);
