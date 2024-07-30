@@ -96,8 +96,9 @@ const aboutMeStyle = `
 `;
 
 const ParticlularImageStyle = {
-  width: '35rem',
+  width: '40rem',
   height: '46.5rem',
+  marginLeft: '3rem',
   border: '1px solid black',
   display: 'flex',
 
