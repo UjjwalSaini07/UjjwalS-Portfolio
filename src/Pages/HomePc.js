@@ -85,7 +85,7 @@ const Home = () => {
         style={{
           position: 'fixed',
           bottom: '20px',
-          left: isFooterInView ? '4%' : '50%',
+          left: isFooterInView ? '-40%' : '50%',
           transform: isFooterInView ? 'none' : 'translateX(-50%)',
           zIndex: 1000,
           display: 'flex',

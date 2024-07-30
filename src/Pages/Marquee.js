@@ -57,15 +57,15 @@ const TestoStyle = `
     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 
-      0 0 3px rgba(0, 255, 197, 0.7), 
-      0 0 5px rgba(0, 255, 197, 0.7), 
-      0 0 7px rgba(169, 57, 255, 0.7), 
-      0 0 9px rgba(169, 57, 255, 0.7), 
-      0 0 12px rgba(0, 255, 197, 0.5), 
-      0 0 15px rgba(169, 57, 255, 0.5);
+    // text-shadow: 
+    //   0 0 3px rgba(0, 255, 197, 0.7), 
+    //   0 0 5px rgba(0, 255, 197, 0.7), 
+    //   0 0 7px rgba(169, 57, 255, 0.7), 
+    //   0 0 9px rgba(169, 57, 255, 0.7), 
+    //   0 0 12px rgba(0, 255, 197, 0.5), 
+    //   0 0 15px rgba(169, 57, 255, 0.5);
     margin-left: 4rem;
-    animation: gradient 1.5s infinite, glow 1.2s infinite alternate;
+    animation: gradient 1.5s infinite;
     letter-spacing: 0.1rem;
     background-size: 200% 200%;
   }
