@@ -20,6 +20,19 @@ const ContactUs = () => {
   const [sendingMsg, setSendingMsg] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  const handleClick = () => {
+    if (!sendingMsg) {
+      console.log("Button clicked, setting sendingMsg to true");
+      setSendingMsg(true);
+
+      // Simulate a sending action and reset after a delay
+      setTimeout(() => {
+        console.log("Resetting sendingMsg to false");
+        setSendingMsg(false);
+      }, 3800); // Adjust the delay as needed
+    }
+  };
+
   const spaceboardsFont = `
     @font-face {
       font-family: 'Spaceboards';
@@ -147,7 +160,7 @@ useEffect(() => {
   };
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
+  
   return (
     <>
     <Helmet>
@@ -376,32 +389,33 @@ useEffect(() => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', width: '100%' }}>
                   <div className="glowbtn">
                     <animated.h1 style={bounce}>
-                    <a
-                      style={{
-                        padding:isMobile ? '10px 50px' : '12px 60px',
-                        borderRadius: '10px',
-                        backgroundColor: 'transparent',
-                        textDecoration: 'none',
-                        color: '#33f403',
-                        border: 'none',
-                        marginBottom:isMobile ? '-5px' : '-10px',
-                        marginLeft: '1px',
-                        marginTop:isMobile ? '-22px' : '-10px',
-                        fontSize: isMobile ? '13.5px' : '16px',
-                        fontWeight: 'bold',
-                        transition: 'background-color 0.3s',
-                        width: '100%',
-                        textAlign: 'center',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      {sendingMsg ? 'Sending...' : 'Send'}
-                    </a>
-                  </animated.h1>
+                      <a
+                        style={{
+                          padding: isMobile ? '10px 50px' : '12px 60px',
+                          borderRadius: '10px',
+                          backgroundColor: 'transparent',
+                          textDecoration: 'none',
+                          color: '#33f403',
+                          border: 'none',
+                          marginBottom: isMobile ? '-5px' : '-10px',
+                          marginLeft: '1px',
+                          marginTop: isMobile ? '-22px' : '-10px',
+                          fontSize: isMobile ? '13.5px' : '16px',
+                          fontWeight: 'bold',
+                          transition: 'background-color 0.3s',
+                          width: '100%',
+                          textAlign: 'center',
+                          cursor: 'pointer'
+                        }}
+                        onClick={handleClick}
+                      >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        {sendingMsg ? 'Sending...' : 'Send'}
+                      </a>
+                    </animated.h1>
                   </div>
 
                   <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
