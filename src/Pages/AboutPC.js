@@ -98,7 +98,7 @@ const aboutMeStyle = `
 const ParticlularImageStyle = {
   width: '35rem',
   height: '46.5rem',
-  border: '1px solid black', // Optional, to visualize the container
+  // border: '1px solid black', // Optional, to visualize the container
   display: 'flex',
 
 };
