@@ -3,6 +3,17 @@ import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
 import './Contact.css';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { motion } from "framer-motion";
+import { useSpring, animated } from '@react-spring/web';
+
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.5, delay: delay },
+  },
+});
 
 const ContactUs = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -82,6 +93,11 @@ const ContactUs = () => {
   }
 `;
 
+const bounce = useSpring({
+  from: { transform: 'translate3d(0, -180px, 0)' },
+  to: { transform: 'translate3d(0, 0, 0)' },
+  config: { tension: 150, friction: 3 },
+});
 
 useEffect(() => {
   const handleResize = () => {
@@ -190,7 +206,13 @@ useEffect(() => {
         }}>
           <div style={{ textAlign: 'left', marginBottom: '30px', width: '100%' }}>
             <div className="Cont" style={{ textAlign: 'left', marginBottom: '1rem',marginLeft: '5rem', marginTop:isMobile ? '1rem' : '0' }}>
+            <motion.div
+              variants={textVariant(0.4)}
+              initial="hidden"
+              animate="show"
+            >
               Contact Me
+            </motion.div>
             </div>
           </div>
           <div style={{
@@ -233,7 +255,13 @@ useEffect(() => {
                       opacity: 0.7,
                     }}
                   >
+                    <motion.div
+                      variants={textVariant(0.64)}
+                      initial="hidden"
+                      animate="show"
+                    >
                     Name*
+                    </motion.div>
                   </label>
                   <input
                     style={{
@@ -279,7 +307,13 @@ useEffect(() => {
                       opacity: 0.7,
                     }}
                   >
+                    <motion.div
+                      variants={textVariant(0.64)}
+                      initial="hidden"
+                      animate="show"
+                    >
                     Email*
+                    </motion.div>
                   </label>
                   <input
                     style={{
@@ -325,7 +359,13 @@ useEffect(() => {
                       opacity: 0.7,
                     }}
                   >
+                    <motion.div
+                      variants={textVariant(0.64)}
+                      initial="hidden"
+                      animate="show"
+                    >
                     Message*
+                    </motion.div>
                   </label>
                   <textarea
                     style={{
@@ -357,6 +397,7 @@ useEffect(() => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', width: '100%' }}>
                   <div className="glowbtn">
+                    <animated.h1 style={bounce}>
                     <a
                       style={{
                         padding:isMobile ? '10px 50px' : '12px 60px',
@@ -382,6 +423,7 @@ useEffect(() => {
                       <span></span>
                       {sendingMsg ? 'Sending...' : 'Send'}
                     </a>
+                  </animated.h1>
                   </div>
 
                   <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -390,6 +432,7 @@ useEffect(() => {
                       <div className="bg-white w-1/2 h-1 hr"></div>
                   </div>
                   <div className="glowbtn">
+                  <animated.h1 style={bounce} >
                   <a
                     href="#"
                     style={{
@@ -420,17 +463,30 @@ useEffect(() => {
                     <span></span>
                     <span></span>
                   </a>
+                  </animated.h1>
                   </div>
                 </div>
               </form>
             </div>
+            
             <div style={{ flex: 1 }}>
-
               <div style={{ flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: isMobile ? '-70px' : '-75px' }}>
                 {contactInfoData.map((info, index) => (
                   <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize:isMobile ? '16px' : '17px', marginLeft:isMobile ? '40px' : '20px', marginTop:isMobile ? '8px' : '0', marginBottom: '8px'}}>
+                    <motion.div
+                      variants={textVariant(0.84)}
+                      initial="hidden"
+                      animate="show"
+                    >
                     {info.icon}
+                    </motion.div>
+                    <motion.div
+                      variants={textVariant(1.4)}
+                      initial="hidden"
+                      animate="show"
+                    >
                     <span>{info.description}</span>
+                    </motion.div>
                   </div>
                 ))}
               </div>
@@ -460,6 +516,7 @@ useEffect(() => {
                 marginTop: '40px',
                 marginLeft: '12px',
               }}>
+                
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5393826342255!2d77.14058945079842!3d28.66222527921225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03009e810ffd%3A0xcf2bda6f1a9acec6!2sNew%20Moti%20Nagar%2C%20Moti%20Nagar%2C%20Delhi%2C%20110015!5e0!3m2!1sen!2sin!4v1636631965111!5m2!1sen!2sin"
                   style={{
