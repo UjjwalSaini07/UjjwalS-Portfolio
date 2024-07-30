@@ -119,56 +119,34 @@ useEffect(() => {
 
   const contactInfoData = [
     {
-      icon: <i className="fa-solid fa-envelopes-bulk"></i>,
-      description: 'ujjwalsaini0007@gmail.com',
-      href: 'mailto:ujjwalsaini0007@gmail.com'
+        icon: <i className="fa-solid fa-envelopes-bulk"></i>,
+        description: 'ujjwalsaini0007@gmail.com',
+        href: 'mailto:ujjwalsaini0007@gmail.com'
     },
     {
-      icon: <i className="fa-solid fa-mobile"></i>,
-      description: '+91-9717-899079',
-      href: 'tel:+919717899079'
+        icon: <i className="fa-solid fa-mobile"></i>,
+        description: '+91-9717-899079',
+        href: 'tel:+919717899079'
     },
     {
-      icon: <i className="fa-brands fa-linkedin"></i>,
-      description: 'LinkedIn Profile',
-      href: 'https://www.linkedin.com/in/ujjwal-saini-220960256/'
+        icon: <i className="fa-brands fa-linkedin"></i>,
+        description: 'My Profile',
+        href: 'https://www.linkedin.com/in/ujjwal-saini-220960256/'
     },
     {
-      icon: <i className="fa-brands fa-github"></i>,
-      description: 'Profile',
-      href: 'https://github.com/UjjwalSaini07'
+        icon: <i className="fa-brands fa-github"></i>,
+        description: 'My Profile',
+        href: 'https://github.com/UjjwalSaini07'
     }
   ];
-
-  // ! Part Of problematic Code
-  // const contactInfoData = [
-  //   {
-  //     iconClass: "fas fa-envelope",
-  //     description: 'ujjwalsaini0007@gmail.com',
-  //     href: 'mailto:ujjwalsaini0007@gmail.com'
-  //   },
-  //   {
-  //     iconClass: "fas fa-mobile-alt",
-  //     description: '+91-9717-xxxxx',
-  //     href: 'tel:+919717xxxxx'
-  //   },
-  //   {
-  //     iconClass: "fab fa-linkedin",
-  //     description: 'LinkedIn Profile',
-  //     href: '/linkedin' // Example internal route
-  //   },
-  //   {
-  //     iconClass: "fab fa-github",
-  //     description: 'Profile',
-  //     href: '/github' // Example internal route
-  //   }
-  // ];
 
   const sendEmail = (e) => {
     e.preventDefault();
     setSendingMsg(true);
     // Implement email sending logic here
   };
+
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <>
@@ -471,40 +449,36 @@ useEffect(() => {
             
             <div style={{ flex: 1 }}>
               <div style={{ flexDirection: 'column', alignItems: 'center', gap: '20px', marginTop: isMobile ? '-70px' : '-75px' }}>
-                {contactInfoData.map((info, index) => (
-                  <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize:isMobile ? '16px' : '17px', marginLeft:isMobile ? '40px' : '20px', marginTop:isMobile ? '8px' : '0', marginBottom: '8px'}}>
-                    <motion.div
-                      variants={textVariant(0.84)}
-                      initial="hidden"
-                      animate="show"
-                    >
-                    {info.icon}
-                    </motion.div>
-                    <motion.div
-                      variants={textVariant(1.4)}
-                      initial="hidden"
-                      animate="show"
-                    >
-                    <span>{info.description}</span>
-                    </motion.div>
-                  </div>
-                ))}
-              </div>
-
-              {/* //! Problematic Code Only Show Icons */}
-              {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '28px', marginTop: '-75px',marginLeft: '16px' }}>
-                {contactInfoData.map((info, index) => (
-                  <Link
-                    key={index}
-                    to={info.href}
-                    style={{ display: 'flex', alignItems: 'center', gap: '15px', fontSize: '20px', textDecoration: 'none', color: 'inherit' }}
-                  >
-                    <i className={info.iconClass} style={{ fontSize: '30px' }}></i>
-                    <span style={{ fontSize: '17px', color: 'inherit' }}>{info.description}</span>
-                  </Link>
-                ))}
-              </div> */}
-              {/* Ends Here */}
+                  {contactInfoData.map((info, index) => (
+                      <div key={index} style={{ fontFamily: 'arial', display: 'flex', alignItems: 'center', gap: '15px', fontSize: isMobile ? '16px' : '17px', marginLeft: isMobile ? '40px' : '20px', marginTop: isMobile ? '8px' : '0', marginBottom: '8px' }}>
+                          <motion.div
+                              variants={textVariant(0.84)}
+                              initial="hidden"
+                              animate="show"
+                          >
+                              {info.icon}
+                          </motion.div>
+                          <motion.div
+                              variants={textVariant(1.4)}
+                              initial="hidden"
+                              animate="show"
+                          >
+                            <a
+                                href={info.href}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                style={{
+                                    textDecoration: 'none',
+                                    color: hoveredIndex === index ? '#0a4ff0' : 'inherit',
+                                    transition: 'color 0.3s ease'
+                                }}
+                            >
+                              <span>{info.description}</span>
+                            </a>
+                          </motion.div>
+                      </div>
+                    ))}
+                </div>
 
               <div className="map" style={{
                 width: '95%',
