@@ -95,18 +95,6 @@ const experiences = [
     ],
   },
   {
-    date: "June 2024 - Present",
-    company_name: "IBM SKillsBuild - Internship",
-    title: "Frontend Developer",
-    iconBg: "#4285F4",
-    icon: IBM,
-    points: [
-      "Designing and developing responsive and user-friendly web interfaces.",
-      "Optimizing website performance and ensuring cross-browser compatibility.",
-      "Contributing to code reviews and upholding code quality.",
-    ],
-  },
-  {
     date: "July 2023 - Present",
     company_name: "Freelancer, Fiverr",
     title: "Freelancing Project",
@@ -129,6 +117,18 @@ const experiences = [
       "Participating in arcade events and completing various GCP modules.",
       "Gaining extensive knowledge and practical skills in Google Cloud Platform technologies.",
       "Engaging in the facilitator program to enhance understanding and application of GCP concepts.",
+    ],
+  },
+  {
+    date: "June 2024 - August 2024",
+    company_name: "IBM SKillsBuild - Internship",
+    title: "Frontend Developer",
+    iconBg: "#4285F4",
+    icon: IBM,
+    points: [
+      "Designing and developing responsive and user-friendly web interfaces.",
+      "Optimizing website performance and ensuring cross-browser compatibility.",
+      "Contributing to code reviews and upholding code quality.",
     ],
   },
   {

@@ -144,7 +144,7 @@ useEffect(() => {
     {
         icon: <i className="fa-brands fa-linkedin"></i>,
         description: 'My Profile',
-        href: 'https://www.linkedin.com/in/ujjwal-saini-220960256/'
+        href: 'https://www.linkedin.com/in/ujjwalsaini07'
     },
     {
         icon: <i className="fa-brands fa-github"></i>,

@@ -77,7 +77,7 @@ const Home = () => {
           </p>
           <div className="share">
             <a
-              href="https://www.linkedin.com/in/ujjwal-saini-220960256/"
+              href="https://www.linkedin.com/in/ujjwalsaini07"
               className="fab fa-linkedin fa-bounce"
               target="_blank"
               rel="noopener noreferrer"
