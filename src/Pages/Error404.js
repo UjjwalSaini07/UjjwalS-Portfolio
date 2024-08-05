@@ -96,7 +96,7 @@ const Error404 = () => {
             <p><i className="fas fa-envelope"></i> ujjwalsaini0007@gmail.com</p>
             <p><i className="fas fa-map-marked-alt"></i> Delhi, India-110015</p>
             <div className="share">
-              <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/" className="fab fa-linkedin fa-bounce" target="_blank" rel="noopener noreferrer"></a>
+              <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin fa-bounce" target="_blank" rel="noopener noreferrer"></a>
               <a href="https://github.com/UjjwalSaini07" className="fab fa-github fa-bounce" target="_blank" rel="noopener noreferrer"></a>
               <a href="mailto:ujjwalsaini0007@gmail.com" className="fas fa-envelope  fa-bounce" target="_blank" rel="noopener noreferrer"></a>
               <a href="https://x.com/UjjwalSaini0007" className="fab fa-twitter fa-bounce" target="_blank" rel="noopener noreferrer"></a>
@@ -104,7 +104,7 @@ const Error404 = () => {
             </div>
           </div>
         </div>
-        <h1 className="credit">Designed with <i className="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/"> Ujjwal Saini</a></h1>
+        <h1 className="credit">Designed with <i className="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/ujjwalsaini07"> Ujjwal Saini</a></h1>
       </section>
     </div>
     </>
@@ -114,16 +114,3 @@ const Error404 = () => {
 export default Error404;
 
 
-// Todo: For Emergency
-// import React from 'react';
-
-// const Error404 = () => {
-//   return (
-//     <div style={{ textAlign: 'center' }}>
-//       <h1 style={{ color: 'white', fontWeight: 'bold', fontSize: '50px'}}>Error</h1>
-//       <p style={{ color: 'white', fontWeight: 'bold' }} >404 Not Found.</p>
-//     </div>
-//   );
-// };
-
-// export default Error404;

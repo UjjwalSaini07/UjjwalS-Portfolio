@@ -141,7 +141,7 @@ function Home() {
           <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '15px' }}>
             <animated.p style={paragraphBounce}>
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
-                <a href="https://www.linkedin.com/in/ujjwal-saini-220960256/" className="fab fa-linkedin  fa-bounce" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin  fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
                 <a href="https://github.com/UjjwalSaini07" className="fab fa-github fa-bounce" target="_blank" rel="noopener noreferrer"
