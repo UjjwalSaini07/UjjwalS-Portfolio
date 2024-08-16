@@ -140,7 +140,7 @@ const projects = [
     ],
     image: MyPortfolio,
     live_link: "https://ujjwals-portfolio.vercel.app/",
-    source_code_link: "https://github.com/UjjwalSaini07/UjjwalS-Portfolio",
+    source_code_link: "*",
   },
   {
     name: "RK Electricals",
