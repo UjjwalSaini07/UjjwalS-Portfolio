@@ -110,7 +110,7 @@ const technologies = [
   { name: "HTML 5", icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" },
   { name: "CSS 3", icon: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png" },
   { name: "JavaScript", icon: "https://i.pinimg.com/736x/b4/de/20/b4de205cb6d4e7cad43c2971f780cfd9.jpg" },
-  { name: "React JS", icon: "https://www.openxcell.com/wp-content/uploads/2021/11/reactjs-inner.svg" },
+  { name: "React JS", icon: "https://www.svgrepo.com/show/355190/reactjs.svg" },
   { name: "Tailwind CSS", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk03fpMxbjzvgaDz2z3gu5G-9UeqgnNfUdd7gzSo9-er843XxKIG3g46lO1GRUF-L9UWs&usqp=CAU" },
   { name: "Python", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968286.png" },
   { name: "Django", icon: "https://www.opengis.ch/wp-content/uploads/2020/04/django-python-logo.png" },
