@@ -58,7 +58,6 @@ const Home = () => {
           ref={heroRef}
           style={{ height: '100vh', border: 'none', margin: '0', padding: '0' }}
         >
-        
           <Hero />
         </div>
         <div
@@ -75,7 +74,7 @@ const Home = () => {
         </div>
         <div
           ref={footerRef}
-          style={{ height: '42vh', border: 'none', margin: '0', padding: '0' }}
+          style={{ height: '24vh', border: 'none', margin: '0', padding: '0' }}
         >
           <Footer />
         </div>
@@ -124,58 +123,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-// todo: Basic Without Scrollig Feature
-// import React, { useState, useEffect } from 'react';
-// import { Helmet } from 'react-helmet';
-// import Hero from './CompoPage/HomeHero';
-// import Home2 from './CompoPage/HomeP2';
-// // import Home3 from './CompoPage/HomeP3';
-// import { MarqueeDemo } from './Mreque';
-// import Footer from './CompoPage/Footer';
-
-// const Home = () => {
-//   const [isMobile, setIsMobile] = useState(false);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsMobile(window.innerWidth <= 767);
-//     };
-
-//     handleResize();
-//     window.addEventListener('resize', handleResize);
-
-//     return () => {
-//       window.removeEventListener('resize', handleResize);
-//     };
-//   }, []);
-
-//   return (
-//     <>
-//       <Helmet>
-//         <title>Home | Portfolio - Ujjwal</title>
-//       </Helmet>
-
-//       <div style={{ display: "flex", flexDirection: "column" }}>
-//         <div style={{ height: "100vh" , border: 'none', margin: "0", padding: "0"}}>
-//           <Hero />
-//         </div>
-//         <div style={{ height: "100vh" , border: 'none', margin: "0", padding: "0"}}>
-//           <Home2 />
-//         </div>
-//         {/* <div style={{ height: "100vh" , border: 'none', margin: "0", padding: "0"}}>
-//           <Home3 />
-//         </div> */}
-//         <div style={{ height: "50vh" , border: 'none', margin: "0", padding: "0"}}>
-//           <MarqueeDemo />
-//         </div>
-//         <div style={{ height: "42vh", border: 'none' }}>
-//           <Footer />
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Home;
