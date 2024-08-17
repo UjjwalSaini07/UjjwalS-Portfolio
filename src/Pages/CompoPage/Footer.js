@@ -59,7 +59,8 @@ const shareStyles = {
   display: "flex",
   gap: "1.5rem",
   flexDirection: "column",  // Ensure the text and icons are stacked vertically
-  alignItems: "center",    // Center the text and icons
+  alignItems: "center",
+  marginRight: "2rem",
 };
 
 const shareLinkStyles = {

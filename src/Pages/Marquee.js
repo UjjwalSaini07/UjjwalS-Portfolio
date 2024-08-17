@@ -223,7 +223,7 @@ export function MarqueeDemo() {
 
   return (
     <div style={containerStyle}>
-      <div className="Test" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '4.5rem'}}>
+      <div className="Test" style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem'}}>
         Testinomails
       </div>
       <Marquee pauseOnHover className="[--duration:20s]">

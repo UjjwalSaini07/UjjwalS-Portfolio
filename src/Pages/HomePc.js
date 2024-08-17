@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Hero from './CompoPage/HomeHero';
 import Home2 from './CompoPage/HomeP2';
+import Home3 from './CompoPage/HomeP3';
+import NumberTicker from './CompoPage/NumberTicker';
 import Footer from './CompoPage/Footer';
 import { MarqueeDemo } from './Marquee';
 
@@ -11,14 +13,17 @@ const Home = () => {
   const [isFooterInView, setIsFooterInView] = useState(false);
   const heroRef = useRef(null);
   const home2Ref = useRef(null);
+  const home3Ref = useRef(null);
   const footerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
+      const footerOffsetTop = footerRef.current.offsetTop;
+
       setIsAtTop(scrollY < windowHeight / 2);
-      setIsFooterInView(scrollY >= windowHeight * 1.5);
+      setIsFooterInView(scrollY + windowHeight >= footerOffsetTop);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -37,10 +42,14 @@ const Home = () => {
       if (scrollY < windowHeight / 2) {
         home2Ref.current.scrollIntoView({ behavior: 'smooth' });
       } else if (scrollY >= windowHeight / 2 && scrollY < windowHeight * 1.5) {
+        home3Ref.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (scrollY >= windowHeight * 1.5) {
         footerRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (direction === 'up') {
-      if (scrollY >= windowHeight * 1.5) {
+      if (scrollY >= windowHeight * 2) {
+        home3Ref.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (scrollY >= windowHeight * 1.5 && scrollY < windowHeight * 2) {
         home2Ref.current.scrollIntoView({ behavior: 'smooth' });
       } else if (scrollY >= windowHeight / 2 && scrollY < windowHeight * 1.5) {
         heroRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -67,8 +76,20 @@ const Home = () => {
           <Home2 />
         </div>
         <div
+          ref={home3Ref}
+          style={{ height: '100vh', border: 'none', margin: '0', padding: '0' }}
+        >
+          <Home3 />
+        </div>
+        <div
           ref={footerRef}
-          style={{ height: '60vh', border: 'none', margin: '0', padding: '0' }}
+          style={{ height: '30vh', border: 'none', margin: '0', padding: '0' }}
+        >
+          <NumberTicker />
+        </div>
+        <div
+          ref={footerRef}
+          style={{ height: '46vh', border: 'none', margin: '0', padding: '0' }}
         >
           <MarqueeDemo />
         </div>
@@ -93,7 +114,7 @@ const Home = () => {
         }}
       >
         <motion.i
-          className={`fa-solid fa-arrow-up ${isAtTop ? 'hidden' : ''}`}
+          className={`fa-solid fa-arrow-up ${isAtTop || isFooterInView ? 'hidden' : ''}`}
           onClick={() => scrollToSection('up')}
           style={{
             fontSize: '30px',
@@ -106,7 +127,7 @@ const Home = () => {
           whileTap={{ scale: 0.9 }}
         />
         <motion.i
-          className={`fa-solid fa-arrow-down ${!isAtTop ? 'hidden' : ''}`}
+          className={`fa-solid fa-arrow-down ${!isAtTop || isFooterInView ? 'hidden' : ''}`}
           onClick={() => scrollToSection('down')}
           style={{
             fontSize: '30px',

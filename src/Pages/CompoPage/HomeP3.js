@@ -2,8 +2,6 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { useSpring, animated } from '@react-spring/web';
 
-import particle from './Particles.jsx';
-
 const HomePcContainer = {
   position: "absolute",
   width: "100%",
@@ -38,10 +36,12 @@ function Home() {
   
   return (
     <div style={HomePcContainer}>
-      <Spline style={spline_model} scene="https://prod.spline.design/fWKEyKyGGJPW-iDk/scene.splinecode" />
+      <Spline style={spline_model} scene="https://prod.spline.design/yF0tNNwe0CsgeJWs/scene.splinecode" />
+      {/* This is a Iron Suited Man Pointed towards the polarized side */}
+      {/* <Spline style={spline_model} scene="https://prod.spline.design/e-hwKBI8zlLCial1/scene.splinecode" /> */}
       <div style={division_overlay}>   
           <div>
-            {/* <particle/> */}
+
           </div>
       </div>
     </div>
