@@ -1,4 +1,3 @@
-// TOdo: Try 1
 import React from 'react';
 import Spline from '@splinetool/react-spline';
 import styled from 'styled-components';
@@ -52,8 +51,8 @@ const Card = styled.div`
   min-height: 200px;
   margin: 22px 10px 10px; /* Adjusted bottom margin to reduce space between rows */
   padding: 20px;
-  background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Gradient background */
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 18px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
@@ -64,14 +63,33 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  backdrop-filter: blur(8px); /* Glassmorphism blur effect */
+  border: 1px solid rgba(255, 255, 255, 0.7); /* Optional border for added effect */
+  
   &:hover {
-    transform: rotateY(10deg) rotateX(10deg) scale(1.1);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Gradient on hover */
+    transform: rotateY(0deg) rotateX(8deg) scale(1.1);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+  }
+  
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   border-radius: 16px;
+  //   background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+  //   opacity: 0.5; /* Slightly opaque gradient overlay */
+  //   z-index: 0; /* Ensure it is behind the content */
+  // }
+
+  * {
+    position: relative;
+    z-index: 1; /* Ensure content is above the overlay */
   }
 `;
-
 
 const CardName = styled.div`
   font-size: 2.2em;
@@ -83,11 +101,11 @@ const CardName = styled.div`
 const CardDescription = styled.div`
   margin: 10px 0;
   font-size: 1.2em;
-  color: #555;
+  color: #fff;
 `;
 
 const CardLink = styled.a`
-  color: #0212f0;
+  color: #ff3705;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
@@ -124,7 +142,4 @@ function HomeP2() {
 }
 
 export default HomeP2;
-
-
-// TOdo: Try2
 
