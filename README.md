@@ -1,8 +1,29 @@
 
 # UjjwalS Porfolio
 Welcome to my portfolio website repository! This project is a comprehensive showcase of my personal and professional achievements, skills, and projects. Designed to be visually appealing and interactive, it highlights my expertise and creativity in a unique and engaging way, providing a detailed overview of my work and capabilities.
-
-
+<table align="left">
+    <thead align="left">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>📏 Repo Size</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/UjjwalSaini07/UjjwalS-Portfolio?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/UjjwalSaini07/UjjwalS-Portfolio?style=flat&logo=github"/></td>
+            <td><img alt="Repo Size" src="https://img.shields.io/github/repo-size/UjjwalSaini07/UjjwalS-Portfolio?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/UjjwalSaini07/UjjwalS-Portfolio?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/UjjwalSaini07/UjjwalS-Portfolio?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+<br/>
 
 ## Table of Contents
 
