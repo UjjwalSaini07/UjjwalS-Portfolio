@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UsLogo from '../../components/Assest_Used/Us_LogoMain.png';
+import rocket from '../../components/Assest_Used/GIFs/rocketemoji.gif';
+import handshake from '../../components/Assest_Used/GIFs/handshake.gif';
 
 const footerStyles = {
   padding: "2rem 4rem",
@@ -128,11 +130,17 @@ const Home = () => {
         <img src={UsLogo} alt="UjjwalS Portfolio Logo" style={logoStyles} />
         <div style={paragraphContainerStyles}>
           <h3 style={boxHeadingStyles}>UjjwalS Portfolio</h3>
-          <p style={ParagraphStyles}>Thanks for visiting! Let's connect and elevate together. 🚀</p>
+          <p style={ParagraphStyles}>
+            Thanks for visiting! Let's connect and elevate together.{' '}
+            <img src={rocket} alt="Rocket Emoji" style={{ width: '20px', verticalAlign: 'middle', display: 'inline' }} />
+          </p>
         </div>
       </div>
       <div style={shareStyles}>
-        <p style={boxParagraphStyles}>Let's Connect 🤝</p>
+        <p style={boxParagraphStyles}>
+          Let's Connect {' '}
+          <img src={handshake} alt="HandShake Emoji" style={{ width: '24px', verticalAlign: 'middle', display: 'inline' }} />
+        </p>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <a
             href="https://www.linkedin.com/in/ujjwalsaini07"
