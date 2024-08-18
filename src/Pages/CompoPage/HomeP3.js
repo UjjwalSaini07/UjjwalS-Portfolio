@@ -23,7 +23,7 @@ const rightSideContainer = {
   position: "absolute",
   top: "20px",
   right: "30px",
-  height: "70%",
+  height: "74%",
   width: "26%",
   fontSize: "large",
   zIndex: 5,
