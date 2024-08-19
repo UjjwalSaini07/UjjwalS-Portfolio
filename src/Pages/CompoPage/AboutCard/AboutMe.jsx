@@ -10,7 +10,7 @@ const spaceboardsFont = `
 const Home3Style = `
   .home3 {
     font-family: 'Spaceboards', sans-serif;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: bold;
     background: linear-gradient(90deg, #ff7f00, #ff0000, #ff7f00, #ff0000);
     -webkit-background-clip: text;
@@ -65,14 +65,13 @@ export default function AboutMe({ isExpanded }) {
       marginBottom: '1rem',
       textAlign: 'left',
       display: 'block',
-      // backgroundColor: 'black200',
       backgroundColor: 'transparent',
+      // background: '#121212',
       backdropFilter: 'blur(7px)',
       WebkitBackdropFilter: 'blur(7px)',
       maxWidth: '100%',
       height: 'auto',
       aspectRatio: 'attr(width) / attr(height)',
-      background: '#121212',
       border: '0.1px solid rgb(100, 100, 100)',
       borderRadius: '10px',
     },
