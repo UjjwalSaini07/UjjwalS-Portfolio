@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Spline from '@splinetool/react-spline';
+import AboutCardSty from './AboutCard/About';
 import {AnimatedListDemo} from './AnimatedListDemo';
 
 const homePcContainer = {
@@ -17,6 +18,18 @@ const splineModel = {
   width: "100%",
   height: "100%",
   zIndex: 1,
+};
+
+const AboutCard = {
+  position: "absolute",
+  zIndex: 2,
+  marginRight: "30px",
+  marginTop: "50px",
+  top: "20px",
+  right: "30px",
+  height: "74%",
+  width: "26%",
+  background: "#020214",
 };
 
 const rightSideContainer = {
@@ -114,6 +127,9 @@ function Home() {
           Show-Casing
         </div> 
         <AnimatedListDemo />
+      </div>
+      <div className='AboutCard'>
+        <AboutCardSty />
       </div>
     </div>
   );
