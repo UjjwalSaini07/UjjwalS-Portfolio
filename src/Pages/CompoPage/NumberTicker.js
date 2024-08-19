@@ -131,7 +131,7 @@ const NumberTicker = () => {
         </div>
         <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
           <div style={labelStyle}>Experience:</div>
-          <div style={valueStyle}>{experienceCount}+</div>
+          <div style={valueStyle}>{experienceCount}+ yrs</div>
         </div>
         <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
           <div style={labelStyle}>Support Hours:</div>

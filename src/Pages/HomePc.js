@@ -37,25 +37,25 @@ const Home = () => {
   const scrollToSection = (direction) => {
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
-
+  
     if (direction === 'down') {
-      if (scrollY < windowHeight / 2) {
+      if (scrollY < home2Ref.current.offsetTop - windowHeight / 2) {
         home2Ref.current.scrollIntoView({ behavior: 'smooth' });
-      } else if (scrollY >= windowHeight / 2 && scrollY < windowHeight * 1.5) {
+      } else if (scrollY >= home2Ref.current.offsetTop - windowHeight / 2 && scrollY < home3Ref.current.offsetTop - windowHeight / 2) {
         home3Ref.current.scrollIntoView({ behavior: 'smooth' });
-      } else if (scrollY >= windowHeight * 1.5) {
+      } else if (scrollY >= home3Ref.current.offsetTop - windowHeight / 2) {
         footerRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (direction === 'up') {
-      if (scrollY >= windowHeight * 2) {
+      if (scrollY >= footerRef.current.offsetTop) {
         home3Ref.current.scrollIntoView({ behavior: 'smooth' });
-      } else if (scrollY >= windowHeight * 1.5 && scrollY < windowHeight * 2) {
+      } else if (scrollY >= home3Ref.current.offsetTop - windowHeight / 2) {
         home2Ref.current.scrollIntoView({ behavior: 'smooth' });
-      } else if (scrollY >= windowHeight / 2 && scrollY < windowHeight * 1.5) {
+      } else if (scrollY >= home2Ref.current.offsetTop - windowHeight / 2) {
         heroRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  };
+  };  
 
   return (
     <>
