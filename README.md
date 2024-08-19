@@ -55,7 +55,7 @@ You can visit the live site here - https://ujjwals-portfolio.vercel.app/
 - GASP
 - Three.js
 - Node.js
-- Spline - For 3D Modelling
+- Spline
 - Webflow
 ## Installation
 
