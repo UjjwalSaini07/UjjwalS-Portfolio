@@ -10,7 +10,7 @@ export default function Certificate({ certification, index }) {
       style={{
         position: 'relative',
         width: '335px',
-        height: '280px',
+        height: isMobile ? '265px' : '280px',
         perspective: '1000px',
         margin: '10px',
         cursor: 'pointer',
@@ -47,13 +47,13 @@ export default function Certificate({ certification, index }) {
           }}
         >
           <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: isMobile ? '14px' : '17px', fontWeight: 'bold' }}>
+            <div style={{ fontSize: isMobile ? '15.4px' : '17px', fontWeight: 'bold' }}>
               {certification.certification}
             </div>
             <div style={{ fontSize: '14px', color: '#dcdcdc' }}>
               {certification.year}
             </div>
-            <div style={{ fontSize: isMobile ? '12px' : '14px', color: '#c9c9c9' }}>
+            <div style={{ fontSize: isMobile ? '13px' : '14px', color: '#c9c9c9' }}>
               {certification.institution}
             </div>
           </div>

@@ -10,6 +10,8 @@ import microachievement from "../../components/Assest_Used/Certifications/Achiev
 import forage from "../../components/Assest_Used/Certifications/ForageCerti.jpg";
 import gdsc from "../../components/Assest_Used/Certifications/Ujjwal Saini_GENAI_StudyJam.jpg";
 
+const isMobile = window.innerWidth < 798;
+
 const spaceboardsFont = `
   @font-face {
     font-family: 'Spaceboards';
@@ -69,6 +71,24 @@ const CertifiStyle = `
         0 0 15px rgba(255, 0, 0, 0.7);
     }
   }
+
+  .cert-PC {
+    display: none;
+  }
+
+  .cert-Mobile {
+    display: block;
+    font-size: 3.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .cert-PC {
+      display: block;
+    }
+    .cert-Mobile {
+      display: none;
+    }
+  }
 `;
 
 export default function Certifications() {
@@ -104,7 +124,7 @@ export default function Certifications() {
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: '20px',
-        maxWidth: '1800px',
+        maxWidth: isMobile ? '800px' : '1800px',
         height: 'auto',
         margin: 'auto',
         color: 'white',
@@ -112,7 +132,10 @@ export default function Certifications() {
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
       }}
     >
-      <div className="cert" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
+      <div className="cert cert-PC" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
+        My Certifications
+      </div>
+      <div className="cert cert-Mobile" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
         My Certifications
       </div>
       <div
