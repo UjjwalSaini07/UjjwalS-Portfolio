@@ -1,4 +1,3 @@
-
 # UjjwalS Porfolio
 Welcome to my portfolio website repository! This project is a comprehensive showcase of my personal and professional achievements, skills, and projects. Designed to be visually appealing and interactive, it highlights my expertise and creativity in a unique and engaging way, providing a detailed overview of my work and capabilities.
 <table align="left">
@@ -59,7 +58,9 @@ You can visit the live site here - https://ujjwals-portfolio.vercel.app/
 - Webflow
 ## Installation
 
-Starting NodeJS Server
+- First Read this [License](https://github.com/UjjwalSaini07/UjjwalS-Portfolio/blob/master/LICENSE) & their terms then proceed.
+
+### Starting NodeJS Server
 
 - Fork the repository
 - Clone the repository:
