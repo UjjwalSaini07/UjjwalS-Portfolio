@@ -90,7 +90,6 @@
   .resumebtn {
     margin-top: 3rem;
   }
-  
   .resumebtn .btn {
     padding: 1.7rem 4rem;
     border-radius: 0.5em;
@@ -106,12 +105,36 @@
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
   }
-  
   .resumebtn .btn:hover {
     background: #1a047e;
   }
-  
   .resumebtn .btn:hover i {
+    transform: translateX(5px);
+  }
+  .certibtn {
+    margin-top: 3.6rem;
+  }
+  .certibtn .btn {
+    padding: 1.7rem 4rem;
+    border-radius: 0.5em;
+    transition: 0.3s;
+    color: #fff;
+    background:  #e73e0d;
+    box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .certibtn .btn span {
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  .certibtn .btn:hover {
+    background: #1a047e;
+  }
+  
+  .certibtn .btn:hover i {
     transform: translateX(5px);
   }
   
