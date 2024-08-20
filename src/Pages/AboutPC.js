@@ -189,7 +189,7 @@ const About = () => {
             initial="hidden"
             animate="show"
         >
-          <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy broinging inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
+          <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy bringing inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
           </p>
           </motion.div>
           
@@ -200,8 +200,8 @@ const About = () => {
                 initial="hidden"
                 animate="show"
             >
-              <p><span> age: </span> 21</p>
-              <p><span> phone : </span> +91 97178-99079</p>
+              <p><span> Age: </span> 21</p>
+              <p><span> Phone : </span> +91 97178-99079</p>
               <p><span> Birthday : </span> 7th Feburary</p>
               </motion.div>
             </div>
@@ -211,8 +211,8 @@ const About = () => {
                 initial="hidden"
                 animate="show"
             >
-              <p><span> email : </span> ujjwalsaini0007@gmail.com</p>
-              <p><span> place : </span> Delhi, India - 110015</p>
+              <p><span> Email : </span> ujjwalsaini0007@gmail.com</p>
+              <p><span> Place : </span> Delhi, India - 110015</p>
               <p><span> Language Known : </span> English, Hindi, Punjabi</p>
               </motion.div>
             </div>
@@ -256,6 +256,30 @@ const About = () => {
               <span></span>
               <span></span>
               Resume
+            </a>
+            <a href="/certifications" className="btn"
+            style={{
+              padding: '12px',
+              borderRadius: '10px',
+              backgroundColor: 'transparent',
+              textDecoration: 'none',
+              color: '#f40388',
+              border: 'none',
+              marginBottom: '-10px',
+              marginLeft: '15px',
+              marginTop: '25px',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              transition: 'background-color 0.3s',
+              width: '40%',
+              textAlign: 'center',
+              cursor: 'pointer'
+            }}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              My Certifications
             </a>
             </motion.div>
           </div>

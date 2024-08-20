@@ -147,13 +147,13 @@ const AboutMobi = () => {
             animate="show"
           >
             <div className="box">
-              <p><span> age: </span> 21</p>
-              <p><span> phone : </span> +91 97178-99079</p>
+              <p><span> Age: </span> 21</p>
+              <p><span> Phone : </span> +91 97178-99079</p>
               <p><span> Birthday : </span> 7th Feburary</p>
             </div>
             <div className="box">
-              <p><span> email : </span> ujjwalsaini0007@gmail.com</p>
-              <p><span> place : </span> Delhi, India - 110015</p>
+              <p><span> Email : </span> ujjwalsaini0007@gmail.com</p>
+              <p><span> Place : </span> Delhi, India - 110015</p>
               <p><span> Language Known : </span> English, Hindi, Punjabi</p>
             </div>
             <div className="box">
@@ -170,6 +170,17 @@ const AboutMobi = () => {
           >
             <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn">
               <span>Resume</span>
+            </a>
+          </motion.div>
+          </div>
+          <div className="certibtn">
+          <motion.div
+            variants={textVariant(2.5)}
+            initial="hidden"
+            animate="show"
+          >
+            <a href="/certifications" className="btn">
+              <span>My Certifications</span>
             </a>
           </motion.div>
           </div>
