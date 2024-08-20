@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import AboutCard from "./AboutCard";
 
 export default function AboutCards() {
@@ -43,14 +44,22 @@ export default function AboutCards() {
   return (
     <div style={container}>
       <div style={cards} className="more-details">
-        <AboutCard {...education} />
-        <AboutCard {...skills} />
-        <AboutCard {...certifications} />
-        <AboutCard {...achievements} />
+        <Link to="/education" style={{ textDecoration: "none" }}>
+          <AboutCard {...education} />
+        </Link>
+        <Link to="/skills" style={{ textDecoration: "none" }}>
+          <AboutCard {...skills} />
+        </Link>
+        <Link to="/certifications" style={{ textDecoration: "none" }}>
+          <AboutCard {...certifications} />
+        </Link>
+        <Link to="/about" style={{ textDecoration: "none" }}>
+          <AboutCard {...achievements} />
+        </Link>
       </div>
     </div>
   );
-};
+}
 
 // ? add this whole section above return section
 // todo: use this, when u hold to be the start state of total section page: Means this come at start whenever page is open
