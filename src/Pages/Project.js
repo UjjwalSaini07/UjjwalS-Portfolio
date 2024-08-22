@@ -409,13 +409,13 @@ const Works = () => {
           </div>
         </motion.div>
         
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3">
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3 overflow-hidden">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
         </div>
 
-        <div className="md:hidden mt-5 flex flex-col gap-4 overflow-x-auto overflow-y-auto">
+        <div className="md:hidden mt-5 flex flex-col gap-4 overflow-x-auto overflow-y-auto overflow-hidden">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
