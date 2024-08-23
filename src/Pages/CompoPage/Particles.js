@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import image1 from './AssetPic/Img3.jpg';
+import image1 from './AssetPic/ImgSitPod1.png';
 
 const Canvas = () => {
   const canvasRef = useRef(null);
@@ -59,11 +59,13 @@ const Canvas = () => {
       constructor(width, height) {
         this.width = width;
         this.height = height;
-        this.gap = 3;
+        this.gap = 2; // Adjusted gap for more particles with a larger image
         this.particleArray = [];
         this.mouse = { radius: 1000, x: 0, y: 0 };
 
-        window.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        // Optional: Throttling the mousemove event to improve performance
+        this.throttledMouseMove = this.throttle(this.handleMouseMove.bind(this), 16);
+        window.addEventListener('mousemove', this.throttledMouseMove);
       }
 
       handleMouseMove(event) {
@@ -72,11 +74,37 @@ const Canvas = () => {
         this.mouse.y = event.clientY - bounds.top;
       }
 
+      throttle(callback, limit) {
+        let waiting = false;
+        return (...args) => {
+          if (!waiting) {
+            callback(...args);
+            waiting = true;
+            setTimeout(() => (waiting = false), limit);
+          }
+        };
+      }
+
       init(ctx) {
         const image = new Image();
         image.src = image1;
         image.onload = () => {
-          ctx.drawImage(image, 0, 0, this.width, this.height);
+          ctx.clearRect(0, 0, this.width, this.height);
+          const aspectRatio = image.width / image.height;
+          let drawWidth, drawHeight;
+
+          if (this.width / this.height > aspectRatio) {
+            drawWidth = this.width;
+            drawHeight = this.width / aspectRatio;
+          } else {
+            drawWidth = this.height * aspectRatio;
+            drawHeight = this.height;
+          }
+
+          const xOffset = (this.width - drawWidth) / 2;
+          const yOffset = (this.height - drawHeight) / 2;
+
+          ctx.drawImage(image, xOffset, yOffset, drawWidth, drawHeight);
           const pixels = ctx.getImageData(0, 0, this.width, this.height).data;
 
           for (let y = 0; y < this.height; y += this.gap) {
@@ -106,7 +134,7 @@ const Canvas = () => {
 
     const initEffect = () => {
       const effect = new Effect(canvas.width, canvas.height);
-      effectRef.current = effect; // Save the effect instance in the ref
+      effectRef.current = effect;
       if (ctx) {
         effect.init(ctx);
       }
@@ -128,13 +156,13 @@ const Canvas = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       if (effectRef.current) {
-        window.removeEventListener('mousemove', effectRef.current.handleMouseMove.bind(effectRef.current));
+        window.removeEventListener('mousemove', effectRef.current.throttledMouseMove);
       }
     };
   }, []);
 
   return (
-    <div className="canvas-container" style={{ width: '37rem', height: '46.5rem' }}>
+    <div className="canvas-container" style={{ width: '37rem', height: '52rem' }}>
       <canvas id="Canvas" ref={canvasRef}></canvas>
       <img alt="avatar" className="hidden" src={image1} />
     </div>
@@ -143,14 +171,15 @@ const Canvas = () => {
 
 export default Canvas;
 
-// ! - All Below Code Conflict With Versel Deployment
-// TOdo: Bounded in W*H
 
+// ?Previous Code 
 // import React, { useEffect, useRef } from 'react';
-// import image1 from './AssetPic/Img3.jpg';
+// import image1 from './AssetPic/ImgPodLessSize2.png';
+// // import image1 from './AssetPic/Img3.jpg';
 
 // const Canvas = () => {
 //   const canvasRef = useRef(null);
+//   const effectRef = useRef(null);
 
 //   useEffect(() => {
 //     const canvas = canvasRef.current;
@@ -160,6 +189,7 @@ export default Canvas;
 //       if (canvas) {
 //         canvas.width = canvas.parentElement.clientWidth;
 //         canvas.height = canvas.parentElement.clientHeight;
+//         initEffect();
 //       }
 //     };
 
@@ -250,33 +280,37 @@ export default Canvas;
 //       }
 //     }
 
-//     const effect = new Effect(canvas.width, canvas.height);
-
-//     if (ctx) {
-//       effect.init(ctx);
-//     }
-
-//     const animate = () => {
+//     const initEffect = () => {
+//       const effect = new Effect(canvas.width, canvas.height);
+//       effectRef.current = effect; // Save the effect instance in the ref
 //       if (ctx) {
-//         ctx.clearRect(0, 0, canvas.width, canvas.height);
-//         effect.draw(ctx);
-//         effect.update();
-//         requestAnimationFrame(animate);
+//         effect.init(ctx);
 //       }
+
+//       const animate = () => {
+//         if (ctx) {
+//           ctx.clearRect(0, 0, canvas.width, canvas.height);
+//           effect.draw(ctx);
+//           effect.update();
+//           requestAnimationFrame(animate);
+//         }
+//       };
+//       animate();
 //     };
 
 //     resizeCanvas();
 //     window.addEventListener('resize', resizeCanvas);
-//     animate();
 
 //     return () => {
 //       window.removeEventListener('resize', resizeCanvas);
-//       window.removeEventListener('mousemove', effect.handleMouseMove.bind(effect));
+//       if (effectRef.current) {
+//         window.removeEventListener('mousemove', effectRef.current.handleMouseMove.bind(effectRef.current));
+//       }
 //     };
 //   }, []);
 
 //   return (
-//     <div className="canvas-container" style={{ width: '36rem', height: '47.5rem' }}>
+//     <div className="canvas-container" style={{ width: '39rem', height: '52rem' }}>
 //       <canvas id="Canvas" ref={canvasRef}></canvas>
 //       <img alt="avatar" className="hidden" src={image1} />
 //     </div>
@@ -285,7 +319,8 @@ export default Canvas;
 
 // export default Canvas;
 
-
+// ! - All Below Code Conflict With Versel Deployment
+// TOdo: Below Code Used only for Testing Purpose
 // ! Unbounded particlate Dimensions- Irrespective of the w*h
 // import React, { useEffect, useRef } from 'react';
 // import image1 from './AssetPic/Img3.jpg';
@@ -427,7 +462,7 @@ export default Canvas;
 
 // export default Canvas;
 
-//! COde Smaple Case 2 - More Faster But Image Is Blurry
+//! Code Smaple Case 2 - More Faster But Image Is Blurry
 // import React, { useEffect, useRef } from 'react';
 // import image1 from './AssetPic/Img3.jpg';
 
