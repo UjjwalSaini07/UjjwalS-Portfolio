@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Routes } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 
 import AppLayout from "./components/AppLayout";
 import Preloader from './components/Preloader.js';
 import Navbar from './components/Navbar.js';
+import Header from './Pages/CompoPage/MobiNavBar/Header.jsx';
 // Pages import
 import Home from './Pages/Home.js';
 import About from './Pages/About.js';
@@ -20,6 +22,8 @@ import Error404 from './Pages/Error404.js';
 const App = () => {
   const [loading, setLoading] = useState(true);
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -30,7 +34,8 @@ const App = () => {
     <div  className="App">
       {loading ? <Preloader /> : (
       <>
-      <Navbar/>
+      {/* <Navbar/> */}
+      {isMobile ? <Header /> : <Navbar />}
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />

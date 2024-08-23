@@ -404,18 +404,18 @@ const Works = () => {
           <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2.5rem' }}>
             My Innovative Development Works
           </div>
-          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '2.2rem', marginRight: '8rem', marginTop: '2.2rem' }}>
+          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '6rem', marginRight: '5rem', marginTop: '2.2rem' }}>
             Projects
           </div>
         </motion.div>
         
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3 overflow-hidden">
+        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3 overflow-hidden overflow-x-hidden overflow-y-hidden">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
         </div>
 
-        <div className="md:hidden mt-5 flex flex-col gap-4 overflow-x-auto overflow-y-auto overflow-hidden">
+        <div className="md:hidden mt-5 flex flex-col gap-4 overflow-hidden overflow-x-hidden overflow-y-hidden">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
