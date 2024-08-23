@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { Home, Info, Engineering, Work, Contacts} from '@mui/icons-material';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
@@ -8,12 +8,35 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Hamburger from './Hamburger';
 import './Header.css';
 
+import USLogopng from '../../../components/Assest_Used/Us_LogoMain.png';
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleNavbar = () => {
     document.body.style.overflow = isOpen ? 'auto' : 'hidden';
     setIsOpen(!isOpen);
+  };
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const headerStyle = {
+    backgroundColor: isScrolled ? '#010215' : 'transparent',
+    transition: 'background-color 0.3s ease-in-out',
   };
 
   const iconStyle = {
@@ -23,11 +46,16 @@ export default function Header() {
   };
 
   return (
-    <div className="myheader" id="nav">
+    <div className="myheader" id="nav" style={headerStyle}>
       <div className="head-container">
-        <span className="hamburger-icon">
+        
+        <span className="hamburger-icon" style={{ height:'20px'}}>
           <Hamburger isOpen={isOpen} toggle={toggleNavbar} />
         </span>
+        <Link to="/" className="logoheader" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={USLogopng} alt="Logo" style={{ height:'40px', marginleft: '8px' }} />
+              Ujjwal Saini
+         </Link>
         <div className={`mobile-navbar ${isOpen ? 'open' : ''}`}>
           <ul>
             <li>
@@ -80,7 +108,7 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <a href="#" onClick={toggleNavbar}>
+              <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={toggleNavbar}>
                 <div className="nav-item" style={iconStyle}>
                   Resume <DocumentScannerIcon className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>
