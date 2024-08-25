@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
-import './Contact.css';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
+import useSound from 'use-sound';
+
+import soundeffect1 from '../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../components/Assest_Used/Sounds/select-click.wav';
+import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
+import './Contact.css';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -19,6 +23,9 @@ const ContactUs = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [sendingMsg, setSendingMsg] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+  const [playSound] = useSound(soundeffect1);
+  const [playSoundAlert] = useSound(soundeffect2);
 
   const handleClick = () => {
     if (!sendingMsg) {
@@ -407,7 +414,10 @@ useEffect(() => {
                           textAlign: 'center',
                           cursor: 'pointer'
                         }}
-                        onClick={handleClick}
+                        onClick={() => {
+                          handleClick();
+                          playSound();
+                        }}
                       >
                         <span></span>
                         <span></span>
@@ -445,7 +455,7 @@ useEffect(() => {
                     }}
                     onClick={() => {
                       setShowModal(true);
-                      // Implement playConfirm function here if needed
+                      playSound();
                     }}
                   >
                     
@@ -481,6 +491,7 @@ useEffect(() => {
                                 href={info.href}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
+                                onClick={playSoundAlert}
                                 style={{
                                     textDecoration: 'none',
                                     color: hoveredIndex === index ? '#0a4ff0' : 'inherit',
