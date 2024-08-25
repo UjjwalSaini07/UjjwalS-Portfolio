@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import useSound from 'use-sound';
+
 import Hero from './CompoPage/HomeHero';
 import Home2 from './CompoPage/HomeP2';
 import Home3 from './CompoPage/HomeP3';
 import NumberTicker from './CompoPage/NumberTicker';
 import Footer from './CompoPage/Footer';
 import { MarqueeDemo } from './Marquee';
+import soundeffect from '../components/Assest_Used/Sounds/snap.wav';
 
 const Home = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -15,6 +18,7 @@ const Home = () => {
   const home2Ref = useRef(null);
   const home3Ref = useRef(null);
   const footerRef = useRef(null);
+  const [playSound] = useSound(soundeffect);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,7 +119,10 @@ const Home = () => {
       >
         <motion.i
           className={`fa-solid fa-arrow-up ${isAtTop || isFooterInView ? 'hidden' : ''}`}
-          onClick={() => scrollToSection('up')}
+          onClick={() => {
+            scrollToSection('up');
+            playSound();
+          }}
           style={{
             fontSize: '30px',
             color: '#fff',
@@ -128,7 +135,10 @@ const Home = () => {
         />
         <motion.i
           className={`fa-solid fa-arrow-down ${!isAtTop || isFooterInView ? 'hidden' : ''}`}
-          onClick={() => scrollToSection('down')}
+          onClick={() => {
+            scrollToSection('down');
+            playSound();
+          }}
           style={{
             fontSize: '30px',
             color: '#fff',
