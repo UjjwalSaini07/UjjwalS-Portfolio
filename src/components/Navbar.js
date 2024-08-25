@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import useSound from 'use-sound';
 import { useMediaQuery } from 'react-responsive';
 
 import USLogopng from '../components/Assest_Used/Us_LogoMain.png';
+import sound from './Assest_Used/Sounds/base.mp3';
 import '../Pages/Nav.css';
 
 const About = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 });
+    const [play] = useSound(sound);
   
     useEffect(() => {
       const toggleMenu = () => {
@@ -38,20 +41,21 @@ const About = () => {
       <div onContextMenu={(e) => e.preventDefault()}>
         <div className='Basic_Nav'>
           <header>
-          <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center' }}>
+          <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center' }}>
             <img src={USLogopng} alt="Logo" style={{ height:isMobile ? '38px' : '48px', marginleft: '5px' }} />
               Ujjwal Saini
           </Link>
             <div id="menu" className="fas fa-bars"></div>
+
             <nav className="navbar">
               <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/skills">Skills</Link></li>
-                <li><Link to="/education">Education</Link></li>
-                <li><Link to="/projects">Projects</Link></li>
-                <li><Link to="/experience">Experience</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/" onClick={play}>Home</Link></li>
+                <li><Link to="/about" onClick={play}>About</Link></li>
+                <li><Link to="/skills" onClick={play}>Skills</Link></li>
+                <li><Link to="/education" onClick={play}>Education</Link></li>
+                <li><Link to="/projects" onClick={play}>Projects</Link></li>
+                <li><Link to="/experience" onClick={play}>Experience</Link></li>
+                <li><Link to="/contact" onClick={play}>Contact</Link></li>
               </ul>
             </nav>
           </header>
