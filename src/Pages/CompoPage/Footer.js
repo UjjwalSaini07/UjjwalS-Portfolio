@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useSound from 'use-sound';
 import UsLogo from '../../components/Assest_Used/Us_LogoMain.png';
 import rocket from '../../components/Assest_Used/GIFs/rocketemoji.gif';
 import handshake from '../../components/Assest_Used/GIFs/handshake.gif';
+
+import soundeffect1 from '../../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../../components/Assest_Used/Sounds/select-click.wav';
 
 const footerStyles = {
   padding: "2rem 4rem",
@@ -112,6 +116,9 @@ const iconStyles = {
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
+  const [playSound1] = useSound(soundeffect1);
+  const [playSound2] = useSound(soundeffect2);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
@@ -128,9 +135,9 @@ const Home = () => {
   return (
     <footer style={footerStyles}>
       <div style={leftSectionStyles}>
-        <img src={UsLogo} alt="UjjwalS Portfolio Logo" style={logoStyles} />
+        <img src={UsLogo} alt="UjjwalS Portfolio Logo" onClick={playSound1} style={logoStyles} />
         <div style={paragraphContainerStyles}>
-          <h3 style={boxHeadingStyles}>UjjwalS Portfolio</h3>
+          <h3 style={boxHeadingStyles} onClick={playSound1}>UjjwalS Portfolio</h3>
           <p style={ParagraphStyles}>
             Thanks for visiting! Let's connect and elevate together.{' '}
             <img src={rocket} alt="Rocket Emoji" style={{ width: '20px', verticalAlign: 'middle', display: 'inline' }} />
@@ -155,6 +162,7 @@ const Home = () => {
             onMouseLeave={(e) =>
               Object.assign(e.target.style, shareLinkStyles)
             }
+            onClick={playSound2}
           ></a>
           <a
             href="https://github.com/UjjwalSaini07"
@@ -168,6 +176,7 @@ const Home = () => {
             onMouseLeave={(e) =>
               Object.assign(e.target.style, shareLinkStyles)
             }
+            onClick={playSound2}
           ></a>
           <a
             href="mailto:ujjwalsaini0007@gmail.com"
@@ -181,6 +190,7 @@ const Home = () => {
             onMouseLeave={(e) =>
               Object.assign(e.target.style, shareLinkStyles)
             }
+            onClick={playSound2}
           ></a>
           <a
             href="https://x.com/UjjwalSaini0007"
@@ -194,6 +204,7 @@ const Home = () => {
             onMouseLeave={(e) =>
               Object.assign(e.target.style, shareLinkStyles)
             }
+            onClick={playSound2}
           ></a>
           <a
             href="tel:+919717899079"
@@ -207,6 +218,7 @@ const Home = () => {
             onMouseLeave={(e) =>
               Object.assign(e.target.style, shareLinkStyles)
             }
+            onClick={playSound2}
           ></a>
         </div>
       </div>
@@ -218,6 +230,7 @@ const Home = () => {
           style={creditLinkStyles}
           onMouseEnter={(e) => (e.target.style.color = "#ffcc33")}
           onMouseLeave={(e) => (e.target.style.color = "#ffae00")}
+          onClick={playSound1}
         >
           Ujjwal Saini
         </a>
