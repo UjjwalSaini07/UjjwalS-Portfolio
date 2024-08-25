@@ -1,6 +1,11 @@
 import React from 'react';
+import useSound from 'use-sound';
+import soundeffect from '../../components/Assest_Used/Sounds/base.mp3';
 
 const RotatingSVGWithButton = () => {
+
+  const [playSound] = useSound(soundeffect);
+
   return (
     <div style={{
       position: 'relative',
@@ -76,6 +81,7 @@ const RotatingSVGWithButton = () => {
           e.target.style.width = '66px'; // Reset size
           e.target.style.height = '66px'; // Reset size
         }}
+        onClick={playSound}
       >
         Hire Me
       </a>

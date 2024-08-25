@@ -3,6 +3,9 @@ import Spline from '@splinetool/react-spline';
 import { Typewriter } from "react-simple-typewriter";
 import { useSpring, animated } from '@react-spring/web';
 import { Flipper, Flipped } from 'react-flip-toolkit';
+import useSound from 'use-sound';
+import soundeffect1 from '../../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../../components/Assest_Used/Sounds/select-click.wav';
 
 import HireMESvg from './HireMe';
 
@@ -82,6 +85,9 @@ function Home() {
     config: { tension: 120, friction: 2 },
   });
 
+  const [playSound1] = useSound(soundeffect1);
+  const [playSound2] = useSound(soundeffect2);
+
   return (
     <div style={HomePcContainer}>
       <Spline style={spline_model} scene="https://prod.spline.design/q1ibVol4H9yif8LF/scene.splinecode" />
@@ -112,7 +118,7 @@ function Home() {
         <div style={{ marginTop: '425px', marginLeft: '100px' }}>
           <div className="glowbtnAbt">
           <animated.p style={paragraphBounce}>
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
+            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound1}
               style={{
                 padding: '15px',
                 borderRadius: '20px',
@@ -143,19 +149,19 @@ function Home() {
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
                 <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin  fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
                 <a href="https://github.com/UjjwalSaini07" className="fab fa-github fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
                 <a href="mailto:ujjwalsaini0007@gmail.com" className="fas fa-envelope  fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
                 <a href="https://x.com/UjjwalSaini0007" className="fab fa-twitter fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
                 <a href="tel:+919717899079" className="fas fa-phone fa-bounce" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} ></a>
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
             </ul>
             </animated.p>
           </div>          
