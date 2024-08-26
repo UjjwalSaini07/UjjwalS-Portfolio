@@ -34,7 +34,7 @@ export default function AboutProfile() {
       height: "140px",
       float: "left",
       marginLeft: "-1.6rem",
-      marginRight: "14px",
+      marginRight: "8px",
       padding: "2px",
     },
     details: {
@@ -49,13 +49,13 @@ export default function AboutProfile() {
     name: {
       color: "white",
       marginTop: "3.8rem",
-      fontSize: "24px",
+      fontSize: "22.5px",
       fontWeight: "bold",
     },
     greyFont: {
       color: "grey",
       fontSize: "1.25rem",
-      marginRight: "7rem",
+      marginRight: "6rem",
     },
     desc: {
       textAlign: "left",
