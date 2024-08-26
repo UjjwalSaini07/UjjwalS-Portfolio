@@ -102,7 +102,8 @@ export default function AboutProfile() {
         </div>
         <div className="glowbtn">
           <a
-            href="https://github.com/UjjwalSaini07"
+            // href="https://github.com/UjjwalSaini07"
+            href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
             onClick={playSound}
             style={{
               padding: "12px 60px",
@@ -125,7 +126,7 @@ export default function AboutProfile() {
             <span></span>
             <span></span>
             <span></span>
-            <button>Github</button>
+            <button>About Me</button>
           </a>
         </div>
       </div>
