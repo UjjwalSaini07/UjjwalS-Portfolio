@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useSound from 'use-sound';
+
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 import AboutCard from "./AboutCard";
 
 export default function AboutCards() {
+  const [playSound] = useSound(soundeffect);
+
   const education = {
     title: "Education",
     description: "College and Degree",
@@ -44,16 +49,16 @@ export default function AboutCards() {
   return (
     <div style={container}>
       <div style={cards} className="more-details">
-        <Link to="/education" style={{ textDecoration: "none" }}>
+        <Link to="/education" onClick={playSound} style={{ textDecoration: "none" }}>
           <AboutCard {...education} />
         </Link>
-        <Link to="/skills" style={{ textDecoration: "none" }}>
+        <Link to="/skills" onClick={playSound} style={{ textDecoration: "none" }}>
           <AboutCard {...skills} />
         </Link>
-        <Link to="/certifications" style={{ textDecoration: "none" }}>
+        <Link to="/certifications" onClick={playSound} style={{ textDecoration: "none" }}>
           <AboutCard {...certifications} />
         </Link>
-        <Link to="/about" style={{ textDecoration: "none" }}>
+        <Link to="/about" onClick={playSound} style={{ textDecoration: "none" }}>
           <AboutCard {...achievements} />
         </Link>
       </div>
