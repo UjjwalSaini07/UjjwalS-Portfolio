@@ -3,6 +3,9 @@ import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
 import './AboutMobi.css'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
+import useSound from 'use-sound';
+
+import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -90,6 +93,8 @@ const aboutMeStyle = `
 `;
 const AboutMobi = () => {
 
+  const [playSound] = useSound(soundeffect);
+
   const bounce = useSpring({
     from: { transform: 'translate3d(0, -180px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
@@ -168,7 +173,7 @@ const AboutMobi = () => {
             initial="hidden"
             animate="show"
           >
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn">
+            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onclick={playSound} className="btn">
               <span>Resume</span>
             </a>
           </motion.div>
@@ -179,7 +184,7 @@ const AboutMobi = () => {
             initial="hidden"
             animate="show"
           >
-            <a href="/certifications" className="btn">
+            <a href="/certifications" onclick={playSound} className="btn">
               <span>My Certifications</span>
             </a>
           </motion.div>
