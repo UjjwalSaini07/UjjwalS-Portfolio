@@ -404,7 +404,7 @@ const Works = () => {
           <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2.5rem' }}>
             My Innovative Development Works
           </div>
-          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '6rem', marginRight: '5rem', marginTop: '2.2rem' }}>
+          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '4rem', marginRight: '7rem', marginTop: '2.2rem' }}>
             Projects
           </div>
         </motion.div>
