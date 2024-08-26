@@ -1,6 +1,8 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
 import styled from 'styled-components';
+import useSound from 'use-sound';
+import soundeffect from '../../components/Assest_Used/Sounds/base.mp3';
 
 const HomePcContainer = styled.div`
   position: absolute;
@@ -122,18 +124,20 @@ function HomeP2() {
     { name: 'Contact', description: 'Get in touch with me for any inquiries or collaboration opportunities—I’d love to hear from you soon!', link: '/contact' },
   ];
 
+  const [playSound] = useSound(soundeffect);
+
   return (
     <HomePcContainer>
       <Spline style={spline_model} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
       <division_overlay>
-        {/* Other content can be added here */}
+        {/* content */}
       </division_overlay>
       <CardsContainer>
         {cardDetails.map((cardDetail, index) => (
           <Card key={index}>
             <CardName>{cardDetail.name}</CardName>
             <CardDescription>{cardDetail.description}</CardDescription>
-            <CardLink href={cardDetail.link}>Learn More</CardLink>
+            <CardLink href={cardDetail.link} onClick={playSound}>Learn More</CardLink>
           </Card>
         ))}
       </CardsContainer>

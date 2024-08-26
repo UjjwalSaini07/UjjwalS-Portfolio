@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import './AboutPC.css'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
+import useSound from 'use-sound';
+
+import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
 import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
 import gif from '../components/Assest_Used/GIFs/Gif_2.gif';
 import ParticlularImage from './CompoPage/Particles.js';
@@ -121,6 +124,8 @@ const About = () => {
     };
   }, []);
 
+  const [playSound] = useSound(soundeffect);
+
   return (
     <section className="about" style={{
       position: 'relative',
@@ -132,7 +137,7 @@ const About = () => {
       color: '#e2e8f0',
       overflow: 'hidden',
       marginTop: '-0.1rem',
-      backgroundImage: `url(${gif})`, // Use GIF as background
+      backgroundImage: `url(${gif})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }} id="about">
@@ -233,7 +238,7 @@ const About = () => {
                 initial="hidden"
                 animate="show"
             >
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
+            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound}
             style={{
               padding: '12px',
               borderRadius: '10px',
@@ -257,7 +262,7 @@ const About = () => {
               <span></span>
               Resume
             </a>
-            <a href="/certifications" className="btn"
+            <a href="/certifications" className="btn" onClick={playSound}
             style={{
               padding: '12px',
               borderRadius: '10px',

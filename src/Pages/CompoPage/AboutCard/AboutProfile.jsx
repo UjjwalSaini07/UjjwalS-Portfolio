@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import useSound from 'use-sound';
+
+import soundeffect from '../../../components/Assest_Used/Sounds/select-click.wav';
 import dp from "../AssetPic/img2.jpg";
 
 export default function AboutProfile() {
+  const [playSound] = useSound(soundeffect);
+
   const flexLeft = {
     container: {
       display: 'block',
@@ -70,9 +75,10 @@ export default function AboutProfile() {
         <div style={flexLeft.name}>Ujjwal Saini</div>
         <h3 style={flexLeft.greyFont}>ujjwalsaini07</h3>
         <div style={flexLeft.desc}>
-          Btech-IT 26' @GGSIPU | FullStack WebDeveloper | Open Source | Learner | Tech Enthusiast | Software Developer |  Designer
+          Btech-IT 26' @GGSIPU | FullStack Web Developer | Open Source | Learner | Tech Enthusiast | Software Developer |  Designer | Gamer
           <div className="glowbtn">
             <a href="https://github.com/UjjwalSaini07"
+              onClick={playSound}
               style={{
                 padding:'12px 60px',
                 borderRadius: '10px',

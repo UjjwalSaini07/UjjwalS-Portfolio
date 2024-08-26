@@ -34,7 +34,6 @@ const App = () => {
     <div  className="App">
       {loading ? <Preloader /> : (
       <>
-      {/* <Navbar/> */}
       {isMobile ? <Header /> : <Navbar />}
         <Routes>
           <Route element={<AppLayout />}>
