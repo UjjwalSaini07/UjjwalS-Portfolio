@@ -77,13 +77,13 @@ const Home = () => {
           ref={home2Ref}
           style={{ height: '100vh', border: 'none', margin: '0', padding: '0' }}
         >
-          <Home2 />
+          <Home3 />
         </div>
         <div
           ref={home3Ref}
           style={{ height: '100vh', border: 'none', margin: '0', padding: '0' }}
         >
-          <Home3 />
+          <Home2 />
         </div>
         <div
           ref={footerRef}
