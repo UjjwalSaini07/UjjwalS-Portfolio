@@ -3,7 +3,10 @@ import * as THREE from 'three';
 import BIRDS from 'vanta/dist/vanta.birds.min';
 import { Typewriter } from "react-simple-typewriter";
 import { useSpring, animated } from '@react-spring/web';
+import useSound from 'use-sound';
 
+import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../components/Assest_Used/Sounds/select-click.wav';
 import img1 from './CompoPage/AssetPic/img2.jpg';
 
 const styles = {
@@ -25,6 +28,8 @@ const typerStyle = {
 
 const Home = () => {
   const vantaRef = useRef(null);
+  const [playSound] = useSound(soundeffect);
+  const [playSoundAlert] = useSound(soundeffect2);
 
   const bounce = useSpring({
     from: { transform: 'translate3d(0, -80px, 0)' },
@@ -89,6 +94,7 @@ const Home = () => {
       <div style={Lowerstyles.content}>
         <div className="glowbtn">
           <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn"
+            onClick={playSound}
             style={Lowerstyles.button}>
             <span></span>
             <span></span>
@@ -100,15 +106,15 @@ const Home = () => {
         <div style={Lowerstyles.socials}>
           <ul className="social-icons" style={Lowerstyles.socialIcons}>
             <li><a href="https://www.linkedin.com/in/ujjwal-saini-220960256/" className="fab fa-linkedin" target="_blank" rel="noopener noreferrer"
-              style={Lowerstyles.icon}></a></li>
+              onClick={playSoundAlert} style={Lowerstyles.icon}></a></li>
             <li><a href="https://github.com/UjjwalSaini07" className="fab fa-github" target="_blank" rel="noopener noreferrer"
-              style={Lowerstyles.icon}></a></li>
+              onClick={playSoundAlert} style={Lowerstyles.icon}></a></li>
             <li><a href="mailto:ujjwalsaini0007@gmail.com" className="fas fa-envelope" target="_blank" rel="noopener noreferrer"
-              style={Lowerstyles.icon}></a></li>
+              onClick={playSoundAlert} style={Lowerstyles.icon}></a></li>
             <li><a href="https://x.com/UjjwalSaini0007" className="fab fa-twitter" target="_blank" rel="noopener noreferrer"
-              style={Lowerstyles.icon}></a></li>
+              onClick={playSoundAlert} style={Lowerstyles.icon}></a></li>
             <li><a href="tel:+919717899079" className="fas fa-phone" target="_blank" rel="noopener noreferrer"
-              style={Lowerstyles.icon}></a></li>
+              onClick={playSoundAlert} style={Lowerstyles.icon}></a></li>
           </ul>
         </div>
       </div>
