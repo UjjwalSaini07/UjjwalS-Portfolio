@@ -202,7 +202,7 @@ const AboutMobi = () => {
         initial="hidden"
         animate="show"
       >
-        <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4.7rem' }}>
+        <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4.56rem' }}>
           About Me
         </div>
       </motion.div>
