@@ -1,199 +1,175 @@
-.about {
-    background: #010215;
-    padding: 2rem 2rem;
-  }
-  
-  .about .row {
-    display: flex;
-    flex-direction: row;
-    gap: 0.2rem;
-    flex-wrap: wrap;
-  }
-  
-  .about .row .image {
-    text-align: left;
-    flex: 1 1 26rem;
-  }
-  
-  .about .row .image img {
-    margin: 2.5rem 0;
-    width: 35rem;
-    height: 46.5rem;
-    border-radius: 15%;
-    margin-left: 15%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .about .row .image img:hover {
-    transform: scale(1.03);
-    box-shadow: 5px 5px 25px #e73e0d;
-  }
-  
-  .about .row .content {
-    flex: 1 1 45rem;
-    padding: 1.1rem;
-    background: transparent;
-    border-radius: 10px;
-    height: 580px;
-    margin-top: -1%;
-    margin-right: 3.5%;
-    transition: border-color 0.3s;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .about .row .content h3 {
-    /* color: #333; */
-    color: #ffffff;
-    font-size: 3rem;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .about .row .content .tag {
-    font-size: 1.5rem;
-    color: #e73e0d;
-    /* color: #2506ad; */
-    font-weight: 600;
-    margin-top: 1rem;
-  }
-  
-  .about .row .content p {
-    font-size: 1.62rem;
-    color: #ffffff;
-    margin-top: 1.6rem;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-  
-  .about .row .content .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-  }
-  
-  .about .row .content .box-container .box p {
-    text-transform: none;
-  }
-  
-  .about .row .content .box-container .box p span {
-    color: #e73e0d;
-    font-weight: 600;
-  }
+.aboutPC {
+  background: #010215;
+  padding: 2rem 2rem;
+}
 
-  .glowbtnAbt a {
-    position: relative;
-    /* color: #03e9f4; */
-    color: #f403e8;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 2.5px;
-    overflow: hidden;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid transparent;
-    margin: 20px;
-    font-size: 18px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    backdrop-filter: blur(10px);
-    cursor: pointer;
+.aboutPC .row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.aboutPC .row .image {
+  text-align: left;
+  flex: 1 1 26rem;
+}
+
+.aboutPC .row .image img {
+  margin: 2.5rem 0;
+  width: 35rem;
+  height: 46.5rem;
+  border-radius: 15%;
+  margin-left: 15%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.aboutPC .row .content {
+  flex: 1 1 45rem;
+  padding: 1.1rem;
+  background: transparent;
+  border-radius: 10px;
+  height: 580px;
+  margin-top: -1%;
+  margin-right: 4%;
+  transition: border-color 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.aboutPC .row .content p {
+  font-size: 1.62rem;
+  color: #ffffff;
+  margin-top: 1.6rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.aboutPC .row .content .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.aboutPC .row .content .box-container .box p {
+  text-transform: none;
+}
+
+/* Styling for Button */
+.glowbtnAbt a {
+  position: relative;
+  /* color: #03e9f4; */
+  color: #f403e8;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 2.5px;
+  overflow: hidden;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid transparent;
+  margin: 20px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
 }
 
 .glowbtnAbt a:hover {
-    /* background: #03e9f4; */
-    background: transparent;
-    color: #050801;
-    /* box-shadow: 0 0 5px #03e9f4, - good Color Make change */
-    box-shadow: 0 0 5px #f403e8,
-                0 0 25px #f40388,
-                0 0 50px #f40388,
-                0 0 200px #f40388;
-                /* 0 0 200px #33f403; */
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  /* background: #03e9f4; */
+  background: transparent;
+  color: #050801;
+  /* box-shadow: 0 0 5px #03e9f4, - good Color Make change */
+  box-shadow: 0 0 5px #f403e8, 0 0 25px #f40388, 0 0 50px #f40388,
+    0 0 200px #f40388;
+  /* 0 0 200px #33f403; */
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
 .glowbtnAbt a span {
-    position: absolute;
-    display: block;
+  position: absolute;
+  display: block;
 }
 
 .glowbtnAbt a span:nth-child(1) {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    /* background: linear-gradient(90deg, transparent, #03e9f4); */
-    background: linear-gradient(180deg, transparent, #f40388);
-    animation: animate1 1s linear infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* background: linear-gradient(90deg, transparent, #03e9f4); */
+  background: linear-gradient(180deg, transparent, #f40388);
+  animation: animate1 1s linear infinite;
 }
 
 @keyframes animate1 {
-    0% {
-        left: -100%;
-    }
-    50%, 100% {
-        left: 100%;
-    }
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 .glowbtnAbt a span:nth-child(2) {
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #f40388);
-    animation: animate2 1s linear infinite;
-    animation-delay: 0.25s;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #f40388);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
 }
 
 @keyframes animate2 {
-    0% {
-        top: -100%;
-    }
-    50%, 100% {
-        top: 100%;
-    }
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
 }
 
 .glowbtnAbt a span:nth-child(3) {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #f40388);
-    animation: animate3 0.85s linear infinite;
-    animation-delay: 0.68s;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #f40388);
+  animation: animate3 0.85s linear infinite;
+  animation-delay: 0.68s;
 }
 
 @keyframes animate3 {
-    0% {
-        right: -100%;
-    }
-    50%, 100% {
-        right: 100%;
-    }
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
 }
 
 .glowbtnAbt a span:nth-child(4) {
-    bottom: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #f40388);
-    animation: animate4 1s linear infinite;
-    animation-delay: 1.25s;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #f40388);
+  animation: animate4 1s linear infinite;
+  animation-delay: 1.25s;
 }
 
 @keyframes animate4 {
-    0% {
-        bottom: -100%;
-    }
-    50%, 100% {
-        bottom: 100%;
-    }
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }

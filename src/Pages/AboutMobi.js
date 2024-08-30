@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
+import React, { useState, useEffect, useRef } from 'react';
 import './AboutMobi.css'; 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
+import Img1 from '../components/Assest_Used/UjjwalImg2.jpg';
 import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
 
 const textVariant = (delay) => ({
@@ -15,6 +16,15 @@ const textVariant = (delay) => ({
     transition: { type: "spring", duration: 1.25, delay: delay },
   },
 });
+
+// const textVariant = (delay = 0) => ({
+//   hidden: { opacity: 0, y: 20 },
+//   show: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { delay, duration: 0.5 },
+//   },
+// });
 
 const fadeIn = (direction, type, delay, duration) => ({
   hidden: {
@@ -40,7 +50,6 @@ const spaceboardsFont = `
 const aboutMeStyle = `
   .about-me {
     font-family: 'Spaceboards', sans-serif;
-    font-size: 5rem;
     font-weight: bold;
     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
     -webkit-background-clip: text;
@@ -91,6 +100,64 @@ const aboutMeStyle = `
     }
   }
 `;
+
+const skillsData = [
+  { name: 'Python', width: '70%' },
+  { name: 'React', width: '75%' },
+  { name: 'C++', width: '60%' },
+  { name: 'UI/UX', width: '50%' },
+  { name: 'SQL', width: '65%' },
+  { name: 'Web Dev', width: '88%' },
+  { name: 'Django', width: '70%' },
+  { name: 'DSA', width: '40%' },
+];
+
+const progressBarContainerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  marginTop: '5px',
+  marginBottom: '10px',
+};
+
+const progressBarWrapStyle = {
+  background: 'rgba(255, 255, 255, 0.2)',
+  borderRadius: '5px',
+  height: '10px',
+  flex: '1',
+  position: 'relative',
+  marginLeft: '-5px',
+  overflow: 'hidden',
+  marginRight: '10px',
+};
+
+const progressBarStyleBase = {
+  height: '100%',
+  transition: '0.9s',
+  backgroundColor: '#ff00ff',
+  borderRadius: '5px',
+  position: 'relative',
+};
+
+const pointerStyle = {
+  width: '10px',
+  height: '10px',
+  backgroundColor: '#ff00ff',
+  borderRadius: '50%',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  right: '-5px',
+};
+
+const circlePointerStyle = {
+  width: '8px',
+  height: '8px',
+  // backgroundColor: '#ff00ff',
+  backgroundColor: '#fff',
+  borderRadius: '50%',
+  marginRight: '10px',
+};
+
 const AboutMobi = () => {
 
   const [playSound] = useSound(soundeffect);
@@ -101,13 +168,29 @@ const AboutMobi = () => {
     config: { tension: 150, friction: 3 },
   });
 
+  const [isClicked, setIsClicked] = useState(false);
+  const imageContainerRef = useRef(null);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+  const handleOutsideClick = (event) => {
+    if (imageContainerRef.current && !imageContainerRef.current.contains(event.target)) {
+      setIsClicked(false);
+    }
+  };
+
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + aboutMeStyle;
     document.head.appendChild(styleElement);
+
+    document.addEventListener('click', handleOutsideClick);
     
     return () => {
       document.head.removeChild(styleElement);
+      document.removeEventListener('click', handleOutsideClick);
     };
   }, []);
 
@@ -118,79 +201,226 @@ const AboutMobi = () => {
         initial="hidden"
         animate="show"
       >
-      <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4.03rem' }}>
-        About Me
-      </div>
+        <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4rem', marginBottom: '1.2rem' }}>
+          About Me
+        </div>
       </motion.div>
       <div className="row">
-        <div className="image" style={{ marginRight: '3rem', alignItems: 'left',marginLeft: '-6rem' }}>
-          <animated.h1 style={bounce}>
-            <img
-                className={"tilt"}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '70% 0%',
+            marginTop: '1.6rem',
+            marginBottom: '1.6rem',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <div
+            ref={imageContainerRef}
+            style={{
+              width: '100%',
+              aspectRatio: '1/1',
+              borderRadius: '2rem',
+              background: 'linear-gradient(45deg, transparent, #6C63FF, transparent)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)',
+              transition: 'transform 0.3s ease-in-out',
+              transform: isClicked ? 'scale(1.05)' : 'scale(1)',
+            }}
+          >
+            <div
+              style={{
+                borderRadius: '2rem',
+                overflow: 'hidden',
+                transform: isClicked ? 'rotate(0deg)' : 'rotate(15deg)',
+                transition: 'transform 0.6s ease-in-out',
+                cursor: 'pointer',
+                position: 'relative',
+                boxShadow: isClicked ? '0 15px 30px rgba(0, 0, 0, 0.3)' : '0 5px 10px rgba(0, 0, 0, 0.15)',
+              }}
+              onClick={handleClick}
+            >
+              <img
                 src={Img1}
-                alt="Image"
-            />
-          </animated.h1>
+                alt="Profile"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  filter: isClicked ? 'grayscale(0%)' : 'grayscale(50%)',
+                  transform: isClicked ? 'scale(1.1)' : 'scale(1)',
+                  transition: 'filter 0.3s ease-in-out, transform 0.6s ease-in-out',
+                  borderRadius: '2rem',
+                  position: 'relative',
+                }}
+              />
+            </div>
+          </div>
         </div>
         <div className="content">
-        <motion.div
-            variants={textVariant(0.4)}
-            initial="hidden"
-            animate="show"
-        >
-          <h3>I'm Ujjwal Saini</h3>
-          <span className="tag">Full Stack Developer | Designer </span>
-          
-          <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy broinging inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
-          </p>
-        </motion.div>
+            <motion.div
+              variants={textVariant(0.4)}
+              initial="hidden"
+              animate="show"
+            >
+              <h3 style={{
+                fontSize: '3.2rem',
+              }}>
+                Hi, I'm Ujjwal Saini</h3>
+              <span className="tag" style={{
+                fontSize: '1.9rem',
+                color: '#ff00ff',
+                fontFamily: "'Vidaloka', serif"
+              }}>
+                Full Stack Developer | Designer </span>
+              <p style={{
+                fontSize: '1.7rem',
+                color: '#ffffff',
+                marginTop: '1.6rem',
+                fontFamily: "'Open Sans', sans-serif",
+                fontStyle: 'italic',
+                fontWeight: 400,
+                lineHeight: 1.7,
+              }}>
+                I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As a well-organised & collaborative individual,
+                I thrive in team environments and enjoy bringing innovative solutions to the table.
+                <br/><br/>
+                Awesome!! Let's Build the Next Big Thing...
+              </p>
+            </motion.div>
           
           <div className="box-container">
-          <motion.div
-            variants={textVariant(1.0)}
-            initial="hidden"
-            animate="show"
-          >
-            <div className="box">
-              <p><span> Age: </span> 21</p>
-              <p><span> Phone : </span> +91 97178-99079</p>
-              <p><span> Birthday : </span> 7th Feburary</p>
+            <motion.div
+              variants={textVariant(1.0)}
+              initial="hidden"
+              animate="show"
+            >
+              <div className="box">
+                <p><i className="bi bi-person-badge-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Age : </span> 21</p>
+                <p><i className="bi bi-telephone-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Phone : </span>
+                <a href="tel:+919717899079" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>+91 97178-99079</a></p>
+                <p><i className="bi bi-cake-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Birthday : </span> 7th Feburary</p>
+              </div>
+              <div className="box">
+                <p><i className="bi bi-envelope-at-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Email : </span>
+                <a href="mailto:ujjwalsaini0007@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>ujjwalsaini0007@gmail.com</a></p>
+                <p><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Place : </span> Delhi, India - 110015</p>
+                <p><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, Punjabi</p>
+              </div>
+              <div className="box">
+                <p><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
+                <p><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Linkedin : </span>
+                <a href="https://www.linkedin.com/in/ujjwalsaini07/" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>Connect Here</a></p>
+                <p><i className="bi bi-mortarboard-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Degree : </span> Bachelor's of Technology - Information Technology'2026</p>
+                <p><i className="bi bi-bank2" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> University : </span> GGSIPU</p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div style={{ marginTop: '20px', marginBottom: '12px', color: '#fff' }}>
+            <div style={{ marginBottom: '20px', textAlign: 'left', borderBottom: '1px solid #ff00ff', width: '100px' }}>
+              <h2 style={{ fontFamily: "'Vidaloka', serif", textTransform: 'uppercase', margin: 0, fontSize: '18px' }}>Skills</h2>
             </div>
-            <div className="box">
-              <p><span> Email : </span> ujjwalsaini0007@gmail.com</p>
-              <p><span> Place : </span> Delhi, India - 110015</p>
-              <p><span> Language Known : </span> English, Hindi, Punjabi</p>
+
+            {/* Skills Section */}
+            <div style={{ flex: '1', marginLeft: '20px' }}>
+              <ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
+                {skillsData.map((skill, index) => (
+                  <li key={index} style={progressBarContainerStyle}>
+                    <div style={circlePointerStyle}></div>
+                    <div style={{ fontFamily: "'Vidaloka', serif", fontSize: '13.5px', width: '80px', flexShrink: 0 }}>{skill.name}</div>
+                    <div style={progressBarWrapStyle}>
+                      <div style={{ ...progressBarStyleBase, width: skill.width }}>
+                        <div style={pointerStyle}></div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="box">
-              <p><span> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
-            </div>
-          </motion.div>
           </div>
           
-          <div className="resumebtn">
-          <motion.div
-            variants={textVariant(1.2)}
-            initial="hidden"
-            animate="show"
-          >
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onclick={playSound} className="btn">
-              <span>Resume</span>
-            </a>
-          </motion.div>
+          <div className="glowbtnAbt">
+            <motion.div
+              variants={textVariant(1.2)}
+              initial="hidden"
+              animate="show"
+            >
+              <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={playSound} className="btn"
+              style={{
+                padding: '12px',
+                borderRadius: '10px',
+                backgroundColor: 'transparent',
+                textDecoration: 'none',
+                color: '#f40388',
+                border: 'none',
+                marginBottom: '-10px',
+                marginLeft: '1px',
+                marginTop: '25px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                transition: 'background-color 0.3s',
+                width: '50%',
+                textAlign: 'center',
+                cursor: 'pointer'
+              }}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Resume
+              </a>
+            </motion.div>
           </div>
-          <div className="certibtn">
-          <motion.div
-            variants={textVariant(2.5)}
-            initial="hidden"
-            animate="show"
-          >
-            <a href="/certifications" onclick={playSound} className="btn">
-              <span>My Certifications</span>
-            </a>
-          </motion.div>
+          <div className="glowbtnAbt">
+            <motion.div
+              variants={textVariant(2.5)}
+              initial="hidden"
+              animate="show"
+            >
+              <a href="/certifications" onClick={playSound} className="btn"
+              style={{
+                padding: '12px',
+                borderRadius: '10px',
+                backgroundColor: 'transparent',
+                textDecoration: 'none',
+                color: '#f40388',
+                border: 'none',
+                marginBottom: '-10px',
+                marginLeft: '1px',
+                marginTop: '25px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                transition: 'background-color 0.3s',
+                width: '90%',
+                textAlign: 'center',
+                cursor: 'pointer'
+              }}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                My Certifications
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
+      
+  
     </section>
   );
 };

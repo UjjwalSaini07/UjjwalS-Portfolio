@@ -127,7 +127,7 @@ const About = () => {
   const [playSound] = useSound(soundeffect);
 
   return (
-    <section className="about" style={{
+    <section className="aboutPC" style={{
       position: 'relative',
       padding: '35px 10px',
       minHeight: '100vh',
@@ -140,7 +140,7 @@ const About = () => {
       backgroundImage: `url(${gif})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
-    }} id="about">
+    }} id="aboutPC">
       <div style={{marginTop: '4rem'}}></div>
       <div style={{
         backdropFilter: 'blur(1px)',
@@ -148,7 +148,8 @@ const About = () => {
         boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
         border: '1px solid rgba(255, 255, 255, 0.3)',
         padding: '20px',
-        maxWidth: '1200px',
+        maxWidth: '1300px',
+        minHeight: '720px',
         width: '100%',
         Top: '5%',
         margin: '5px auto',
@@ -166,35 +167,36 @@ const About = () => {
       </div>
       </motion.div>
       <div className="row">
-        {/* <div className="image">
-          <animated.h1 style={bounce}>
-            <img
-                className={"tilt"}
-                src={Img1}
-                alt="Image"
-            />
-          </animated.h1>
-        </div> */}
-        {/* <animated.h1 style={bounce}> */}
         <div style={ParticlularImageStyle}>
           <ParticlularImage />
         </div>
-        {/* </animated.h1> */}
         <div className="content">
         <motion.div
             variants={textVariant(0.1)}
             initial="hidden"
             animate="show"
         >
-          <h3>I'm Ujjwal Saini</h3>
-          <span className="tag">Full Stack Developer | Designer </span>
+          <h3 style={{fontFamily: "'Great Vibes', cursive", color: '#ffffff', fontSize: '4rem'}}>I'm Ujjwal Saini</h3>
+          <span style={{
+              fontSize: '2rem', color: '#ff00ff', fontWeight: 600, fontFamily: "'Vidaloka', serif", marginTop: '1rem',
+          }}>
+            Full Stack Developer | Designer </span>
           </motion.div>
           <motion.div
             variants={textVariant(0.6)}
             initial="hidden"
             animate="show"
         >
-          <p>I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy bringing inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
+          <p style={{
+                fontSize: '1.5rem',
+                color: '#ffffff',
+                marginTop: '1.5rem',
+                fontFamily: "'Open Sans', sans-serif",
+                fontStyle: 'italic',
+                fontWeight: 400,
+                lineHeight: 1.7,
+              }}>
+                I am Ujjwal, an IT Engineering student passionate about computers and aiming to kickstart a career in Software Development and Web Development. Currently based in Delhi, India, I am pursuing my undergraduate studies in Information Technology at GGSIPU. My enthusiasm lies in enhancing my coding abilities and crafting applications and websites. As Well-organised & collaborative individual,<br/> I thrive in team environemnts and enjoy bringing inovative solutions to table.<br/><br/> Awesome!! Let's Build the Next Big Thing...
           </p>
           </motion.div>
           
@@ -205,9 +207,13 @@ const About = () => {
                 initial="hidden"
                 animate="show"
             >
-              <p><span> Age: </span> 21</p>
-              <p><span> Phone : </span> +91 97178-99079</p>
-              <p><span> Birthday : </span> 7th Feburary</p>
+              <p><i className="bi bi-person-badge-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Age : </span> 21</p>
+              <p><i className="bi bi-telephone-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Phone : </span>
+              <a href="tel:+919717899079" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>+91 97178-99079</a></p>
+              <p><i className="bi bi-cake-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Birthday : </span> 7th Feburary</p>
               </motion.div>
             </div>
             <div className="box">
@@ -216,9 +222,13 @@ const About = () => {
                 initial="hidden"
                 animate="show"
             >
-              <p><span> Email : </span> ujjwalsaini0007@gmail.com</p>
-              <p><span> Place : </span> Delhi, India - 110015</p>
-              <p><span> Language Known : </span> English, Hindi, Punjabi</p>
+              <p><i className="bi bi-envelope-at-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Email : </span>
+              <a href="mailto:ujjwalsaini0007@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>ujjwalsaini0007@gmail.com</a></p>
+              <p><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Place : </span> Delhi, India - 110015</p>
+              <p><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, Punjabi</p>
               </motion.div>
             </div>
             <div className="box">
@@ -227,7 +237,11 @@ const About = () => {
                 initial="hidden"
                 animate="show"
             >
-              <p><span> Hobbies : </span> Cube Solving, Gardening, Learning New Skills, Travelling, Listening Music</p>
+              <p><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
+              <p><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Linkedin : </span>
+              <a href="https://www.linkedin.com/in/ujjwalsaini07/" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>Connect Here</a></p>
               </motion.div>
             </div>
           </div>
