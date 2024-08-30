@@ -1,76 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vidaloka:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vidaloka:wght@400;700&display=swap");
 
 .about {
-    background: #010215;
-    padding: 2rem 2rem;
-    margin-top: 6.5rem;
-  }
-  
-  .about .row {
-    display: flex;
-    flex-direction: row;
-    gap: 0.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .about .row .content {
-    flex: 1 1 45rem;
-    padding: 1.1rem;
-    background: #010215;
-    border-radius: 10px;
-    height: 500px;
-    /* margin-top: -1%; */
-    /* margin-right: 7%; */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .about .row .content h3 {
-  color: #ffffff;
-  font-family: 'Great Vibes', cursive !important;
+  background: #010215;
+  padding: 2rem 2rem;
+  margin-top: 6.5rem;
 }
 
+.about .row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+  padding: 1.1rem;
+  background: #010215;
+  border-radius: 10px;
+  height: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about .row .content h3 {
+  color: #ffffff;
+  font-family: "Great Vibes", cursive !important;
+}
+
+.about .row .content p {
+  font-size: 1.62rem;
+  color: #ffffff;
+  margin-top: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.about .row .content .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+.about .row .content .box-container .box p {
+  text-transform: none;
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    height: 1890px;
+  }
+
+  .about .row {
+    margin-bottom: 7rem;
+  }
+
   .about .row .content .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
+    gap: 0;
   }
-  
-  .about .row .content .box-container .box p {
-    text-transform: none;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .about {
-        height: 1890px;
-    }
-    
-    .about .row {
-      margin-bottom: 7rem;
-    }
-    
-    .about .row .content .box-container {
-      gap: 0;
-    }
 
-    .about .row .content {
-        flex: 1 1 45rem;
-        padding: 1.2rem;
-        background: #010215;
-        border-radius: 10px;
-        height: 450px;
-        margin-top: 2%;
-        margin-right: 7%;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .about .about-me{
-        margin-right: 6%;
-    }
+  .about .row .content {
+    flex: 1 1 45rem;
+    padding: 1.2rem;
+    background: #010215;
+    border-radius: 10px;
+    height: 450px;
+    margin-top: 2%;
+    margin-right: 7%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
+
+  .about .about-me {
+    margin-right: 6%;
+  }
+}

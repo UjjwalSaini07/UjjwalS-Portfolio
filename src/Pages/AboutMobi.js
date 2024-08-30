@@ -271,7 +271,9 @@ const AboutMobi = () => {
               }}>
                 Hi, I'm Ujjwal Saini</h3>
               <span className="tag" style={{
-                fontSize: '1.85rem',
+                fontSize: '1.9rem',
+                color: '#ff00ff',
+                fontFamily: "'Vidaloka', serif"
               }}>
                 Full Stack Developer | Designer </span>
               <p style={{
