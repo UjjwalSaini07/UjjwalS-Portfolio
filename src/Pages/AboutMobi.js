@@ -50,7 +50,6 @@ const spaceboardsFont = `
 const aboutMeStyle = `
   .about-me {
     font-family: 'Spaceboards', sans-serif;
-    font-size: 6rem;
     font-weight: bold;
     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
     -webkit-background-clip: text;
@@ -202,7 +201,7 @@ const AboutMobi = () => {
         initial="hidden"
         animate="show"
       >
-        <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4.56rem' }}>
+        <div className="about-me" style={{ textAlign: 'center', marginRight: '3.5rem', fontSize: '4rem', marginBottom: '1.2rem' }}>
           About Me
         </div>
       </motion.div>
@@ -404,7 +403,7 @@ const AboutMobi = () => {
                 fontSize: '16px',
                 fontWeight: 'bold',
                 transition: 'background-color 0.3s',
-                width: '80%',
+                width: '90%',
                 textAlign: 'center',
                 cursor: 'pointer'
               }}>

@@ -48,7 +48,7 @@
   
   @media screen and (max-width: 600px) {
     .about {
-        height: 1880px;
+        height: 1900px;
     }
     
     .about .row {
@@ -71,7 +71,6 @@
     }
 
     .about .about-me{
-        font-size: 4.5rem;
         margin-right: 6%;
     }
   }
