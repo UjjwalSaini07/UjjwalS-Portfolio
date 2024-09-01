@@ -136,6 +136,10 @@ const AboutMobi = () => {
     }
   };
 
+  const { ref: ref0, inView: inView0 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
   const { ref: ref1, inView: inView1 } = useInView({
     triggerOnce: false,
     threshold: 0.1, 
@@ -334,32 +338,32 @@ const AboutMobi = () => {
               animate="show"
             >
               <div className="box">
-                <p ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'}}><i className="bi bi-person-badge-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem'}}></i>
+                <p ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'}}><i className="bi bi-person-badge-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem'}}></i>
                 <span style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Age : </span> 21</p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 4.5s ease-out, transform 3.5s ease-out'}}><i className="bi bi-telephone-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 4.5s ease-out, transform 3.5s ease-out'}}><i className="bi bi-telephone-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Phone : </span>
                 <a href="tel:+919717899079" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>+91 97178-99079</a></p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 5s ease-out, transform 4.5s ease-out'}}><i className="bi bi-cake-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 5s ease-out, transform 4.5s ease-out'}}><i className="bi bi-cake-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Birthday : </span> 7th Feburary</p>
               </div>
               <div className="box">
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 6s ease-out, transform 5.5s ease-out'}}><i className="bi bi-envelope-at-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 6s ease-out, transform 5.5s ease-out'}}><i className="bi bi-envelope-at-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Email : </span>
                 <a href="mailto:ujjwalsaini0007@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>ujjwalsaini0007@gmail.com</a></p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 7s ease-out, transform 6.5s ease-out'}}><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 6.5s ease-out'}}><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Place : </span> Delhi, India - 110015</p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 8s ease-out, transform 7.5s ease-out'}}><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 7.5s ease-out'}}><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, Punjabi</p>
               </div>
               <div className="box">
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 9s ease-out, transform 8.5s ease-out'}}><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 8.5s ease-out'}}><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.5)', transition: 'opacity 10s ease-out, transform 9.5s ease-out'}}><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 9.5s ease-out'}}><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Linkedin : </span>
                 <a href="https://www.linkedin.com/in/ujjwalsaini07/" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>Connect Here</a></p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.5)', transition: 'opacity 11s ease-out, transform 10.5s ease-out'}}><i className="bi bi-mortarboard-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 10.5s ease-out'}}><i className="bi bi-mortarboard-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Degree : </span> Bachelor's of Technology - Information Technology'2026</p>
-                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.5)', transition: 'opacity 12s ease-out, transform 11.5s ease-out'}}><i className="bi bi-bank2" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 11.5s ease-out'}}><i className="bi bi-bank2" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> University : </span> GGSIPU</p>
               </div>
             </motion.div>
