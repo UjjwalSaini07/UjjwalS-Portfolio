@@ -137,11 +137,11 @@ const AboutMobi = () => {
   };
 
   const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: false, // Trigger animation only once
+    triggerOnce: false,
     threshold: 0.1, 
   });
   const { ref: ref2, inView: inView2 } = useInView({
-    triggerOnce: false, // Trigger animation only once
+    triggerOnce: false,
     threshold: 0.1, 
   });
 

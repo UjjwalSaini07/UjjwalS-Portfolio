@@ -1,7 +1,17 @@
 import React, { useEffect, useRef } from 'react';
+import { motion } from "framer-motion";
 
 const MobBack = () => {
   const imgRef = useRef(null);
+
+  const textVariant = (delay) => ({
+    hidden: { y: -50, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", duration: 1.5, delay: delay },
+    },
+  });
 
   const adjustOpacity = () => {
     if (imgRef.current) {
@@ -61,13 +71,19 @@ const MobBack = () => {
 
   return (
     <div style={{ height: '20vh', margin: 0, padding: 0 }}>
-      <div style={{ position: 'relative', zIndex: 1 }}></div>
+      <div style={{ position: 'relative', zIndex: 2 }}></div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={containerStyle}>
-          <div style={marqueeContainerStyle}>
-            <div style={marqueeTextStyle}>SOFTWARE DEVELOPER </div>
-            <div style={marqueeTextStyle}>FULL STACK DEVELOPER</div>
-          </div>
+          <motion.div
+            variants={textVariant(1.2)}
+            initial="hidden"
+            animate="show"
+          >
+            <div style={marqueeContainerStyle}>
+              <div style={marqueeTextStyle}>SOFTWARE DEVELOPER </div>
+              <div style={marqueeTextStyle}>FULL STACK DEVELOPER</div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
