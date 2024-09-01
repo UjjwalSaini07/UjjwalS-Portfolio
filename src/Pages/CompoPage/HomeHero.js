@@ -2,12 +2,22 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { Typewriter } from "react-simple-typewriter";
 import { useSpring, animated } from '@react-spring/web';
+import { motion } from "framer-motion";
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import useSound from 'use-sound';
 import soundeffect1 from '../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../components/Assest_Used/Sounds/select-click.wav';
 
 import HireMESvg from './HireMe';
+
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.25, delay: delay },
+  },
+});
 
 const HomePcContainer = {
   position: "absolute",
@@ -97,27 +107,41 @@ function Home() {
             <animated.h1 style={bounce} className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span>
             </animated.h1>
-            <animated.p style={paragraphBounce} className={`${styles.heroSubText} mt-2 text-white-100`}>
-              I develop web <br /> and mobile applications
-            </animated.p>
-              <animated.p style={typewriterBounce}>
-                <div style={typerStyle}>
-                  <Typewriter
-                    words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer', 'Gamer']}
-                    loop={true}
-                    cursor
-                    cursorStyle='_'
-                    typeSpeed={180}
-                    deleteSpeed={100}
-                    delaySpeed={1000}
-                  /> 
-                </div>
-              </animated.p>
+            <motion.div
+              variants={textVariant(1.5)}
+              initial="hidden"
+              animate="show"
+            >
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              I develop Web <br /> and Mobile Applications
+            </p>
+            </motion.div>
+              <motion.div
+                variants={textVariant(2.8)}
+                initial="hidden"
+                animate="show"
+              >
+              <div style={typerStyle}>
+                <Typewriter
+                  words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer', 'Gamer']}
+                  loop={true}
+                  cursor
+                  cursorStyle='_'
+                  typeSpeed={180}
+                  deleteSpeed={100}
+                  delaySpeed={1000}
+                /> 
+              </div>
+              </motion.div>
           </div>
         </div>
         <div style={{ marginTop: '425px', marginLeft: '100px' }}>
           <div className="glowbtnAbt">
-          <animated.p style={paragraphBounce}>
+            <motion.div
+              variants={textVariant(3.6)}
+              initial="hidden"
+              animate="show"
+            >
             <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound1}
               style={{
                 padding: '15px',
@@ -142,35 +166,44 @@ function Home() {
               <span></span>
               About Me
             </a>
-            </animated.p>
+            </motion.div>
           </div>
           <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '15px' }}>
-            <animated.p style={paragraphBounce}>
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
-                <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin  fa-bounce" target="_blank" rel="noopener noreferrer"
+              <motion.div variants={textVariant(4.6)} initial="hidden" animate="show">
+                <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
-                <a href="https://github.com/UjjwalSaini07" className="fab fa-github fa-bounce" target="_blank" rel="noopener noreferrer"
+              </motion.div>
+              <motion.div variants={textVariant(5.2)} initial="hidden" animate="show">
+                <a href="https://github.com/UjjwalSaini07" className="fab fa-github fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
-                <a href="mailto:ujjwalsaini0007@gmail.com" className="fas fa-envelope  fa-bounce" target="_blank" rel="noopener noreferrer"
+              </motion.div>
+              <motion.div variants={textVariant(6)} initial="hidden" animate="show">
+                <a href="mailto:ujjwalsaini0007@gmail.com" className="fas fa-envelope fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
-                <a href="https://x.com/UjjwalSaini0007" className="fab fa-twitter fa-bounce" target="_blank" rel="noopener noreferrer"
+              </motion.div>
+              <motion.div variants={textVariant(6.8)} initial="hidden" animate="show">
+                <a href="https://x.com/UjjwalSaini0007" className="fab fa-twitter fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
-                <a href="tel:+919717899079" className="fas fa-phone fa-bounce" target="_blank" rel="noopener noreferrer"
+              </motion.div>
+              <motion.div variants={textVariant(7.5)} initial="hidden" animate="show">
+                <a href="tel:+919717899079" className="fas fa-phone fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
+              </motion.div>
             </ul>
-            </animated.p>
           </div>          
         </div>
       
-        <div style={HireMEStyle}>
-          <HireMESvg />
-        </div>
-
+        <motion.div variants={textVariant(8)} initial="hidden" animate="show">
+          <div style={HireMEStyle}>
+            <HireMESvg />
+          </div>
+        </motion.div>
       </div>
     </div>
   );
