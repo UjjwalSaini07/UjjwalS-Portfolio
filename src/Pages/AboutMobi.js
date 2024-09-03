@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AboutMobi.css'; 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useInView } from 'react-intersection-observer';
 
 import Img1 from '../components/Assest_Used/UjjwalImg2.jpg';
 import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
@@ -112,52 +113,6 @@ const skillsData = [
   { name: 'DSA', width: '40%' },
 ];
 
-const progressBarContainerStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  marginTop: '5px',
-  marginBottom: '10px',
-};
-
-const progressBarWrapStyle = {
-  background: 'rgba(255, 255, 255, 0.2)',
-  borderRadius: '5px',
-  height: '10px',
-  flex: '1',
-  position: 'relative',
-  marginLeft: '-5px',
-  overflow: 'hidden',
-  marginRight: '10px',
-};
-
-const progressBarStyleBase = {
-  height: '100%',
-  transition: '0.9s',
-  backgroundColor: '#ff00ff',
-  borderRadius: '5px',
-  position: 'relative',
-};
-
-const pointerStyle = {
-  width: '10px',
-  height: '10px',
-  backgroundColor: '#ff00ff',
-  borderRadius: '50%',
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  right: '-5px',
-};
-
-const circlePointerStyle = {
-  width: '8px',
-  height: '8px',
-  // backgroundColor: '#ff00ff',
-  backgroundColor: '#fff',
-  borderRadius: '50%',
-  marginRight: '10px',
-};
-
 const AboutMobi = () => {
 
   const [playSound] = useSound(soundeffect);
@@ -181,6 +136,72 @@ const AboutMobi = () => {
     }
   };
 
+  const { ref: ref0, inView: inView0 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+  const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
+  const circlePointerStyle = {
+    width: '8px',
+    height: '8px',
+    backgroundColor: '#fff',
+    borderRadius: '50%',
+    marginRight: '10px',
+    opacity: inView2 ? 1 : 0,
+    transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+    transition: 'opacity 1.6s ease-out, transform 2.2s ease-out',
+  };
+
+  const progressBarContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: '5px',
+    marginBottom: '10px',
+  };
+  
+  const progressBarWrapStyle = {
+    background: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: '5px',
+    height: '10px',
+    flex: '1',
+    position: 'relative',
+    marginLeft: '-5px',
+    overflow: 'hidden',
+    marginRight: '10px',
+    opacity: inView2 ? 1 : 0,
+    transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+    transition: 'opacity 4s ease-out, transform 4.5s ease-out',
+  };
+
+  const progressBarStyleBase = {
+    height: '100%',
+    backgroundColor: '#ff00ff',
+    borderRadius: '5px',
+    position: 'relative',
+    opacity: inView2 ? 1 : 0,
+    transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+    transition: 'opacity 4.2s ease-out, transform 6s ease-out',
+  };
+  
+  const pointerStyle = {
+    width: '10px',
+    height: '10px',
+    backgroundColor: '#ff00ff',
+    borderRadius: '50%',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    right: '-5px',
+  };
+
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + aboutMeStyle;
@@ -197,7 +218,7 @@ const AboutMobi = () => {
   return (
     <section className="about" id="about">
       <motion.div
-        variants={textVariant(0.25)}
+        variants={textVariant(0.8)}
         initial="hidden"
         animate="show"
       >
@@ -216,6 +237,11 @@ const AboutMobi = () => {
             justifyContent: 'center',
           }}
         >
+          <motion.div
+            variants={textVariant(1.8)}
+            initial="hidden"
+            animate="show"
+          >
           <div
             ref={imageContainerRef}
             style={{
@@ -243,6 +269,11 @@ const AboutMobi = () => {
               }}
               onClick={handleClick}
             >
+              <motion.div
+                variants={textVariant(3)}
+                initial="hidden"
+                animate="show"
+              >
               <img
                 src={Img1}
                 alt="Profile"
@@ -257,12 +288,14 @@ const AboutMobi = () => {
                   position: 'relative',
                 }}
               />
+              </motion.div>
             </div>
           </div>
+          </motion.div>
         </div>
         <div className="content">
             <motion.div
-              variants={textVariant(0.4)}
+              variants={textVariant(3.8)}
               initial="hidden"
               animate="show"
             >
@@ -276,6 +309,11 @@ const AboutMobi = () => {
                 fontFamily: "'Vidaloka', serif"
               }}>
                 Full Stack Developer | Designer </span>
+              <motion.div
+                variants={textVariant(4.5)}
+                initial="hidden"
+                animate="show"
+              >
               <p style={{
                 fontSize: '1.7rem',
                 color: '#ffffff',
@@ -290,6 +328,7 @@ const AboutMobi = () => {
                 <br/><br/>
                 Awesome!! Let's Build the Next Big Thing...
               </p>
+              </motion.div>
             </motion.div>
           
           <div className="box-container">
@@ -299,40 +338,42 @@ const AboutMobi = () => {
               animate="show"
             >
               <div className="box">
-                <p><i className="bi bi-person-badge-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 1.5s ease-out'}}><i className="bi bi-person-badge-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem'}}></i>
                 <span style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Age : </span> 21</p>
-                <p><i className="bi bi-telephone-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 4.5s ease-out, transform 3.5s ease-out'}}><i className="bi bi-telephone-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Phone : </span>
                 <a href="tel:+919717899079" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>+91 97178-99079</a></p>
-                <p><i className="bi bi-cake-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 5s ease-out, transform 4.5s ease-out'}}><i className="bi bi-cake-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Birthday : </span> 7th Feburary</p>
               </div>
               <div className="box">
-                <p><i className="bi bi-envelope-at-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.7)', transition: 'opacity 6s ease-out, transform 5.5s ease-out'}}><i className="bi bi-envelope-at-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Email : </span>
                 <a href="mailto:ujjwalsaini0007@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>ujjwalsaini0007@gmail.com</a></p>
-                <p><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 6.5s ease-out'}}><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Place : </span> Delhi, India - 110015</p>
-                <p><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 7.5s ease-out'}}><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, Punjabi</p>
               </div>
               <div className="box">
-                <p><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 5.5s ease-out'}}><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Hobbies : </span> Cube Solving, Gardening, Learning New SKills, Travelling, Listening Music</p>
-                <p><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 6.5s ease-out'}}><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Linkedin : </span>
                 <a href="https://www.linkedin.com/in/ujjwalsaini07/" target="_blank" rel="noopener noreferrer" style={{ color: '#fcfcfc' }}>Connect Here</a></p>
-                <p><i className="bi bi-mortarboard-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 7.5s ease-out'}}><i className="bi bi-mortarboard-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Degree : </span> Bachelor's of Technology - Information Technology'2026</p>
-                <p><i className="bi bi-bank2" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 8.5s ease-out'}}><i className="bi bi-bank2" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> University : </span> GGSIPU</p>
               </div>
             </motion.div>
           </div>
 
           <div style={{ marginTop: '20px', marginBottom: '12px', color: '#fff' }}>
-            <div style={{ marginBottom: '20px', textAlign: 'left', borderBottom: '1px solid #ff00ff', width: '100px' }}>
-              <h2 style={{ fontFamily: "'Vidaloka', serif", textTransform: 'uppercase', margin: 0, fontSize: '18px' }}>Skills</h2>
+            <div ref={ref2} style={{ marginBottom: '20px', textAlign: 'left', borderBottom: '1px solid #ff00ff', width: '100px', opacity: inView2 ? 1 : 0, transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+                      transition: 'opacity 1.6s ease-out, transform 0.8s ease-out' }}>
+              <h2 ref={ref2} style={{ fontFamily: "'Vidaloka', serif", textTransform: 'uppercase', margin: 0, fontSize: '18px', opacity: inView2 ? 1 : 0, transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+                      transition: 'opacity 2s ease-out, transform 1.8s ease-out' }}>Skills</h2>
             </div>
 
             {/* Skills Section */}
@@ -340,10 +381,11 @@ const AboutMobi = () => {
               <ul style={{ listStyleType: 'none', padding: '0', margin: '0' }}>
                 {skillsData.map((skill, index) => (
                   <li key={index} style={progressBarContainerStyle}>
-                    <div style={circlePointerStyle}></div>
-                    <div style={{ fontFamily: "'Vidaloka', serif", fontSize: '13.5px', width: '80px', flexShrink: 0 }}>{skill.name}</div>
-                    <div style={progressBarWrapStyle}>
-                      <div style={{ ...progressBarStyleBase, width: skill.width }}>
+                    <div ref={ref2} style={circlePointerStyle}></div>
+                    <div ref={ref2} style={{ fontFamily: "'Vidaloka', serif", fontSize: '13.5px', width: '80px', flexShrink: 0, opacity: inView2 ? 1 : 0, transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+                      transition: 'opacity 2s ease-out, transform 3s ease-out'}}>{skill.name}</div>
+                    <div ref={ref2} style={progressBarWrapStyle}>
+                      <div ref={ref2} style={{ ...progressBarStyleBase, width: skill.width }}>
                         <div style={pointerStyle}></div>
                       </div>
                     </div>
@@ -360,6 +402,7 @@ const AboutMobi = () => {
               animate="show"
             >
               <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={playSound} className="btn"
+              ref={ref2}
               style={{
                 padding: '12px',
                 borderRadius: '10px',
@@ -375,7 +418,10 @@ const AboutMobi = () => {
                 transition: 'background-color 0.3s',
                 width: '50%',
                 textAlign: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                opacity: inView2 ? 1 : 0,
+                transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
+                transition: 'opacity 1.6s ease-out, transform 4s ease-out',
               }}>
                 <span></span>
                 <span></span>
@@ -392,6 +438,7 @@ const AboutMobi = () => {
               animate="show"
             >
               <a href="/certifications" onClick={playSound} className="btn"
+              ref={ref2}
               style={{
                 padding: '12px',
                 borderRadius: '10px',
@@ -407,7 +454,10 @@ const AboutMobi = () => {
                 transition: 'background-color 0.3s',
                 width: '90%',
                 textAlign: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                opacity: inView2 ? 1 : 0,
+                transform: inView2 ? 'translateY(0)' : 'translateY(-70px)',
+                transition: 'transform 2s ease-out',
               }}>
                 <span></span>
                 <span></span>
@@ -426,3 +476,6 @@ const AboutMobi = () => {
 };
 
 export default AboutMobi;
+
+
+

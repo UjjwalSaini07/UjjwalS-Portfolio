@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { motion } from "framer-motion";
 import IconCloud from "../@/components/magicui/icon-cloud";
 import { Helmet } from 'react-helmet';
+import { useInView } from 'react-intersection-observer';
+import { useMediaQuery } from 'react-responsive';
 
 // Define motion variants
 const textVariant = (delay) => ({
@@ -154,6 +156,14 @@ const slugs = [
 
 const Tech = () => {
 
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + SkillStyle;
@@ -170,7 +180,7 @@ const Tech = () => {
         <title>My Skills | Portfolio - Ujjwal</title>
     </Helmet>
       <motion.div
-        variants={textVariant(0.1)}
+        variants={textVariant(0.8)}
         initial="hidden"
         animate="show"
         className="text-center mb-16 px-4"
@@ -186,7 +196,7 @@ const Tech = () => {
       <div className="flex flex-wrap justify-center gap-10 mt-12 px-4">
         {technologies.map((technology, index) => (
           <motion.div
-            variants={textVariant(0.3)}
+            variants={textVariant(0.8)}
             initial="hidden"
             animate="show"
             key={technology.name}
@@ -214,14 +224,14 @@ const Tech = () => {
         ))}
       </div>
 
-      <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '3.5rem', marginRight: '3rem' ,fontSize: '5.2rem'}}>
+      <div className="Tech Tech-Mobile" ref={ref1} style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '3.5rem', marginRight: '3rem' , fontSize: '5.2rem', opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 2.5s ease-out'}}>
           Skills in CLoud
       </div>
 
-      <div className="block md:hidden px-4 py-6 flex items-center justify-center">
+      <div className="block md:hidden px-4 py-6 flex items-center justify-center" ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(-50px) scale(0.9)', transition: 'opacity 3s ease-out, transform 4.5s ease-out'}}>
         <div className="relative w-full max-w-[90%] mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg shadow-xl p-4">
           <div className="bg-white rounded-lg border border-gray-300 shadow-md p-6 flex items-center justify-center">
-            <div className="text-blue-600 font-bold " style={{ fontSize: '2rem',alignItems: 'center', justifyContent: 'center'}}><IconCloud iconSlugs={slugs} /></div>
+            <div className="text-blue-600 font-bold" ref={ref1} style={{ fontSize: '2rem', alignItems: 'center', justifyContent: 'center', opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(-50px) scale(0.9)', transition: 'opacity 5s ease-out, transform 7.5s ease-out'}}><IconCloud iconSlugs={slugs} /></div>
           </div>
         </div>
       </div>

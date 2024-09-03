@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import AboutDetails from "./AboutDetails";
 import AboutProfile from "./AboutProfile";
 
@@ -45,8 +46,22 @@ export default function About() {
 
   const [isExpanded, setExpanded] = useState(false);
 
+  const textVariant = (delay) => ({
+    hidden: { y: -50, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", duration: 1.25, delay: delay },
+    },
+  });
+
   return (
     <main style={styles.about}>
+      <motion.div
+        variants={textVariant(2.6)}
+        initial="hidden"
+        animate="show"
+      >
       <div className="container" id="about">
         <div className="mobile" style={styles.mobileStyle}>
           <div className="mobile__screen" style={styles.mobileScreenStyle}>
@@ -56,6 +71,7 @@ export default function About() {
           <div className="mobile__shadow" style={styles.mobileShadowStyle}></div>
         </div>
       </div>
+      </motion.div>
     </main>
   );
 }

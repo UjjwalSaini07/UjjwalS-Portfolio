@@ -1,11 +1,24 @@
 import React from "react";
+import { useInView } from 'react-intersection-observer';
 
 export default function AboutCard(props) {
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+  const { ref: ref2, inView: inView2 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
   const titleStyle = {
     color: '#e73e0d',
-    // color: 'wheat',
     fontSize: '15px',
     fontWeight: 'bold',
+    opacity: inView1 ? 10 : 0,
+    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
+    transition: 'opacity 0.2s ease-out, transform 4s ease-out',
   };
   
   const descStyle = {
@@ -13,6 +26,9 @@ export default function AboutCard(props) {
     fontSize: '15px',
     marginTop: '5px',
     opacity: '0.8',
+    opacity: inView1 ? 1 : 0,
+    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
+    transition: 'opacity 0.2s ease-out, transform 5s ease-out',
   };
 
   const cardStyle = {
@@ -44,6 +60,9 @@ export default function AboutCard(props) {
     margin: '2px',
     marginTop: '5px',
     opacity: '0.8',
+    opacity: inView1 ? 1 : 0,
+    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
+    transition: 'opacity 0.2s ease-out, transform 5s ease-out',
   };
 
   const pointsStyle = {
@@ -51,17 +70,20 @@ export default function AboutCard(props) {
     fontSize: '15px',
     marginTop: '5px',
     opacity: '0.8',
+    opacity: inView1 ? 1 : 0,
+    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
+    transition: 'opacity 0.2s ease-out, transform 5s ease-out',
   };
 
   return (
     <div style={cardStyle}>
-      <div style={titleStyle}>{props.title}</div>
-        <div style={descStyle}>
+      <div ref = {ref1} style={titleStyle}>{props.title}</div>
+        <div ref = {ref1} style={descStyle}>
           {props.description}
         </div>
-      <div className="points" style={pointsStyle}>
+      <div className="points"  ref = {ref1} style={pointsStyle}>
         {props.points.map((point, index) => (
-          <li className="card-item" key={index} style={cardItemStyle}>
+          <li className="card-item" key={index} ref = {ref1} style={cardItemStyle}>
             {point}
           </li>
         ))}

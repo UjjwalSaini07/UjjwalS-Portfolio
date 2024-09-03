@@ -6,6 +6,7 @@ import Gssoc from '../components/Assest_Used/CompanyLogo/Gssoc_Logo.png';
 import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
 import freelance from '../components/Assest_Used/CompanyLogo/WorkOnPC.png';
 import curious from '../components/Assest_Used/CompanyLogo/Curious_Logo.png';
+import WOB from '../components/Assest_Used/CompanyLogo/WOB24.png';
 import { Helmet } from 'react-helmet';
 import { motion } from "framer-motion";
 
@@ -95,9 +96,22 @@ const experiences = [
     ],
   },
   {
+    date: "September 2024 - Present",
+    company_name: "GirlScript Foundation - Apprenticeship",
+    title: "Campus Ambassador | Contributor",
+    iconBg: "#fff",
+    icon: WOB,
+    points: [
+      "Promoted the Winter of Blockchain program across campus to increase participation.",
+      "Organized workshops and events to foster a blockchain learning community.",
+      "Collaborated with the GirlScript team to coordinate and execute initiatives.",
+      "Enhanced technical skills by engaging in blockchain-related projects.",
+    ],
+  },
+  {
     date: "July 2023 - Present",
     company_name: "Freelancer, Fiverr",
-    title: "Freelancing Project",
+    title: "Freelance",
     iconBg: "#fff",
     icon: freelance,
     points: [

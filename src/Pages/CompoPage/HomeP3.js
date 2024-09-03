@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Spline from '@splinetool/react-spline';
 import AboutCardSty from './AboutCard/About';
 import {AnimatedListDemo} from './AnimatedListDemo';
+import { motion } from "framer-motion";
 
 const homePcContainer = {
   position: "absolute",
@@ -106,6 +107,15 @@ const Home3Style = `
   }
 `;
 
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.25, delay: delay },
+  },
+});
+
 function Home() {
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -120,13 +130,15 @@ function Home() {
   return (
     <div style={homePcContainer}>
       <Spline style={splineModel} scene="https://prod.spline.design/yF0tNNwe0CsgeJWs/scene.splinecode" />
-      {/* This is an Iron Suited Man Pointed towards the polarized side */}
-      {/* <Spline style={splineModel} scene="https://prod.spline.design/e-hwKBI8zlLCial1/scene.splinecode" /> */}
-      <div style={rightSideContainer}>  
-        <div className="home3" style={{ textAlign: 'center'}}>
-          Show-Casing
-        </div> 
-        <AnimatedListDemo />
+      <div style={rightSideContainer}> 
+        <motion.div variants={textVariant(2.5)} initial="hidden" animate="show"> 
+          <div className="home3" style={{ textAlign: 'center'}}>
+            Show-Casing
+          </div> 
+        </motion.div>
+        <motion.div variants={textVariant(4)} initial="hidden" animate="show">
+          <AnimatedListDemo />
+        </motion.div>
       </div>
       <div className='AboutCard'>
         <AboutCardSty />

@@ -1,12 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useSound from 'use-sound';
+import { useInView } from 'react-intersection-observer';
 
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 import AboutCard from "./AboutCard";
 
 export default function AboutCards() {
   const [playSound] = useSound(soundeffect);
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
 
   const education = {
     title: "Education",
@@ -49,16 +55,16 @@ export default function AboutCards() {
   return (
     <div style={container}>
       <div style={cards} className="more-details">
-        <Link to="/education" onClick={playSound} style={{ textDecoration: "none" }}>
+        <Link to="/education" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s` }}>
           <AboutCard {...education} />
         </Link>
-        <Link to="/skills" onClick={playSound} style={{ textDecoration: "none" }}>
+        <Link to="/skills" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 14.5s, transform 1.25s ease-out 14.5s` }}>
           <AboutCard {...skills} />
         </Link>
-        <Link to="/certifications" onClick={playSound} style={{ textDecoration: "none" }}>
+        <Link to="/certifications" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 18.5s, transform 1.25s ease-out 18.5s` }}>
           <AboutCard {...certifications} />
         </Link>
-        <Link to="/about" onClick={playSound} style={{ textDecoration: "none" }}>
+        <Link to="/about" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 20.5s, transform 1.25s ease-out 20.5s` }}>
           <AboutCard {...achievements} />
         </Link>
       </div>

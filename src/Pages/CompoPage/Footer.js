@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useSound from 'use-sound';
+import { useInView } from 'react-intersection-observer';
+
 import UsLogo from '../../components/Assest_Used/Us_LogoMain.png';
 import rocket from '../../components/Assest_Used/GIFs/rocketemoji.gif';
 import handshake from '../../components/Assest_Used/GIFs/handshake.gif';
-
 import soundeffect1 from '../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../components/Assest_Used/Sounds/select-click.wav';
 
@@ -25,38 +26,10 @@ const leftSectionStyles = {
   maxWidth: "50%",
 };
 
-const logoStyles = {
-  height: "auto",
-  width: "51px",
-  marginRight: "1.2rem",
-};
-
 const paragraphContainerStyles = {
   display: "flex",
   flexDirection: "column", // Stack paragraph below heading
   justifyContent: "center", // Center paragraph content
-};
-
-
-const boxHeadingStyles = {
-  fontSize: "2.5rem",
-  fontWeight: "bold",
-  color: "#ffcc33",
-  textShadow: "1px 1px 3px rgba(0, 0, 0, 0.5)",
-};
-
-const ParagraphStyles = {
-  fontSize: "1.35rem",
-  color: "#e0e0e0",
-  marginRight: "1rem",
-  textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
-};
-
-const boxParagraphStyles = {
-  fontSize: "1.8rem",
-  color: "#e0e0e0",
-  marginRight: "1rem",
-  textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
 };
 
 const shareStyles = {
@@ -119,6 +92,50 @@ const Home = () => {
   const [playSound1] = useSound(soundeffect1);
   const [playSound2] = useSound(soundeffect2);
 
+  const { ref: ref0, inView: inView0 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
+  const logoStyles = {
+    height: "auto",
+    width: "51px",
+    marginRight: "1.2rem",
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 5.2s, transform 1.25s ease-out 5.2s`,
+  };
+
+  const boxHeadingStyles = {
+    fontSize: "2.5rem",
+    fontWeight: "bold",
+    color: "#ffcc33",
+    textShadow: "1px 1px 3px rgba(0, 0, 0, 0.5)",
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 5.8s, transform 1.25s ease-out 5.8s`,
+  };
+
+  const ParagraphStyles = {
+    fontSize: "1.35rem",
+    color: "#e0e0e0",
+    marginRight: "1rem",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 6.4s, transform 1.25s ease-out 6.4s`,
+  };
+
+  const boxParagraphStyles = {
+    fontSize: "1.8rem",
+    color: "#e0e0e0",
+    marginRight: "1rem",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 7.3s, transform 1.25s ease-out 7.3s`,
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
@@ -135,25 +152,29 @@ const Home = () => {
   return (
     <footer style={footerStyles}>
       <div style={leftSectionStyles}>
-        <img src={UsLogo} alt="UjjwalS Portfolio Logo" onClick={playSound1} style={logoStyles} />
+        <img src={UsLogo} alt="UjjwalS Portfolio Logo" onClick={playSound1} ref={ref0} style={logoStyles} />
         <div style={paragraphContainerStyles}>
-          <h3 style={boxHeadingStyles} onClick={playSound1}>UjjwalS Portfolio</h3>
-          <p style={ParagraphStyles}>
+          <h3 ref={ref0} style={boxHeadingStyles} onClick={playSound1}>UjjwalS Portfolio</h3>
+          <p ref={ref0} style={ParagraphStyles}>
             Thanks for visiting! Let's connect and elevate together.{' '}
-            <img src={rocket} alt="Rocket Emoji" style={{ width: '20px', verticalAlign: 'middle', display: 'inline' }} />
+            <img src={rocket} alt="Rocket Emoji" ref={ref0} style={{ width: '20px', verticalAlign: 'middle', display: 'inline',opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 6.8s, transform 1.25s ease-out 6.8s` }} />
           </p>
         </div>
       </div>
       <div style={shareStyles}>
         <p style={boxParagraphStyles}>
           Let's Connect {' '}
-          <img src={handshake} alt="HandShake Emoji" style={{ width: '24px', verticalAlign: 'middle', display: 'inline' }} />
+          <img src={handshake} alt="HandShake Emoji" ref={ref0} style={{ width: '24px', verticalAlign: 'middle', display: 'inline', opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 7.6s, transform 1.25s ease-out 7.6s` }} />
         </p>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <a
             href="https://www.linkedin.com/in/ujjwalsaini07"
             className="fab fa-linkedin"
-            style={shareLinkStyles}
+            ref={ref0}
+            style={{...shareLinkStyles,
+              opacity: inView0 ? 1 : 0,
+              transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+              transition: 'opacity 1.25s ease-out 8s, transform 1.25s ease-out 8s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -167,7 +188,11 @@ const Home = () => {
           <a
             href="https://github.com/UjjwalSaini07"
             className="fab fa-github"
-            style={shareLinkStyles}
+            ref={ref0}
+            style={{...shareLinkStyles,
+              opacity: inView0 ? 1 : 0,
+              transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+              transition: 'opacity 1.25s ease-out 8.4s, transform 1.25s ease-out 8.4s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -181,7 +206,11 @@ const Home = () => {
           <a
             href="mailto:ujjwalsaini0007@gmail.com"
             className="fas fa-envelope"
-            style={shareLinkStyles}
+            ref={ref0}
+            style={{...shareLinkStyles,
+              opacity: inView0 ? 1 : 0,
+              transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+              transition: 'opacity 1.25s ease-out 8.8s, transform 1.25s ease-out 8.8s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -195,7 +224,11 @@ const Home = () => {
           <a
             href="https://x.com/UjjwalSaini0007"
             className="fab fa-twitter"
-            style={shareLinkStyles}
+            ref={ref0}
+            style={{...shareLinkStyles,
+              opacity: inView0 ? 1 : 0,
+              transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+              transition: 'opacity 1.25s ease-out 9.2s, transform 1.25s ease-out 9.2s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -209,7 +242,11 @@ const Home = () => {
           <a
             href="tel:+919717899079"
             className="fas fa-phone"
-            style={shareLinkStyles}
+            ref={ref0}
+            style={{...shareLinkStyles,
+              opacity: inView0 ? 1 : 0,
+              transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+              transition: 'opacity 1.25s ease-out 9.6s, transform 1.25s ease-out 9.6s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -222,12 +259,13 @@ const Home = () => {
           ></a>
         </div>
       </div>
-      <h1 className="credit" style={creditStyles}>
+      <h1 className="credit" ref={ref0} style={{...creditStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 10.1s, transform 1.25s ease-out 10.1s'}}>
         Designed with <i className="fa fa-heart pulse" style={iconStyles}></i>{" "}
         by{" "}
         <a
           href="https://www.linkedin.com/in/ujjwal-saini-220960256/"
-          style={creditLinkStyles}
+          ref={ref0}
+          style={{...creditLinkStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s'}}
           onMouseEnter={(e) => (e.target.style.color = "#ffcc33")}
           onMouseLeave={(e) => (e.target.style.color = "#ffae00")}
           onClick={playSound1}

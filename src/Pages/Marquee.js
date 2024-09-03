@@ -3,6 +3,7 @@ import Shade1 from '../components/Assest_Used/textures/Gradients/Shade1.png';
 import Shade2 from '../components/Assest_Used/textures/Gradients/Shade2.png';
 import Shade3 from '../components/Assest_Used/textures/Gradients/Shade3.png';
 import { Backdrop } from '@react-three/drei';
+import { useInView } from 'react-intersection-observer';
 
 const reviews = [
   {
@@ -99,21 +100,33 @@ const TestoStyle = `
 `;
 
 const Marquee = ({ children, reverse = false, pauseOnHover = false, className = '' }) => {
+
+  const { ref: ref0, inView: inView0 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
   const marqueeStyle = {
     display: 'flex',
     animation: `marquee 20s linear infinite`,
     whiteSpace: 'nowrap',
     ...(reverse && { animationDirection: 'reverse' }),
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 4.8s`,
   };
 
   const containerStyle = {
     overflow: 'hidden',
     display: 'flex',
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 4.8s`,
   };
 
   return (
-    <div style={containerStyle} className={className}>
-      <div style={marqueeStyle}>{children}</div>
+    <div style={containerStyle} className={className} ref={ref0}>
+      <div  ref={ref0} style={marqueeStyle}>{children}</div>
     </div>
   );
 };
@@ -221,9 +234,14 @@ export function MarqueeDemo() {
     background: 'linear-gradient(to left, #020214, rgba(2, 2, 20, 0))',
   };
 
+  const { ref: ref0, inView: inView0 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
   return (
     <div style={containerStyle}>
-      <div className="Test" style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem'}}>
+      <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem',  opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(50px)', transition: `opacity 1.25s ease-out 4.2s, transform 1.25s ease-out 4.2s`}}>
         Testinomails
       </div>
       <Marquee pauseOnHover className="[--duration:20s]">

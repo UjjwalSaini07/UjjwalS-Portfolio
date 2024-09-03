@@ -3,6 +3,7 @@ import Spline from '@splinetool/react-spline';
 import styled from 'styled-components';
 import useSound from 'use-sound';
 import soundeffect from '../../components/Assest_Used/Sounds/base.mp3';
+import { useInView } from 'react-intersection-observer';
 
 const HomePcContainer = styled.div`
   position: absolute;
@@ -11,6 +12,7 @@ const HomePcContainer = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  background: #020215;
   z-index: 1;
 `;
 
@@ -22,19 +24,6 @@ const spline_model = {
   height: '100%',
   zIndex: '1',
 };
-
-const division_overlay = styled.div`
-  position: absolute;
-  top: 20px;
-  width: 60%;
-  font-size: large;
-  left: 30px;
-  z-index: 4;
-  color: rgb(240, 2, 149);
-  background: transparent;
-  padding: 10px;
-  border-radius: 8px;
-`;
 
 const CardsContainer = styled.div`
   display: flex;
@@ -126,15 +115,24 @@ function HomeP2() {
 
   const [playSound] = useSound(soundeffect);
 
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
   return (
     <HomePcContainer>
-      <Spline style={spline_model} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
-      <division_overlay>
-        {/* content */}
-      </division_overlay>
-      <CardsContainer>
+      <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
+      <CardsContainer ref={ref1}>
         {cardDetails.map((cardDetail, index) => (
-          <Card key={index}>
+          <Card
+            key={index}
+            style={{
+              opacity: inView1 ? 1 : 0,
+              transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
+              transition: `opacity 1.25s ease-out ${1.2 + index}s, transform 1.25s ease-out ${1.2 + index}s`,
+            }}
+          >
             <CardName>{cardDetail.name}</CardName>
             <CardDescription>{cardDetail.description}</CardDescription>
             <CardLink href={cardDetail.link} onClick={playSound}>Learn More</CardLink>
@@ -146,4 +144,3 @@ function HomeP2() {
 }
 
 export default HomeP2;
-

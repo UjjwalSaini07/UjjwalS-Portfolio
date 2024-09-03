@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import { useInView } from 'react-intersection-observer';
 
 const spaceboardsFont = `
   @font-face {
@@ -55,6 +56,12 @@ const Home3Style = `
 `;
 
 export default function AboutMe({ isExpanded }) {
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
   const content = {
     container: {
       font: `monospace`,
@@ -74,6 +81,9 @@ export default function AboutMe({ isExpanded }) {
       aspectRatio: 'attr(width) / attr(height)',
       border: '0.1px solid rgb(100, 100, 100)',
       borderRadius: '10px',
+      opacity: inView1 ? 1 : 0,
+      transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
+      transition: `opacity 1.25s ease-out 7.5s, transform 1.25s ease-out 7.5s`
     },
     }
 
@@ -89,11 +99,11 @@ export default function AboutMe({ isExpanded }) {
 
   return (
     <>
-      <div style={isExpanded ? {display: "none"} : content.container}>
-        <div className="home3">
+      <div ref={ref1} style={isExpanded ? {display: "none"} : content.container}>
+        <div className="home3" ref={ref1} style={{ opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 8.4s, transform 1.25s ease-out 8.4s` }}>
           About Me
         </div> 
-        <div>
+        <div ref={ref1} style={{ opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 9.4s, transform 1.25s ease-out 9.4s` }}>
           <br />
           I pursuing my graduation with a degree in Information & Technology, from University GGSIPU. After realizing that programming is where my passion lies, I decided to pursue in Cs related field and I'm currently a 3rd year student at the College of Engineering, Delhi. <br/><br/>
 
