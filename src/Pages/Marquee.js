@@ -100,6 +100,7 @@ const TestoStyle = `
 `;
 
 const Marquee = ({ children, reverse = false, pauseOnHover = false, className = '' }) => {
+
   const { ref: ref0, inView: inView0 } = useInView({
     triggerOnce: false,
     threshold: 0.1, 
@@ -109,18 +110,18 @@ const Marquee = ({ children, reverse = false, pauseOnHover = false, className = 
     display: 'flex',
     animation: `marquee 20s linear infinite`,
     whiteSpace: 'nowrap',
-    opacity: inView0 ? 1 : 0,
-    transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
-    transition: 'opacity 1.2s ease-out, transform 5.2s ease-out',
     ...(reverse && { animationDirection: 'reverse' }),
+    opacity: inView0 ? 1 : 0,
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 4.8s`,
   };
 
   const containerStyle = {
     overflow: 'hidden',
     display: 'flex',
     opacity: inView0 ? 1 : 0,
-    transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)',
-    transition: 'opacity 1.2s ease-out, transform 5.2s ease-out',
+    transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
+    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 4.8s`,
   };
 
   return (
@@ -240,7 +241,7 @@ export function MarqueeDemo() {
 
   return (
     <div style={containerStyle}>
-      <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem', opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 3s ease-out'}}>
+      <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem',  opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(50px)', transition: `opacity 1.25s ease-out 4.2s, transform 1.25s ease-out 4.2s`}}>
         Testinomails
       </div>
       <Marquee pauseOnHover className="[--duration:20s]">

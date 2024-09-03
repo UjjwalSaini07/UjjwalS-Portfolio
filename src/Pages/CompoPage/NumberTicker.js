@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const NumberTicker = () => {
   const [projectCount, setProjectCount] = useState(0);
@@ -17,6 +18,11 @@ const NumberTicker = () => {
     hoursSupportCount: 1320,
     additionalStatCount: 12,
   };
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
 
   useEffect(() => {
     // IntersectionObserver to check if the component is visible
@@ -121,23 +127,23 @@ const NumberTicker = () => {
   return (
     <div style={containerStyle} ref={containerRef}>
       <div style={rowStyle}>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
+        <div ref={ref1} style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s` }}>
           <div style={labelStyle}>Projects:</div>
           <div style={valueStyle}>{projectCount}+</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
+        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.8s, transform 1.25s ease-out 1.8s` }}>
           <div style={labelStyle}>Happy Clients:</div>
           <div style={valueStyle}>{happyClientCount}</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
+        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.6s, transform 1.25s ease-out 2.6s` }}>
           <div style={labelStyle}>Experience:</div>
           <div style={valueStyle}>{experienceCount}+ yrs</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
+        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s` }}>
           <div style={labelStyle}>Support Hours:</div>
           <div style={valueStyle}>{hoursSupportCount}+</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle }}>
+        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.8s, transform 1.25s ease-out 3.8s` }}>
           <div style={labelStyle}>Languages:</div>
           <div style={valueStyle}>{additionalStatCount}+</div>
         </div>
