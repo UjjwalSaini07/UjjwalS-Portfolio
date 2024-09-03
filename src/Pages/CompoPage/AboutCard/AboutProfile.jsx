@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import useSound from 'use-sound';
+import { useInView } from 'react-intersection-observer';
 
 import soundeffect from '../../../components/Assest_Used/Sounds/select-click.wav';
 import dp from "../AssetPic/img2.jpg";
 
 export default function AboutProfile() {
   const [playSound] = useSound(soundeffect);
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
 
   const flexLeft = {
     container: {
@@ -68,17 +74,19 @@ export default function AboutProfile() {
 
   return (
     <div style={flexLeft.container}>
-      <div style={flexLeft.imgContainer}>
+      <div ref={ref1} style={{ ...flexLeft.imgContainer, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3s, transform 1.25s ease-out 3s` }}>
         <img src={dp} alt="Profile" style={flexLeft.dp} />
       </div>
       <div style={flexLeft.details}>
-        <div style={flexLeft.name}>Ujjwal Saini</div>
-        <h3 style={flexLeft.greyFont}>ujjwalsaini07</h3>
-        <div style={flexLeft.desc}>
+        <div ref={ref1} style={{ ...flexLeft.name, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s` }}>Ujjwal Saini</div>
+        <h3 ref={ref1} style={{ ...flexLeft.greyFont, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 4.7s, transform 1.25s ease-out 4.7s` }}>ujjwalsaini07</h3>
+        <div ref={ref1} style={{ ...flexLeft.desc, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 5.6s, transform 1.25s ease-out 5.6s` }}>
           Btech-IT 26' @GGSIPU | FullStack Web Developer | Open Source | Learner | Tech Enthusiast | Software Developer |  Designer | Gamer
+        </div>
           <div className="glowbtn">
             <a href="https://github.com/UjjwalSaini07"
               onClick={playSound}
+              ref={ref1}
               style={{
                 padding:'12px 60px',
                 borderRadius: '10px',
@@ -93,7 +101,10 @@ export default function AboutProfile() {
                 transition: 'background-color 0.3s',
                 width: '100%',
                 textAlign: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                opacity: inView1 ? 1 : 0,
+                transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
+                transition: `opacity 1.25s ease-out 6.8s, transform 1.25s ease-out 6.8s`
               }}>
               <span></span>
               <span></span>
@@ -102,7 +113,6 @@ export default function AboutProfile() {
               <button>Github</button>
             </a>
           </div>
-        </div>
       </div>
     </div>
   );

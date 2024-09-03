@@ -1,6 +1,12 @@
 import React from "react";
+import { useInView } from 'react-intersection-observer';
 
 export default function AboutCard(props) {
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.1, 
+  });
+
   const titleStyle = {
     color: 'wheat',
     fontSize: '15px',
@@ -21,12 +27,10 @@ export default function AboutCard(props) {
     marginLeft: '0',
     marginTop: '0',
     textAlign: 'left',
-    // backgroundColor: 'black',
     backgroundColor: 'transparent',
     maxWidth: '100%',
     height: 'auto',
     aspectRatio: 'attr(width) / attr(height)',
-    // background: 'linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(0, 0, 0, 0.5) 100%)',
     backdropFilter: 'blur(7px)',
     WebkitBackdropFilter: 'blur(7px)',
     border: '0.1px solid rgb(100, 100, 100)',
@@ -54,13 +58,13 @@ export default function AboutCard(props) {
 
   return (
     <div style={cardStyle}>
-      <div style={titleStyle}>{props.title}</div>
-        <div style={descStyle}>
+      <div ref={ref1} style={{...titleStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.6s, transform 1.25s ease-out 1.6s`}}>{props.title}</div>
+        <div ref={ref1} style={{...descStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.2s, transform 1.25s ease-out 2.2s`}}>
           {props.description}
         </div>
-      <div className="points" style={pointsStyle}>
+      <div className="points" ref={ref1} style={{...pointsStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.8s, transform 1.25s ease-out 2.8s`}}>
         {props.points.map((point, index) => (
-          <li className="card-item" key={index} style={cardItemStyle}>
+          <li className="card-item" key={index} ref={ref1} style={{...cardItemStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.8s, transform 1.25s ease-out 2.8s`}}>
             {point}
           </li>
         ))}
