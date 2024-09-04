@@ -20,7 +20,7 @@ const NumberTicker = () => {
   };
 
   const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 
@@ -127,15 +127,15 @@ const NumberTicker = () => {
   return (
     <div style={containerStyle} ref={containerRef}>
       <div style={rowStyle}>
-        <div ref={ref1} style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s` }}>
+        <div ref={ref1} style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s` }}>
           <div style={labelStyle}>Projects:</div>
           <div style={valueStyle}>{projectCount}+</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.8s, transform 1.25s ease-out 1.8s` }}>
+        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s` }}>
           <div style={labelStyle}>Happy Clients:</div>
           <div style={valueStyle}>{happyClientCount}</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.6s, transform 1.25s ease-out 2.6s` }}>
+        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.5s, transform 1.25s ease-out 2.5s` }}>
           <div style={labelStyle}>Experience:</div>
           <div style={valueStyle}>{experienceCount}+ yrs</div>
         </div>

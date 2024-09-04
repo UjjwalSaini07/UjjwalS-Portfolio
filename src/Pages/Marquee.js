@@ -102,7 +102,7 @@ const TestoStyle = `
 const Marquee = ({ children, reverse = false, pauseOnHover = false, className = '' }) => {
 
   const { ref: ref0, inView: inView0 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 
@@ -113,7 +113,7 @@ const Marquee = ({ children, reverse = false, pauseOnHover = false, className = 
     ...(reverse && { animationDirection: 'reverse' }),
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 4.8s`,
+    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 5s`,
   };
 
   const containerStyle = {
@@ -235,7 +235,7 @@ export function MarqueeDemo() {
   };
 
   const { ref: ref0, inView: inView0 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 

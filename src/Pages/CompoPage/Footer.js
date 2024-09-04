@@ -93,7 +93,7 @@ const Home = () => {
   const [playSound2] = useSound(soundeffect2);
 
   const { ref: ref0, inView: inView0 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 
