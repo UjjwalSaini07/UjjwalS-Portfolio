@@ -79,20 +79,9 @@ const HireMEStyle = {
 
 function Home() {
   const bounce = useSpring({
-    from: { transform: 'translate3d(0, -80px, 0)' },
-    to: { transform: 'translate3d(0, 0, 0)' },
-    config: { tension: 100, friction: 7 },
-  });
-
-  const paragraphBounce = useSpring({
     from: { transform: 'translate3d(0, -50px, 0)' },
     to: { transform: 'translate3d(0, 0, 0)' },
-    config: { tension: 120, friction: 4 },
-  });
-  const typewriterBounce = useSpring({
-    from: { transform: 'translate3d(0, -50px, 0)' },
-    to: { transform: 'translate3d(0, 0, 0)' },
-    config: { tension: 120, friction: 2 },
+    config: { tension: 120, friction: 5 },
   });
 
   const [playSound1] = useSound(soundeffect1);
@@ -104,16 +93,24 @@ function Home() {
       <div style={division_overlay}>
         <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
           <div>
-            <animated.h1 style={bounce} className={`${styles.heroHeadText} text-white`}>
+            {/* <animated.h1 style={bounce} className={`${styles.heroHeadText} text-white`}> */}
+            <motion.div
+                variants={textVariant(0.5)}
+                initial="hidden"
+                animate="show"
+                className={`${styles.heroHeadText} text-white`}
+              >
               Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span>
-            </animated.h1>
+              </motion.div>
+            {/* </animated.h1> */}
             <motion.div
               variants={textVariant(1.5)}
               initial="hidden"
               animate="show"
             >
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              I develop Web <br /> and Mobile Applications
+              {/* Designing and developing  <br /> top-notch Web and Mobile Apps */}
+              I craft exceptional & innovative <br /> Web and Mobile Applications
             </p>
             </motion.div>
               <motion.div

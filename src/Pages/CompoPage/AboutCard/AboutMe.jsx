@@ -58,7 +58,7 @@ const Home3Style = `
 export default function AboutMe({ isExpanded }) {
 
   const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 
