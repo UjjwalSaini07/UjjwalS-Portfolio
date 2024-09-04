@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 export default function AboutCard(props) {
   const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 

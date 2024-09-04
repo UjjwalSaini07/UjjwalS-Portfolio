@@ -93,16 +93,14 @@ function Home() {
       <div style={division_overlay}>
         <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
           <div>
-            {/* <animated.h1 style={bounce} className={`${styles.heroHeadText} text-white`}> */}
             <motion.div
-                variants={textVariant(0.5)}
-                initial="hidden"
-                animate="show"
-                className={`${styles.heroHeadText} text-white`}
-              >
+              variants={textVariant(0.4)}
+              initial="hidden"
+              animate="show"
+              className={`${styles.heroHeadText} text-white`}
+            >
               Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span>
-              </motion.div>
-            {/* </animated.h1> */}
+            </motion.div>
             <motion.div
               variants={textVariant(1.5)}
               initial="hidden"
@@ -110,7 +108,7 @@ function Home() {
             >
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
               {/* Designing and developing  <br /> top-notch Web and Mobile Apps */}
-              I craft exceptional & innovative <br /> Web and Mobile Applications
+              I Craft exceptional & innovative <br /> Web and Mobile Applications
             </p>
             </motion.div>
               <motion.div
@@ -224,3 +222,4 @@ export default Home;
 //       // <Spline scene="https://prod.spline.design/dsRG-ONMgP6dcNnS/scene.splinecode" />
 //   );
 // }
+{/* <animated.h1 style={bounce} className={`${styles.heroHeadText} text-white`}> */}
