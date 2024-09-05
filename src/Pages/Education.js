@@ -193,7 +193,7 @@ const Education = () => {
           {educationData.map((education, index) => (
             <VerticalTimelineElement
               key={`education-${index}`}
-              contentStyle={{ background: "#1d1836", color: "#fff", borderRadius: "15px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
+              contentStyle={{ background: "#140b40", color: "#fff", borderRadius: "15px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
               contentArrowStyle={{ borderRight: "10px solid  #232631" }}
               date={education.date}
               dateClassName="date"

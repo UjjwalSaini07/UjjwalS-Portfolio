@@ -202,7 +202,7 @@ const Experience = () => {
         {experiences.map((experience, index) => (
           <VerticalTimelineElement
             key={`experience-${index}`}
-            contentStyle={{ background: "#1d1836", color: "#fff", borderRadius: "10px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
+            contentStyle={{ background: "#140b40", color: "#fff", borderRadius: "10px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
             contentArrowStyle={{ borderRight: "7px solid  #232631" }}
             date={experience.date}
             dateClassName="date"
