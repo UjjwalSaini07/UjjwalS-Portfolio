@@ -1,12 +1,19 @@
 import React from "react";
+import { useInView } from 'react-intersection-observer';
 
 export default function Certificate({ certification, index }) {
   const isMobile = window.innerWidth < 798;
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.1, 
+  });
 
   return (
     <div
       className="certificate-card"
       key={index}
+      ref={ref1}
       style={{
         position: 'relative',
         width: '335px',
@@ -16,6 +23,9 @@ export default function Certificate({ certification, index }) {
         cursor: 'pointer',
         transform: 'scale(1)',
         transition: 'transform 0.3s ease',
+        opacity: inView1 ? 1 : 0, 
+        transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+        transition: 'opacity 1.25s ease-out ${1.7 + index}s, transform 1.25s ease-out ${1.7 + index}s'
       }}
     >
       <div
