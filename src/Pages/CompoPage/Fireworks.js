@@ -43,7 +43,7 @@ const Firework = () => {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+    <div style={{ position: 'absolute', width: '100vw', height: '100vh' }}>
       <canvas
         ref={canvasRef}
         style={{ 

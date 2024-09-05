@@ -10,7 +10,7 @@ import useSound from 'use-sound';
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
 import Hamburger from './Hamburger';
-import './Header.css';
+import '../../Styles/Header.css';
 
 import USLogopng from '../../../components/Assest_Used/Us_LogoMain.png';
 

@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
+import ConfettiComponent from './CompoPage/Confetti';
 import useSound from 'use-sound';
 
 import soundeffect1 from '../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../components/Assest_Used/Sounds/select-click.wav';
 import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
-import './Contact.css';
+import './Styles/Contact.css';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -22,6 +23,7 @@ const textVariant = (delay) => ({
 const ContactUs = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [sendingMsg, setSendingMsg] = useState(false);
+  const [confettiVisible, setConfettiVisible] = useState(false)
   const [showModal, setShowModal] = useState(false);
 
   const [playSound] = useSound(soundeffect1);
@@ -36,6 +38,10 @@ const ContactUs = () => {
       setTimeout(() => {
         console.log("Resetting sendingMsg to false");
         setSendingMsg(false);
+        setConfettiVisible(true); // Show confetti after sending message
+        setTimeout(() => {
+          setConfettiVisible(false); // Hide confetti after some time
+        }, 10000); // Duration for the confetti
       }, 3800); // Adjust the delay as needed
     }
   };
@@ -394,39 +400,41 @@ useEffect(() => {
                   />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', width: '100%' }}>
-                  <div className="glowbtn">
-                    <animated.h1 style={bounce}>
-                      <a
-                        style={{
-                          padding: isMobile ? '10px 50px' : '12px 60px',
-                          borderRadius: '10px',
-                          backgroundColor: 'transparent',
-                          textDecoration: 'none',
-                          color: '#33f403',
-                          border: 'none',
-                          marginBottom: isMobile ? '-5px' : '-10px',
-                          marginLeft: '1px',
-                          marginTop: isMobile ? '-22px' : '-10px',
-                          fontSize: isMobile ? '13.5px' : '16px',
-                          fontWeight: 'bold',
-                          transition: 'background-color 0.3s',
-                          width: '100%',
-                          textAlign: 'center',
-                          cursor: 'pointer'
-                        }}
-                        onClick={() => {
-                          handleClick();
-                          playSound();
-                        }}
-                      >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        {sendingMsg ? 'Sending...' : 'Send'}
-                      </a>
-                    </animated.h1>
-                  </div>
+                    <div className="glowbtn">
+                      <animated.h1 style={bounce}>
+                        <a
+                          style={{
+                            padding: isMobile ? '10px 50px' : '12px 60px',
+                            borderRadius: '10px',
+                            backgroundColor: 'transparent',
+                            textDecoration: 'none',
+                            color: '#33f403',
+                            border: 'none',
+                            marginBottom: isMobile ? '-5px' : '-10px',
+                            marginLeft: '1px',
+                            marginTop: isMobile ? '-22px' : '-10px',
+                            fontSize: isMobile ? '13.5px' : '16px',
+                            fontWeight: 'bold',
+                            transition: 'background-color 0.3s',
+                            width: '100%',
+                            textAlign: 'center',
+                            cursor: 'pointer'
+                          }}
+                          onClick={() => {
+                            handleClick();
+                            playSound();
+                          }}
+                        >
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          {sendingMsg ? 'Sending...' : 'Send'}
+                        </a>
+                      </animated.h1>
+                      {confettiVisible && <ConfettiComponent />}
+                    </div>
+                    
 
                   <div className="flex w-full gap-5 items-center"  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                       <div className="bg-white w-1/2 h-1 hr"></div>
@@ -436,7 +444,8 @@ useEffect(() => {
                   <div className="glowbtn">
                   <animated.h1 style={bounce} >
                   <a
-                    href="#"
+                    href="https://calendar.app.google/1a3kt3j1sz6zDfFm9"
+                    target="_blank" rel="noopener noreferrer"
                     style={{
                       padding: '15px',
                       borderRadius: '12px',

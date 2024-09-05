@@ -4,11 +4,11 @@ import { useInView } from 'react-intersection-observer';
 export default function AboutCard(props) {
 
   const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
   const { ref: ref2, inView: inView2 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
 
@@ -16,9 +16,9 @@ export default function AboutCard(props) {
     color: '#e73e0d',
     fontSize: '15px',
     fontWeight: 'bold',
-    opacity: inView1 ? 10 : 0,
-    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
-    transition: 'opacity 0.2s ease-out, transform 4s ease-out',
+    opacity: inView1 ? 1 : 0, 
+    transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
   };
   
   const descStyle = {
@@ -26,9 +26,9 @@ export default function AboutCard(props) {
     fontSize: '15px',
     marginTop: '5px',
     opacity: '0.8',
-    opacity: inView1 ? 1 : 0,
-    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
-    transition: 'opacity 0.2s ease-out, transform 5s ease-out',
+    opacity: inView1 ? 1 : 0, 
+    transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
   };
 
   const cardStyle = {
@@ -60,9 +60,9 @@ export default function AboutCard(props) {
     margin: '2px',
     marginTop: '5px',
     opacity: '0.8',
-    opacity: inView1 ? 1 : 0,
-    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
-    transition: 'opacity 0.2s ease-out, transform 5s ease-out',
+    opacity: inView1 ? 1 : 0, 
+    transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
   };
 
   const pointsStyle = {
@@ -70,9 +70,9 @@ export default function AboutCard(props) {
     fontSize: '15px',
     marginTop: '5px',
     opacity: '0.8',
-    opacity: inView1 ? 1 : 0,
-    transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)',
-    transition: 'opacity 0.2s ease-out, transform 5s ease-out',
+    opacity: inView1 ? 1 : 0, 
+    transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
   };
 
   return (

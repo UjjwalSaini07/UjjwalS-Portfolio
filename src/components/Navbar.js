@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import USLogopng from '../components/Assest_Used/Us_LogoMain.png';
 import sound from './Assest_Used/Sounds/base.mp3';
-import '../Pages/Nav.css';
+import '../Pages/Styles/Nav.css';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },

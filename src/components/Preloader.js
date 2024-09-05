@@ -1,5 +1,5 @@
 import * as React from "react";
-import './Preloader.css';
+import '../Pages/Styles/Preloader.css';
 import { Typewriter } from "react-simple-typewriter";
 
 const isMobile = window.innerWidth <= 768;

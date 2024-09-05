@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './AboutMobi.css'; 
+import './Styles/AboutMobi.css'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';
@@ -137,11 +137,11 @@ const AboutMobi = () => {
   };
 
   const { ref: ref0, inView: inView0 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
   const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1, 
   });
   const { ref: ref2, inView: inView2 } = useInView({
@@ -469,8 +469,6 @@ const AboutMobi = () => {
           </div>
         </div>
       </div>
-      
-  
     </section>
   );
 };

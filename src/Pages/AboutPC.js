@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './AboutPC.css'; 
+import './Styles/AboutPC.css'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';

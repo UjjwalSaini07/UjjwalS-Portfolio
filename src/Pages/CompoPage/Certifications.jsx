@@ -1,4 +1,6 @@
 import React,{useEffect} from "react";
+import { useInView } from 'react-intersection-observer';
+import { motion } from "framer-motion";
 import Certificate from "./BaseCertificate";
 
 import gssoc24 from "../../components/Assest_Used/Certifications/Ujjwal_GSSoC2024.png";
@@ -94,7 +96,28 @@ const CertifiStyle = `
     }
   }
 `;
+const textVariant = (delay) => ({
+  hidden: { y: -50, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 1.25, delay: delay },
+  },
+});
 
+const fadeIn = (direction, type, delay, duration) => ({
+  hidden: {
+    x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+    y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: { type: type, delay: delay, duration: duration, ease: "easeOut" },
+  },
+});
 export default function Certifications() {
   const certifications = {
     title: "Certifications",
@@ -113,6 +136,11 @@ export default function Certifications() {
       { certification: "GSsoc'23: My 1st Open-source Competition", year: "2023", institution: "GirlScript Summer of Code", image: gssoc23 },
     ],
   };
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    triggerOnce: true,
+    threshold: 0.1, 
+  });
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -140,12 +168,16 @@ export default function Certifications() {
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
       }}
     >
+      <motion.div variants={textVariant(1)} initial="hidden" animate="show" >
       <div className="cert cert-PC" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
-        My Certifications
+        My Achievements & Certifications
       </div>
+      </motion.div>
+      <motion.div variants={textVariant(1)} initial="hidden" animate="show" >
       <div className="cert cert-Mobile" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
         My Certifications
       </div>
+      </motion.div>
       <div
         style={{
           display: 'flex',
@@ -156,7 +188,14 @@ export default function Certifications() {
         }}
       >
         {certifications.content.map((certification, index) => (
-          <Certificate key={index} index={index} certification={certification} />
+          <motion.div
+            variants={textVariant(6.8)}
+            initial="hidden"
+            animate="show"
+            variants={fadeIn("", "", index * 0.5, 1.8)}
+          >
+            <Certificate key={index} index={index} certification={certification} />
+          </motion.div>
         ))}
       </div>
     </div>
