@@ -26,7 +26,6 @@ const Home = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -77,7 +76,7 @@ const Lowerstyles = {
     justifyContent: 'center',
     backgroundColor: '#080424',
     overflow: 'hidden',
-    zIndex: 1, // Changed from 'zindex' to 'zIndex'
+    zIndex: 1,
   },
 };
 
