@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import USLogopng from '../components/Assest_Used/US_LogoTransparent.png';
-import './Error404.css';
+import './Styles/Error404.css';
 import { Helmet } from 'react-helmet';
 
 const Error404 = () => {

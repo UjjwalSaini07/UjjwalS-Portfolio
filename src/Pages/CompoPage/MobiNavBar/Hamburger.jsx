@@ -1,5 +1,5 @@
 import React from 'react';
-import './Hamburger.css';
+import '../../Styles/Hamburger.css';
 
 export default function Hamburger({ isOpen, toggle }) {
   return (

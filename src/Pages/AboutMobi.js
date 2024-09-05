@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './AboutMobi.css'; 
+import './Styles/AboutMobi.css'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';

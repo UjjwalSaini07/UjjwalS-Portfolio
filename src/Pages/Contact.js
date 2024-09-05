@@ -9,7 +9,7 @@ import useSound from 'use-sound';
 import soundeffect1 from '../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../components/Assest_Used/Sounds/select-click.wav';
 import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
-import './Contact.css';
+import './Styles/Contact.css';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
