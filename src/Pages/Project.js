@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+import { Helmet } from 'react-helmet';
 import link from '../components/Assest_Used/link.png';
 import github from '../components/Assest_Used/github.png';
 
@@ -12,7 +13,6 @@ import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
 import ProfileCard from '../components/Assest_Used/ProjectImg/ProfileCard.png';
 import Cube from '../components/Assest_Used/ProjectImg/Cube.png';
 import VoiceAss from '../components/Assest_Used/ProjectImg/VoiceAss.gif';
-import { Helmet } from 'react-helmet';
 
 const styles = {
   paddingX: "sm:px-16 px-6",

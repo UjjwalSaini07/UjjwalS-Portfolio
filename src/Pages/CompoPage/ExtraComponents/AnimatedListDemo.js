@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "../../@/components/magicui/lib/utils";
-import { AnimatedList } from "../../@/components/magicui/animated-list";
+import { cn } from "../../../@/components/magicui/lib/utils";
+import { AnimatedList } from "../../../@/components/magicui/animated-list";
 
 const notifications = [
   {

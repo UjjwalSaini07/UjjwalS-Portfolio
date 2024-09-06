@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
 
-import Hero from './CompoPage/HomeHero';
-import Home2 from './CompoPage/HomeP2';
-import Home3 from './CompoPage/HomeP3';
-import NumberTicker from './CompoPage/NumberTicker';
-import Footer from './CompoPage/Footer';
-import { MarqueeDemo } from './Marquee';
-import soundeffect from '../components/Assest_Used/Sounds/snap.wav';
+import Hero from '../HomeSec/HomeHero';
+import Home2 from '../HomeSec/HomeP2';
+import Home3 from '../HomeSec/HomeP3';
+import NumberTicker from '../ExtraComponents/NumberTicker';
+import Footer from './Footer';
+import { MarqueeDemo } from '../ExtraComponents/Marquee';
+import soundeffect from '../../../components/Assest_Used/Sounds/snap.wav';
 
 const Home = () => {
   const [isAtTop, setIsAtTop] = useState(true);

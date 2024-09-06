@@ -14,8 +14,8 @@ import Experience from './Pages/Experience.js';
 import Education from './Pages/Education.js';
 import Project from './Pages/Project.js';
 import Contact from './Pages/Contact.js';
-import CharacterFight from './Pages/CharacterFight.js';
-import Certifications from './Pages/CompoPage/Certifications.jsx';
+import CharacterFight from './Pages/CompoPage/ExtraComponents/CharacterFight.js';
+import Certifications from './Pages/CompoPage/Certificate/Certifications.jsx';
 // Error Page
 import Error404 from './Pages/Error404.js';
 

@@ -2,8 +2,9 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 import styled from 'styled-components';
 import useSound from 'use-sound';
-import soundeffect from '../../components/Assest_Used/Sounds/base.mp3';
 import { useInView } from 'react-intersection-observer';
+
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 
 const HomePcContainer = styled.div`
   position: absolute;

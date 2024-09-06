@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import './Styles/AboutPC.css'; 
+import React, { useEffect } from 'react'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';
 
-import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
-import Img1 from '../components/Assest_Used/UjjwalImg1.jpg';
-import gif from '../components/Assest_Used/GIFs/Gif_2.gif';
-import ParticlularImage from './CompoPage/Particles.js';
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
+import Img1 from '../../../components/Assest_Used/UjjwalImg1.jpg';
+import gif from '../../../components/Assest_Used/GIFs/Gif_2.gif';
+import ParticlularImage from '../ExtraComponents/Particles';
+import '../../Styles/AboutPC.css';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },

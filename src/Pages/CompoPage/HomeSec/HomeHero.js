@@ -5,10 +5,10 @@ import { useSpring, animated } from '@react-spring/web';
 import { motion } from "framer-motion";
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import useSound from 'use-sound';
-import soundeffect1 from '../../components/Assest_Used/Sounds/base.mp3';
-import soundeffect2 from '../../components/Assest_Used/Sounds/select-click.wav';
 
-import HireMESvg from './HireMe';
+import soundeffect1 from '../../../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
+import HireMESvg from '../ExtraComponents/HireMe';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },

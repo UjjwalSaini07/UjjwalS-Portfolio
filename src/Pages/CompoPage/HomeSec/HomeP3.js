@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import Spline from '@splinetool/react-spline';
-import AboutCardSty from './AboutCard/About';
-import {AnimatedListDemo} from './AnimatedListDemo';
 import { motion } from "framer-motion";
+
+import AboutCardSty from '../AboutCard/About';
+import {AnimatedListDemo} from '../ExtraComponents/AnimatedListDemo';
 
 const homePcContainer = {
   position: "absolute",
