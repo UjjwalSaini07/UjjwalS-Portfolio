@@ -31,8 +31,8 @@ const CardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  top: 25px;
+  position: absolute;
+  top: 130px;
   right: 50px;
   width: 45%;
   z-index: 3;
@@ -132,6 +132,16 @@ function HomeP2() {
               opacity: inView1 ? 1 : 0,
               transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
               transition: `opacity 1.25s ease-out ${1.2 + index}s, transform 1.25s ease-out ${1.2 + index}s`,
+              border: '2px solid transparent',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.border = '2px solid #22d3ee';
+              e.currentTarget.style.borderRadius = '14px';
+              e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.border = '2px solid transparent';
+              e.currentTarget.style.boxShadow = 'none';
             }}
           >
             <CardName>{cardDetail.name}</CardName>
