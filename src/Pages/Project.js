@@ -378,6 +378,8 @@ const Works = () => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + ProjectStyle;
     document.head.appendChild(styleElement);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     return () => {
       document.head.removeChild(styleElement);

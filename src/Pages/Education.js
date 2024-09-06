@@ -165,6 +165,8 @@ const Education = () => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + EducationStyle;
     document.head.appendChild(styleElement);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     return () => {
       document.head.removeChild(styleElement);

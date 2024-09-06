@@ -133,6 +133,8 @@ useEffect(() => {
   handleResize();
   window.addEventListener('resize', handleResize);
 
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   const styleElement = document.createElement('style');
   styleElement.innerHTML = spaceboardsFont + ContactStyle;
   document.head.appendChild(styleElement);
@@ -169,7 +171,6 @@ useEffect(() => {
   const sendEmail = (e) => {
     e.preventDefault();
     setSendingMsg(true);
-    // Implement email sending logic here
   };
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
