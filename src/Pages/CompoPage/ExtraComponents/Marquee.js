@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Shade1 from '../components/Assest_Used/textures/Gradients/Shade1.png';
-import Shade2 from '../components/Assest_Used/textures/Gradients/Shade2.png';
-import Shade3 from '../components/Assest_Used/textures/Gradients/Shade3.png';
 import { Backdrop } from '@react-three/drei';
 import { useInView } from 'react-intersection-observer';
+
+import Shade1 from '../../../components/Assest_Used/textures/Gradients/Shade1.png';
+import Shade2 from '../../../components/Assest_Used/textures/Gradients/Shade2.png';
+import Shade3 from '../../../components/Assest_Used/textures/Gradients/Shade3.png';
 
 const reviews = [
   {

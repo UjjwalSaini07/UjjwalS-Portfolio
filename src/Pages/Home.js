@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import HomeMobi from './HomeMobi';
-import HomePc from './HomePc';
+import HomeMobi from './CompoPage/MobiVersion/HomeMobi';
+import HomePc from './CompoPage/PcVersion/HomePc';
 import { Helmet } from 'react-helmet';
 
 const About = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <>

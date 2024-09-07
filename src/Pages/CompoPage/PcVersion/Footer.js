@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import useSound from 'use-sound';
 import { useInView } from 'react-intersection-observer';
 
-import UsLogo from '../../components/Assest_Used/Us_LogoMain.png';
-import rocket from '../../components/Assest_Used/GIFs/rocketemoji.gif';
-import handshake from '../../components/Assest_Used/GIFs/handshake.gif';
-import soundeffect1 from '../../components/Assest_Used/Sounds/base.mp3';
-import soundeffect2 from '../../components/Assest_Used/Sounds/select-click.wav';
+import UsLogo from '../../../components/Assest_Used/Us_LogoMain.png';
+import rocket from '../../../components/Assest_Used/GIFs/rocketemoji.gif';
+import handshake from '../../../components/Assest_Used/GIFs/handshake.gif';
+import soundeffect1 from '../../../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
 
 const footerStyles = {
   padding: "2rem 4rem",

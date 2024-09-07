@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
-import ConfettiComponent from './CompoPage/Confetti';
 import useSound from 'use-sound';
 
+import ConfettiComponent from './CompoPage/VisualEffects/Confetti';
 import soundeffect1 from '../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../components/Assest_Used/Sounds/select-click.wav';
 import gif from '../components/Assest_Used/GIFs/Gif_Basic.gif';
@@ -133,6 +133,8 @@ useEffect(() => {
   handleResize();
   window.addEventListener('resize', handleResize);
 
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   const styleElement = document.createElement('style');
   styleElement.innerHTML = spaceboardsFont + ContactStyle;
   document.head.appendChild(styleElement);
@@ -169,7 +171,6 @@ useEffect(() => {
   const sendEmail = (e) => {
     e.preventDefault();
     setSendingMsg(true);
-    // Implement email sending logic here
   };
 
   const [hoveredIndex, setHoveredIndex] = useState(null);

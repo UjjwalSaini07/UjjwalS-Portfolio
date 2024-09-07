@@ -75,7 +75,15 @@ export default function AboutProfile() {
   return (
     <div style={flexLeft.container}>
       <div ref={ref1} style={{ ...flexLeft.imgContainer, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s` }}>
-        <img src={dp} alt="Profile" style={flexLeft.dp} />
+        <img src={dp} alt="Profile" style={flexLeft.dp} 
+          onMouseEnter={(e) => {
+            e.currentTarget.style.border = '2.8px solid #22d3ee';
+            e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.border = '2.8px solid transparent';
+            e.currentTarget.style.boxShadow = 'none';
+          }}/>
       </div>
       <div style={flexLeft.details}>
         <div ref={ref1} style={{ ...flexLeft.name, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.1s, transform 1.25s ease-out 2.1s` }}>Ujjwal Saini</div>

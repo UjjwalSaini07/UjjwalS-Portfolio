@@ -3,11 +3,11 @@ import * as THREE from 'three';
 import BIRDS from 'vanta/dist/vanta.birds.min';
 import useSound from 'use-sound';
 
-import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
-import soundeffect2 from '../components/Assest_Used/Sounds/select-click.wav';
-import img1 from './CompoPage/AssetPic/img2.jpg';
-import Homeback from './CompoPage/WordMareque/HomeMobBack';
-import Aboutcard from './CompoPage/WordMareque/About';
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
+import img1 from '../AssetPic/img2.jpg';
+import Homeback from '../WordMareque/HomeMobBack';
+import Aboutcard from '../WordMareque/About';
 
 const Home = () => {
   const vantaRef = useRef(null);

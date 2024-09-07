@@ -9,19 +9,19 @@ export default function AboutCard(props) {
 
   const titleStyle = {
     color: 'wheat',
-    fontSize: '15px',
+    fontSize: '16px',
     fontWeight: 'bold',
   };
   
   const descStyle = {
     color: 'white',
-    fontSize: '15px',
+    fontSize: '13.5px',
     marginTop: '5px',
     opacity: '0.8',
   };
 
   const cardStyle = {
-    fontSize: '15px',
+    fontSize: '13.5px',
     padding: '15px',
     paddingTop: '15px',
     marginLeft: '0',
@@ -43,7 +43,7 @@ export default function AboutCard(props) {
     display: 'inline',
     font: 'monospace',
     color: 'white',
-    fontSize: '15px',
+    fontSize: '13.5px',
     margin: '2px',
     marginTop: '5px',
     opacity: '0.8',
@@ -51,7 +51,7 @@ export default function AboutCard(props) {
 
   const pointsStyle = {
     color: 'white',
-    fontSize: '15px',
+    fontSize: '13.5px',
     marginTop: '5px',
     opacity: '0.8',
   };

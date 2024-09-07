@@ -15,30 +15,30 @@ export default function AboutCards() {
   });
 
   const education = {
-    title: "Education",
+    title: "My Education",
     description: "College and Degree",
     points: ["Engineering College, GGSIPU-26, ", "IT"],
     content: [],
   };
 
   const skills = {
-    title: "Skills",
+    title: "My Technical Skills",
     description: "",
-    points: ["React, ","Javascript, ","Python, ","Django, ","Tailwind, ","C/C++, ","Java, ","MySql, ","Three.js, ","Other... ",],
+    points: ["React, ","Javascript, ","Python, ","Django, ","Tailwind, ","C/C++, ","Java-Basic, ","MySql, ","Three.js, ","Others... ",],
     content: [],
   };
 
   const certifications = {
-    title: "Certifications",
+    title: "My Certifications",
     description: "",
-    points: ["Cyber Security Analyst ,","GCP Arcade Certification ,","Postman API ,","GSsoc ,","Other..."],
+    points: ["GSsoc Appreciation, ", "Cyber Security Analyst, ", "Azure Fundamental ,", "GCP Arcade, ","Postman API, ", "Others..."],
     content: [],
   };
 
   const achievements = {
-    title: "Achievements",
+    title: "My Achievements",
     description: "",
-    points: ["Branch Topper, ", "Tech Advocate, ", "Github Achiever, ", "GSsoc Ranker, ", "Other..."],
+    points: ["Branch Topper, ", "Tech & Github Advocate, ", "GSsoc Ranker, ", "WOB'24 Campus Ambassador, ","Others..."],
     content: [],
   };
 
@@ -55,16 +55,84 @@ export default function AboutCards() {
   return (
     <div style={container}>
       <div style={cards} className="more-details">
-        <Link to="/education" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s` }}>
+        <Link to="/education" onClick={playSound} ref={ref1} 
+          style={{ 
+            textDecoration: "none", 
+            opacity: inView1 ? 1 : 0, 
+            transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+            transition: `opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s`, 
+            border: '2px solid transparent',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.border = '2px solid #22d3ee';
+            e.currentTarget.style.borderRadius = '14px';
+            e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.border = '2px solid transparent';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+        >
           <AboutCard {...education} />
         </Link>
-        <Link to="/skills" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 14.5s, transform 1.25s ease-out 14.5s` }}>
+        <Link to="/skills" onClick={playSound} ref={ref1} 
+          style={{ 
+            textDecoration: "none", 
+            opacity: inView1 ? 1 : 0, 
+            transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+            transition: `opacity 1.25s ease-out 14.5s, transform 1.25s ease-out 14.5s`,
+            border: '2px solid transparent',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.border = '2px solid #22d3ee';
+            e.currentTarget.style.borderRadius = '14px';
+            e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.border = '2px solid transparent';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+        >
           <AboutCard {...skills} />
         </Link>
-        <Link to="/certifications" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 18.5s, transform 1.25s ease-out 18.5s` }}>
+        <Link to="/certifications" onClick={playSound} ref={ref1} 
+          style={{ 
+            textDecoration: "none", 
+            opacity: inView1 ? 1 : 0, 
+            transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+            transition: `opacity 1.25s ease-out 18.5s, transform 1.25s ease-out 18.5s`,
+            border: '2px solid transparent',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.border = '2px solid #22d3ee';
+            e.currentTarget.style.borderRadius = '14px';
+            e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.border = '2px solid transparent';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+        >
           <AboutCard {...certifications} />
         </Link>
-        <Link to="/about" onClick={playSound} ref={ref1} style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 20.5s, transform 1.25s ease-out 20.5s` }}>
+        <Link to="/about" onClick={playSound} ref={ref1} 
+          style={{ 
+            textDecoration: "none", 
+            opacity: inView1 ? 1 : 0, 
+            transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
+            transition: `opacity 1.25s ease-out 20.5s, transform 1.25s ease-out 20.5s`,
+            border: '2px solid transparent',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.border = '2px solid #22d3ee';
+            e.currentTarget.style.borderRadius = '14px';
+            e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.border = '2px solid transparent';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+        >
           <AboutCard {...achievements} />
         </Link>
       </div>

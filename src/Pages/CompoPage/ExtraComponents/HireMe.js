@@ -1,6 +1,7 @@
 import React from 'react';
 import useSound from 'use-sound';
-import soundeffect from '../../components/Assest_Used/Sounds/base.mp3';
+
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 
 const RotatingSVGWithButton = () => {
 

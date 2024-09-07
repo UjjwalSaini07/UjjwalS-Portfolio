@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from "framer-motion";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+
 import IBM from '../components/Assest_Used/CompanyLogo/IBM_Logo.png';
 import Gssoc from '../components/Assest_Used/CompanyLogo/Gssoc_Logo.png';
 import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
 import freelance from '../components/Assest_Used/CompanyLogo/WorkOnPC.png';
 import curious from '../components/Assest_Used/CompanyLogo/Curious_Logo.png';
 import WOB from '../components/Assest_Used/CompanyLogo/WOB24.png';
-import { Helmet } from 'react-helmet';
-import { motion } from "framer-motion";
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -177,6 +178,8 @@ const Experience = () => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + WorkExStyle;
     document.head.appendChild(styleElement);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     return () => {
       document.head.removeChild(styleElement);

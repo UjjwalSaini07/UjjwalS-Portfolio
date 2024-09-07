@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Styles/AboutMobi.css'; 
 import { motion } from "framer-motion";
 import { useSpring, animated } from '@react-spring/web';
 import useSound from 'use-sound';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useInView } from 'react-intersection-observer';
 
-import Img1 from '../components/Assest_Used/UjjwalImg2.jpg';
-import soundeffect from '../components/Assest_Used/Sounds/base.mp3';
+import Img1 from '../../../components/Assest_Used/UjjwalImg2.jpg';
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
+import '../../Styles/AboutMobi.css'; 
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },

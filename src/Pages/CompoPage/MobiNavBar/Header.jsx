@@ -7,12 +7,11 @@ import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import useSound from 'use-sound';
 
-import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
-import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
 import Hamburger from './Hamburger';
 import '../../Styles/Header.css';
-
 import USLogopng from '../../../components/Assest_Used/Us_LogoMain.png';
+import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
+import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

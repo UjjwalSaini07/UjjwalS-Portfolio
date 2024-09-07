@@ -3,18 +3,18 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 import Certificate from "./BaseCertificate";
 
-import gssoc24 from "../../components/Assest_Used/Certifications/Ujjwal_GSSoC2024.png";
-import postman from "../../components/Assest_Used/Certifications/PostMan Certificate.png";
-import tatacyber from "../../components/Assest_Used/Certifications/Ujjwal_CyberSuraksha.jpg";
-import isro from "../../components/Assest_Used/Certifications/Isro_Certificate.jpg";
-import ibmskillbuild from "../../components/Assest_Used/Certifications/IBM SkillsBuild Data Visualization Micro Internship.jpg";
-import microachievement from "../../components/Assest_Used/Certifications/Achievements-ujjwalsaini-0007.jpg";
-import forage from "../../components/Assest_Used/Certifications/ForageCerti.jpg";
-import gdsc from "../../components/Assest_Used/Certifications/Ujjwal Saini_GENAI_StudyJam.jpg";
-import ibmfwd from "../../components/Assest_Used/Certifications/IBM SkillsBuild FWD Summer Internship Certificate_page-0001.jpg";
-import gssoc23 from "../../components/Assest_Used/Certifications/Participation_2023Gssoc.png";
-import mlsaAz from "../../components/Assest_Used/Certifications/MLSA_AzureFundamental.png";
-import skillbuildaifd from "../../components/Assest_Used/Certifications/ArtificialIntelligenceFundamentals.png";
+import gssoc24 from "../../../components/Assest_Used/Certifications/Ujjwal_GSSoC2024.png";
+import postman from "../../../components/Assest_Used/Certifications/PostMan Certificate.png";
+import tatacyber from "../../../components/Assest_Used/Certifications/Ujjwal_CyberSuraksha.jpg";
+import isro from "../../../components/Assest_Used/Certifications/Isro_Certificate.jpg";
+import ibmskillbuild from "../../../components/Assest_Used/Certifications/IBM SkillsBuild Data Visualization Micro Internship.jpg";
+import microachievement from "../../../components/Assest_Used/Certifications/Achievements-ujjwalsaini-0007.jpg";
+import forage from "../../../components/Assest_Used/Certifications/ForageCerti.jpg";
+import gdsc from "../../../components/Assest_Used/Certifications/Ujjwal Saini_GENAI_StudyJam.jpg";
+import ibmfwd from "../../../components/Assest_Used/Certifications/IBM SkillsBuild FWD Summer Internship Certificate_page-0001.jpg";
+import gssoc23 from "../../../components/Assest_Used/Certifications/Participation_2023Gssoc.png";
+import mlsaAz from "../../../components/Assest_Used/Certifications/MLSA_AzureFundamental.png";
+import skillbuildaifd from "../../../components/Assest_Used/Certifications/ArtificialIntelligenceFundamentals.png";
 
 const isMobile = window.innerWidth < 798;
 
@@ -146,6 +146,8 @@ export default function Certifications() {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + CertifiStyle;
     document.head.appendChild(styleElement);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     return () => {
       document.head.removeChild(styleElement);

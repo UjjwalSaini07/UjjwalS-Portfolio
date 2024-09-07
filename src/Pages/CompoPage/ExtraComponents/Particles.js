@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import image1 from './AssetPic/ImgSitPod1.png';
+import image1 from '../AssetPic/ImgSitPod1.png';
 
 const Canvas = () => {
   const canvasRef = useRef(null);

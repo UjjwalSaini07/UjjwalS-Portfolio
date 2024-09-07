@@ -14,6 +14,8 @@ const Error404 = () => {
 
     $('#menu').on('click', toggleMenu);
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     const disableDevTools = (e) => {
       if (e.keyCode === 123 || 
           (e.ctrlKey && e.shiftKey && (e.keyCode === 'I'.charCodeAt(0) ||
