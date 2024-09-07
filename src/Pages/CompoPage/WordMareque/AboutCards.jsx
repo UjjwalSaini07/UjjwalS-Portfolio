@@ -61,29 +61,25 @@ export default function AboutCards() {
       <div style={cards} className="more-details">
         <Link to="/education" onClick={playSound} ref={ref1} 
           style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)', transition: 'opacity 0.5s ease-out, transform 3s ease-out'}}
-          onMouseEnter={(e) => {
-            if (window.innerWidth <= 768) { // Adjust the width as per your mobile breakpoint
-              e.currentTarget.style.border = '2px solid #22d3ee';
-              e.currentTarget.style.borderRadius = '14px';
-              e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
-            }
+          onTouchStart={(e) => {
+            e.currentTarget.style.border = '2px solid #22d3ee';
+            e.currentTarget.style.borderRadius = '14px';
+            e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
           }}
-          onMouseLeave={(e) => {
-            if (window.innerWidth <= 768) {
-              e.currentTarget.style.border = '2px solid transparent';
-              e.currentTarget.style.boxShadow = 'none';
-            }
+          onTouchEnd={(e) => {
+            e.currentTarget.style.border = '2px solid transparent';
+            e.currentTarget.style.boxShadow = 'none';
           }}>          
           <AboutCard {...education} />
         </Link>
         <Link to="/skills" onClick={playSound} ref={ref1} 
           style={{ textDecoration: "none", opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(60px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 5s ease-out'}}
-          onMouseEnter={(e) => {
+          onTouchStart={(e) => {
             e.currentTarget.style.border = '2px solid #22d3ee';
             e.currentTarget.style.borderRadius = '14px';
             e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
           }}
-          onMouseLeave={(e) => {
+          onTouchEnd={(e) => {
             e.currentTarget.style.border = '2px solid transparent';
             e.currentTarget.style.boxShadow = 'none';
           }}>
@@ -91,12 +87,12 @@ export default function AboutCards() {
         </Link>
         <Link to="/certifications" onClick={playSound} ref={ref2} 
           style={{ textDecoration: "none", opacity: inView2 ? 1 : 0, transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 0.5s ease-out, transform 4s ease-out'}}
-          onMouseEnter={(e) => {
+          onTouchStart={(e) => {
             e.currentTarget.style.border = '2px solid #22d3ee';
             e.currentTarget.style.borderRadius = '14px';
             e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
           }}
-          onMouseLeave={(e) => {
+          onTouchEnd={(e) => {
             e.currentTarget.style.border = '2px solid transparent';
             e.currentTarget.style.boxShadow = 'none';
           }}>
@@ -104,12 +100,12 @@ export default function AboutCards() {
         </Link>
         <Link to="/about" onClick={playSound} ref={ref2} 
           style={{ textDecoration: "none", opacity: inView2 ? 1 : 0, transform: inView2 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 6s ease-out'}}
-          onMouseEnter={(e) => {
+          onTouchStart={(e) => {
             e.currentTarget.style.border = '2px solid #22d3ee';
             e.currentTarget.style.borderRadius = '14px';
             e.currentTarget.style.boxShadow = '0 0 10px #22d3ee';
           }}
-          onMouseLeave={(e) => {
+          onTouchEnd={(e) => {
             e.currentTarget.style.border = '2px solid transparent';
             e.currentTarget.style.boxShadow = 'none';
           }}>
