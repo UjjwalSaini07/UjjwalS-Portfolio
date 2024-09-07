@@ -21,7 +21,7 @@ export default function AboutCard(props) {
   };
 
   const cardStyle = {
-    fontSize: '15px',
+    fontSize: '13.5px',
     padding: '15px',
     paddingTop: '15px',
     marginLeft: '0',

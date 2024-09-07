@@ -14,7 +14,7 @@ export default function AboutCard(props) {
 
   const titleStyle = {
     color: '#e73e0d',
-    fontSize: '15px',
+    fontSize: '16.5px',
     fontWeight: 'bold',
     opacity: inView1 ? 1 : 0, 
     transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
@@ -23,7 +23,7 @@ export default function AboutCard(props) {
   
   const descStyle = {
     color: 'white',
-    fontSize: '15px',
+    fontSize: '13.5px',
     marginTop: '5px',
     opacity: '0.8',
     opacity: inView1 ? 1 : 0, 
@@ -56,7 +56,7 @@ export default function AboutCard(props) {
     display: 'inline',
     font: 'monospace',
     color: 'white',
-    fontSize: '15px',
+    fontSize: '13.5px',
     margin: '2px',
     marginTop: '5px',
     opacity: '0.8',
@@ -67,7 +67,7 @@ export default function AboutCard(props) {
 
   const pointsStyle = {
     color: 'white',
-    fontSize: '15px',
+    fontSize: '13.5px',
     marginTop: '5px',
     opacity: '0.8',
     opacity: inView1 ? 1 : 0, 
