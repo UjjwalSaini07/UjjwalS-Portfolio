@@ -31,7 +31,7 @@ export default function AboutCards() {
   const certifications = {
     title: "My Certifications",
     description: "",
-    points: ["Cyber Security Analyst ,","GCP Arcade Certification ,","Postman API ,","GSsoc ,","Others..."],
+    points: ["GSsoc Appreciation, ", "Cyber Security Analyst, ", "Azure Fundamental ,", "GCP Arcade, ","Postman API, ", "Others..."],
     content: [],
   };
 

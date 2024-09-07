@@ -6,6 +6,61 @@ import { useInView } from 'react-intersection-observer';
 
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 
+const spaceboardsFont = `
+  @font-face {
+    font-family: 'Spaceboards';
+    src: url('/fonts/Spaceboards.otf') format('opentype');
+  }
+`;
+
+const TestoStyle = `
+  .Test {
+    font-family: 'Spaceboards', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 4rem;
+    animation: gradient 1.5s infinite;
+    letter-spacing: 0.1rem;
+    background-size: 200% 200%;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 
+        0 0 0 rgba(0, 255, 197, 0.7), 
+        0 0 0 rgba(0, 255, 197, 0.7), 
+        0 0 0 rgba(169, 57, 255, 0.7), 
+        0 0 0 rgba(169, 57, 255, 0.7), 
+        0 0 0 rgba(0, 255, 197, 0.5), 
+        0 0 0 rgba(169, 57, 255, 0.5);
+    }
+    100% {
+      text-shadow: 
+        0 0 1px rgba(0, 255, 197, 1), 
+        0 0 2px rgba(0, 255, 197, 1), 
+        0 0 5px rgba(169, 57, 255, 1), 
+        0 0 8px rgba(169, 57, 255, 1), 
+        0 0 12px rgba(0, 255, 197, 0.7), 
+        0 0 15px rgba(169, 57, 255, 0.7);
+    }
+  }
+`;
+
 const HomePcContainer = styled.div`
   position: absolute;
   width: 100%;
@@ -32,7 +87,7 @@ const CardsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top: 130px;
+  top: 180px;
   right: 50px;
   width: 45%;
   z-index: 3;
@@ -63,19 +118,6 @@ const Card = styled.div`
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
   }
-  
-  // &:before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   border-radius: 16px;
-  //   background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
-  //   opacity: 0.5; /* Slightly opaque gradient overlay */
-  //   z-index: 0; /* Ensure it is behind the content */
-  // }
 
   * {
     position: relative;
@@ -107,11 +149,12 @@ const CardLink = styled.a`
 function HomeP2() {
   const cardDetails = [
     { name: 'About Me', description: 'Passionate and innovative developer with a creative flair, dedicated to crafting visually appealing and functional web solutions.', link: '/about' },
-    { name: 'Skills', description: 'Explore the diverse skills and cutting-edge technologies I work with to create innovative and impactful digital solutions.', link: '/skills' },
+    { name: 'Tech Skills', description: 'Explore the diverse skills and cutting-edge technologies I work with to create innovative and impactful digital solutions.', link: '/skills' },
     { name: 'Education', description: 'Explore my educational qualifications and achievements to see the foundation of my expertise and growth.', link: '/education' },
-    { name: 'Projects', description: 'Discover the projects I’ve worked on to see my creativity and technical skills in action and impact fully.', link: '/projects' },
+    { name: 'My Projects', description: 'Discover the projects I’ve worked on to see my creativity and technical skills in action and impact fully.', link: '/projects' },
     { name: 'Experience', description: 'See my professional experience and work history to understand my journey and the skills I’ve developed.', link: '/experience' },
-    { name: 'Contact', description: 'Get in touch with me for any inquiries or collaboration opportunities—I’d love to hear from you soon!', link: '/contact' },
+    { name: 'Certifications', description: 'Showcasing my accomplishments and expertise in various fields—explore my certifications and the skills I’ve gained!', link: '/certifications' },
+    // { name: 'Contact', description: 'Get in touch with me for any inquiries or collaboration opportunities—I’d love to hear from you soon!', link: '/contact' },
   ];
 
   const [playSound] = useSound(soundeffect);
@@ -124,14 +167,18 @@ function HomeP2() {
   return (
     <HomePcContainer>
       <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
+      <div className="Test" style={{ textAlign: 'center', zIndex: '2', marginRight: '8rem', marginTop: '10rem', marginBottom: '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
+        Project Overview
+      </div>
       <CardsContainer ref={ref1}>
+        
         {cardDetails.map((cardDetail, index) => (
           <Card
             key={index}
             style={{
               opacity: inView1 ? 1 : 0,
               transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
-              transition: `opacity 1.25s ease-out ${1.2 + index}s, transform 1.25s ease-out ${1.2 + index}s`,
+              transition: `opacity 1.25s ease-out ${1.4 + index}s, transform 1.25s ease-out ${1.4 + index}s`,
               border: '2px solid transparent',
             }}
             onMouseEnter={(e) => {
