@@ -50,7 +50,7 @@ You can visit the live site here - https://ujjwals-portfolio.vercel.app/
 - React: JavaScript library for building user interfaces.
 - Vanta.js: For animated background effects.
 - Tailwind CSS: For styling components inline.
-- Motion Ui
+- Magic Ui
 - GASP
 - Three.js
 - Node.js
