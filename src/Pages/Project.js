@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { Helmet } from 'react-helmet';
+import useSound from 'use-sound';
 import link from '../components/Assest_Used/link.png';
 import github from '../components/Assest_Used/github.png';
 import Spline from '@splinetool/react-spline';
@@ -16,6 +17,8 @@ import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
 import ProfileCard from '../components/Assest_Used/ProjectImg/ProfileCard.png';
 import Cube from '../components/Assest_Used/ProjectImg/Cube.png';
 import VoiceAss from '../components/Assest_Used/ProjectImg/VoiceAss.gif';
+
+import soundeffect1 from '../components/Assest_Used/Sounds/select-click.wav';
 
 const styles = {
   paddingX: "sm:px-16 px-6",
@@ -407,6 +410,8 @@ const Works = () => {
   const handleTouchStart = () => setIsHovered(true);
   const handleTouchEnd = () => setIsHovered(false);
 
+  const [playSoundAlert] = useSound(soundeffect1);
+
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + ProjectStyle;
@@ -458,13 +463,19 @@ const Works = () => {
           
           <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3 overflow-hidden overflow-x-hidden overflow-y-hidden">
             {projects.map((project, index) => (
-              <ProjectCard key={`project-${index}`} index={index} {...project} />
+              <ProjectCard key={`project-${index}`} index={index} {...project} 
+              onClick={() => {
+                playSoundAlert(); 
+              }}/>
             ))}
           </div>
 
           <div className="md:hidden mt-5 flex flex-col gap-4 overflow-hidden overflow-x-hidden overflow-y-hidden">
             {projects.map((project, index) => (
-              <ProjectCard key={`project-${index}`} index={index} {...project} />
+              <ProjectCard key={`project-${index}`} index={index} {...project} 
+              onClick={() => {
+                playSoundAlert();
+              }}/>
             ))}
           </div>
         </motion.section>
