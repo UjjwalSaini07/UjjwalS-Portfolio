@@ -1,12 +1,15 @@
 // Todo:  Try Chnages
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { Helmet } from 'react-helmet';
 import link from '../components/Assest_Used/link.png';
 import github from '../components/Assest_Used/github.png';
+import Spline from '@splinetool/react-spline';
+import { useMediaQuery } from 'react-responsive';
 
 // Project Thumbnail
+import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 import VedicVani from '../components/Assest_Used/ProjectImg/VedicVani.png';
 import MyPortfolio from '../components/Assest_Used/ProjectImg/USPortfolio.png';
 import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
@@ -64,6 +67,24 @@ const staggerContainer = (staggerChildren, delayChildren) => ({
     },
   },
 });
+
+const spline_model = { 
+  position: "fixed",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  zIndex: "1",
+};
+const mainContSplinebg = {
+  zIndex: '1',
+  backgroundImage: `url(${bgref})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  transition: 'all 0.3s ease',
+  position: 'relative', 
+};
+
 
 const projects = [
   {
@@ -334,11 +355,13 @@ const ProjectCard = ({
           src={image}
           alt="project_image"
           className="w-full h-full object-cover rounded-3xl"
+          style={{pointerEvents: "auto"}}
         />
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
           <div
             onClick={() => window.open(live_link, "_blank")}
             className="w-14 h-14 bg-black bg-opacity-60 p-2.5 rounded-full flex justify-center items-center cursor-pointer transition-transform transform hover:scale-110"
+            style={{pointerEvents: "auto"}}
           >
             <img
               src={link}
@@ -349,6 +372,7 @@ const ProjectCard = ({
           <div
             onClick={() => window.open(source_code_link, "_blank")}
             className="w-14 h-14 bg-black bg-opacity-60 p-1.5 rounded-full flex justify-center items-center cursor-pointer transition-transform transform hover:scale-110"
+            style={{pointerEvents: "auto"}}
           >
             <img
               src={github}
@@ -374,6 +398,15 @@ const ProjectCard = ({
 );
 
 const Works = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+  
+  const handleTouchStart = () => setIsHovered(true);
+  const handleTouchEnd = () => setIsHovered(false);
+
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + ProjectStyle;
@@ -391,38 +424,52 @@ const Works = () => {
     <Helmet>
       <title>My Projects | Portfolio - Ujjwal</title>
     </Helmet>
-      <motion.section
-        variants={staggerContainer(0.5, 0.2)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} max-w-12xl mx-auto sm:h-full h-[100vh]`}
-      >
-        <span className="hash-span" id="works">
-          &nbsp;
-        </span>
+    <div style={mainContSplinebg}>
+      {!isMobile ? (
+        <Spline 
+          style={spline_model} 
+          scene="https://prod.spline.design/z6sedxN3BKPCAM0N/scene.splinecode"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+      ) : (
+        'none'
+      )}
+      <div className="mt-1" style={{ zIndex: '20', position: 'relative', pointerEvents: "none", }}>
+        <motion.section
+          variants={staggerContainer(0.5, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          className={`${styles.padding} max-w-12xl mx-auto sm:h-full h-[100vh]`}
+        >
+          <span className="hash-span" id="works">
+            &nbsp;
+          </span>
 
-        <motion.div variants={textVariant(0.3)}>
-          <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2.5rem' }}>
-            My Innovative Development Works
+          <motion.div variants={textVariant(0.3)}>
+            <div className="Proj Proj-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '2.5rem' }}>
+              My Innovative Development Works
+            </div>
+            <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '4rem', marginRight: '7rem', marginTop: '2.2rem' }}>
+              Projects
+            </div>
+          </motion.div>
+          
+          <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3 overflow-hidden overflow-x-hidden overflow-y-hidden">
+            {projects.map((project, index) => (
+              <ProjectCard key={`project-${index}`} index={index} {...project} />
+            ))}
           </div>
-          <div className="Proj Proj-Mobile" style={{ textAlign: 'center', marginBottom: '2.4rem', marginLeft: '4rem', marginRight: '7rem', marginTop: '2.2rem' }}>
-            Projects
-          </div>
-        </motion.div>
-        
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-3 overflow-hidden overflow-x-hidden overflow-y-hidden">
-          {projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
-          ))}
-        </div>
 
-        <div className="md:hidden mt-5 flex flex-col gap-4 overflow-hidden overflow-x-hidden overflow-y-hidden">
-          {projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
-          ))}
-        </div>
-      </motion.section>
+          <div className="md:hidden mt-5 flex flex-col gap-4 overflow-hidden overflow-x-hidden overflow-y-hidden">
+            {projects.map((project, index) => (
+              <ProjectCard key={`project-${index}`} index={index} {...project} />
+            ))}
+          </div>
+        </motion.section>
+      </div>
+    </div>
     </>
   );
 };

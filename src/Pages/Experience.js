@@ -6,7 +6,7 @@ import "react-vertical-timeline-component/style.min.css";
 import Spline from '@splinetool/react-spline';
 import { useMediaQuery } from 'react-responsive';
 
-import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png'
+import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 import IBM from '../components/Assest_Used/CompanyLogo/IBM_Logo.png';
 import Gssoc from '../components/Assest_Used/CompanyLogo/Gssoc_Logo.png';
 import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
