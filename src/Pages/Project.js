@@ -88,7 +88,6 @@ const mainContSplinebg = {
   position: 'relative', 
 };
 
-
 const projects = [
   {
     name: "Vedic Vani",
