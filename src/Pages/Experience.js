@@ -40,7 +40,6 @@ const mainContSplinebg = {
   position: 'relative', 
 };
 
-
 const spaceboardsFont = `
   @font-face {
     font-family: 'Spaceboards';
