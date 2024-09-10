@@ -40,7 +40,9 @@ export default function Header() {
   }, []);
 
   const headerStyle = {
-    backgroundColor: isScrolled ? '#010215' : 'transparent',
+    backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.082)' : 'transparent',
+    backdropFilter: isScrolled ? 'blur(5px)' : 'none',
+    boxShadow: isScrolled ? '0 6px 12px rgba(0, 0, 0, 0.5)' : 'none',
     transition: 'background-color 0.3s ease-in-out',
   };
 

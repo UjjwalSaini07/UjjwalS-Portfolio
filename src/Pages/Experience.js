@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from "framer-motion";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import Spline from '@splinetool/react-spline';
+import { useMediaQuery } from 'react-responsive';
 
+import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png'
 import IBM from '../components/Assest_Used/CompanyLogo/IBM_Logo.png';
 import Gssoc from '../components/Assest_Used/CompanyLogo/Gssoc_Logo.png';
 import GCP from '../components/Assest_Used/CompanyLogo/GCP_Logo.jpg';
@@ -19,6 +22,24 @@ const textVariant = (delay) => ({
     transition: { type: "spring", duration: 1.25, delay: delay },
   },
 });
+
+const spline_model = { 
+  position: "fixed",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  zIndex: "1",
+};
+const mainContSplinebg = {
+  zIndex: '1',
+  backgroundImage: `url(${bgref})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  transition: 'all 0.3s ease',
+  position: 'relative', 
+};
+
 
 const spaceboardsFont = `
   @font-face {
@@ -78,6 +99,22 @@ const WorkExStyle = `
         0 0 8px rgba(169, 57, 255, 1), 
         0 0 12px rgba(0, 255, 197, 0.7), 
         0 0 15px rgba(169, 57, 255, 0.7);
+    }
+  }
+  .Work-Ex-PC {
+    display: none;
+  }
+
+  .Work-Ex-Mobile {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .Work-Ex-PC {
+      display: block;
+    }
+    .Work-Ex-Mobile {
+      display: none;
     }
   }
 `;
@@ -173,6 +210,15 @@ const experiences = [
 ];
 
 const Experience = () => {
+  
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+  
+  const handleTouchStart = () => setIsHovered(true);
+  const handleTouchEnd = () => setIsHovered(false);
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -191,71 +237,92 @@ const Experience = () => {
     <Helmet>
       <title>Experience | Portfolio - Ujjwal</title>
     </Helmet>
-    <div className="mt-20">
-      <motion.div
-        variants={textVariant(0.3)}
-        initial="hidden"
-        animate="show"
-      >
-      <div className="Work-Ex" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
-        Work & Experience
-      </div>
-      </motion.div>
-      <VerticalTimeline>
-        {experiences.map((experience, index) => (
-          <VerticalTimelineElement
-            key={`experience-${index}`}
-            contentStyle={{ background: "#140b40", color: "#fff", borderRadius: "10px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
-            contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-            date={experience.date}
-            dateClassName="date"
-            iconStyle={{ background: experience.iconBg }}
-            icon={<div className="flex items-center justify-center w-full h-full"><img src={experience.icon} alt={experience.company_name} className="w-full h-full object-cover rounded-full" /></div>}
-          >
-            <h3 className="company-title">{experience.title}</h3>
-            <p className="company-name">{experience.company_name}</p>
-            <ul className="mt-5 list-disc ml-5 space-y-3.5">
-              {experience.points.map((point, idx) => (
-                <li key={`experience-point-${idx}`} className="text-[#d4d4d8] sm:text-[15px] text-[12px] pl-1 tracking-wider">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
-      <style jsx global>{`
-        .vertical-timeline-element-date {
-          font-size: 18px !important;
-          color: #fff !important;
-          font-weight: bold !important;
-        }
-        
-        .company-title {
-          color: white;
-          font-size: 25px;
-          font-weight: bold;
-        }
-
-        .company-name {
-          color: #e4e4e7 !important;
-          font-size: 13px !important;
-          font-weight: bold !important;
-        }
-
-        @media (max-width: 768px) {
-          .Work-Ex {
-            font-size: 34px;
-            margin-right: 2.4rem;
-          }
-          .company-title {
-          font-size: 18.5px;
-          }
+    <div style={mainContSplinebg}>
+      {!isMobile ? (
+        <Spline 
+          style={spline_model} 
+          scene="https://prod.spline.design/rBcaq3Xa97MnC3a4/scene.splinecode"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+      ) : (
+        <Spline 
+          style={spline_model} 
+          scene="https://prod.spline.design/tQH4xs3CwWIS7EtM/scene.splinecode"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        />
+      )}
+      <div className="mt-20" style={{ zIndex: '20', position: 'relative', pointerEvents: "none", }}>
+        <motion.div
+          variants={textVariant(0.3)}
+          initial="hidden"
+          animate="show"
+        >
+        <div className="Work-Ex Work-Ex-PC" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
+          My Technical Experience
+        </div>
+        <div className="Work-Ex Work-Ex-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '7.6rem'}}>
+          My Experience
+        </div>
+        </motion.div>
+        <VerticalTimeline>
+          {experiences.map((experience, index) => (
+            <VerticalTimelineElement
+              key={`experience-${index}`}
+              // contentStyle={{ background: "#140b40", color: "#fff", borderRadius: "10px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)" }}
+              contentStyle={{ background: "rgba(255, 255, 255, 0.09)", color: "#fff", borderRadius: "18px", boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)", backdropFilter: "blur(6px)" }}
+              contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+              date={experience.date}
+              dateClassName="date"
+              iconStyle={{ background: experience.iconBg }}
+              icon={<div className="flex items-center justify-center w-full h-full"><img src={experience.icon} alt={experience.company_name} className="w-full h-full object-cover rounded-full" /></div>}
+            >
+              <h3 className="company-title">{experience.title}</h3>
+              <p className="company-name">{experience.company_name}</p>
+              <ul className="mt-5 list-disc ml-5 space-y-3.5">
+                {experience.points.map((point, idx) => (
+                  <li key={`experience-point-${idx}`} className="text-[#d4d4d8] sm:text-[15px] text-[12px] pl-1 tracking-wider">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+        <style jsx global>{`
           .vertical-timeline-element-date {
-            font-size: 14px !important;
+            font-size: 18px !important;
+            color: #fff !important;
+            font-weight: bold !important;
           }
-        }
-      `}</style>
+          
+          .company-title {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+          }
+
+          .company-name {
+            color: #e4e4e7 !important;
+            font-size: 13px !important;
+            font-weight: bold !important;
+          }
+
+          @media (max-width: 768px) {
+            .Work-Ex {
+              font-size: 34px;
+              margin-right: 2.4rem;
+            }
+            .company-title {
+            font-size: 18.5px;
+            }
+            .vertical-timeline-element-date {
+              font-size: 14px !important;
+            }
+          }
+        `}</style>
+      </div>
     </div>
     </>
   );
