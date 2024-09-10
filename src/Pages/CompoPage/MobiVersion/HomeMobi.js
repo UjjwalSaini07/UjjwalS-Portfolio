@@ -37,6 +37,7 @@ const Home = () => {
       THREE: THREE,
       mouseControls: true,
       touchControls: true,
+      quantity: 3.50,
       gyroControls: false,
       minHeight: 200.00,
       minWidth: 200.00,
@@ -44,8 +45,8 @@ const Home = () => {
       scaleMobile: 1.00,
       backgroundColor: 0x030321,
       colorMode: "variance",
-      birdSize: 1.60,
-      speedLimit: 4.00,
+      birdSize: 1.20,
+      speedLimit: 3.50,
       separation: 87.00,
       alignment: 44.00,
       cohesion: 38.00
