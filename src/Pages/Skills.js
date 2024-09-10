@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet';
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
 
+import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png'
+
 // Define motion variants
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -163,7 +165,6 @@ const Tech = () => {
     threshold: 0.1,
   });
 
-
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + SkillStyle;
@@ -181,6 +182,7 @@ const Tech = () => {
     <Helmet>
         <title>My Skills | Portfolio - Ujjwal</title>
     </Helmet>
+    {/* <div style={{backgroundImage: `url(${bgref})`}}> */}
       <motion.div
         variants={textVariant(0.8)}
         initial="hidden"
@@ -237,6 +239,7 @@ const Tech = () => {
           </div>
         </div>
       </div>
+    {/* </div> */}
     </>
   );
 };

@@ -166,9 +166,7 @@ const About = () => {
       
       <Spline 
         style={spline_model} 
-        // scene="https://prod.spline.design/tQH4xs3CwWIS7EtM/scene.splinecode"
-        // scene="https://prod.spline.design/z6sedxN3BKPCAM0N/scene.splinecode"
-        scene="https://prod.spline.design/rBcaq3Xa97MnC3a4/scene.splinecode"
+        scene="https://prod.spline.design/tQH4xs3CwWIS7EtM/scene.splinecode"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       />
