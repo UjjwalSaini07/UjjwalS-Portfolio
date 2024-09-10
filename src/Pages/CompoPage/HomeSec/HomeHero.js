@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import useSound from 'use-sound';
 
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 import soundeffect1 from '../../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
 import HireMESvg from '../ExtraComponents/HireMe';
@@ -25,6 +26,10 @@ const HomePcContainer = {
   height: "100vh",
   overflow: "hidden",
   zindex: "1",
+  backgroundColor: "#000000",
+  backgroundImage: `url(${bgref})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 };
 
 const spline_model = {
