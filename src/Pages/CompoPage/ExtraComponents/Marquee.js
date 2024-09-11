@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import Shade1 from '../../../components/Assest_Used/textures/Gradients/Shade1.png';
 import Shade2 from '../../../components/Assest_Used/textures/Gradients/Shade2.png';
 import Shade3 from '../../../components/Assest_Used/textures/Gradients/Shade3.png';
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 
 const reviews = [
   {
@@ -137,9 +138,9 @@ const ReviewCard = ({ img, name, username, body }) => {
 
   const cardStyle = {
     position: 'relative',
-    width: '35rem', // Increase card width
-    height: '8rem', // Increase card width
-    margin: '0.2px 0.5rem 1.2rem', // Adjust margins
+    width: '35rem',
+    height: '8rem', 
+    margin: '0.2px 0.5rem 1.2rem',
     cursor: 'pointer',
     overflow: 'hidden',
     borderRadius: '1rem',
@@ -213,8 +214,11 @@ export function MarqueeDemo() {
     width: '100%',
     overflow: 'hidden',
     borderRadius: '0.75rem',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-    backgroundColor: '#020214',
+    // border: '1px solid rgba(0, 0, 0, 0.1)',
+    // backgroundColor: '#020214',
+    backgroundImage: `url(${bgref})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     color: 'white',
   };
 
@@ -224,15 +228,15 @@ export function MarqueeDemo() {
     top: 0,
     bottom: 0,
     left: 0,
-    width: '15%', // Adjust the gradient width
-    background: 'linear-gradient(to right, #020214, rgba(2, 2, 20, 0))',
+    width: '18%', // Adjust the gradient width
+    // background: 'linear-gradient(to right, #020214, rgba(2, 2, 20, 0))',
   };
 
   const gradientReverseStyle = {
     ...gradientStyle,
     left: 'auto',
     right: 0,
-    background: 'linear-gradient(to left, #020214, rgba(2, 2, 20, 0))',
+    // background: 'linear-gradient(to left, #020214, rgba(2, 2, 20, 0))',
   };
 
   const { ref: ref0, inView: inView0 } = useInView({
