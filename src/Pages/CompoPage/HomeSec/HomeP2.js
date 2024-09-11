@@ -5,6 +5,7 @@ import useSound from 'use-sound';
 import { useInView } from 'react-intersection-observer';
 
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 
 const spaceboardsFont = `
   @font-face {
@@ -68,7 +69,9 @@ const HomePcContainer = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
-  background: #020215;
+  // background: #020215;
+  background-Image: url(${bgref});
+  background-size: cover;
   z-index: 1;
 `;
 
@@ -166,9 +169,10 @@ function HomeP2() {
 
   return (
     <HomePcContainer>
-      <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
-      <div className="Test" style={{ textAlign: 'center', zIndex: '2', marginRight: '8rem', marginTop: '10rem', marginBottom: '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
-        Project Overview
+      <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/vyBJML2ZgR2CVUbJ/scene.splinecode" />
+      {/* <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" /> */}
+      <div className="Test" style={{ textAlign: 'center', zIndex: '2', marginRight: '3rem', marginTop: '10rem', marginBottom: '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
+        Portfolio Overview
       </div>
       <CardsContainer ref={ref1}>
         
