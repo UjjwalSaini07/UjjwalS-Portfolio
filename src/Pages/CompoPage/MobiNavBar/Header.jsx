@@ -19,10 +19,17 @@ export default function Header() {
   const [playSound] = useSound(soundeffect);
   const [playSoundAlert] = useSound(soundeffect2);
 
+  // const toggleNavbar = () => {
+  //   document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+  //   setIsOpen(!isOpen);
+  // };
   const toggleNavbar = () => {
-    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
-    setIsOpen(!isOpen);
+    setIsOpen(prevState => {
+      document.body.style.overflow = prevState ? 'auto' : 'hidden';
+      return !prevState;
+    });
   };
+  
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -40,7 +47,9 @@ export default function Header() {
   }, []);
 
   const headerStyle = {
-    backgroundColor: isScrolled ? '#010215' : 'transparent',
+    backgroundColor: isScrolled ? '#000000' : 'transparent',
+    // backdropFilter: isScrolled ? 'blur(5px)' : 'blur(0)',
+    boxShadow: isScrolled ? '0 6px 12px rgba(0, 0, 0, 0.5)' : 'none',
     transition: 'background-color 0.3s ease-in-out',
   };
 
@@ -53,7 +62,6 @@ export default function Header() {
   return (
     <div className="myheader" id="nav" style={headerStyle}>
       <div className="head-container">
-        
         <span className="hamburger-icon" style={{ height:'20px'}}>
           <Hamburger isOpen={isOpen} toggle={toggleNavbar} />
         </span>

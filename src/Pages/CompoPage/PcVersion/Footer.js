@@ -8,10 +8,14 @@ import rocket from '../../../components/Assest_Used/GIFs/rocketemoji.gif';
 import handshake from '../../../components/Assest_Used/GIFs/handshake.gif';
 import soundeffect1 from '../../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 
 const footerStyles = {
   padding: "2rem 4rem",
-  background: "#020214",
+  // background: "#020214",
+  backgroundImage: `url(${bgref})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
   color: "#fff",
   display: "flex",
   justifyContent: "space-between",

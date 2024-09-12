@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
+
 const NumberTicker = () => {
   const [projectCount, setProjectCount] = useState(0);
   const [happyClientCount, setHappyClientCount] = useState(0);
@@ -77,7 +79,10 @@ const NumberTicker = () => {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '20px',
-    backgroundColor: '#020214',
+    // backgroundColor: '#020214',
+    backgroundImage: `url(${bgref})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     color: '#fff',
     minHeight: '100vh',
     overflow: 'hidden',
@@ -99,7 +104,7 @@ const NumberTicker = () => {
     margin: '10px',
     padding: '15px',
     borderRadius: '8px',
-    backgroundColor: 'rgba(255, 255, 255, 0)', // Fully transparent background
+    backgroundColor: 'rgba(255, 255, 255, 0)',
     color: '#fff',
     boxShadow: '0 6px 12px rgba(0, 0, 0, 0)', 
     width: '160px',

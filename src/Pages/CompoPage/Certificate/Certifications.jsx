@@ -1,8 +1,11 @@
-import React,{useEffect} from "react";
+import React,{ useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 import Certificate from "./BaseCertificate";
+import { useMediaQuery } from 'react-responsive';
+import Spline from '@splinetool/react-spline';
 
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png'
 import gssoc24 from "../../../components/Assest_Used/Certifications/Ujjwal_GSSoC2024.png";
 import postman from "../../../components/Assest_Used/Certifications/PostMan Certificate.png";
 import tatacyber from "../../../components/Assest_Used/Certifications/Ujjwal_CyberSuraksha.jpg";
@@ -17,6 +20,22 @@ import mlsaAz from "../../../components/Assest_Used/Certifications/MLSA_AzureFun
 import skillbuildaifd from "../../../components/Assest_Used/Certifications/ArtificialIntelligenceFundamentals.png";
 
 const isMobile = window.innerWidth < 798;
+
+const spline_model = { 
+  position: "fixed",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  zIndex: "1",
+};
+const mainContSplinebg = {
+  zIndex: '1',
+  backgroundImage: `url(${bgref})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  position: 'relative', 
+};
 
 const spaceboardsFont = `
   @font-face {
@@ -142,6 +161,11 @@ export default function Certifications() {
     threshold: 0.1, 
   });
 
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const [isHovered, setIsHovered] = useState(false);
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.innerHTML = spaceboardsFont + CertifiStyle;
@@ -155,50 +179,64 @@ export default function Certifications() {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: 'transaprent',
-        padding: '12px',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '20px',
-        maxWidth: isMobile ? '800px' : '1800px',
-        height: 'auto',
-        margin: 'auto',
-        color: 'white',
-        overflow: 'hidden',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
-      }}
-    >
-      <motion.div variants={textVariant(1)} initial="hidden" animate="show" >
-      <div className="cert cert-PC" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
-        My Achievements & Certifications
-      </div>
-      </motion.div>
-      <motion.div variants={textVariant(1)} initial="hidden" animate="show" >
-      <div className="cert cert-Mobile" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
-        My Certifications
-      </div>
-      </motion.div>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '15px',
-          marginTop: '20px',
-          justifyContent: 'center',
-        }}
-      >
-        {certifications.content.map((certification, index) => (
-          <motion.div
-            variants={textVariant(6.8)}
-            initial="hidden"
-            animate="show"
-            variants={fadeIn("", "", index * 0.5, 1.8)}
-          >
-            <Certificate key={index} index={index} certification={certification} />
+    <div style={mainContSplinebg}>
+      {!isMobile ? (
+        <Spline 
+          style={spline_model} 
+          scene="https://prod.spline.design/z6sedxN3BKPCAM0N/scene.splinecode"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+      ) : (
+        'none'
+      )}
+      <div className="mt-1" style={{ zIndex: '20', position: 'relative', pointerEvents: "none", }}>
+        <div
+          style={{
+            backgroundColor: 'transaprent',
+            padding: '12px',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '20px',
+            maxWidth: isMobile ? '800px' : '1800px',
+            height: 'auto',
+            margin: 'auto',
+            color: 'white',
+            overflow: 'hidden',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+          }}
+        >
+          <motion.div variants={textVariant(1)} initial="hidden" animate="show" >
+          <div className="cert cert-PC" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
+            My Achievements & Certifications
+          </div>
           </motion.div>
-        ))}
+          <motion.div variants={textVariant(1)} initial="hidden" animate="show" >
+          <div className="cert cert-Mobile" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '6.4rem' }}>
+            My Certifications
+          </div>
+          </motion.div>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '15px',
+              marginTop: '20px',
+              justifyContent: 'center',
+            }}
+          >
+            {certifications.content.map((certification, index) => (
+              <motion.div
+                variants={textVariant(6.8)}
+                initial="hidden"
+                animate="show"
+                variants={fadeIn("", "", index * 0.5, 1.8)}
+              >
+                <Certificate key={index} index={index} certification={certification} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

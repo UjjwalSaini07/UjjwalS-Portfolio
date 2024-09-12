@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import IconCloud from "../@/components/magicui/icon-cloud";
 import { Helmet } from 'react-helmet';
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
+import Spline from '@splinetool/react-spline';
+
+import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png'
 
 // Define motion variants
 const textVariant = (delay) => ({
@@ -28,6 +31,23 @@ const fadeIn = (direction, type, delay, duration) => ({
     transition: { type: type, delay: delay, duration: duration, ease: "easeOut" },
   },
 });
+
+const spline_model = { 
+  position: "fixed",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  zIndex: "1",
+};
+const mainContSplinebg = {
+  zIndex: '1',
+  backgroundImage: `url(${bgref})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  transition: 'all 0.3s ease',
+  position: 'relative', 
+};
 
 const spaceboardsFont = `
   @font-face {
@@ -157,12 +177,19 @@ const slugs = [
 const Tech = () => {
 
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+  
+  const handleTouchStart = () => setIsHovered(true);
+  const handleTouchEnd = () => setIsHovered(false);
 
   const { ref: ref1, inView: inView1 } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
-
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -181,62 +208,78 @@ const Tech = () => {
     <Helmet>
         <title>My Skills | Portfolio - Ujjwal</title>
     </Helmet>
-      <motion.div
-        variants={textVariant(0.8)}
-        initial="hidden"
-        animate="show"
-        className="text-center mb-16 px-4"
-      >
-        <div className="Tech Tech-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '7.2rem' }}>
-          My Techincal Skills
-        </div>
-        <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '8rem', marginRight: '2.8rem' }}>
-          My Tech Stack
-        </div>
-      </motion.div>
+    {/* <div style={{backgroundImage: `url(${bgref})`}}> */}
+    <div style={mainContSplinebg}>
+      {!isMobile ? (
+        <Spline 
+          style={spline_model} 
+          scene="https://prod.spline.design/z6sedxN3BKPCAM0N/scene.splinecode"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+      ) : (
+        'none'
+      )}
+      <div className="mt-1" style={{ zIndex: '20', position: 'relative', pointerEvents: "none", }}>
+        <motion.div
+          variants={textVariant(0.8)}
+          initial="hidden"
+          animate="show"
+          className="text-center mb-16 px-4"
+        >
+          <div className="Tech Tech-PC" style={{ textAlign: 'center', marginBottom: '3rem', marginTop: '7.2rem' }}>
+            My Techincal Skills
+          </div>
+          <div className="Tech Tech-Mobile" style={{ textAlign: 'center', marginBottom: '3.5rem', marginTop: '8rem', marginRight: '2.8rem' }}>
+            My Tech Stack
+          </div>
+        </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-10 mt-12 px-4">
-        {technologies.map((technology, index) => (
-          <motion.div
-            variants={textVariant(0.8)}
-            initial="hidden"
-            animate="show"
-            key={technology.name}
-            variants={fadeIn("", "", index * 0.1, 0.75)}
-            className="relative w-64 h-64 p-6 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 shadow-lg flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl overflow-hidden"
-          >
+        <div className="flex flex-wrap justify-center gap-10 mt-12 px-4">
+          {technologies.map((technology, index) => (
             <motion.div
-              className="absolute inset-0 bg-gradient-to-tl from-transparent to-black opacity-30"
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 0.5 }}
-              transition={{ duration: 0.3 }}
-            />
-            <motion.img
-              src={technology.icon}
-              alt={technology.name}
-              className={`relative w-24 h-24 object-contain rounded-full shadow-lg border-4 border-white ${technology.dark ? "bg-gray-700" : ""}`}
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.2, rotate: 15 }}
-              transition={{ duration: 0.3 }}
-            />
-            <h3 className="relative text-white mt-4 text-center text-xl font-semibold tracking-tight">
-              {technology.name}
-            </h3>
-          </motion.div>
-        ))}
-      </div>
+              variants={textVariant(0.8)}
+              initial="hidden"
+              animate="show"
+              key={technology.name}
+              variants={fadeIn("", "", index * 0.1, 0.75)}
+              className="relative w-64 h-64 p-6 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 shadow-lg flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl overflow-hidden"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-tl from-transparent to-black opacity-30"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 0.5 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.img
+                src={technology.icon}
+                alt={technology.name}
+                className={`relative w-24 h-24 object-contain rounded-full shadow-lg border-4 border-white ${technology.dark ? "bg-gray-700" : ""}`}
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.2, rotate: 15 }}
+                transition={{ duration: 0.3 }}
+                style={{pointerEvents: "auto",}}
+              />
+              <h3 className="relative text-white mt-4 text-center text-xl font-semibold tracking-tight">
+                {technology.name}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
 
-      <div className="Tech Tech-Mobile" ref={ref1} style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '3.5rem', marginRight: '3rem' , fontSize: '5.2rem', opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 2.5s ease-out'}}>
-          Skills in CLoud
-      </div>
+        <div className="Tech Tech-Mobile" ref={ref1} style={{ textAlign: 'center', marginBottom: '1rem', marginTop: '3.5rem', marginRight: '3rem' , fontSize: '5.2rem', opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.9)', transition: 'opacity 1.5s ease-out, transform 2.5s ease-out'}}>
+            Skills in CLoud
+        </div>
 
-      <div className="block md:hidden px-4 py-6 flex items-center justify-center" ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(-50px) scale(0.9)', transition: 'opacity 3s ease-out, transform 4.5s ease-out'}}>
-        <div className="relative w-full max-w-[90%] mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg shadow-xl p-4">
-          <div className="bg-white rounded-lg border border-gray-300 shadow-md p-6 flex items-center justify-center">
-            <div className="text-blue-600 font-bold" ref={ref1} style={{ fontSize: '2rem', alignItems: 'center', justifyContent: 'center', opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(-50px) scale(0.9)', transition: 'opacity 5s ease-out, transform 7.5s ease-out'}}><IconCloud iconSlugs={slugs} /></div>
+        <div className="block md:hidden px-4 py-6 flex items-center justify-center" ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(-50px) scale(0.9)', transition: 'opacity 3s ease-out, transform 4.5s ease-out', pointerEvents: "auto",}}>
+          <div className="relative w-full max-w-[90%] mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg shadow-xl p-4">
+            <div className="bg-white rounded-lg border border-gray-300 shadow-md p-6 flex items-center justify-center">
+              <div className="text-blue-600 font-bold" ref={ref1} style={{ fontSize: '2rem', alignItems: 'center', justifyContent: 'center', opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(-50px) scale(0.9)', transition: 'opacity 5s ease-out, transform 7.5s ease-out'}}><IconCloud iconSlugs={slugs} /></div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };

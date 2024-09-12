@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -22,8 +22,19 @@ const textVariant = (delay) => ({
 const About = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 });
     const [play] = useSound(sound);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    
   
     useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+
       const toggleMenu = () => {
         $('#menu').toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -41,16 +52,28 @@ const About = () => {
       };
   
       document.addEventListener('keydown', disableDevTools);
+
+      window.addEventListener('scroll', handleScroll);
   
       return () => {
         $('#menu').off('click', toggleMenu);
         document.removeEventListener('keydown', disableDevTools);
+
+        window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+
+    const headerStyle = {
+      backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
+      // backdropFilter: isScrolled ? 'blur(5px)' : 'blur(0)',
+      // filter: isScrolled ? 'blur(5px)' : 'blur(0px)',
+      boxShadow: isScrolled ? '0 6px 12px rgba(0, 0, 0, 0.5)' : 'none',
+      transition: 'background-color 0.3s ease-in-out',
+    };
   
     return (
       <div onContextMenu={(e) => e.preventDefault()}>
-        <div className='Basic_Nav'>
+        <div className='Basic_Nav' style={headerStyle}>
           <header>
           <motion.div variants={textVariant(1.2)} initial="hidden" animate="show">
             <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center' }}>
