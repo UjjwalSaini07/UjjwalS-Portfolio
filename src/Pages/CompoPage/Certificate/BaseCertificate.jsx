@@ -25,7 +25,8 @@ export default function Certificate({ certification, index }) {
         transition: 'transform 0.3s ease',
         opacity: inView1 ? 1 : 0, 
         transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-        transition: 'opacity 1.25s ease-out ${1.7 + index}s, transform 1.25s ease-out ${1.7 + index}s'
+        transition: 'opacity 1.25s ease-out ${1.7 + index}s, transform 1.25s ease-out ${1.7 + index}s',
+        pointerEvents: "auto",
       }}
     >
       <div
