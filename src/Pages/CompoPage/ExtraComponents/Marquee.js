@@ -175,7 +175,7 @@ const ReviewCard = ({ img, name, username, body }) => {
           </p>
         </div>
       </div>
-      <blockquote style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: 'white' }}>{body}</blockquote>
+      <blockquote style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'white' }}>{body}</blockquote>
     </figure>
   );
 };
@@ -247,7 +247,7 @@ export function MarqueeDemo() {
   return (
     <div style={containerStyle}>
       <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem',  opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(50px)', transition: `opacity 1.25s ease-out 4.2s, transform 1.25s ease-out 4.2s`}}>
-        Testinomails
+        Testimonials
       </div>
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
@@ -266,5 +266,3 @@ export function MarqueeDemo() {
 }
 
 export default MarqueeDemo;
-
-
