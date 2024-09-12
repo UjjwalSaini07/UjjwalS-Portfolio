@@ -47,8 +47,7 @@ export default function Header() {
   }, []);
 
   const headerStyle = {
-    // backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.2)' : 'transparent',
-    backgroundColor: isScrolled ? 'rgba(50, 50, 50, 0.7)' : 'rgba(50, 50, 50, 0)',
+    backgroundColor: isScrolled ? '#000000' : 'transparent',
     // backdropFilter: isScrolled ? 'blur(5px)' : 'blur(0)',
     boxShadow: isScrolled ? '0 6px 12px rgba(0, 0, 0, 0.5)' : 'none',
     transition: 'background-color 0.3s ease-in-out',
