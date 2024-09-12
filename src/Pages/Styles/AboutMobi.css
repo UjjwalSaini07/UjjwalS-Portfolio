@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Vidaloka:wght@400;700&display=swap");
 
 .about {
-  background: #010215;
+  /* background: #010215; */
   padding: 2rem 2rem;
   margin-top: 6.5rem;
 }
@@ -21,10 +21,10 @@
 .about .row .content {
   flex: 1 1 45rem;
   padding: 1.1rem;
-  background: #010215;
+  /* background: #010215; */
   border-radius: 10px;
   height: 500px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .about .row .content h3 {
@@ -68,12 +68,12 @@
   .about .row .content {
     flex: 1 1 45rem;
     padding: 1.2rem;
-    background: #010215;
+    /* background: #010215; */
     border-radius: 10px;
     height: 450px;
     margin-top: 2%;
     margin-right: 7%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
   }
 
   .about .about-me {

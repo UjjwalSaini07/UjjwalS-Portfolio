@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 
 import Img1 from '../../../components/Assest_Used/UjjwalImg2.jpg';
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 import '../../Styles/AboutMobi.css'; 
 
 const textVariant = (delay) => ({
@@ -201,6 +202,11 @@ const AboutMobi = () => {
     transform: 'translateY(-50%)',
     right: '-5px',
   };
+  const aboutinline = {
+    backgroundImage: `url(${bgref})`,
+    // backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -216,7 +222,7 @@ const AboutMobi = () => {
   }, []);
 
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" style={aboutinline}>
       <motion.div
         variants={textVariant(0.8)}
         initial="hidden"
