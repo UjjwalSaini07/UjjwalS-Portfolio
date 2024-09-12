@@ -5,6 +5,7 @@ import useSound from 'use-sound';
 
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
+import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 import img1 from '../AssetPic/img2.jpg';
 import Homeback from '../WordMareque/HomeMobBack';
 import Aboutcard from '../WordMareque/About';
@@ -43,7 +44,9 @@ const Home = () => {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      backgroundColor: 0x030321,
+      backgroundColor: 0x0,
+      // backgroundImage: `url(${bgref})`,
+      // backgroundPosition: 'center',
       colorMode: "variance",
       birdSize: 1.20,
       speedLimit: 3.50,
@@ -75,7 +78,10 @@ const Lowerstyles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#080424',
+    backgroundImage: `url(${bgref})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    // backgroundColor: '#080424',
     overflow: 'hidden',
     zIndex: 1,
   },
