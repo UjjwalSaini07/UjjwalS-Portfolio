@@ -267,7 +267,7 @@ const Home = () => {
         Designed with <i className="fa fa-heart pulse" style={iconStyles}></i>{" "}
         by{" "}
         <a
-          href="https://www.linkedin.com/in/ujjwal-saini-220960256/"
+          href="https://www.linkedin.com/in/ujjwalsaini07"
           ref={ref0}
           style={{...creditLinkStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s'}}
           onMouseEnter={(e) => (e.target.style.color = "#ffcc33")}
