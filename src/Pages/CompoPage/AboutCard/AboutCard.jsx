@@ -11,7 +11,6 @@ export default function AboutCard(props) {
     color: '#e73e0d',
     fontSize: '18px',
     fontWeight: 'bold',
-    // fontFamily: "'Arsenal SC', sans-serif",
     fontFamily: "'Vidaloka', serif",
   };
   
