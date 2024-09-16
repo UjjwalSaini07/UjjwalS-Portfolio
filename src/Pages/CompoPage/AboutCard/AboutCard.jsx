@@ -8,9 +8,11 @@ export default function AboutCard(props) {
   });
 
   const titleStyle = {
-    color: 'wheat',
-    fontSize: '16px',
+    color: '#e73e0d',
+    fontSize: '18px',
     fontWeight: 'bold',
+    // fontFamily: "'Arsenal SC', sans-serif",
+    fontFamily: "'Vidaloka', serif",
   };
   
   const descStyle = {
