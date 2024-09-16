@@ -18,14 +18,11 @@ const textVariant = (delay) => ({
   },
 });
 
-
 const About = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 });
     const [play] = useSound(sound);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    
-  
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > 50) {
@@ -34,7 +31,6 @@ const About = () => {
           setIsScrolled(false);
         }
       };
-
       const toggleMenu = () => {
         $('#menu').toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -65,8 +61,6 @@ const About = () => {
 
     const headerStyle = {
       backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
-      // backdropFilter: isScrolled ? 'blur(5px)' : 'blur(0)',
-      // filter: isScrolled ? 'blur(5px)' : 'blur(0px)',
       boxShadow: isScrolled ? '0 6px 12px rgba(0, 0, 0, 0.5)' : 'none',
       transition: 'background-color 0.3s ease-in-out',
     };
@@ -76,8 +70,8 @@ const About = () => {
         <div className='Basic_Nav' style={headerStyle}>
           <header>
           <motion.div variants={textVariant(1.2)} initial="hidden" animate="show">
-            <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={USLogopng} alt="Logo" style={{ height:isMobile ? '38px' : '48px', marginleft: '5px' }} />
+            <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center', fontFamily: "'Vidaloka', serif", }}>
+              <img src={USLogopng} alt="Logo" style={{ height:isMobile ? '38px' : '48px', marginleft: '5px', }} />
                 Ujjwal Saini
             </Link>
           </motion.div>

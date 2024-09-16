@@ -72,6 +72,7 @@ const typerStyle = {
   color: "#02f202",
   fontWeight: "500",
   display: "inline-block",
+  fontFamily: "'Srisakdi', system-ui",
 };
 
 
@@ -102,6 +103,7 @@ function Home() {
               variants={textVariant(0.4)}
               initial="hidden"
               animate="show"
+              style={{ fontFamily: "'Bodoni Moda', serif" }}
               className={`${styles.heroHeadText} text-white`}
             >
               Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span>
@@ -111,7 +113,7 @@ function Home() {
               initial="hidden"
               animate="show"
             >
-            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`} style={{ fontFamily: "'Vidaloka', serif" }}>
               {/* Designing and developing  <br /> top-notch Web and Mobile Apps */}
               I Craft exceptional & innovative <br /> Web and Mobile Applications
             </p>
@@ -152,9 +154,10 @@ function Home() {
                 border: 'none',
                 marginBottom: '-10px',
                 marginLeft: '1px',
-                marginTop: '-20px',
+                marginTop: '-25px',
                 fontSize: '18px',
                 fontWeight: 'bold',
+                fontFamily: "'Vidaloka', serif",
                 transition: 'background-color 0.3s',
                 width: '25%',
                 textAlign: 'center',
@@ -228,3 +231,10 @@ export default Home;
 //   );
 // }
 {/* <animated.h1 style={bounce} className={`${styles.heroHeadText} text-white`}> */}
+
+//! Google Font:
+// fontFamily: "'Playfair Display SC', serif",
+// fontFamily: "'Vidaloka', serif",
+// fontFamily: "'Arsenal SC', sans-serif",
+// fontFamily: "'Tangerine', cursive",
+// fontFamily: "'Pinyon Script', cursive",

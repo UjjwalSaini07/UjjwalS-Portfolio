@@ -28,7 +28,7 @@
 
 .aboutPC .row .content {
   flex: 1 1 45rem;
-  padding: 1.1rem;
+  padding: 1.2rem;
   background: transparent;
   border-radius: 10px;
   height: 580px;
@@ -50,7 +50,7 @@
 .aboutPC .row .content .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .aboutPC .row .content .box-container .box p {

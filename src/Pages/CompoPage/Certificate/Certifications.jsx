@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Certificate from "./BaseCertificate";
 import { useMediaQuery } from 'react-responsive';
 import Spline from '@splinetool/react-spline';
+import CloseIcon from "@mui/icons-material/Close";
 
 import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png'
 import gssoc24 from "../../../components/Assest_Used/Certifications/Ujjwal_GSSoC2024.png";
@@ -137,6 +138,53 @@ const fadeIn = (direction, type, delay, duration) => ({
     transition: { type: type, delay: delay, duration: duration, ease: "easeOut" },
   },
 });
+
+const popupStyles = {
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  zIndex: 100,
+  backgroundColor: "rgba(0, 0, 0, 0.6)",
+  padding: "1.2rem",
+  borderRadius: "15px",
+  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
+  maxWidth: "100vw",
+  maxHeight: "90vh",
+  display: "flex",
+  marginTop: "2.8rem",
+  justifyContent: "center",
+  alignItems: "center",
+  overflow: "hidden",
+};
+
+const imageStyle = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "10px",
+  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.7)",
+};
+
+const closeIconStyle = {
+  position: "absolute",
+  top: "1.5rem",
+  right: "1.6rem",
+  fontSize: "2.2rem",
+  fontWeight: "bold",
+  color: "#000000",
+  cursor: "pointer",
+  background: "rgba(255, 255, 255, 0)",
+  padding: "1rem",
+  borderRadius: "60%",
+};
+
+const responsivePopupStyles = {
+  ...popupStyles,
+  width: isMobile ? "100vw" : "60vw",
+  height: isMobile ? "auto" : "auto",
+};
+
 export default function Certifications() {
   const certifications = {
     title: "Certifications",
@@ -165,6 +213,29 @@ export default function Certifications() {
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleCertificateClick = (image) => {
+    setSelectedImage(image);
+    setIsPopupOpen(true);
+  };
+
+  let lastTouchTime = 0;
+  const handleDoubleTouch = (image) => {
+  const currentTime = new Date().getTime();
+  const tapLength = currentTime - lastTouchTime
+  if (tapLength < 500 && tapLength > 0) {  // 500ms threshold for double tap
+    setSelectedImage(image);
+    setIsPopupOpen(true);
+  }
+  lastTouchTime = currentTime;
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -231,6 +302,9 @@ export default function Certifications() {
                 initial="hidden"
                 animate="show"
                 variants={fadeIn("", "", index * 0.5, 1.8)}
+                onDoubleClick={() => handleCertificateClick(certification.image)}
+                // onTouchStart={() => handleDoubleTouch(certification.image)}
+                style={{ cursor: 'pointer' }}
               >
                 <Certificate key={index} index={index} certification={certification} />
               </motion.div>
@@ -238,6 +312,16 @@ export default function Certifications() {
           </div>
         </div>
       </div>
+      {/* Popup Modal for Certificate */}
+      {isPopupOpen && (
+      <div style={responsivePopupStyles}>
+        <img src={selectedImage} alt="Certificate" style={imageStyle} />
+        <div style={closeIconStyle} onClick={closePopup}>
+          &#10005;
+          {/* <CloseIcon /> */}
+        </div>
+      </div>
+    )}
     </div>
   );
 }
