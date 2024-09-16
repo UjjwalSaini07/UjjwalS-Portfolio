@@ -284,16 +284,23 @@ const About = () => {
               <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Hobbies : </span> Cube Solving, Gardening, Learning New Skills, Travelling, Listening Music, Playing Football</p>
               </motion.div>
               <motion.div variants={textVariant(5.2)} initial="hidden" animate="show">
-              <p><i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
-              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Linkedin : </span>
-              <a href="https://www.linkedin.com/in/ujjwalsaini07/" target="_blank" rel="noopener noreferrer" style={{ color: isHovered ?  '#fcfcfc' : '#17fc03', pointerEvents: 'auto' }}>Connect Here</a></p>
+              <p>
+                <i className="bi bi-linkedin" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Linkedin : </span>
+                <a href="https://www.linkedin.com/in/ujjwalsaini07/" target="_blank" rel="noopener noreferrer" style={{ color: isHovered ?  '#fcfcfc' : '#17fc03', pointerEvents: 'auto' }}>Connect Here</a>
+                {/* <motion.div variants={textVariant(5.8)} initial="hidden" animate="show"> */}
+                <i className="bi bi-github" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem',  marginLeft: '4rem'}}></i>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Github : </span>
+                <a href="https://github.com/UjjwalSaini07" target="_blank" rel="noopener noreferrer" style={{ color: isHovered ?  '#fcfcfc' : '#17fc03', pointerEvents: 'auto' }}>Follow Here</a>
+                {/* </motion.div> */}
+              </p>
               </motion.div>
             </div>
           </div>
           
           <div className="glowbtnAbt">
           <motion.div
-                variants={textVariant(6)}
+                variants={textVariant(6.6)}
                 initial="hidden"
                 animate="show"
             >
