@@ -140,6 +140,10 @@ const Home = () => {
     transition: `opacity 1.25s ease-out 7.3s, transform 1.25s ease-out 7.3s`,
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
@@ -158,7 +162,7 @@ const Home = () => {
       <div style={leftSectionStyles}>
         <img src={UsLogo} alt="UjjwalS Portfolio Logo" onClick={playSound1} ref={ref0} style={logoStyles} />
         <div style={paragraphContainerStyles}>
-          <h3 ref={ref0} style={boxHeadingStyles} onClick={playSound1}>UjjwalS Portfolio</h3>
+          <h3 ref={ref0} style={boxHeadingStyles} onClick={() => { playSound1(); handleScrollToTop(); }}>UjjwalS Portfolio</h3>
           <p ref={ref0} style={ParagraphStyles}>
             Thanks for visiting! Let's connect and elevate together.{' '}
             <img src={rocket} alt="Rocket Emoji" ref={ref0} style={{ width: '20px', verticalAlign: 'middle', display: 'inline',opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 6.8s, transform 1.25s ease-out 6.8s` }} />
