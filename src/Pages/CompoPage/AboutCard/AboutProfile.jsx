@@ -56,11 +56,14 @@ export default function AboutProfile() {
       marginTop: '1.8rem',
       // fontSize: '28px',
       fontSize: '4rem',
+      marginLeft: '-5px',
       fontWeight: 'bold',
     },
     greyFont: {
       color: 'grey',
-      fontSize: '1.25rem',
+      fontSize: '1.6rem',
+      fontFamily: "'Vidaloka', serif",
+      marginTop: '-5px',
       margin: '0px',
     },
     desc: {
