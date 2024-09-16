@@ -54,7 +54,8 @@ export default function AboutProfile() {
     name: {
       color: 'white',
       marginTop: '1.8rem',
-      fontSize: '28px',
+      // fontSize: '28px',
+      fontSize: '4rem',
       fontWeight: 'bold',
     },
     greyFont: {
@@ -86,7 +87,7 @@ export default function AboutProfile() {
           }}/>
       </div>
       <div style={flexLeft.details}>
-        <div ref={ref1} style={{ ...flexLeft.name, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.1s, transform 1.25s ease-out 2.1s` }}>Ujjwal Saini</div>
+        <div ref={ref1} style={{ ...flexLeft.name, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.1s, transform 1.25s ease-out 2.1s`, fontFamily:  "'Tangerine', cursive",}}>Ujjwal Saini</div>
         <h3 ref={ref1} style={{ ...flexLeft.greyFont, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s` }}>ujjwalsaini07</h3>
         <div ref={ref1} style={{ ...flexLeft.desc, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 4.6s, transform 1.25s ease-out 4.6s` }}>
           Btech-IT 26' @GGSIPU | FullStack Web Developer | Open Source | Learner | Tech Enthusiast | Software Developer |  Designer | Gamer
