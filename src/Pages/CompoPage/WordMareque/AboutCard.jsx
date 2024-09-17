@@ -14,8 +14,9 @@ export default function AboutCard(props) {
 
   const titleStyle = {
     color: '#e73e0d',
-    fontSize: '16.5px',
+    fontSize: '17px',
     fontWeight: 'bold',
+    fontFamily: "'Vidaloka', serif",
     opacity: inView1 ? 1 : 0, 
     transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
     transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
