@@ -70,9 +70,9 @@ const About = () => {
         <div className='Basic_Nav' style={headerStyle}>
           <header>
           <motion.div variants={textVariant(1.2)} initial="hidden" animate="show">
-            <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center', fontFamily: "'Vidaloka', serif", }}>
+            <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center', }}>
               <img src={USLogopng} alt="Logo" style={{ height:isMobile ? '38px' : '48px', marginleft: '5px', }} />
-                Ujjwal Saini
+                <p style={{ fontFamily: "'Tangerine', cursive", fontSize: '2.7rem' }}>Ujjwal Saini</p>
             </Link>
           </motion.div>
             <div id="menu" className="fas fa-bars"></div>
