@@ -51,13 +51,15 @@ export default function AboutProfile() {
     name: {
       color: "white",
       marginTop: "3.8rem",
-      fontSize: "22.5px",
+      // fontSize: "22.5px",
+      fontSize: "3rem",
       fontWeight: "bold",
     },
     greyFont: {
       color: "grey",
-      fontSize: "1.25rem",
-      marginRight: "6rem",
+      fontSize: "1.5rem",
+      fontFamily: "'Vidaloka', serif",
+      // marginRight: "4rem",
     },
     desc: {
       textAlign: "left",
@@ -123,7 +125,7 @@ export default function AboutProfile() {
           initial="hidden"
           animate="show"
         >
-        <div style={flexLeft.name}>Ujjwal Saini</div>
+        <div style={{...flexLeft.name, fontFamily:  "'Tangerine', cursive",}}>Ujjwal Saini</div>
         </motion.div>
         <motion.div
           variants={textVariant(5.6)}

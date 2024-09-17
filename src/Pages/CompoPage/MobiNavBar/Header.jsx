@@ -67,13 +67,13 @@ export default function Header() {
         </span>
         <Link to="/" className="logoheader" onClick={playSoundAlert} style={{ display: 'flex', alignItems: 'center' }}>
             <img src={USLogopng} alt="Logo" style={{ height:'40px', marginleft: '8px' }} />
-              Ujjwal Saini
+              <p style={{ fontFamily: "'Tangerine', cursive", fontSize: '2.7rem' }}>Ujjwal Saini</p>
          </Link>
         <div className={`mobile-navbar ${isOpen ? 'open' : ''}`}>
           <ul>
             <li>
               <NavLink to="/" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Home <Home className="nav-icon" sx={{ fontSize: 20 }} />
                 </div>
               </NavLink>
@@ -81,49 +81,49 @@ export default function Header() {
 
             <li>
               <NavLink to="/about" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   About <Info className="nav-icon" sx={{ fontSize: 16 }}/>
                 </div>
               </NavLink>
             </li>
             <li>
               <NavLink to="/skills" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Skills <PsychologyIcon className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>
               </NavLink>
             </li>
             <li>
               <NavLink to="/education" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Education <MenuBookIcon className="nav-icon" sx={{ fontSize: 18 }}/>
                 </div>
               </NavLink>
             </li>
             <li>
               <NavLink to="/projects" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Projects <Engineering className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>
               </NavLink>
             </li>
             <li>
               <NavLink to="/experience" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Experience <Work className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" exact onClick={() => { toggleNavbar(); playSound(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Contact <Contacts className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>
               </NavLink>
             </li>
             <li>
               <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={() => { toggleNavbar(); playSoundAlert(); }}>
-                <div className="nav-item" style={iconStyle}>
+                <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Resume <DocumentScannerIcon className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>
               </a>

@@ -70,9 +70,9 @@ const About = () => {
         <div className='Basic_Nav' style={headerStyle}>
           <header>
           <motion.div variants={textVariant(1.2)} initial="hidden" animate="show">
-            <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center', fontFamily: "'Vidaloka', serif", }}>
+            <Link to="/" className="logo" onClick={play} style={{ display: 'flex', alignItems: 'center', }}>
               <img src={USLogopng} alt="Logo" style={{ height:isMobile ? '38px' : '48px', marginleft: '5px', }} />
-                Ujjwal Saini
+                <p style={{ fontFamily: "'Tangerine', cursive", fontSize: '2.7rem' }}>Ujjwal Saini</p>
             </Link>
           </motion.div>
             <div id="menu" className="fas fa-bars"></div>
@@ -80,25 +80,25 @@ const About = () => {
             <nav className="navbar">
               <ul>
                 <motion.div variants={textVariant(1.8)} initial="hidden" animate="show">
-                  <li><Link to="/" onClick={play}>Home</Link></li>
+                  <li><Link to="/" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Home</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(2.2)} initial="hidden" animate="show">
-                  <li><Link to="/about" onClick={play}>About</Link></li>
+                  <li><Link to="/about" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>About</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(2.6)} initial="hidden" animate="show">
-                  <li><Link to="/skills" onClick={play}>Skills</Link></li>
+                  <li><Link to="/skills" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Skills</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(3)} initial="hidden" animate="show">
-                  <li><Link to="/education" onClick={play}>Education</Link></li>
+                  <li><Link to="/education" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Education</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(3.4)} initial="hidden" animate="show">
-                  <li><Link to="/projects" onClick={play}>Projects</Link></li>
+                  <li><Link to="/projects" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Projects</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(3.8)} initial="hidden" animate="show">
-                  <li><Link to="/experience" onClick={play}>Experience</Link></li>
+                  <li><Link to="/experience" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Experience</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(4.2)} initial="hidden" animate="show">
-                  <li><Link to="/contact" onClick={play}>Contact</Link></li>
+                  <li><Link to="/contact" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Contact</Link></li>
                 </motion.div>
               </ul>
             </nav>

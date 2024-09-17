@@ -129,7 +129,7 @@ const Card = styled.div`
 `;
 
 const CardName = styled.div`
-  font-size: 2.2em;
+  font-size: 2.3rem;
   font-weight: bold;
   margin-bottom: 5px;
   color: rgb(240, 2, 149);
@@ -145,8 +145,9 @@ const CardLink = styled.a`
   color: #ff3705;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2em;
-  margin-top: 10px;
+  // font-size: 1.2em;
+  font-size: 2.2em;
+  margin-top: 6px;
 `;
 
 function HomeP2() {
@@ -169,7 +170,8 @@ function HomeP2() {
 
   return (
     <HomePcContainer>
-      <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/vyBJML2ZgR2CVUbJ/scene.splinecode" />
+      <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
+      {/* <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/vyBJML2ZgR2CVUbJ/scene.splinecode" /> */}
       {/* <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" /> */}
       <div className="Test" style={{ textAlign: 'center', zIndex: '2', marginRight: '3rem', marginTop: '10rem', marginBottom: '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
         Portfolio Overview
@@ -195,9 +197,9 @@ function HomeP2() {
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            <CardName>{cardDetail.name}</CardName>
+            <CardName style={{ fontFamily: "'Vidaloka', serif",}}>{cardDetail.name}</CardName>
             <CardDescription>{cardDetail.description}</CardDescription>
-            <CardLink href={cardDetail.link} onClick={playSound}>Learn More</CardLink>
+            <CardLink href={cardDetail.link} onClick={playSound} style={{ fontFamily: "'Tangerine', cursive", }}>Learn More</CardLink>
           </Card>
         ))}
       </CardsContainer>
