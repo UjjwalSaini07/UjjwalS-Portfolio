@@ -12,14 +12,13 @@ const isPc = window.innerWidth <= 1800;
 
 const headerStyle = {
   textAlign: "center",
-  fontWeight: isMobileSmall ? "500" : "600",
+  fontWeight: "500",
   fontSize: isMobileSmall ? "31.5px" : isMobileLarge ? "32px" : isTablet ? "33.5px" : isPc ? "37px" : '34px',
   color: '#E73E0D',
   position:'relative',
   marginLeft: isMobileSmall ? '0.5rem' : isMobileLarge ? "0.8rem" : isTablet ? "1" : '0.5rem',
-  transform: isMobileSmall ? 'translateY(850%)' : isMobileLarge ? "translateY(790%)" : isTablet ? "translateY(780%)" : isPcshort ? "translateY(800%)" : isPc ? "translateY(880%)" : 'translateY(720%)',
-  fontFamily: isMobileSmall ? "'Great Vibes', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Arsenal SC', sans-serif",
-  // fontFamily: isMobileSmall ? "'Tangerine', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Vidaloka', serif",
+  transform: isMobileSmall ? 'translateY(860%)' : isMobileLarge ? "translateY(800%)" : isTablet ? "translateY(800%)" : isPcshort ? "translateY(800%)" : isPc ? "translateY(900%)" : 'translateY(720%)',
+  fontFamily: isMobileSmall ? "'Tangerine', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Vidaloka', serif",
 };
 
 const SVGComponent = (props) => (
