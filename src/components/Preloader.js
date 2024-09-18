@@ -1,19 +1,25 @@
 import * as React from "react";
-import '../Pages/Styles/Preloader.css';
 import { Typewriter } from "react-simple-typewriter";
+import { transform } from "framer-motion";
 
-const isMobile = window.innerWidth <= 768;
+import '../Pages/Styles/Preloader.css';
+
+const isMobileSmall = window.innerWidth <= 375;
+const isMobileLarge = window.innerWidth <= 768;
+const isTablet = window.innerWidth <= 1023;
+const isPcshort = window.innerWidth <= 1150;
+const isPc = window.innerWidth <= 1800;
 
 const headerStyle = {
   textAlign: "center",
-  fontWeight: 'bold',
-  // fontWeight: "580",
-  fontFamily: "Arial, sans-serif",
-  fontSize: isMobile ? "25px" : '32px',
+  fontWeight: "700",
+  fontSize: isMobileSmall ? "31.5px" : isMobileLarge ? "32px" : isTablet ? "33.5px" : isPc ? "37px" : '34px',
   color: '#E73E0D',
-  left: isMobile ? '32%' : '43.8%',
-  top: isMobile ? '58%' : '65%',
-  position:'absolute',
+  position:'relative',
+  marginLeft: isMobileSmall ? '0.5rem' : isMobileLarge ? "0.8rem" : isTablet ? "1" : '0.5rem',
+  transform: isMobileSmall ? 'translateY(800%)' : isMobileLarge ? "translateY(790%)" : isTablet ? "translateY(780%)" : isPcshort ? "translateY(800%)" : isPc ? "translateY(880%)" : 'translateY(720%)',
+  fontFamily: isMobileSmall ? "'Tangerine', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Arsenal SC', sans-serif",
+  // fontFamily: isMobileSmall ? "'Tangerine', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Vidaloka', serif",
 };
 
 const SVGComponent = (props) => (
