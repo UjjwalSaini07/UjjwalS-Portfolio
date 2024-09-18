@@ -17,7 +17,7 @@ const headerStyle = {
   color: '#E73E0D',
   position:'relative',
   marginLeft: isMobileSmall ? '0.5rem' : isMobileLarge ? "0.8rem" : isTablet ? "1" : '0.5rem',
-  transform: isMobileSmall ? 'translateY(800%)' : isMobileLarge ? "translateY(790%)" : isTablet ? "translateY(780%)" : isPcshort ? "translateY(800%)" : isPc ? "translateY(880%)" : 'translateY(720%)',
+  transform: isMobileSmall ? 'translateY(850%)' : isMobileLarge ? "translateY(790%)" : isTablet ? "translateY(780%)" : isPcshort ? "translateY(800%)" : isPc ? "translateY(880%)" : 'translateY(720%)',
   fontFamily: isMobileSmall ? "'Tangerine', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Arsenal SC', sans-serif",
   // fontFamily: isMobileSmall ? "'Tangerine', cursive" : isMobileLarge ? "'Tangerine', cursive" : isTablet ? "'Tangerine', cursive" : "'Vidaloka', serif",
 };
