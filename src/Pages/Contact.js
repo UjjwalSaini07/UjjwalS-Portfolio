@@ -122,7 +122,7 @@ const ContactUs = () => {
 const bounce = useSpring({
   from: { transform: 'translate3d(0, -180px, 0)' },
   to: { transform: 'translate3d(0, 0, 0)' },
-  config: { tension: 150, friction: 3 },
+  config: { tension: 120, friction: 4 },
 });
 
 useEffect(() => {
