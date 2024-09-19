@@ -94,7 +94,6 @@ function Home() {
     marginLeft: '-12rem',
   };
   
-
   return (
     <div style={HomePcContainer}>
       { !isBigPC && (
@@ -144,7 +143,7 @@ function Home() {
               </motion.div>
           </div>
         </div>
-        <div style={{ marginTop: '425px', marginLeft: isShortPC ? '1rem' : '100px', marginTop: isShortPC ? '35rem' : 'none'  }}>
+        <div style={{ marginTop: '425px', marginLeft: isShortPC ? '1rem' : '100px', marginTop: isShortPC ? '35rem' : '42.5rem'  }}>
           <div className="glowbtnAbt">
             <motion.div
               variants={textVariant(3.6)}
