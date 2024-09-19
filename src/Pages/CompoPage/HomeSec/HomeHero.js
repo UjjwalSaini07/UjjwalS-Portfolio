@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { useSpring, animated } from '@react-spring/web';
 import { motion } from "framer-motion";
 import { Flipper, Flipped } from 'react-flip-toolkit';
+import { useMediaQuery } from 'react-responsive';
 import useSound from 'use-sound';
 
 import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
@@ -75,7 +76,6 @@ const typerStyle = {
   fontFamily: "'Srisakdi', system-ui",
 };
 
-
 const HireMEStyle = {
   display: 'flex',
   marginTop: '-4rem',
@@ -93,9 +93,17 @@ function Home() {
   const [playSound1] = useSound(soundeffect1);
   const [playSound2] = useSound(soundeffect2);
 
+  const isShortPC = useMediaQuery({ maxWidth: 1250 });
+  const isBigPC = useMediaQuery({ minWidth: 1251, maxWidth: 1600 });
+
   return (
     <div style={HomePcContainer}>
-      <Spline style={spline_model} scene="https://prod.spline.design/q1ibVol4H9yif8LF/scene.splinecode" />
+      { !isBigPC && (
+        <Spline style={spline_model} scene="https://prod.spline.design/j2e7Alo5WLeGiNyw/scene.splinecode" />
+      )}
+      { !isShortPC && (
+        <Spline style={spline_model} scene="https://prod.spline.design/q1ibVol4H9yif8LF/scene.splinecode" /> 
+      )}
       <div style={division_overlay}>
         <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
           <div>
