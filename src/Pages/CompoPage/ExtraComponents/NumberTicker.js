@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-
 import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 
 const NumberTicker = () => {
@@ -12,7 +11,6 @@ const NumberTicker = () => {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
-  // Define maximum values for each statistic
   const maxValues = {
     projectCount: 15,
     happyClientCount: 3,
@@ -27,7 +25,6 @@ const NumberTicker = () => {
   });
 
   useEffect(() => {
-    // IntersectionObserver to check if the component is visible
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.1 }
@@ -45,17 +42,16 @@ const NumberTicker = () => {
   }, []);
 
   useEffect(() => {
-    // Function to handle ticker updates
     const updateTicker = () => {
       setProjectCount(prev => (prev < maxValues.projectCount ? prev + 1 : prev));
       setHappyClientCount(prev => (prev < maxValues.happyClientCount ? prev + 1 : prev));
       setExperienceCount(prev => (prev < maxValues.experienceCount ? prev + 1 : prev));
-      setHoursSupportCount(prev => (prev < maxValues.hoursSupportCount ? prev + 6 : prev)); // 2x speed
+      setHoursSupportCount(prev => (prev < maxValues.hoursSupportCount ? prev + 6 : prev));
       setAdditionalStatCount(prev => (prev < maxValues.additionalStatCount ? prev + 1 : prev));
     };
 
     const interval = isVisible && document.visibilityState === 'visible'
-      ? setInterval(updateTicker, 100) 
+      ? setInterval(updateTicker, 100)
       : null;
 
     const handleVisibilityChange = () => {
@@ -79,7 +75,6 @@ const NumberTicker = () => {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '20px',
-    // backgroundColor: '#020214',
     backgroundImage: `url(${bgref})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -91,13 +86,13 @@ const NumberTicker = () => {
   const rowStyle = {
     display: 'flex',
     justifyContent: 'space-around',
-    width: '70%',
+    width: '100%',
     maxWidth: '1000px',
     flexWrap: 'wrap',
     marginTop: '58px',
   };
 
-    const itemStyle = {
+  const itemStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -106,11 +101,10 @@ const NumberTicker = () => {
     borderRadius: '8px',
     backgroundColor: 'rgba(255, 255, 255, 0)',
     color: '#fff',
-    boxShadow: '0 6px 12px rgba(0, 0, 0, 0)', 
+    boxShadow: '0 6px 12px rgba(0, 0, 0, 0)',
     width: '160px',
     transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
   };
-  
 
   const itemHoverStyle = {
     transform: 'scale(1.05)',
@@ -129,28 +123,67 @@ const NumberTicker = () => {
     color: '#ff4500',
   };
 
+  // Responsive media query for smaller screens
+  const responsiveStyle = `
+    @media (max-width: 1024px) {
+      .ticker-row {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      .ticker-item {
+        width: 120px;
+        margin: 5px;
+        padding: 10px;
+      }
+      .ticker-label {
+        font-size: 14px;
+      }
+      .ticker-value {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ticker-row {
+        justify-content: space-around;
+      }
+      .ticker-item {
+        width: 100px;
+        margin: 3px;
+        padding: 8px;
+      }
+      .ticker-label {
+        font-size: 12px;
+      }
+      .ticker-value {
+        font-size: 16px;
+      }
+    }
+  `;
+
   return (
     <div style={containerStyle} ref={containerRef}>
-      <div style={rowStyle}>
-        <div ref={ref1} style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s` }}>
-          <div style={labelStyle}>Projects:</div>
-          <div style={valueStyle}>{projectCount}+</div>
+      <style>{responsiveStyle}</style>
+      <div className="ticker-row" style={rowStyle}>
+        <div ref={ref1} className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s` }}>
+          <div className="ticker-label" style={labelStyle}>Projects:</div>
+          <div className="ticker-value" style={valueStyle}>{projectCount}+</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s` }}>
-          <div style={labelStyle}>Happy Clients:</div>
-          <div style={valueStyle}>{happyClientCount}</div>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s` }}>
+          <div className="ticker-label" style={labelStyle}>Happy Clients:</div>
+          <div className="ticker-value" style={valueStyle}>{happyClientCount}</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.5s, transform 1.25s ease-out 2.5s` }}>
-          <div style={labelStyle}>Experience:</div>
-          <div style={valueStyle}>{experienceCount}+ yrs</div>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.5s, transform 1.25s ease-out 2.5s` }}>
+          <div className="ticker-label" style={labelStyle}>Experience:</div>
+          <div className="ticker-value" style={valueStyle}>{experienceCount}+ yrs</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s` }}>
-          <div style={labelStyle}>Support Hours:</div>
-          <div style={valueStyle}>{hoursSupportCount}+</div>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s` }}>
+          <div className="ticker-label" style={labelStyle}>Support Hours:</div>
+          <div className="ticker-value" style={valueStyle}>{hoursSupportCount}+</div>
         </div>
-        <div style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.8s, transform 1.25s ease-out 3.8s` }}>
-          <div style={labelStyle}>Languages:</div>
-          <div style={valueStyle}>{additionalStatCount}+</div>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.8s, transform 1.25s ease-out 3.8s` }}>
+          <div className="ticker-label" style={labelStyle}>Languages:</div>
+          <div className="ticker-value" style={valueStyle}>{additionalStatCount}+</div>
         </div>
       </div>
     </div>
