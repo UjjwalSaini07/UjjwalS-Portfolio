@@ -44,10 +44,9 @@ const spline_model = {
 
 const division_overlay = {
   position: "absolute",
-  top: "20px",
+  top: "2rem",
   width: "62%",
-  fontSize: "large",
-  left: "30px",
+  left: "2.7rem",
   zIndex: "5",
   color: "rgb(240, 2, 149)",
   background: "transparent",
@@ -66,23 +65,6 @@ const styles = {
     "text-[#dfd9ff] font-medium lg:text-[35px] lg:leading-[40px]",
 };
 
-const typerStyle = {
-  width: "100%",
-  marginTop: "6px",
-  fontSize: "5rem",
-  color: "#02f202",
-  fontWeight: "500",
-  display: "inline-block",
-  fontFamily: "'Srisakdi', system-ui",
-};
-
-const HireMEStyle = {
-  display: 'flex',
-  marginTop: '-4rem',
-  marginLeft: '-12rem',
-
-};
-
 function Home() {
   const bounce = useSpring({
     from: { transform: 'translate3d(0, -50px, 0)' },
@@ -95,6 +77,23 @@ function Home() {
 
   const isShortPC = useMediaQuery({ maxWidth: 1250 });
   const isBigPC = useMediaQuery({ minWidth: 1251, maxWidth: 1600 });
+
+  const typerStyle = {
+    width: "100%",
+    marginTop: "6px",
+    fontSize: isShortPC ? "3.5rem" : "5rem",
+    color: "#02f202",
+    fontWeight: "500",
+    display: "inline-block",
+    fontFamily: "'Srisakdi', system-ui",
+  };
+
+  const HireMEStyle = {
+    display: 'flex',
+    marginTop: isShortPC ? "-4.8rem" : '-4.1rem',
+    marginLeft: '-12rem',
+  };
+  
 
   return (
     <div style={HomePcContainer}>
@@ -111,7 +110,7 @@ function Home() {
               variants={textVariant(0.4)}
               initial="hidden"
               animate="show"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              style={{ fontFamily: "'Bodoni Moda', serif", fontSize: isShortPC ? '6.2rem' : 'none', marginTop: isShortPC ? '-3.7rem' : 'none' , marginBottom: isShortPC ? '2rem' : 'none'  }}
               className={`${styles.heroHeadText} text-white`}
             >
               Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span>
@@ -121,7 +120,7 @@ function Home() {
               initial="hidden"
               animate="show"
             >
-            <p className={`${styles.heroSubText} mt-2 text-white-100`} style={{ fontFamily: "'Vidaloka', serif" }}>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`} style={{ fontFamily: "'Vidaloka', serif", fontSize: isShortPC ? '2.8rem' : 'none', marginTop: isShortPC ? '-3rem' : 'none' }}>
               {/* Designing and developing  <br /> top-notch Web and Mobile Apps */}
               I Craft exceptional & innovative <br /> Web and Mobile Applications
             </p>
@@ -145,7 +144,7 @@ function Home() {
               </motion.div>
           </div>
         </div>
-        <div style={{ marginTop: '425px', marginLeft: '100px' }}>
+        <div style={{ marginTop: '425px', marginLeft: isShortPC ? '1rem' : '100px', marginTop: isShortPC ? '35rem' : 'none'  }}>
           <div className="glowbtnAbt">
             <motion.div
               variants={textVariant(3.6)}
@@ -163,11 +162,11 @@ function Home() {
                 marginBottom: '-10px',
                 marginLeft: '1px',
                 marginTop: '-25px',
-                fontSize: '18px',
+                fontSize: '1.8rem',
                 fontWeight: 'bold',
                 fontFamily: "'Vidaloka', serif",
                 transition: 'background-color 0.3s',
-                width: '25%',
+                width: isShortPC ? '36%' : '25%',
                 textAlign: 'center',
                 cursor: 'pointer'
               }}>
@@ -179,7 +178,7 @@ function Home() {
             </a>
             </motion.div>
           </div>
-          <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '15px' }}>
+          <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '2.8rem', textAlign: 'center' }}>
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
               <motion.div variants={textVariant(4.6)} initial="hidden" animate="show">
                 <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin fa-beat-fade" target="_blank" rel="noopener noreferrer"
