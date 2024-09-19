@@ -117,6 +117,16 @@ const ContactUs = () => {
       align-items: center;
     }
   }
+  @media (max-width: 998px) {
+    .Cont{
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 1050px) {
+    .Cont{
+      font-size: 4.35rem;
+    }
+  }
 `;
 
 const bounce = useSpring({
