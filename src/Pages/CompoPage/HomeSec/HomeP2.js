@@ -7,6 +7,9 @@ import { useInView } from 'react-intersection-observer';
 import soundeffect from '../../../components/Assest_Used/Sounds/base.mp3';
 import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 
+const isTablet = window.innerWidth <= 1023;
+const isPcshort = window.innerWidth <= 1330;
+
 const spaceboardsFont = `
   @font-face {
     font-family: 'Spaceboards';
@@ -17,7 +20,6 @@ const spaceboardsFont = `
 const TestoStyle = `
   .Test {
     font-family: 'Spaceboards', sans-serif;
-    font-size: 5rem;
     font-weight: bold;
     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
     -webkit-background-clip: text;
@@ -69,7 +71,6 @@ const HomePcContainer = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
-  // background: #020215;
   background-Image: url(${bgref});
   background-size: cover;
   z-index: 1;
@@ -90,10 +91,14 @@ const CardsContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top: 180px;
+  top: 24% ;
   right: 50px;
   width: 45%;
   z-index: 3;
+
+  @media (max-width: 1330px) {
+    top: 16% ;
+  }
 `;
 
 const Card = styled.div`
@@ -173,7 +178,7 @@ function HomeP2() {
       <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
       {/* <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/vyBJML2ZgR2CVUbJ/scene.splinecode" /> */}
       {/* <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" /> */}
-      <div className="Test" style={{ textAlign: 'center', zIndex: '2', marginRight: '3rem', marginTop: '10rem', marginBottom: '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
+      <div className="Test" style={{ fontSize: isTablet ? '2.8rem' : isPcshort ? '3.7rem' : '5rem', textAlign: 'center', zIndex: '2', marginRight: isTablet ? '1.5rem' : isPcshort ? '2.2rem' : '3rem', marginTop: isPcshort ? '5rem' : '10rem', marginBottom: isPcshort ? '0.5rem' : '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
         Portfolio Overview
       </div>
       <CardsContainer ref={ref1}>
