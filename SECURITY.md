@@ -6,7 +6,8 @@ Releasing Version 1 of My Portfolio Website
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.x   | :white_check_mark: |
+| 1.3   | :white_check_mark: |
+| 1.2   | :white_check_mark: |
 | 0.x   | :x:                |
 
 
