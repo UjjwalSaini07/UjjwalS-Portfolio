@@ -89,7 +89,7 @@ const NumberTicker = () => {
     width: '100%',
     maxWidth: '1000px',
     flexWrap: 'wrap',
-    marginTop: '58px',
+    marginTop: '5.5rem',
   };
 
   const itemStyle = {
@@ -112,15 +112,17 @@ const NumberTicker = () => {
   };
 
   const labelStyle = {
-    fontSize: '16.5px',
+    fontSize: '3rem',
     fontWeight: 'bold',
-    marginBottom: '5px',
+    marginBottom: '0.2rem',
+    fontFamily: "'Tangerine', cursive",
   };
 
   const valueStyle = {
-    fontSize: '22px',
+    fontSize: '2.2rem',
     fontWeight: 'bold',
     color: '#ff4500',
+    fontFamily: "'Vidaloka', serif",
   };
 
   // Responsive media query for smaller screens
