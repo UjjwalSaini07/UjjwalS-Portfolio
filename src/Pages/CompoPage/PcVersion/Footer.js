@@ -28,6 +28,7 @@ const leftSectionStyles = {
   display: "flex",
   alignItems: "center",
   maxWidth: "50%",
+  marginTop: '1.2rem'
 };
 
 const paragraphContainerStyles = {
@@ -80,6 +81,8 @@ const creditLinkStyles = {
   color: "#ffae00",
   textDecoration: "none",
   transition: "color 0.3s ease",
+  fontSize: "1.75rem",
+  fontFamily: "'Dancing Script', cursive",
 };
 
 const iconStyles = {
@@ -114,6 +117,7 @@ const Home = () => {
     fontSize: "2.5rem",
     fontWeight: "bold",
     color: "#ffcc33",
+    fontFamily: "'Vidaloka', serif",
     textShadow: "1px 1px 3px rgba(0, 0, 0, 0.5)",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
@@ -121,9 +125,10 @@ const Home = () => {
   };
 
   const ParagraphStyles = {
-    fontSize: "1.35rem",
+    fontSize: "1.8rem",
     color: "#e0e0e0",
     marginRight: "1rem",
+    fontFamily: "'Beau Rivage', cursive",
     textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
@@ -131,9 +136,10 @@ const Home = () => {
   };
 
   const boxParagraphStyles = {
-    fontSize: "1.8rem",
+    fontSize: "2rem",
     color: "#e0e0e0",
     marginRight: "1rem",
+    fontFamily: "'Dancing Script', cursive",
     textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',

@@ -254,4 +254,5 @@ export default Home;
 // fontFamily: "'Vidaloka', serif",
 // fontFamily: "'Arsenal SC', sans-serif",
 // fontFamily: "'Tangerine', cursive",
-// fontFamily: "'Pinyon Script', cursive",
+// fontFamily: "'Italianno', cursive",
+// fontFamily: "'Dancing Script', cursive",
