@@ -17,6 +17,7 @@ import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
 import ProfileCard from '../components/Assest_Used/ProjectImg/ProfileCard.png';
 import Cube from '../components/Assest_Used/ProjectImg/Cube.png';
 import VoiceAss from '../components/Assest_Used/ProjectImg/VoiceAss.gif';
+import Hotel from '../components/Assest_Used/ProjectImg/Hotel_Management.png';
 
 import soundeffect1 from '../components/Assest_Used/Sounds/select-click.wav';
 
@@ -248,6 +249,24 @@ const projects = [
     image: VoiceAss,
     live_link: "https://github.com/UjjwalSaini07/Voice_assistant",
     source_code_link: "https://github.com/UjjwalSaini07/Voice_assistant",
+  },
+  {
+    name: "Hotel Management IDE",
+    description:
+      "Check out my Hotel Management project on GitHub! Developed during my 12th class using Python, this IDE-based project demonstrates cutting-edge technology with advanced features tailored for hotel management.",
+    tags: [
+      {
+        name: "Python",
+        color: "bg-orange-500",
+      },
+      {
+        name: "Tkinter",
+        color: "bg-white",
+      },
+    ],
+    image: Hotel,
+    live_link: "https://github.com/UjjwalSaini07/Hotel_Management_System",
+    source_code_link: "https://github.com/UjjwalSaini07/Hotel_Management_System",
   },
 
 ];
