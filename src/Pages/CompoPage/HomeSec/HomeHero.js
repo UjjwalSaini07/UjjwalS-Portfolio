@@ -11,6 +11,7 @@ import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbou
 import soundeffect1 from '../../../components/Assest_Used/Sounds/base.mp3';
 import soundeffect2 from '../../../components/Assest_Used/Sounds/select-click.wav';
 import HireMESvg from '../ExtraComponents/HireMe';
+import TextSpan from '../ExtraComponents/TextSpan';
 
 const textVariant = (delay) => ({
   hidden: { y: -50, opacity: 0 },
@@ -112,7 +113,17 @@ function Home() {
               style={{ fontFamily: "'Bodoni Moda', serif", fontSize: isShortPC ? '6.2rem' : 'none', marginTop: isShortPC ? '-3.7rem' : 'none' , marginBottom: isShortPC ? '2rem' : 'none'  }}
               className={`${styles.heroHeadText} text-white`}
             >
-              Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span>
+              {/* Hi, I'm <span className="text-[#e73e0d]">Ujjwal</span> */}
+              {/* <TextSpan>H{' '}</TextSpan><TextSpan>i,{' '}</TextSpan> <TextSpan>{' '}I'{' '}</TextSpan><TextSpan>m</TextSpan> */}
+              Hi, I'm{' '}
+              <span className="text-[#e73e0d]">
+                <TextSpan>U</TextSpan>
+                <TextSpan>j</TextSpan>
+                <TextSpan>j</TextSpan>
+                <TextSpan>w</TextSpan>
+                <TextSpan>a</TextSpan>
+                <TextSpan>l</TextSpan>
+              </span>
             </motion.div>
             <motion.div
               variants={textVariant(1.5)}
