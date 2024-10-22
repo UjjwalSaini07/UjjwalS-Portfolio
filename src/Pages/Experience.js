@@ -133,19 +133,6 @@ const experiences = [
     ],
   },
   {
-    date: "September 2024 - Present",
-    company_name: "GirlScript Foundation - Apprenticeship",
-    title: "Campus Ambassador | Contributor",
-    iconBg: "#fff",
-    icon: WOB,
-    points: [
-      "Promoted the Winter of Blockchain program across campus to increase participation.",
-      "Organized workshops and events to foster a blockchain learning community.",
-      "Collaborated with the GirlScript team to coordinate and execute initiatives.",
-      "Enhanced technical skills by engaging in blockchain-related projects.",
-    ],
-  },
-  {
     date: "July 2023 - Present",
     company_name: "Freelancer, Fiverr",
     title: "Freelance",
@@ -168,6 +155,19 @@ const experiences = [
       "Participating in arcade events and completing various GCP modules.",
       "Gaining extensive knowledge and practical skills in Google Cloud Platform technologies.",
       "Engaging in the facilitator program to enhance understanding and application of GCP concepts.",
+    ],
+  },
+  {
+    date: "September 2024 - October 2024",
+    company_name: "GirlScript Foundation - Apprenticeship",
+    title: "Campus Ambassador | Contributor",
+    iconBg: "#fff",
+    icon: WOB,
+    points: [
+      "Promoted the Winter of Blockchain program across campus to increase participation.",
+      "Organized workshops and events to foster a blockchain learning community.",
+      "Collaborated with the GirlScript team to coordinate and execute initiatives.",
+      "Enhanced technical skills by engaging in blockchain-related projects.",
     ],
   },
   {
