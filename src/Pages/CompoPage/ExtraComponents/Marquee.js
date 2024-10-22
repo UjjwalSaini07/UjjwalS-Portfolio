@@ -115,7 +115,7 @@ const Marquee = ({ children, reverse = false, pauseOnHover = false, className = 
     ...(reverse && { animationDirection: 'reverse' }),
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 5s`,
+    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`,
   };
 
   const containerStyle = {
@@ -123,7 +123,7 @@ const Marquee = ({ children, reverse = false, pauseOnHover = false, className = 
     display: 'flex',
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 4.8s`,
+    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`,
   };
 
   return (
@@ -214,8 +214,6 @@ export function MarqueeDemo() {
     width: '100%',
     overflow: 'hidden',
     borderRadius: '0.75rem',
-    // border: '1px solid rgba(0, 0, 0, 0.1)',
-    // backgroundColor: '#020214',
     backgroundImage: `url(${bgref})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -228,15 +226,13 @@ export function MarqueeDemo() {
     top: 0,
     bottom: 0,
     left: 0,
-    width: '18%', // Adjust the gradient width
-    // background: 'linear-gradient(to right, #020214, rgba(2, 2, 20, 0))',
+    width: '18%',
   };
 
   const gradientReverseStyle = {
     ...gradientStyle,
     left: 'auto',
     right: 0,
-    // background: 'linear-gradient(to left, #020214, rgba(2, 2, 20, 0))',
   };
 
   const { ref: ref0, inView: inView0 } = useInView({
@@ -246,7 +242,7 @@ export function MarqueeDemo() {
 
   return (
     <div style={containerStyle}>
-      <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem',  opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(50px)', transition: `opacity 1.25s ease-out 4.2s, transform 1.25s ease-out 4.2s`}}>
+      <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem',  opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s`}}>
         Testimonials
       </div>
       <Marquee pauseOnHover className="[--duration:20s]">

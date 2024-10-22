@@ -167,23 +167,23 @@ const NumberTicker = () => {
     <div style={containerStyle} ref={containerRef}>
       <style>{responsiveStyle}</style>
       <div className="ticker-row" style={rowStyle}>
-        <div ref={ref1} className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s` }}>
+        <div ref={ref1} className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.4s, transform 1.25s ease-out 0.4s` }}>
           <div className="ticker-label" style={labelStyle}>Projects:</div>
           <div className="ticker-value" style={valueStyle}>{projectCount}+</div>
         </div>
-        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s` }}>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.9s, transform 1.25s ease-out 0.9s` }}>
           <div className="ticker-label" style={labelStyle}>Happy Clients:</div>
           <div className="ticker-value" style={valueStyle}>{happyClientCount}</div>
         </div>
-        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.5s, transform 1.25s ease-out 2.5s` }}>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.4s, transform 1.25s ease-out 1.4s` }}>
           <div className="ticker-label" style={labelStyle}>Experience:</div>
           <div className="ticker-value" style={valueStyle}>{experienceCount}+ yrs</div>
         </div>
-        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s` }}>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.9s, transform 1.25s ease-out 1.9s` }}>
           <div className="ticker-label" style={labelStyle}>Support Hours:</div>
           <div className="ticker-value" style={valueStyle}>{hoursSupportCount}+</div>
         </div>
-        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.8s, transform 1.25s ease-out 3.8s` }}>
+        <div className="ticker-item" style={{ ...itemStyle, ':hover': itemHoverStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.4s, transform 1.25s ease-out 2.4s` }}>
           <div className="ticker-label" style={labelStyle}>Languages:</div>
           <div className="ticker-value" style={valueStyle}>{additionalStatCount}+</div>
         </div>
