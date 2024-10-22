@@ -75,7 +75,7 @@ const MobBack = () => {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={containerStyle}>
           <motion.div
-            variants={textVariant(1.2)}
+            variants={textVariant(0.5)}
             initial="hidden"
             animate="show"
           >
