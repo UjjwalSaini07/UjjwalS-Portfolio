@@ -19,7 +19,7 @@ export default function AboutCards() {
   const skills = {
     title: "My Technical Skills",
     description: "",
-    points: ["React, ","Javascript, ","Python, ","Django, ","Tailwind, ","C/C++, ","Java-Basic, ","MySql, ","Three.js, ","Others... ",],
+    points: ["React, ","Javascript, ","Python, ","Django, ","Tailwind, ","C/C++, ","Sass/Scss, ","MySql, ","ExpressJs, ","Others... ",],
     content: [],
   };
 
