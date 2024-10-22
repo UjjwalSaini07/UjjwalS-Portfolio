@@ -107,7 +107,7 @@ function Home() {
         <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
           <div>
             <motion.div
-              variants={textVariant(0.4)}
+              variants={textVariant(0.2)}
               initial="hidden"
               animate="show"
               style={{ fontFamily: "'Bodoni Moda', serif", fontSize: isShortPC ? '6.2rem' : 'none', marginTop: isShortPC ? '-3.7rem' : 'none' , marginBottom: isShortPC ? '2rem' : 'none'  }}
@@ -126,7 +126,7 @@ function Home() {
               </span>
             </motion.div>
             <motion.div
-              variants={textVariant(1.5)}
+              variants={textVariant(0.8)}
               initial="hidden"
               animate="show"
             >
@@ -136,13 +136,13 @@ function Home() {
             </p>
             </motion.div>
               <motion.div
-                variants={textVariant(2.8)}
+                variants={textVariant(1.6)}
                 initial="hidden"
                 animate="show"
               >
               <div style={typerStyle}>
                 <Typewriter
-                  words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer', 'Gamer']}
+                  words={['Creative Designer', 'Frontend Developer', 'Backend Developer', 'Freelancer']}
                   loop={true}
                   cursor
                   cursorStyle='_'
@@ -157,11 +157,11 @@ function Home() {
         <div style={{ marginTop: '425px', marginLeft: isShortPC ? '1rem' : '100px', marginTop: isShortPC ? '35rem' : '42.5rem'  }}>
           <div className="glowbtnAbt">
             <motion.div
-              variants={textVariant(3.6)}
+              variants={textVariant(2.6)}
               initial="hidden"
               animate="show"
             >
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound1}
+            <a href="https://drive.google.com/file/d/13IyggUS8LKb4cJ1LjfB2B4_fcPLC-o7z/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound1}
               style={{
                 padding: '15px',
                 borderRadius: '20px',
@@ -190,27 +190,27 @@ function Home() {
           </div>
           <div className="home-socials" style={{ marginTop: '20px', fontSize: '25px', marginLeft: '2.8rem', textAlign: 'center' }}>
             <ul className="social-icons" style={{ listStyle: 'none', padding: '0', display: 'flex', gap: '10px' }}>
-              <motion.div variants={textVariant(4.6)} initial="hidden" animate="show">
+              <motion.div variants={textVariant(3.5)} initial="hidden" animate="show">
                 <a href="https://www.linkedin.com/in/ujjwalsaini07" className="fab fa-linkedin fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
               </motion.div>
-              <motion.div variants={textVariant(5.2)} initial="hidden" animate="show">
+              <motion.div variants={textVariant(4)} initial="hidden" animate="show">
                 <a href="https://github.com/UjjwalSaini07" className="fab fa-github fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
               </motion.div>
-              <motion.div variants={textVariant(6)} initial="hidden" animate="show">
+              <motion.div variants={textVariant(4.5)} initial="hidden" animate="show">
                 <a href="mailto:ujjwalsaini0007@gmail.com" className="fas fa-envelope fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
               </motion.div>
-              <motion.div variants={textVariant(6.8)} initial="hidden" animate="show">
+              <motion.div variants={textVariant(5)} initial="hidden" animate="show">
                 <a href="https://x.com/UjjwalSaini0007" className="fab fa-twitter fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
               </motion.div>
-              <motion.div variants={textVariant(7.5)} initial="hidden" animate="show">
+              <motion.div variants={textVariant(5.5)} initial="hidden" animate="show">
                 <a href="tel:+919717899079" className="fas fa-phone fa-beat-fade" target="_blank" rel="noopener noreferrer"
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} onClick={playSound2}></a>
@@ -219,7 +219,7 @@ function Home() {
           </div>          
         </div>
       
-        <motion.div variants={textVariant(8)} initial="hidden" animate="show">
+        <motion.div variants={textVariant(6.5)} initial="hidden" animate="show">
           <div style={HireMEStyle}>
             <HireMESvg />
           </div>
