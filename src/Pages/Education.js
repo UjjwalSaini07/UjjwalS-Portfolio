@@ -158,7 +158,7 @@ const educationData = [
     icon: school10,
     points: [
       "Board: Central Board of Secondary Education, New Delhi",
-      "Percentage - 81.2%",
+      "Percentage - 80%",
       "Science Olympiad Achiever",
       "Taking Part in Many Competitions (Educational/Cultural)",
       "Football & Drawing Awards Winning for School.",
