@@ -204,16 +204,16 @@ function HomeP2() {
   return (
     <HomePcContainer>
       { !isBigPC && (
-        <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/0Rl3xHGfXkSgHWnu/scene.splinecode" />
+        <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.5s, transform 1.25s ease-out 0.5s'}} scene="https://prod.spline.design/0Rl3xHGfXkSgHWnu/scene.splinecode" />
       )}
       { !isShortPC && (
-        <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
+        <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.5s, transform 1.25s ease-out 0.5s'}} scene="https://prod.spline.design/rnK7SZJPgrRw-DL9/scene.splinecode" />
       )}
 
       {/* This Spline Model has slightly different lighting with Gloss Shade with more -x axis */}
       {/* <Spline ref={ref1} style={{...spline_model, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 0.7s, transform 1.25s ease-out 0.7s'}} scene="https://prod.spline.design/vyBJML2ZgR2CVUbJ/scene.splinecode" /> */}
 
-      <div className="Test" style={{ fontSize: isTablet ? '2.8rem' : isPcshort ? '3.8rem' : '5rem', textAlign: 'center', zIndex: '2', marginRight: isTablet ? '1.5rem' : isPcshort ? '2.8rem' : '3rem', marginTop: isPcshort ? '5rem' : '10rem', marginBottom: isPcshort ? '0.5rem' : '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>
+      <div className="Test" style={{ fontSize: isTablet ? '2.8rem' : isPcshort ? '3.8rem' : '4.8rem', textAlign: 'center', zIndex: '2', marginRight: isTablet ? '1.5rem' : isPcshort ? '2.8rem' : '3rem', marginTop: isPcshort ? '5rem' : '10rem', marginBottom: isPcshort ? '0.5rem' : '2rem',  opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.8s, transform 1.25s ease-out 0.8s`}}>
         Portfolio Overview
       </div>
 
@@ -225,7 +225,7 @@ function HomeP2() {
               style={{
                 opacity: inView1 ? 1 : 0,
                 transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
-                transition: `opacity 1.25s ease-out ${1.4 + index}s, transform 1.25s ease-out ${1.4 + index}s`,
+                transition: `opacity 1.25s ease-out ${1.1 + index}s, transform 1.25s ease-out ${1.1 + index}s`,
                 border: '2px solid transparent',
               }}
               onMouseEnter={(e) => {
@@ -254,7 +254,7 @@ function HomeP2() {
               style={{
                 opacity: inView1 ? 1 : 0,
                 transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
-                transition: `opacity 1.25s ease-out ${1.4 + index}s, transform 1.25s ease-out ${1.4 + index}s`,
+                transition: `opacity 1.25s ease-out ${1.1 + index}s, transform 1.25s ease-out ${1.1 + index}s`,
                 border: '2px solid transparent',
               }}
               onMouseEnter={(e) => {

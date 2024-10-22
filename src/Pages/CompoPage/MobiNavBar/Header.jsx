@@ -122,7 +122,7 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={() => { toggleNavbar(); playSoundAlert(); }}>
+              <a href="https://drive.google.com/file/d/13IyggUS8LKb4cJ1LjfB2B4_fcPLC-o7z/view?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={() => { toggleNavbar(); playSoundAlert(); }}>
                 <div className="nav-item" style={{...iconStyle, fontFamily: "'Vidaloka', serif",}}>
                   Resume <DocumentScannerIcon className="nav-icon" sx={{ fontSize: 20 }}/>
                 </div>

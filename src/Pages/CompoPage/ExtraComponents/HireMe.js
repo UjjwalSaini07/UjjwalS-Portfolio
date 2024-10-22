@@ -37,7 +37,8 @@ const RotatingSVGWithButton = () => {
         </defs>
         <text fill="#ffffff" fontSize="11.1">
           <textPath xlinkHref="#circlePath">
-            . UI/UX Designer  .  Web Developer  .  Game Dev
+            . UI/UX Designer  .  Web Developer  .  Mobile App
+            {/* . UI/UX Designer  .  Web Developer  .  Game Dev */}
           </textPath>
         </text>
       </svg>

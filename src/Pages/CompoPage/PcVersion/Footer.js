@@ -12,7 +12,6 @@ import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbou
 
 const footerStyles = {
   padding: "2rem 4rem",
-  // background: "#020214",
   backgroundImage: `url(${bgref})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -33,8 +32,8 @@ const leftSectionStyles = {
 
 const paragraphContainerStyles = {
   display: "flex",
-  flexDirection: "column", // Stack paragraph below heading
-  justifyContent: "center", // Center paragraph content
+  flexDirection: "column",
+  justifyContent: "center",
 };
 
 const shareStyles = {
@@ -110,7 +109,7 @@ const Home = () => {
     marginRight: "1.2rem",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 5.2s, transform 1.25s ease-out 5.2s`,
+    transition: `opacity 1.25s ease-out 4.4s, transform 1.25s ease-out 4.4s`,
   };
 
   const boxHeadingStyles = {
@@ -121,7 +120,7 @@ const Home = () => {
     textShadow: "1px 1px 3px rgba(0, 0, 0, 0.5)",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 5.8s, transform 1.25s ease-out 5.8s`,
+    transition: `opacity 1.25s ease-out 4.6s, transform 1.25s ease-out 4.6s`,
   };
 
   const ParagraphStyles = {
@@ -132,7 +131,7 @@ const Home = () => {
     textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 6.4s, transform 1.25s ease-out 6.4s`,
+    transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 5s`,
   };
 
   const boxParagraphStyles = {
@@ -143,7 +142,7 @@ const Home = () => {
     textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
     opacity: inView0 ? 1 : 0,
     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-    transition: `opacity 1.25s ease-out 7.3s, transform 1.25s ease-out 7.3s`,
+    transition: `opacity 1.25s ease-out 6s, transform 1.25s ease-out 6s`,
   };
 
   const handleScrollToTop = () => {
@@ -171,14 +170,14 @@ const Home = () => {
           <h3 ref={ref0} style={boxHeadingStyles} onClick={() => { playSound1(); handleScrollToTop(); }}>UjjwalS Portfolio</h3>
           <p ref={ref0} style={ParagraphStyles}>
             Thanks for visiting! Let's connect and elevate together.{' '}
-            <img src={rocket} alt="Rocket Emoji" ref={ref0} style={{ width: '20px', verticalAlign: 'middle', display: 'inline',opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 6.8s, transform 1.25s ease-out 6.8s` }} />
+            <img src={rocket} alt="Rocket Emoji" ref={ref0} style={{ width: '20px', verticalAlign: 'middle', display: 'inline',opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 5.6s, transform 1.25s ease-out 5.6s` }} />
           </p>
         </div>
       </div>
       <div style={shareStyles}>
         <p style={boxParagraphStyles}>
           Let's Connect {' '}
-          <img src={handshake} alt="HandShake Emoji" ref={ref0} style={{ width: '24px', verticalAlign: 'middle', display: 'inline', opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 7.6s, transform 1.25s ease-out 7.6s` }} />
+          <img src={handshake} alt="HandShake Emoji" ref={ref0} style={{ width: '24px', verticalAlign: 'middle', display: 'inline', opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 6.5s, transform 1.25s ease-out 6.5s` }} />
         </p>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <a
@@ -188,7 +187,7 @@ const Home = () => {
             style={{...shareLinkStyles,
               opacity: inView0 ? 1 : 0,
               transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-              transition: 'opacity 1.25s ease-out 8s, transform 1.25s ease-out 8s'}}
+              transition: 'opacity 1.25s ease-out 7s, transform 1.25s ease-out 7s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -206,7 +205,7 @@ const Home = () => {
             style={{...shareLinkStyles,
               opacity: inView0 ? 1 : 0,
               transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-              transition: 'opacity 1.25s ease-out 8.4s, transform 1.25s ease-out 8.4s'}}
+              transition: 'opacity 1.25s ease-out 7.4s, transform 1.25s ease-out 7.4s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -224,7 +223,7 @@ const Home = () => {
             style={{...shareLinkStyles,
               opacity: inView0 ? 1 : 0,
               transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-              transition: 'opacity 1.25s ease-out 8.8s, transform 1.25s ease-out 8.8s'}}
+              transition: 'opacity 1.25s ease-out 7.8s, transform 1.25s ease-out 7.8s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -242,7 +241,7 @@ const Home = () => {
             style={{...shareLinkStyles,
               opacity: inView0 ? 1 : 0,
               transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-              transition: 'opacity 1.25s ease-out 9.2s, transform 1.25s ease-out 9.2s'}}
+              transition: 'opacity 1.25s ease-out 8.2s, transform 1.25s ease-out 8.2s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -260,7 +259,7 @@ const Home = () => {
             style={{...shareLinkStyles,
               opacity: inView0 ? 1 : 0,
               transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-              transition: 'opacity 1.25s ease-out 9.6s, transform 1.25s ease-out 9.6s'}}
+              transition: 'opacity 1.25s ease-out 8.8s, transform 1.25s ease-out 8.8s'}}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) =>
@@ -273,13 +272,13 @@ const Home = () => {
           ></a>
         </div>
       </div>
-      <h1 className="credit" ref={ref0} style={{...creditStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 10.1s, transform 1.25s ease-out 10.1s'}}>
+      <h1 className="credit" ref={ref0} style={{...creditStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 9.2s, transform 1.25s ease-out 9.2s'}}>
         Designed with <i className="fa fa-heart pulse" style={iconStyles}></i>{" "}
         by{" "}
         <a
           href="https://www.linkedin.com/in/ujjwalsaini07"
           ref={ref0}
-          style={{...creditLinkStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s'}}
+          style={{...creditLinkStyles, opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(-50px)', transition: 'opacity 1.25s ease-out 9.8s, transform 1.25s ease-out 9.8s'}}
           onMouseEnter={(e) => (e.target.style.color = "#ffcc33")}
           onMouseLeave={(e) => (e.target.style.color = "#ffae00")}
           onClick={playSound1}

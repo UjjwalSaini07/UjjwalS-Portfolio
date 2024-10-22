@@ -27,7 +27,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5200); // Adjust the timeout as needed
+    }, 3400);
   }, []);
 
   return (
@@ -48,7 +48,6 @@ const App = () => {
             <Route path="/certifications" element={<Certifications />} />
           </Route>
           <Route path="*" element={<Error404 />} />
-          {/* <Route path="*" element={<h1>404 Not Found</h1>} /> */}
         </Routes>
       </>
     )}

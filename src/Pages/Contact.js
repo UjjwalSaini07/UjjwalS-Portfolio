@@ -112,19 +112,20 @@ const ContactUs = () => {
       display: none;
     }
     .Cont{
-      font-size: 3.2rem;
-      margin-right: -2px;
+      font-size: 2.8rem;
+      margin-right: -5px;
       align-items: center;
     }
   }
   @media (max-width: 998px) {
     .Cont{
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
   @media (max-width: 1050px) {
     .Cont{
-      font-size: 4.35rem;
+      font-size: 3.5rem;
+      margin-right: -1px;
     }
   }
 `;
@@ -537,7 +538,8 @@ useEffect(() => {
               }}>
                 
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5393826342255!2d77.14058945079842!3d28.66222527921225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03009e810ffd%3A0xcf2bda6f1a9acec6!2sNew%20Moti%20Nagar%2C%20Moti%20Nagar%2C%20Delhi%2C%20110015!5e0!3m2!1sen!2sin!4v1636631965111!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4709491222006!2d77.1156931!3d28.643659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d036b61214b21%3A0xaaa9a3b98a1faee2!2sRajouri%20Garden%2C%20Delhi!5e0!3m2!1sen!2sin!4v1698004002035!5m2!1sen!2sin"
+                  // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5393826342255!2d77.14058945079842!3d28.66222527921225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03009e810ffd%3A0xcf2bda6f1a9acec6!2sNew%20Moti%20Nagar%2C%20Moti%20Nagar%2C%20Delhi%2C%20110015!5e0!3m2!1sen!2sin!4v1636631965111!5m2!1sen!2sin"
                   style={{
                     border: 0,
                     width: '100%',

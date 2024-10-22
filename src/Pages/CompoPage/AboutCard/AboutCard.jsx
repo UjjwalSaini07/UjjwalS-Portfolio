@@ -59,13 +59,13 @@ export default function AboutCard(props) {
 
   return (
     <div style={cardStyle}>
-      <div ref={ref1} style={{...titleStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s`}}>{props.title}</div>
-        <div ref={ref1} style={{...descStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.0s, transform 1.25s ease-out 2.0s`}}>
+      <div ref={ref1} style={{...titleStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s`}}>{props.title}</div>
+        <div ref={ref1} style={{...descStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s`}}>
           {props.description}
         </div>
-      <div className="points" ref={ref1} style={{...pointsStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.8s, transform 1.25s ease-out 2.8s`}}>
+      <div className="points" ref={ref1} style={{...pointsStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.1s, transform 1.25s ease-out 2.1s`}}>
         {props.points.map((point, index) => (
-          <li className="card-item" key={index} ref={ref1} style={{...cardItemStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.8s, transform 1.25s ease-out 2.8s`}}>
+          <li className="card-item" key={index} ref={ref1} style={{...cardItemStyle, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.1s, transform 1.25s ease-out 2.1s`}}>
             {point}
           </li>
         ))}

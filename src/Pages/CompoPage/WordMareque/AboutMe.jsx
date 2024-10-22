@@ -99,13 +99,13 @@ export default function AboutMe({ isExpanded }) {
   return (
     <>
       <motion.div
-        variants={textVariant(10)}
+        variants={textVariant(8)}
         initial="hidden"
         animate="show"
       >
       <div style={isExpanded ? {display: "none"} : content.container}>
         <motion.div
-          variants={textVariant(10.8)}
+          variants={textVariant(8.4)}
           initial="hidden"
           animate="show"
         >
@@ -114,7 +114,7 @@ export default function AboutMe({ isExpanded }) {
         </div>
         </motion.div>
         <motion.div
-          variants={textVariant(11.8)}
+          variants={textVariant(8.8)}
           initial="hidden"
           animate="show"
         >

@@ -14,9 +14,6 @@ export default function About() {
     about: {
       margin: 0,
       padding: 0,
-      // opacity: inView1 ? 1 : 0, 
-      // transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-      // transition: `opacity 1.25s ease-out 1.5s, transform 1.25s ease-out 1.5s`,
     },
     laptopStyle: {
       display: 'flex',

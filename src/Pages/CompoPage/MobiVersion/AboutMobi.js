@@ -224,7 +224,7 @@ const AboutMobi = () => {
   return (
     <section className="about" id="about" style={aboutinline}>
       <motion.div
-        variants={textVariant(0.8)}
+        variants={textVariant(0.2)}
         initial="hidden"
         animate="show"
       >
@@ -244,7 +244,7 @@ const AboutMobi = () => {
           }}
         >
           <motion.div
-            variants={textVariant(1.8)}
+            variants={textVariant(0.8)}
             initial="hidden"
             animate="show"
           >
@@ -276,7 +276,7 @@ const AboutMobi = () => {
               onClick={handleClick}
             >
               <motion.div
-                variants={textVariant(3)}
+                variants={textVariant(1.6)}
                 initial="hidden"
                 animate="show"
               >
@@ -301,7 +301,7 @@ const AboutMobi = () => {
         </div>
         <div className="content">
             <motion.div
-              variants={textVariant(3.8)}
+              variants={textVariant(2.8)}
               initial="hidden"
               animate="show"
             >
@@ -316,7 +316,7 @@ const AboutMobi = () => {
               }}>
                 Full Stack Developer | Designer </span>
               <motion.div
-                variants={textVariant(4.5)}
+                variants={textVariant(3.6)}
                 initial="hidden"
                 animate="show"
               >
@@ -359,7 +359,7 @@ const AboutMobi = () => {
                 <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 6.5s ease-out'}}><i className="bi bi-geo-alt-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
                 <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Place : </span> Delhi, India - 110015</p>
                 <p  ref={ref0} style={{opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 7.5s ease-out'}}><i className="bi bi-globe" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
-                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, Punjabi</p>
+                <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, French</p>
               </div>
               <div className="box">
                 <p  ref={ref1} style={{opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0) scale(1)' : 'translateY(70px) scale(0.6)', transition: 'opacity 6s ease-out, transform 5.5s ease-out'}}><i className="bi bi-star-fill" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
@@ -407,7 +407,7 @@ const AboutMobi = () => {
               initial="hidden"
               animate="show"
             >
-              <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={playSound} className="btn"
+              <a href="https://drive.google.com/file/d/13IyggUS8LKb4cJ1LjfB2B4_fcPLC-o7z/view?usp=sharing" target="_blank" rel="noopener noreferrer" onClick={playSound} className="btn"
               ref={ref2}
               style={{
                 padding: '12px',

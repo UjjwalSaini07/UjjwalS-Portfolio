@@ -78,7 +78,7 @@ export default function AboutProfile() {
 
   return (
     <div style={flexLeft.container}>
-      <div ref={ref1} style={{ ...flexLeft.imgContainer, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1s, transform 1.25s ease-out 1s` }}>
+      <div ref={ref1} style={{ ...flexLeft.imgContainer, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 0.4s, transform 1.25s ease-out 0.4s` }}>
         <img src={dp} alt="Profile" style={flexLeft.dp} 
           onMouseEnter={(e) => {
             e.currentTarget.style.border = '2.8px solid #22d3ee';
@@ -90,10 +90,10 @@ export default function AboutProfile() {
           }}/>
       </div>
       <div style={flexLeft.details}>
-        <div ref={ref1} style={{ ...flexLeft.name, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.1s, transform 1.25s ease-out 2.1s`, fontFamily:  "'Tangerine', cursive",}}>Ujjwal Saini</div>
-        <h3 ref={ref1} style={{ ...flexLeft.greyFont, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s` }}>ujjwalsaini07</h3>
-        <div ref={ref1} style={{ ...flexLeft.desc, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 4.6s, transform 1.25s ease-out 4.6s` }}>
-          Btech-IT 26' @GGSIPU | FullStack Web Developer | Open Source | Learner | Tech Enthusiast | Software Developer |  Designer | Gamer
+        <div ref={ref1} style={{ ...flexLeft.name, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.1s, transform 1.25s ease-out 1.1s`, fontFamily:  "'Tangerine', cursive",}}>Ujjwal Saini</div>
+        <h3 ref={ref1} style={{ ...flexLeft.greyFont, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 1.8s, transform 1.25s ease-out 1.8s` }}>ujjwalsaini07</h3>
+        <div ref={ref1} style={{ ...flexLeft.desc, opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 2.4s, transform 1.25s ease-out 2.4s` }}>
+          Btech-IT 26' @GGSIPU | FullStack Web Developer | Open Source | Learner | Tech Enthusiast | Software Developer |  Designer
         </div>
           <div className="glowbtn">
             <a href="https://github.com/UjjwalSaini07"
@@ -116,7 +116,7 @@ export default function AboutProfile() {
                 cursor: 'pointer',
                 opacity: inView1 ? 1 : 0,
                 transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
-                transition: `opacity 1.25s ease-out 5.8s, transform 1.25s ease-out 5.8s`
+                transition: `opacity 1.25s ease-out 3s, transform 1.25s ease-out 3s`
               }}>
               <span></span>
               <span></span>

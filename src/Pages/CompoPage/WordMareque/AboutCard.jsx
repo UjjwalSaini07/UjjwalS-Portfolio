@@ -19,7 +19,7 @@ export default function AboutCard(props) {
     fontFamily: "'Vidaloka', serif",
     opacity: inView1 ? 1 : 0, 
     transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
+    transition: `opacity 1.25s ease-out 2s, transform 1.25s ease-out 2s`
   };
   
   const descStyle = {
@@ -29,7 +29,7 @@ export default function AboutCard(props) {
     opacity: '0.8',
     opacity: inView1 ? 1 : 0, 
     transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
+    transition: `opacity 1.25s ease-out 2s, transform 1.25s ease-out 2s`
   };
 
   const cardStyle = {
@@ -39,12 +39,10 @@ export default function AboutCard(props) {
     marginLeft: '0',
     marginTop: '0',
     textAlign: 'left',
-    // backgroundColor: 'black',
     backgroundColor: 'transparent',
     maxWidth: '100%',
     height: 'auto',
     aspectRatio: 'attr(width) / attr(height)',
-    // background: 'linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(0, 0, 0, 0.5) 100%)',
     backdropFilter: 'blur(7px)',
     WebkitBackdropFilter: 'blur(7px)',
     border: '0.1px solid rgb(100, 100, 100)',
@@ -63,7 +61,7 @@ export default function AboutCard(props) {
     opacity: '0.8',
     opacity: inView1 ? 1 : 0, 
     transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
+    transition: `opacity 1.25s ease-out 2s, transform 1.25s ease-out 2s`
   };
 
   const pointsStyle = {
@@ -73,7 +71,7 @@ export default function AboutCard(props) {
     opacity: '0.8',
     opacity: inView1 ? 1 : 0, 
     transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-    transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`
+    transition: `opacity 1.25s ease-out 2s, transform 1.25s ease-out 2s`
   };
 
   return (

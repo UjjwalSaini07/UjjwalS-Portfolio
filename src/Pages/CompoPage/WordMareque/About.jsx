@@ -58,7 +58,7 @@ export default function About() {
   return (
     <main style={styles.about}>
       <motion.div
-        variants={textVariant(2.6)}
+        variants={textVariant(1.4)}
         initial="hidden"
         animate="show"
       >

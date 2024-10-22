@@ -275,7 +275,7 @@ const About = () => {
               </motion.div>
               <motion.div variants={textVariant(4.5)} initial="hidden" animate="show">
               <p><i className="bi bi-translate" style={{ fontSize: '1.7rem', color: '#ff00ff', marginRight: '0.5rem' }}></i>
-              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, Punjabi</p>
+              <span  style={{color: '#ff00ff', fontFamily: "'Vidaloka', serif", fontWeight: 500, marginTop: '1rem'}}> Language Known : </span> English, Hindi, French(Basic)</p>
               </motion.div>
             </div>
             <div className="box">
@@ -300,11 +300,11 @@ const About = () => {
           
           <div className="glowbtnAbt">
           <motion.div
-                variants={textVariant(6.6)}
+                variants={textVariant(6)}
                 initial="hidden"
                 animate="show"
             >
-            <a href="https://drive.google.com/file/d/1dUp-F4kjgafGYs9xX6DUDbi6crlxQqjt/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound}
+            <a href="https://drive.google.com/file/d/13IyggUS8LKb4cJ1LjfB2B4_fcPLC-o7z/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn" onClick={playSound}
             style={{
               padding: '12px',
               borderRadius: '10px',

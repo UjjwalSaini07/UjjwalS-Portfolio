@@ -51,7 +51,6 @@ export default function AboutProfile() {
     name: {
       color: "white",
       marginTop: "3.8rem",
-      // fontSize: "22.5px",
       fontSize: "3rem",
       fontWeight: "bold",
     },
@@ -59,7 +58,6 @@ export default function AboutProfile() {
       color: "grey",
       fontSize: "1.5rem",
       fontFamily: "'Vidaloka', serif",
-      // marginRight: "4rem",
     },
     desc: {
       textAlign: "left",
@@ -111,7 +109,7 @@ export default function AboutProfile() {
   return (
     <div style={flexLeft.container}>
       <motion.div
-        variants={textVariant(4.2)}
+        variants={textVariant(2)}
         initial="hidden"
         animate="show"
       >
@@ -121,21 +119,21 @@ export default function AboutProfile() {
       </motion.div>
       <div style={flexLeft.details}>
         <motion.div
-          variants={textVariant(4.8)}
+          variants={textVariant(2.6)}
           initial="hidden"
           animate="show"
         >
         <div style={{...flexLeft.name, fontFamily:  "'Tangerine', cursive",}}>Ujjwal Saini</div>
         </motion.div>
         <motion.div
-          variants={textVariant(5.6)}
+          variants={textVariant(3.5)}
           initial="hidden"
           animate="show"
         >
         <h3 style={flexLeft.greyFont}>ujjwalsaini07</h3>
         </motion.div>
         <motion.div
-          variants={textVariant(6.2)}
+          variants={textVariant(4.2)}
           initial="hidden"
           animate="show"
         >
@@ -144,7 +142,7 @@ export default function AboutProfile() {
         </div>
         </motion.div>
         <motion.div
-          variants={textVariant(6.8)}
+          variants={textVariant(4.8)}
           initial="hidden"
           animate="show"
         >
@@ -181,7 +179,7 @@ export default function AboutProfile() {
       <div style={flexLeft.socials}>
         <ul className="social-icons" style={flexLeft.socialIcons}>
           <motion.div
-            variants={textVariant(7.6)}
+            variants={textVariant(5.6)}
             initial="hidden"
             animate="show"
           >
@@ -197,7 +195,7 @@ export default function AboutProfile() {
           </li>
           </motion.div>
           <motion.div
-            variants={textVariant(8)}
+            variants={textVariant(6.1)}
             initial="hidden"
             animate="show"
           >
@@ -213,7 +211,7 @@ export default function AboutProfile() {
           </li>
           </motion.div>
           <motion.div
-            variants={textVariant(8.4)}
+            variants={textVariant(6.6)}
             initial="hidden"
             animate="show"
           >
@@ -229,7 +227,7 @@ export default function AboutProfile() {
           </li>
           </motion.div>
           <motion.div
-            variants={textVariant(8.8)}
+            variants={textVariant(7.1)}
             initial="hidden"
             animate="show"
           >
@@ -245,7 +243,7 @@ export default function AboutProfile() {
           </li>
           </motion.div>
           <motion.div
-            variants={textVariant(9.4)}
+            variants={textVariant(7.6)}
             initial="hidden"
             animate="show"
           >
