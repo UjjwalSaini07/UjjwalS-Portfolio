@@ -112,19 +112,20 @@ const ContactUs = () => {
       display: none;
     }
     .Cont{
-      font-size: 3.2rem;
-      margin-right: -2px;
+      font-size: 2.8rem;
+      margin-right: -5px;
       align-items: center;
     }
   }
   @media (max-width: 998px) {
     .Cont{
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
   @media (max-width: 1050px) {
     .Cont{
-      font-size: 4.35rem;
+      font-size: 3.5rem;
+      margin-right: -1px;
     }
   }
 `;
