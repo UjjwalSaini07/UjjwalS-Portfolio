@@ -24,7 +24,7 @@ export default function AboutCards() {
   const skills = {
     title: "My Technical Skills",
     description: "",
-    points: ["React, ","Javascript, ","Python, ","Django, ","Tailwind, ","C/C++, ","Java-Basic, ","MySql, ","Three.js, ","Others... ",],
+    points: ["React, ","Javascript, ","Python, ","Django, ","Tailwind, ","C/C++, ","Sass/Scss, ","MySql, ","ExpressJs, ","Others... ",],
     content: [],
   };
 
@@ -60,7 +60,7 @@ export default function AboutCards() {
             textDecoration: "none", 
             opacity: inView1 ? 1 : 0, 
             transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-            transition: `opacity 1.25s ease-out 10.5s, transform 1.25s ease-out 10.5s`, 
+            transition: `opacity 1.25s ease-out 5.5s, transform 1.25s ease-out 5.5s`, 
             border: '2px solid transparent',
           }}
           onMouseEnter={(e) => {
@@ -80,7 +80,7 @@ export default function AboutCards() {
             textDecoration: "none", 
             opacity: inView1 ? 1 : 0, 
             transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-            transition: `opacity 1.25s ease-out 14.5s, transform 1.25s ease-out 14.5s`,
+            transition: `opacity 1.25s ease-out 7s, transform 1.25s ease-out 7s`,
             border: '2px solid transparent',
           }}
           onMouseEnter={(e) => {
@@ -100,7 +100,7 @@ export default function AboutCards() {
             textDecoration: "none", 
             opacity: inView1 ? 1 : 0, 
             transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-            transition: `opacity 1.25s ease-out 18.5s, transform 1.25s ease-out 18.5s`,
+            transition: `opacity 1.25s ease-out 9.4s, transform 1.25s ease-out 9.4s`,
             border: '2px solid transparent',
           }}
           onMouseEnter={(e) => {
@@ -120,7 +120,7 @@ export default function AboutCards() {
             textDecoration: "none", 
             opacity: inView1 ? 1 : 0, 
             transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', 
-            transition: `opacity 1.25s ease-out 20.5s, transform 1.25s ease-out 20.5s`,
+            transition: `opacity 1.25s ease-out 11s, transform 1.25s ease-out 11s`,
             border: '2px solid transparent',
           }}
           onMouseEnter={(e) => {

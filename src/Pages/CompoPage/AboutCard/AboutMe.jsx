@@ -83,7 +83,7 @@ export default function AboutMe({ isExpanded }) {
       borderRadius: '10px',
       opacity: inView1 ? 1 : 0,
       transform: inView1 ? 'translateY(0)' : 'translateY(-50px)',
-      transition: `opacity 1.25s ease-out 6.2s, transform 1.25s ease-out 6.2s`
+      transition: `opacity 1.25s ease-out 3.5s, transform 1.25s ease-out 3.5s`
     },
     }
 
@@ -100,10 +100,10 @@ export default function AboutMe({ isExpanded }) {
   return (
     <>
       <div ref={ref1} style={isExpanded ? {display: "none"} : content.container}>
-        <div className="home3" ref={ref1} style={{ opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 7.2s, transform 1.25s ease-out 7.2s` }}>
+        <div className="home3" ref={ref1} style={{ opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 4.2s, transform 1.25s ease-out 4.2s` }}>
           About Me
         </div> 
-        <div ref={ref1} style={{ opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 9s, transform 1.25s ease-out 9s` }}>
+        <div ref={ref1} style={{ opacity: inView1 ? 1 : 0, transform: inView1 ? 'translateY(0)' : 'translateY(-50px)', transition: `opacity 1.25s ease-out 5s, transform 1.25s ease-out 5s` }}>
           <br />
           I pursuing my graduation with a degree in Information & Technology, from University GGSIPU. After realizing that programming is where my passion lies, I decided to pursue in Cs related field and I'm currently a 3rd year student at the College of Engineering, Delhi. <br/><br/>
 
