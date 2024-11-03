@@ -34,7 +34,6 @@ Welcome to my portfolio website repository! This project is a comprehensive show
  - Contact
 
 <!--<table align="left">
-
     <td>Demo</td> 
     <td>Features</td>
     <td>Technologies Used</td>
