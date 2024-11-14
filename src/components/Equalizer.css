@@ -1,0 +1,28 @@
+.bar {
+  animation: bounce 0.5s ease-in-out infinite alternate;
+}
+
+.bar1 {
+  animation-delay: 0.1s;
+}
+
+.bar2 {
+  animation-delay: 0.2s;
+}
+
+.bar3 {
+  animation-delay: 0.3s;
+}
+
+.bar4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    height: 2px;
+  }
+  to {
+    height: 10px;
+  }
+}

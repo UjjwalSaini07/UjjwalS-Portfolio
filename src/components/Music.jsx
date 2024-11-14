@@ -1,0 +1,251 @@
+import React, { useState, useRef } from "react";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
+
+import Equalizer from "./Equalizer";
+import Audio1 from "../components/Assest_Used/Sounds/Music/Audio1_LMK.mp3";
+import Audio2 from "../components/Assest_Used/Sounds/Music/Audio2_EDEyeClosed.mp3";
+import Audio3 from "../components/Assest_Used/Sounds/Music/Audio3_AWAlone.mp3";
+import Audio4 from "../components/Assest_Used/Sounds/Music/Audio4_EDShape.mp3";
+import Audio5 from "../components/Assest_Used/Sounds/Music/Audio5_AWFaded.mp3";
+
+const Music = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState(Audio1);
+  const audioRef = useRef(null);
+  const clickTimeout = useRef(null);
+
+  const correctPassword = "ujjwal";
+
+  const handleMusicPlay = async () => {
+    if (!isAuthenticated) {
+      const { value: password } = await Swal.fire({
+        title: "Enter your password",
+        input: "password",
+        inputLabel: "Password",
+        inputPlaceholder: "Enter your password",
+        customClass: {
+          popup: 'swal-custom-popup',
+          title: 'swal-custom-title',
+          input: 'swal-custom-input',
+          confirmButton: 'swal-custom-button',
+        },
+        inputAttributes: {
+          maxlength: "10",
+          autocapitalize: "off",
+          autocorrect: "off",
+        },
+      });
+
+      if (password) {
+        if (password === correctPassword) {
+          Swal.fire(`Password correct!<br/> Music is playing.<br/> Double Tap on MusicNode to get the next song.`);
+          setIsAuthenticated(true);
+          setIsPlaying(true);
+          audioRef.current.play();
+          audioRef.current.volume = 0.4;
+        } else {
+          Swal.fire(`Incorrect password.<br/>Try again.<br/> You Entered: ${password}<br/>Hint: Something Special!!`);
+        }
+      }
+    } else {
+      handleDoubleClick();
+    }
+  };
+  
+const handleDoubleClick = () => {
+    if (clickTimeout.current) {
+      setCurrentAudio((prevAudio) => {
+        const audioArray = [Audio1, Audio2, Audio3, Audio4, Audio5];
+        const currentIndex = audioArray.indexOf(prevAudio); // Get the current audio index
+        const nextIndex = (currentIndex + 1) % audioArray.length; // Calculate the next index (cycle back to 0 after 4)
+        return audioArray[nextIndex]; // Setting the next audio
+      });
+      setIsPlaying(true);
+  
+      // Remove any previous event listener before adding a new one
+      audioRef.current.removeEventListener("canplaythrough", handlePlayAfterLoad);
+  
+      // Add an event listener to play the audio only once it's ready
+      audioRef.current.addEventListener("canplaythrough", handlePlayAfterLoad);
+      audioRef.current.load(); // Load the new audio source
+  
+      clearTimeout(clickTimeout.current);
+      clickTimeout.current = null;
+    } else {
+      clickTimeout.current = setTimeout(() => {
+        clickTimeout.current = null;
+        togglePlayPause();
+      }, 300);
+    }
+  };
+  
+  // Function to handle playback after loading
+  const handlePlayAfterLoad = () => {
+    audioRef.current.play();
+  };
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  return (
+    <div>
+      <button
+        onClick={handleMusicPlay}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        style={{ color: "#fff" }}
+      >
+        {isPlaying ?
+          (
+            <i className="bi bi-pause"
+             style={{ cursor: "pointer", fontSize: "24px", color: "#fff" }}
+          ></i>
+          ) : 
+          (
+            <i className="bi bi-music-note-beamed"
+            style={{ cursor: "pointer", fontSize: "24px", color: "#fff" }}
+         ></i>
+        )}
+      </button>
+      {/* ! Eqaulizer show some Error */}
+      {/* <button
+        onClick={handleMusicPlay}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        style={{ color: "#fff" }}
+      >
+        {isPlaying ? (
+          isHovering ? (
+            <i className="bi bi-pause"
+             style={{ cursor: "pointer", fontSize: "24px", color: "#fff" }}
+          ></i>
+          ) : (
+            <Equalizer/>
+          )
+        ) : (
+            <i className="bi bi-music-note-beamed"
+            style={{ cursor: "pointer", fontSize: "24px", color: "#fff" }}
+         ></i>
+        )}
+      </button> */}
+      <audio ref={audioRef} src={currentAudio} />
+      <style jsx>{`
+        .swal-custom-popup {
+          width: 450px;
+        }
+        .swal-custom-title {
+          font-size: 2.2rem;
+        }
+        .swal-custom-input {
+          font-size: 1.2em;
+          padding: 10px;
+        }
+        .swal-custom-button {
+          font-size: 1.2em;
+          padding: 10px 20px;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Music;
+
+
+// Todo: Good Code, But some minor problems
+// import React, { useState, useRef } from "react";
+// import Swal from "sweetalert2";
+// import "sweetalert2/dist/sweetalert2.min.css";
+
+// import Audio1 from "../components/Assest_Used/Sounds/Music/Audio1_LMK.mp3";
+// import Audio2 from "../components/Assest_Used/Sounds/Music/Audio2_AW.mp3";
+
+// const Music = () => {
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const [isAuthenticated, setIsAuthenticated] = useState(false);
+//   const [currentAudio, setCurrentAudio] = useState(Audio1);
+//   const audioRef = useRef(null);
+//   const clickTimeout = useRef(null);
+
+//   const correctPassword = "ujjwal";
+
+//   const handleMusicPlay = async () => {
+//     if (!isAuthenticated) {
+//       const { value: password } = await Swal.fire({
+//         title: "Enter your password",
+//         input: "password",
+//         inputLabel: "Password",
+//         inputPlaceholder: "Enter your password",
+//         inputAttributes: {
+//           maxlength: "10",
+//           autocapitalize: "off",
+//           autocorrect: "off",
+//         },
+//       });
+
+//       if (password) {
+//         if (password === correctPassword) {
+//           Swal.fire(`Password correct! Music is playing.`);
+//           setIsAuthenticated(true);
+//           setIsPlaying(true);
+//           audioRef.current.play();
+//         } else {
+//           Swal.fire(`Incorrect password. Try again.`);
+//         }
+//       }
+//     } else {
+//       handleDoubleClick();
+//     }
+//   };
+
+//   const handleDoubleClick = () => {
+//     if (clickTimeout.current) {
+//       // If the button was clicked twice within a short interval, change the song
+//       setCurrentAudio(currentAudio === Audio1 ? Audio2 : Audio1);
+//       setIsPlaying(true);
+//       audioRef.current.play();
+//       clearTimeout(clickTimeout.current);
+//       clickTimeout.current = null;
+//     } else {
+//       // Set a timeout to detect the second click within 300ms
+//       clickTimeout.current = setTimeout(() => {
+//         clickTimeout.current = null;
+//         togglePlayPause();
+//       }, 300);
+//     }
+//   };
+
+//   const togglePlayPause = () => {
+//     if (isPlaying) {
+//       audioRef.current.pause();
+//     } else {
+//       audioRef.current.play();
+//     }
+//     setIsPlaying(!isPlaying);
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={handleMusicPlay} style={{ color: "#fff" }}>
+//         <i
+//           className="bi bi-music-note-beamed"
+//           style={{ cursor: "pointer", fontSize: "24px", color: "#fff" }}
+//         ></i>
+//       </button>
+//       <audio ref={audioRef} src={currentAudio} />
+//     </div>
+//   );
+// };
+
+// export default Music;
+
