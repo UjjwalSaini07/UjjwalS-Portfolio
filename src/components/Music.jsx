@@ -36,6 +36,12 @@ const Music = () => {
           autocapitalize: "off",
           autocorrect: "off",
         },
+        willOpen: () => {
+          document.body.style.overflow = "hidden"; // Disable scroll
+        },
+        willClose: () => {
+          document.body.style.overflow = "auto"; // Restore scroll
+        },
       });
 
       if (password) {
@@ -60,24 +66,7 @@ const Music = () => {
 
   const handleDoubleClick = () => {
     if (clickTimeout.current) {
-      setCurrentAudio((prevAudio) => {
-        const audioArray = [Audio1, Audio2, Audio3, Audio4, Audio5];
-        const currentIndex = audioArray.indexOf(prevAudio); // Get the current audio index
-        const nextIndex = (currentIndex + 1) % audioArray.length; // Calculate the next index (cycle back to 0 after 4)
-        return audioArray[nextIndex]; // Setting the next audio
-      });
-      setIsPlaying(true);
-
-      // Remove any previous event listener before adding a new one
-      audioRef.current.removeEventListener(
-        "canplaythrough",
-        handlePlayAfterLoad
-      );
-
-      // Add an event listener to play the audio only once it's ready
-      audioRef.current.addEventListener("canplaythrough", handlePlayAfterLoad);
-      audioRef.current.load(); // Load the new audio source
-
+      setNextAudio();
       clearTimeout(clickTimeout.current);
       clickTimeout.current = null;
     } else {
@@ -86,6 +75,26 @@ const Music = () => {
         togglePlayPause();
       }, 300);
     }
+  };
+
+  const setNextAudio = () => {
+    setCurrentAudio((prevAudio) => {
+      const audioArray = [Audio1, Audio2, Audio3, Audio4, Audio5];
+      const currentIndex = audioArray.indexOf(prevAudio); // Get the current audio index
+      const nextIndex = (currentIndex + 1) % audioArray.length; // Calculate the next index (cycle back to 0 after 4)
+      return audioArray[nextIndex]; // Setting the next audio
+    });
+    setIsPlaying(true);
+
+    // Remove any previous event listener before adding a new one
+    audioRef.current.removeEventListener(
+      "canplaythrough",
+      handlePlayAfterLoad
+    );
+
+    // Add an event listener to play the audio only once it's ready
+    audioRef.current.addEventListener("canplaythrough", handlePlayAfterLoad);
+    audioRef.current.load(); // Load the new audio source
   };
 
   // Function to handle playback after loading
@@ -138,11 +147,12 @@ const Music = () => {
         )}
       </button>
 
-      <audio ref={audioRef} src={currentAudio} />
+      <audio
+        ref={audioRef}
+        src={currentAudio}
+        onEnded={setNextAudio} // Automatically set the next audio when the current one ends
+      />
       <style jsx>{`
-        .swal-custom-popup {
-          width: 450px;
-        }
         .swal-custom-title {
           font-size: 2.2rem;
         }

@@ -102,7 +102,7 @@ const About = () => {
                   <li><Link to="/contact" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Contact</Link></li>
                 </motion.div>
                 <motion.div variants={textVariant(4.5)} initial="hidden" animate="show">
-                  <li><Music /></li>
+                  <li><Music onClick={play}/></li>
                 </motion.div>
               </ul>
             </nav>
