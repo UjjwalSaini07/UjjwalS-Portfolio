@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./Equalizer.css";
+import ".././Pages/Styles/Equalizer.css";
 
 const SVGComponent = (props) => (
   <svg
