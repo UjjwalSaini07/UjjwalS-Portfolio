@@ -264,7 +264,8 @@ export function MarqueeDemo() {
 export default MarqueeDemo;
 
 
-// TOdo: Done some rubbish Change
+// Todo: Problematic Code
+// ! Try Change - 1: Component is moving good but the problem is space between start and end.
 // import React, { useEffect, useState } from 'react';
 // import { useInView } from 'react-intersection-observer';
 
@@ -274,80 +275,87 @@ export default MarqueeDemo;
 // import bgref from '../../../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 
 // const reviews = [
-//   {
-//     name: "Ayush",
-//     username: "@ayush",
-//     body: "I've never seen anything like this before. It's amazing. I love it.",
-//     img: Shade1,
-//   },
-//   {
-//     name: "Keshav",
-//     username: "@keshav",
-//     body: "I don't know what to say. I'm speechless. This is amazing.",
-//     img: Shade2,
-//   },
-//   {
-//     name: "Sameer",
-//     username: "@sam",
-//     body: "I'm at a loss for words. This is amazing. I love it.",
-//     img: Shade3,
-//   },
-//   {
-//     name: "Rohit",
-//     username: "@rohit",
-//     body: "I'm at a loss for words. This is amazing. I love it.",
-//     img: Shade3,
-//   },
-//   {
-//     name: "Ansh",
-//     username: "@ansh",
-//     body: "I'm at a loss for words. This is amazing. I love it.",
-//     img: Shade2,
-//   },
-//   {
-//     name: "Jhanvi",
-//     username: "@jhanvi",
-//     body: "I'm at a loss for words. This is amazing. I love it.",
-//     img: Shade1,
-//   },
+//   { name: "Ayush", username: "@ayush", body: "I've never seen anything like this before. It's amazing. I love it.", img: Shade1 },
+//   { name: "Keshav", username: "@keshav", body: "I don't know what to say. I'm speechless. This is amazing.", img: Shade2 },
+//   { name: "Sameer", username: "@sam", body: "I'm at a loss for words. This is amazing. I love it.", img: Shade3 },
+//   { name: "Rohit", username: "@rohit", body: "I'm at a loss for words. This is amazing. I love it.", img: Shade3 },
+//   { name: "Ansh", username: "@ansh", body: "I'm at a loss for words. This is amazing. I love it.", img: Shade2 },
+//   { name: "Jhanvi", username: "@jhanvi", body: "I'm at a loss for words. This is amazing. I love it.", img: Shade1 },
 // ];
 
-// const Marquee = ({ children, reverse = false }) => {
+// const spaceboardsFont = `
+//   @font-face {
+//     font-family: 'Spaceboards';
+//     src: url('/fonts/Spaceboards.otf') format('opentype');
+//   }
+// `;
+
+// const TestoStyle = `
+//   .Test {
+//     font-family: 'Spaceboards', sans-serif;
+//     font-size: 5rem;
+//     font-weight: bold;
+//     background: linear-gradient(90deg, #0cffc5, #a939ff, #0cffc5, #a939ff);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     margin-left: 4rem;
+//     animation: gradient 1.5s infinite;
+//     letter-spacing: 0.1rem;
+//     background-size: 200% 200%;
+//   }
+
+//   @keyframes gradient {
+//     0% { background-position: 0% 50%; }
+//     50% { background-position: 100% 50%; }
+//     100% { background-position: 0% 50%; }
+//   }
+
+//   /* Marquee animation styles */
+//   .animate-marquee {
+//     display: flex;
+//     animation: marquee var(--duration, 10s) linear infinite;
+//   }
+
+//   .animate-marquee2 {
+//     display: flex;
+//     animation: marquee2 var(--duration, 10s) linear infinite;
+//   }
+
+//   @keyframes marquee {
+//     from { transform: translateX(100%); }
+//     to { transform: translateX(-100%); }
+//   }
+
+//   @keyframes marquee2 {
+//     from { transform: translateX(-100%); }
+//     to { transform: translateX(100%); }
+//   }
+
+//   .group:hover .animate-marquee,
+//   .group:hover .animate-marquee2 {
+//     animation-play-state: paused;
+//   }
+// `;
+
+// const Marquee = ({ children, reverse = false, pauseOnHover = false, className = '' }) => {
 //   const { ref: ref0, inView: inView0 } = useInView({
 //     triggerOnce: true,
 //     threshold: 0.1,
 //   });
 
+//   const marqueeClass = reverse ? 'animate-marquee2' : 'animate-marquee';
 //   const marqueeStyle = {
-//     display: 'flex',
-//     animation: `marquee 20s linear infinite`,
-//     whiteSpace: 'nowrap',
-//     ...(reverse && { animationDirection: 'reverse' }),
 //     opacity: inView0 ? 1 : 0,
 //     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-//     transition: `opacity 1.25s ease-out 0.5s, transform 1.25s ease-out 0.5s`,
-//   };
-
-//   const containerStyle = {
-//     overflow: 'hidden',
-//     display: 'flex',
-//     opacity: inView0 ? 1 : 0,
-//     transform: inView0 ? 'translateY(0)' : 'translateY(-50px)',
-//     transition: `opacity 1.25s ease-out 0.5s, transform 1.25s ease-out 0.5s`,
-//     position: 'relative',
+//     transition: `opacity 1.25s ease-out 4s, transform 1.25s ease-out 4s`,
 //   };
 
 //   return (
-//     <div style={containerStyle} className="marquee-container" ref={ref0}>
-//       <div style={marqueeStyle}>
-//         {children}
-//         {children} {/* Duplicate children to create infinite loop */}
-//         {children} {/* Triplicate to ensure there's enough content */}
-//       </div>
+//     <div ref={ref0} style={marqueeStyle} className={`${marqueeClass} ${className} ${pauseOnHover ? 'group' : ''}`}>
+//       {children}
 //     </div>
 //   );
 // };
-
 
 // const ReviewCard = ({ img, name, username, body }) => {
 //   const [hover, setHover] = useState(false);
@@ -355,8 +363,8 @@ export default MarqueeDemo;
 //   const cardStyle = {
 //     position: 'relative',
 //     width: '35rem',
-//     height: '8rem',
-//     margin: '0.5rem',
+//     height: '8rem', 
+//     margin: '0.2px 0.5rem 1.2rem',
 //     cursor: 'pointer',
 //     overflow: 'hidden',
 //     borderRadius: '1rem',
@@ -399,13 +407,13 @@ export default MarqueeDemo;
 // export function MarqueeDemo() {
 //   useEffect(() => {
 //     const styleSheet = document.styleSheets[0];
-//     const keyframes = `
-//       @keyframes marquee {
-//         0% { transform: translateX(100%); }
-//         100% { transform: translateX(-100%); }
-//       }
-//     `;
-//     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+//     const styleElement = document.createElement('style');
+//     styleElement.innerHTML = spaceboardsFont + TestoStyle;
+//     document.head.appendChild(styleElement);
+
+//     return () => {
+//       document.head.removeChild(styleElement);
+//     };
 //   }, []);
 
 //   const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
@@ -442,14 +450,22 @@ export default MarqueeDemo;
 //     right: 0,
 //   };
 
+//   const { ref: ref0, inView: inView0 } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1, 
+//   });
+
 //   return (
 //     <div style={containerStyle}>
-//       <Marquee>
+//       <div className="Test" ref={ref0} style={{ textAlign: 'center', marginBottom: '2.5rem', marginTop: '1rem',  opacity: inView0 ? 1 : 0, transform: inView0 ? 'translateY(0)' : 'translateY(50px)', transition: `opacity 1.25s ease-out 3.2s, transform 1.25s ease-out 3.2s`}}>
+//         Testimonials
+//       </div>
+//       <Marquee pauseOnHover className="[--duration:20s]">
 //         {firstRow.map((review) => (
 //           <ReviewCard key={review.username} {...review} />
 //         ))}
 //       </Marquee>
-//       <Marquee reverse>
+//       <Marquee reverse pauseOnHover className="[--duration:20s]">
 //         {secondRow.map((review) => (
 //           <ReviewCard key={review.username} {...review} />
 //         ))}

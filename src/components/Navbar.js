@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import useSound from 'use-sound';
 import { useMediaQuery } from 'react-responsive';
 
+import Music from './Music.jsx';
 import USLogopng from '../components/Assest_Used/Us_LogoMain.png';
 import sound from './Assest_Used/Sounds/base.mp3';
 import '../Pages/Styles/Nav.css';
@@ -99,6 +100,9 @@ const About = () => {
                 </motion.div>
                 <motion.div variants={textVariant(4.2)} initial="hidden" animate="show">
                   <li><Link to="/contact" onClick={play} style={{ fontFamily: "'Vidaloka', serif",}}>Contact</Link></li>
+                </motion.div>
+                <motion.div variants={textVariant(4.5)} initial="hidden" animate="show">
+                  <li><Music onClick={play}/></li>
                 </motion.div>
               </ul>
             </nav>
