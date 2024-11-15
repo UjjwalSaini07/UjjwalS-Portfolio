@@ -1,5 +1,6 @@
 .bar {
   animation: bounce 0.5s ease-in-out infinite alternate;
+  transform-origin: bottom; /* Anchor scaling from bottom */
 }
 
 .bar1 {
@@ -20,9 +21,9 @@
 
 @keyframes bounce {
   from {
-    height: 2px;
+    transform: scaleY(0.2); /* Smallest scale */
   }
   to {
-    height: 10px;
+    transform: scaleY(1); /* Full height */
   }
 }
