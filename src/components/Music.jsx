@@ -16,53 +16,67 @@ const Music = () => {
   const audioRef = useRef(null);
   const clickTimeout = useRef(null);
 
-  const correctPassword = "ujjwal";
+  // const correctPassword = "ujjwal";
 
   const handleMusicPlay = async () => {
     if (!isAuthenticated) {
-      const { value: password } = await Swal.fire({
-        title: "Enter your password",
-        input: "password",
-        inputLabel: "Password",
-        inputPlaceholder: "Enter your password",
-        customClass: {
-          popup: "swal-custom-popup",
-          title: "swal-custom-title",
-          input: "swal-custom-input",
-          confirmButton: "swal-custom-button",
-        },
-        inputAttributes: {
-          maxlength: "10",
-          autocapitalize: "off",
-          autocorrect: "off",
-        },
-        willOpen: () => {
-          document.body.style.overflow = "hidden"; // Disable scroll
-        },
-        willClose: () => {
-          document.body.style.overflow = "auto"; // Restore scroll
-        },
-      });
-
-      if (password) {
-        if (password === correctPassword) {
-          Swal.fire(
-            `Password correct!<br/> Music is playing.<br/> Double Tap on MusicNode to get the next song.`
-          );
-          setIsAuthenticated(true);
-          setIsPlaying(true);
-          audioRef.current.play();
-          audioRef.current.volume = 0.4;
-        } else {
-          Swal.fire(
-            `Incorrect password.<br/>Try again.<br/> You Entered: ${password}<br/>Hint: Something Special!!`
-          );
-        }
-      }
+      Swal.fire(
+        `Music is playing.<br/> Double Tap on MusicNode to get the next song.`
+      );
+      setIsAuthenticated(true);
+      setIsPlaying(true);
+      audioRef.current.play();
+      audioRef.current.volume = 0.4;
     } else {
       handleDoubleClick();
     }
   };
+  // todo: validate with the password
+  // const handleMusicPlay = async () => {
+  //   if (!isAuthenticated) {
+  //     const { value: password } = await Swal.fire({
+  //       title: "Enter your password",
+  //       input: "password",
+  //       inputLabel: "Password",
+  //       inputPlaceholder: "Enter your password",
+  //       customClass: {
+  //         popup: "swal-custom-popup",
+  //         title: "swal-custom-title",
+  //         input: "swal-custom-input",
+  //         confirmButton: "swal-custom-button",
+  //       },
+  //       inputAttributes: {
+  //         maxlength: "10",
+  //         autocapitalize: "off",
+  //         autocorrect: "off",
+  //       },
+  //       willOpen: () => {
+  //         document.body.style.overflow = "hidden"; // Disable scroll
+  //       },
+  //       willClose: () => {
+  //         document.body.style.overflow = "auto"; // Restore scroll
+  //       },
+  //     });
+
+  //     if (password) {
+  //       if (password === correctPassword) {
+  //         Swal.fire(
+  //           `Password correct!<br/> Music is playing.<br/> Double Tap on MusicNode to get the next song.`
+  //         );
+  //         setIsAuthenticated(true);
+  //         setIsPlaying(true);
+  //         audioRef.current.play();
+  //         audioRef.current.volume = 0.4;
+  //       } else {
+  //         Swal.fire(
+  //           `Incorrect password.<br/>Try again.<br/> You Entered: ${password}<br/>Hint: Something Special!!`
+  //         );
+  //       }
+  //     }
+  //   } else {
+  //     handleDoubleClick();
+  //   }
+  // };
 
   const handleDoubleClick = () => {
     if (clickTimeout.current) {
