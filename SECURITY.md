@@ -2,10 +2,11 @@
 
 ## Supported Versions
 
-Releasing Version 1 of My Portfolio Website
+Latest Releasing Version 1.4 of My Portfolio Website.
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 1.4   | :white_check_mark: |
 | 1.3   | :white_check_mark: |
 | 1.2   | :x: |
 | 1.1   | :white_check_mark: |
