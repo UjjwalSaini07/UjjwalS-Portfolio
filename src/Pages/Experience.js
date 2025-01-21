@@ -149,7 +149,7 @@ const experiences = [
     date: "Oct 2023 - Present",
     company_name: "Google Cloud Platform - Online",
     title: "Trainee In Program",
-    iconBg: "#4285F4",
+    iconBg: "#fff",
     icon: GCP,
     points: [
       "Participating in arcade events and completing various GCP modules.",
@@ -174,7 +174,7 @@ const experiences = [
     date: "June 2024 - August 2024",
     company_name: "IBM SKillsBuild - Internship",
     title: "Frontend Developer",
-    iconBg: "#4285F4",
+    iconBg: "#fff",
     icon: IBM,
     points: [
       "Designing and developing responsive and user-friendly web interfaces.",
@@ -198,7 +198,7 @@ const experiences = [
     date: "Dec 2023 - Jan 2024",
     company_name: "IBM Skillbuild - Internship (As a Learner)",
     title: "Data Analyst",
-    iconBg: "#B21807",
+    iconBg: "#fff",
     icon: IBM,
     points: [
       "Analyzed and interpreted complex data sets to inform business decisions.",
