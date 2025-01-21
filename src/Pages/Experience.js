@@ -121,12 +121,12 @@ const WorkExStyle = `
 const experiences = [
   {
     date: "July 2024 - Present",
-    company_name: "Curious Ecosystem - Apprenticeship",
+    company_name: "Curious Business Solution - Apprenticeship",
     title: "Open Source Developer",
     iconBg: "#fff",
     icon: curious,
     points: [
-      "Developing and maintaining open-source projects with a focus on full-stack solutions.",
+      "Developing and maintaining projects with a focus on full-stack solutions.",
       "Optimized Frontend services for scalability.",
       "Improving integration and development workflows for better efficiency.",
       "Collaborating with backend developers to integrate frontend components with server-side logic.",
