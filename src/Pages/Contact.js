@@ -538,7 +538,7 @@ useEffect(() => {
               }}>
                 
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.987241148713!2d77.2319384!3d28.6249118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0b5b3b51cd%3A0x63589a2e9f69bc01!2sIndia%20Gate%2C%20Delhi!5e0!3m2!1sen!2sin!4v1698004002035!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13918.39004592845!2d77.2088282!3d28.6139298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1698004002035!5m2!1sen!2sin"
                   style={{
                     border: 0,
                     width: '100%',
