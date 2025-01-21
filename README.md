@@ -1,4 +1,4 @@
-# UjjwalS Porfolio
+# UjjwalS Portfolio
 Welcome to my portfolio website repository! This project is a comprehensive showcase of my personal and professional achievements, skills, and projects. Designed to be visually appealing and interactive, it highlights my expertise and creativity in a unique and engaging way, providing a detailed overview of my work and capabilities.
 <table align="left">
     <thead align="left">
