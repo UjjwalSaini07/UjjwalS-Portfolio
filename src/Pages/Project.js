@@ -13,6 +13,8 @@ import { useMediaQuery } from 'react-responsive';
 import bgref from '../components/Assest_Used/textures/Bg_Shades/CubeBgAbout.png';
 import VedicVani from '../components/Assest_Used/ProjectImg/VedicVani.png';
 import MyPortfolio from '../components/Assest_Used/ProjectImg/USPortfolio.png';
+import alwaysmine from '../components/Assest_Used/ProjectImg/AlwaysMine.png';
+import mailscoutverify from '../components/Assest_Used/ProjectImg/MailScoutVerify.png';
 import RK from '../components/Assest_Used/ProjectImg/RkElect.png';
 import ProfileCard from '../components/Assest_Used/ProjectImg/ProfileCard.png';
 import Cube from '../components/Assest_Used/ProjectImg/Cube.png';
@@ -165,6 +167,28 @@ const projects = [
     image: MyPortfolio,
     live_link: "https://ujjwals-portfolio.vercel.app/",
     source_code_link: "*",
+  },
+  {
+    name: "MailScoutVerify",
+    description:
+      "Ensure accurate email address verification to guarantee authenticity and reliability for seamless communication. Employ reliable tools to validate domains, detect errors, and confirm active accounts, reducing bounce rates.",
+    tags: [
+      {
+        name: "Javascript",
+        color: "bg-orange-500",
+      },
+      {
+        name: "Nodejs",
+        color: "bg-white",
+      },
+      {
+        name: "Api",
+        color: "bg-green-500",
+      },
+    ],
+    image: mailscoutverify,
+    live_link: "https://www.npmjs.com/package/mailscoutverify",
+    source_code_link: "https://github.com/UjjwalSaini07/MailScoutVerify",
   },
   {
     name: "RK Electricals",
