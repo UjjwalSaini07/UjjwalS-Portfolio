@@ -62,9 +62,6 @@ You also visit here - https://www.ujjwalsaini.tech/
 - Vanta.js: For animated background effects.
 - Tailwind CSS: For styling components inline.
 - Magic Ui
-- GASP
-- Three.js
-- Node.js
 - Spline
 - Webflow
 ## Installation
